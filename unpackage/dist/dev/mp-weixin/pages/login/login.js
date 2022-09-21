@@ -151,8 +151,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 var _default =
 {
   data: function data() {
@@ -181,31 +179,32 @@ var _default =
       // } else {
 
       // }
-      alert('hello');
+      // alert('hello');
       console.log('hello', this.email, this.passWord);
     },
     // 
     getIdentityCode: function getIdentityCode() {
-      alert('getIdentityCode');
+      // alert('getIdentityCode');
       console.log('getIdentityCode');
     },
     // 忘记密码页面
     forgetPass: function forgetPass() {
-      alert('forgetPass');
+      // alert('forgetPass');
       uni.navigateTo({
         url: '../forgetPass/forgetPass' });
 
     },
     // 注册页面
     registerAccount: function registerAccount() {
-      alert('registerAccount');
+      // alert('registerAccount');
       uni.navigateTo({
         url: '../register/register' });
 
     },
     // 展示隐私政策
     showProvacy: function showProvacy() {
-      alert('showProvacy');
+      // alert('showProvacy')
+      console.log('showProvacy');
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

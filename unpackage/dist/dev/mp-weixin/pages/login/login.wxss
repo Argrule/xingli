@@ -1,4 +1,40 @@
+.fontBody {
+  margin: 10rpx 10rpx;
+  color: #008bd0;
+  font-size: 24rpx;
+  border: 2rpx solid #008bd0;
+}
+.cue {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  color: #7b7b7b;
+  text-align: center;
+}
+.xieyi {
+  font-size: 24rpx;
+  color: #1a71b9;
+  margin: 15rpx 1rpx 0rpx 0rpx;
+}
+.submit {
+  display: flex;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  justify-content: center;
+  -webkit-transform: translateY(-10rpx);
+          transform: translateY(-10rpx);
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: 100%;
+}
+.submit button {
+  color: #fff;
+  width: 100%;
+  border-radius: 50rpx;
+  background-color: #008bd0;
+}
 .content {
+  background-image: url(/static/login.jpg);
   text-align: center;
 }
 .select {
@@ -8,7 +44,7 @@
 }
 .displayBox {
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 .IDCode-button {
   width: 150rpx;
@@ -19,7 +55,7 @@
 }
 .uni-input {
   display: block;
-  border: 1px salmon solid;
+  border: 1px #008bd0 solid;
   width: 500rpx;
   margin: 15rpx auto;
   border-radius: 8rpx;
@@ -27,6 +63,8 @@
 .login-button {
   width: 300rpx;
   margin: 15rpx;
-  border-radius: 15rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #008bd0;
 }
 
