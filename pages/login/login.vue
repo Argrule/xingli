@@ -1,7 +1,9 @@
 <template>
-	<view class="content">
-		<form >			
-		<view class="title"><h1>名字</h1></view>
+	<!-- 加载背景图，注这样才生效 -->
+	<view class="content" style="background-image: url('../../static/login.jpg');background-size: 100% 100%;">
+		<form class="form_content">			
+		<!-- 名字，待修改 -->
+		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">名字</view></view>
 		<view class="title">
 		<input class="uni-input" maxlength="11" type="number" v-model="email" placeholder="请输入邮箱账号" />		
 		<input class="uni-input" maxlength="10" type="text" v-model="passWord" placeholder="请输入密码" />
@@ -14,7 +16,7 @@
 			<checkbox class="cue" v-model="isPermited" @change="changeiIsPermited">我已阅读并同意</checkbox>
 			<view class="xieyi" @click="showProvacy">《用户协议及隐私政策》</view>
 		</view>
-		<button class="login-button" size="mini" @click="login">登录</button>
+		<button class="login-button" size="mini" @click="login">登录</button>				
 		</form>		
 	</view>
 </template>
@@ -81,22 +83,28 @@
 <style lang="less">
 .fontBody{
 	margin:10rpx 10rpx;
-	color: #008bd0;
+	color: #fff;
 	font-size: 24rpx;
-	border: 2rpx solid #008bd0;
+	// border: 2rpx solid #fff;
 }
 .cue {	
 	transform:scale(0.7);
-	color: #7b7b7b;
+	color: rgb(220, 223, 229);
 	text-align: center;
 	// margin: 10rpx 0rpx 10rpx 0rpx;
 }
 .xieyi{
 	font-size: 24rpx;	
-	color: rgba(26, 113, 185, 100);	
+	// color: rgba(26, 113, 185, 100);	
+	color: rgb(220, 223, 229);	
 	// text-align: center;
 	margin: 15rpx 1rpx 0rpx 0rpx;	
 }
+// .form_content{
+	// margin: 0 auto;
+	// display: flex;
+	// align-content: center;
+// }
 .submit {
 			display: flex;
 			margin-top: 40rpx;
@@ -120,7 +128,7 @@
 	// align-items: center;
 
 	// margin: auto auto;	
-	background-image: url('../../static/login.jpg');
+	height: 100%;
 	text-align: center;
 }
 .select{
@@ -142,7 +150,8 @@
 }
 .uni-input{
 	display: block;	
-	border: 1px #008bd0 solid;
+	border: 1px #fff solid;
+	background-color: #fff;
 	width: 500rpx;
 	margin: 15rpx auto;
 	border-radius: 8rpx;
@@ -154,7 +163,7 @@
 	color:#fff;
 	// width: 100%;
 	border-radius: 50rpx;
-	background-color: #008bd0;
+	background-color: rgb(251, 194, 166);
 	// background-color: red;
 }
 // .title{
