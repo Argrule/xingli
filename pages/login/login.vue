@@ -5,19 +5,19 @@
 		<!-- 名字，待修改 -->
 		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">名字</view></view>
 		<view class="title">
-		<input class="uni-input" maxlength="11" type="number" v-model="email" placeholder="请输入邮箱账号" />		
-		<input class="uni-input" maxlength="10" type="text" v-model="passWord" placeholder="请输入密码" />
+		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />		
+		<input class="uni-input" maxlength="15" type="text" v-model="passWord" placeholder="请输入密码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="forgetPass">忘记密码</view>
 			<view class="fontBody" @click="registerAccount">注册账号</view>
 		</view>
 		</view>
 		<view class="select">
-			<checkbox class="cue" v-model="isPermited" @change="changeiIsPermited"></checkbox>
-			<view class="xieyi" >我已阅读并同意</view>
+			<checkbox class="cue" @click="changeiIsPermited"></checkbox>
+			<view class="xieyi">我已阅读并同意</view>
 			<view class="xieyi" @click="showProvacy">《用户协议及隐私政策》</view>
 		</view>
-		<button class="login-button" size="mini" @click="login">登录</button>				
+		<button class="login-button" size="mini" @click="beforeLogin">登录</button>			
 		</form>		
 	</view>
 </template>
@@ -30,28 +30,40 @@
 				email:'',
 				passWord:'',
 				// 是否同意协议
-				isPermited:'',		
+				isPermited:false,		
 			};
 		},
 		methods:{			
 			// 勾选或取消同意协议
-			changeiIsPermited(){
+			changeiIsPermited(){						
 				if (this.isPermited) {
-					this.isPermited=0;
+					this.isPermited=false;
 				} else {
-					this.isPermited=1;
+					this.isPermited=true;
 				}
 			},
 			// 登录
+			beforeLogin(){								
+				if (this.isPermited) {
+					// 校验
+					let emailType = /[\s\S]+@[\w\W]+/;
+					let passWordType = /[\w\W]{6,}/;					
+					if (!emailType.test(this.email)) {						
+						return uni.$showMsg("请输入正确的邮箱格式");
+					}										
+					if (!passWordType.test(this.passWord)) {						
+						return uni.$showMsg("请输入至少六位密码");
+					}
+					uni.$showMsg('登录成功');
+					// 登录请求
+					this.login();
+				} else {
+					return uni.$showMsg("请同意隐私协议");
+				}				
+			},
+			// 发登录请求
 			login(){
-				console.log('isPermited:',this.isPermited)
-				// if (this.isPermited) {
-					
-				// } else {
-					
-				// }
-				// alert('hello');
-				console.log('hello',this.email,this.passWord);
+				console.log('yes login:',this.isPermited)
 			},
 			// 
 			getIdentityCode(){

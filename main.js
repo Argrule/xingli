@@ -1,4 +1,5 @@
 import App from './App'
+import { uni } from "./apis/request/request";
 
 // #ifndef VUE3
 import Vue from 'vue'
