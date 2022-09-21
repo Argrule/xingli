@@ -33,6 +33,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/personalMain/personalMain",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

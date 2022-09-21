@@ -196,22 +196,22 @@ var _default =
     // 发登录请求
     login: function login() {
       console.log('yes login:', this.isPermited);
+      uni.navigateTo({
+        url: '../personalMain/personalMain' });
+
     },
     // 
     getIdentityCode: function getIdentityCode() {
-      // alert('getIdentityCode');
       console.log('getIdentityCode');
     },
     // 忘记密码页面
     forgetPass: function forgetPass() {
-      // alert('forgetPass');
       uni.navigateTo({
         url: '../forgetPass/forgetPass' });
 
     },
     // 注册页面
     registerAccount: function registerAccount() {
-      // alert('registerAccount');
       uni.navigateTo({
         url: '../register/register' });
 

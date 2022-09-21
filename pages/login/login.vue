@@ -64,22 +64,22 @@
 			// 发登录请求
 			login(){
 				console.log('yes login:',this.isPermited)
+				uni.navigateTo({
+					url:'../personalMain/personalMain'
+				})
 			},
 			// 
-			getIdentityCode(){
-				// alert('getIdentityCode');
+			getIdentityCode(){				
 				console.log('getIdentityCode');
 			},
 			// 忘记密码页面
-			forgetPass(){
-				// alert('forgetPass');
+			forgetPass(){				
 				uni.navigateTo({
 					url:'../forgetPass/forgetPass'
 				})
 			},
 			// 注册页面
-			registerAccount(){
-				// alert('registerAccount');
+			registerAccount(){				
 				uni.navigateTo({
 					url:'../register/register'
 				})

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/login/login",
     "pages/register/register",
-    "pages/forgetPass/forgetPass"
+    "pages/forgetPass/forgetPass",
+    "pages/personalMain/personalMain"
   ],
   "subPackages": [],
   "window": {
