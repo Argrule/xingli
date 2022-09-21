@@ -6,7 +6,7 @@
 		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">名字</view></view>
 		<view class="title">
 		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />		
-		<input class="uni-input" maxlength="15" type="text" v-model="passWord" placeholder="请输入密码" />
+		<input class="uni-input" maxlength="15" type="password" v-model="passWord" placeholder="请输入密码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="forgetPass">忘记密码</view>
 			<view class="fontBody" @click="registerAccount">注册账号</view>
