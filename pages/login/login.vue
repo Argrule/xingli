@@ -81,16 +81,20 @@
 </script>
 
 <style lang="less">
+// 忘记密码、注册账号
 .fontBody{
-	margin:10rpx 10rpx;
+	margin:0rpx 15rpx;
 	color: #fff;
-	font-size: 24rpx;
+	font-size: 30rpx;
 	// border: 2rpx solid #fff;
 }
+// 我已阅读并同意
 .cue {	
 	transform:scale(0.7);
 	color: rgb(220, 223, 229);
-	text-align: center;
+	font-size: 37rpx;
+	// border-radius: 100rpx;
+	// text-align: right;
 	// margin: 10rpx 0rpx 10rpx 0rpx;
 }
 .xieyi{
@@ -100,39 +104,22 @@
 	// text-align: center;
 	margin: 15rpx 1rpx 0rpx 0rpx;	
 }
-// .form_content{
+.form_content{
 	// margin: 0 auto;
-	// display: flex;
+	display: flex;
+	// 给父元素加高度，flex的space-around才能分空间
+	height: 100vh;
+	flex-direction: column;
+	justify-content: space-around;
 	// align-content: center;
-// }
-.submit {
-			display: flex;
-			margin-top: 40rpx;
-			margin-bottom: 40rpx;
-			justify-content: center;
-			transform: translateY(-10rpx);
-			align-items: center;
-			font-weight: 600;
-			letter-spacing: 1px;
-			width: 100%;
-			button {
-				color:#fff;
-				width: 100%;
-				border-radius: 50rpx;
-				background-color: #008bd0;
-			}
-		}
-.content{
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-
+}
+.content{	
 	// margin: auto auto;	
 	height: 100%;
 	text-align: center;
 }
 .select{
-	margin-top: 50rpx;
+	margin-top: 15rpx;
 	display: flex;
 	justify-content: center;
 	// align-items: center;
@@ -149,11 +136,14 @@
 	left: 150rpx;
 }
 .uni-input{
+	text-align: left;
+	padding: 10rpx;
 	display: block;	
+	font-size: 30rpx;
 	border: 1px #fff solid;
 	background-color: #fff;
 	width: 500rpx;
-	margin: 15rpx auto;
+	margin: 55rpx auto;
 	border-radius: 8rpx;
 }
 .login-button{
@@ -166,10 +156,4 @@
 	background-color: rgb(251, 194, 166);
 	// background-color: red;
 }
-// .title{
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// align-content: center;
-// }
 </style>
