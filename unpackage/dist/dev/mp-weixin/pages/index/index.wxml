@@ -1,0 +1,1 @@
+<view class="content"><view class="text-area"><view><button data-event-opts="{{[['tap',[['gologin',['$event']]]]]}}" bindtap="__e">登录页</button></view></view></view>

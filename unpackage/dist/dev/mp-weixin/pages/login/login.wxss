@@ -1,0 +1,32 @@
+.content {
+  text-align: center;
+}
+.select {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+}
+.displayBox {
+  display: flex;
+  justify-content: right;
+}
+.IDCode-button {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 8rpx;
+  position: relative;
+  left: 150rpx;
+}
+.uni-input {
+  display: block;
+  border: 1px salmon solid;
+  width: 500rpx;
+  margin: 15rpx auto;
+  border-radius: 8rpx;
+}
+.login-button {
+  width: 300rpx;
+  margin: 15rpx;
+  border-radius: 15rpx;
+}
+
