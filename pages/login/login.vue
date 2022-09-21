@@ -13,7 +13,8 @@
 		</view>
 		</view>
 		<view class="select">
-			<checkbox class="cue" v-model="isPermited" @change="changeiIsPermited">我已阅读并同意</checkbox>
+			<checkbox class="cue" v-model="isPermited" @change="changeiIsPermited"></checkbox>
+			<view class="xieyi" >我已阅读并同意</view>
 			<view class="xieyi" @click="showProvacy">《用户协议及隐私政策》</view>
 		</view>
 		<button class="login-button" size="mini" @click="login">登录</button>				
@@ -90,19 +91,18 @@
 }
 // 我已阅读并同意
 .cue {	
-	transform:scale(0.7);
+	transform:scale(0.5);
 	color: rgb(220, 223, 229);
-	font-size: 37rpx;
+	// font-size: 37rpx;
 	// border-radius: 100rpx;
 	// text-align: right;
 	// margin: 10rpx 0rpx 10rpx 0rpx;
 }
 .xieyi{
-	font-size: 24rpx;	
+	font-size: 25rpx;	
 	// color: rgba(26, 113, 185, 100);	
-	color: rgb(220, 223, 229);	
-	// text-align: center;
-	margin: 15rpx 1rpx 0rpx 0rpx;	
+	color: rgb(220, 223, 229);		
+	margin: 10rpx 0rpx 0rpx 0rpx;		
 }
 .form_content{
 	// margin: 0 auto;

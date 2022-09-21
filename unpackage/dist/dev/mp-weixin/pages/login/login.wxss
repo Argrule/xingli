@@ -4,15 +4,14 @@
   font-size: 30rpx;
 }
 .cue {
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   color: #dcdfe5;
-  font-size: 37rpx;
 }
 .xieyi {
-  font-size: 24rpx;
+  font-size: 25rpx;
   color: #dcdfe5;
-  margin: 15rpx 1rpx 0rpx 0rpx;
+  margin: 10rpx 0rpx 0rpx 0rpx;
 }
 .form_content {
   display: flex;
