@@ -148,78 +148,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      // 邮箱密码，待校验
+      // 邮箱、验证码，待校验
       email: '',
-      passWord: '',
-      // 是否同意协议
-      isPermited: false };
+      checkWord: '' };
 
   },
   methods: {
-    // 勾选或取消同意协议
-    changeiIsPermited: function changeiIsPermited() {
-      if (this.isPermited) {
-        this.isPermited = false;
-      } else {
-        this.isPermited = true;
+    // 注册
+    beforeRegister: function beforeRegister() {
+      // 校验
+      var emailType = /[\s\S]+@[\w\W]+/;
+      var checkWordType = /[\w\W]{6,}/;
+      if (!emailType.test(this.email)) {
+        return uni.$showMsg("请输入正确的邮箱格式");
       }
-    },
-    // 登录
-    beforeLogin: function beforeLogin() {
-      if (this.isPermited) {
-        // 校验
-        var emailType = /[\s\S]+@[\w\W]+/;
-        var passWordType = /[\w\W]{6,}/;
-        if (!emailType.test(this.email)) {
-          return uni.$showMsg("请输入正确的邮箱格式");
-        }
-        if (!passWordType.test(this.passWord)) {
-          return uni.$showMsg("请输入至少六位密码");
-        }
-        uni.$showMsg('登录成功');
-        // 登录请求
-        this.login();
-      } else {
-        return uni.$showMsg("请同意隐私协议");
+      if (!checkWordType.test(this.checkWord)) {
+        return uni.$showMsg("请输入正确验证码");
       }
+      uni.$showMsg('注册成功');
+      // 注册请求
+      this.register();
     },
-    // 发登录请求
-    login: function login() {
-      console.log('yes login:', this.isPermited);
+    // 发注册请求
+    register: function register() {
+      console.log('yes register:');
     },
-    // 
+    // 获取验证码
     getIdentityCode: function getIdentityCode() {
-      // alert('getIdentityCode');
       console.log('getIdentityCode');
-    },
-    // 忘记密码页面
-    forgetPass: function forgetPass() {
-      // alert('forgetPass');
-      uni.navigateTo({
-        url: '../forgetPass/forgetPass' });
-
-    },
-    // 注册页面
-    registerAccount: function registerAccount() {
-      // alert('registerAccount');
-      uni.navigateTo({
-        url: '../register/register' });
-
-    },
-    // 展示隐私政策
-    showProvacy: function showProvacy() {
-      // alert('showProvacy')
-      console.log('showProvacy');
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

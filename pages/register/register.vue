@@ -3,21 +3,15 @@
 	<view class="content" style="background-image: url('../../static/login.jpg');background-size: 100% 100%;">
 		<form class="form_content">			
 		<!-- 名字，待修改 -->
-		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">名字</view></view>
+		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">注册</view></view>
 		<view class="title">
-		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />		
-		<input class="uni-input" maxlength="15" type="text" v-model="passWord" placeholder="请输入密码" />
+		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />
 		<view class="displayBox">
-			<view class="fontBody" @click="forgetPass">忘记密码</view>
-			<view class="fontBody" @click="registerAccount">注册账号</view>
+			<view class="fontBody" @click="getIdentityCode">获取验证码</view>
 		</view>
-		</view>
-		<view class="select">
-			<checkbox class="cue" @click="changeiIsPermited"></checkbox>
-			<view class="xieyi">我已阅读并同意</view>
-			<view class="xieyi" @click="showProvacy">《用户协议及隐私政策》</view>
-		</view>
-		<button class="login-button" size="mini" @click="beforeLogin">登录</button>			
+		<input class="uni-input" maxlength="15" type="text" v-model="checkWord" placeholder="请输入验证码" />		
+		</view>		
+		<button class="login-button" size="mini" @click="beforeRegister">注册</button>			
 		</form>		
 	</view>
 </template>
@@ -26,95 +20,49 @@
 	export default {
 		data() {
 			return {
-				// 邮箱密码，待校验
+				// 邮箱、验证码，待校验
 				email:'',
-				passWord:'',
-				// 是否同意协议
-				isPermited:false,		
+				checkWord:'',				
 			};
 		},
 		methods:{			
-			// 勾选或取消同意协议
-			changeiIsPermited(){						
-				if (this.isPermited) {
-					this.isPermited=false;
-				} else {
-					this.isPermited=true;
+			// 注册
+			beforeRegister(){												
+				// 校验
+				let emailType = /[\s\S]+@[\w\W]+/;
+				let checkWordType = /[\w\W]{6,}/;					
+				if (!emailType.test(this.email)) {						
+					return uni.$showMsg("请输入正确的邮箱格式");
+				}										
+				if (!checkWordType.test(this.checkWord)) {						
+					return uni.$showMsg("请输入正确验证码");
 				}
+				uni.$showMsg('注册成功');
+				// 注册请求
+				this.register();										
 			},
-			// 登录
-			beforeLogin(){								
-				if (this.isPermited) {
-					// 校验
-					let emailType = /[\s\S]+@[\w\W]+/;
-					let passWordType = /[\w\W]{6,}/;					
-					if (!emailType.test(this.email)) {						
-						return uni.$showMsg("请输入正确的邮箱格式");
-					}										
-					if (!passWordType.test(this.passWord)) {						
-						return uni.$showMsg("请输入至少六位密码");
-					}
-					uni.$showMsg('登录成功');
-					// 登录请求
-					this.login();
-				} else {
-					return uni.$showMsg("请同意隐私协议");
-				}				
+			// 发注册请求
+			register(){
+				console.log('yes register:');
 			},
-			// 发登录请求
-			login(){
-				console.log('yes login:',this.isPermited)
-			},
-			// 
-			getIdentityCode(){
-				// alert('getIdentityCode');
+			// 获取验证码
+			getIdentityCode(){				
 				console.log('getIdentityCode');
-			},
-			// 忘记密码页面
-			forgetPass(){
-				// alert('forgetPass');
-				uni.navigateTo({
-					url:'../forgetPass/forgetPass'
-				})
-			},
-			// 注册页面
-			registerAccount(){
-				// alert('registerAccount');
-				uni.navigateTo({
-					url:'../register/register'
-				})
-			},
-			// 展示隐私政策
-			showProvacy(){
-				// alert('showProvacy')
-				console.log('showProvacy')
-			}
+			},				
 		}
 	}
 </script>
 
 <style lang="less">
-// 忘记密码、注册账号
 .fontBody{
-	margin:0rpx 15rpx;
+	margin:0rpx 0rpx;
+	position: relative;
+	left: 63%;
 	color: #fff;
-	font-size: 30rpx;
-	// border: 2rpx solid #fff;
-}
-// 我已阅读并同意
-.cue {	
-	transform:scale(0.5);
-	color: rgb(220, 223, 229);
-	// font-size: 37rpx;
-	// border-radius: 100rpx;
-	// text-align: right;
-	// margin: 10rpx 0rpx 10rpx 0rpx;
-}
-.xieyi{
-	font-size: 25rpx;	
-	// color: rgba(26, 113, 185, 100);	
-	color: rgb(220, 223, 229);		
-	margin: 10rpx 0rpx 0rpx 0rpx;		
+	padding: 5rpx 10rpx;
+	background-color: rgba(255, 255, 255, 0.295);
+	font-size: 30rpx;	
+	border-radius: 8rpx;
 }
 .form_content{
 	// margin: 0 auto;
@@ -130,15 +78,9 @@
 	height: 100%;
 	text-align: center;
 }
-.select{
-	margin-top: 15rpx;
-	display: flex;
-	justify-content: center;
-	// align-items: center;
-}
 .displayBox{
 	display: flex;
-	justify-content: center;
+	justify-content: right;
 }
 .IDCode-button{
 	width: 150rpx;
@@ -155,7 +97,7 @@
 	border: 1px #fff solid;
 	background-color: #fff;
 	width: 500rpx;
-	margin: 55rpx auto;
+	margin: 35rpx auto;
 	border-radius: 8rpx;
 }
 .login-button{
