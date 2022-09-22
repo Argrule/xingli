@@ -63,14 +63,15 @@
 			},
 			// 发登录请求
 			login(){
-				uni.$http.post('/login/login',{
+				const { data:res } = uni.$http.post('/login/login',{
 					userName:this.email,
 					password:this.passWord
 				})
+				console.log("res",res);
 				console.log('yes login:',this.isPermited)
-				uni.navigateTo({
+				uni.switchTab({
 					url:'../personalMain/personalMain'
-				})
+				});
 			},
 			// 
 			getIdentityCode(){				

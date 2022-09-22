@@ -45,37 +45,69 @@
             }
             
         }
+        ,{
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/talk/talk",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
-    // "tabBar": {
-	// 	"color": "#7A7E83",
-	// 	"selectedColor": "#1890ff",
-	// 	"borderStyle": "black",
-	// 	"backgroundColor": "#ffffff",
-	// 	"height": "60px",
-	// 	"fontSize": "10px",
-	// 	"iconWidth": "24px",
-	// 	"spacing": "2px",
-	// 	"iconWidth": "25px",
-	// 	"list": [{
-	// 			"pagePath": "pages/Sign/Sign",
-	// 			"iconPath": "static/icon/sign.png",
-	// 			"selectedIconPath": "static/icon/sign-a.png",
-	// 			"text": "报名"
-	// 		},
-	// 		{
-	// 			"pagePath": "pages/Message/Message",
-	// 			"iconPath": "static/icon/comment.png",
-	// 			"selectedIconPath": "static/icon/comment-a.png",
-	// 			"text": "消息"
-	// 		},
-	// 		{
-	// 			"pagePath": "pages/Profile/Profile",
-	// 			"iconPath": "static/icon/user.png",
-	// 			"selectedIconPath": "static/icon/user-a.png",
-	// 			"text": "个人"
-	// 		}
-	// 	]
-	// },
+    "tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#1890ff",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "60px",
+		"fontSize": "10px",		
+		"spacing": "2px",
+		"iconWidth": "25px",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/icon/sign.png",
+				"selectedIconPath": "static/icon/sign-a.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"iconPath": "static/icon/comment.png",
+				"selectedIconPath": "static/icon/comment-a.png",
+				"text": "预约"
+			},
+			{
+				"pagePath": "pages/talk/talk",
+				"iconPath": "static/icon/comment.png",
+				"selectedIconPath": "static/icon/comment-a.png",
+				"text": "诉心"
+			},
+			{
+				"pagePath": "pages/personalMain/personalMain",
+				"iconPath": "static/icon/user.png",
+				"selectedIconPath": "static/icon/user-a.png",
+				"text": "我的"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
