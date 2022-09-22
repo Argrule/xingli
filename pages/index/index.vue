@@ -1,58 +1,58 @@
 <template>
-	<view class="content">	
-		<view class="text-area">			
-			<view>
-			<button @click="gologin">登录页</button>
-			</view>
-		</view>
-	</view>
+  <view class="content">
+    <view class="text-area">
+      <view>        
+        <u-alert title="hello" type="warning" description="欢迎登录"></u-alert>
+        <u-button size="normal" type="warning" @click="gologin"
+          >登录页</u-button
+        >
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-			gologin(){
-				uni.navigateTo({
-					url:'../login/login'
-				})
-			}
-
-		}
-	}
+export default {
+  data() {
+    return {
+      title: "Hello",
+    };
+  },
+  onLoad() {},
+  methods: {
+    gologin() {
+      uni.navigateTo({
+        url: "../login/login",
+      });
+    },
+  },
+};
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50rpx;
+}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
+.text-area {
+  display: flex;
+  justify-content: center;
+}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
 </style>
