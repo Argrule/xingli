@@ -5,6 +5,9 @@ import { uni } from "./apis/request/request";
 import Vue from 'vue'
 Vue.config.productionTip = false
 App.mpType = 'app'
+// 引入uview
+import uView from '@/uni_modules/uview-ui'
+Vue.use(uView);
 const app = new Vue({
     ...App
 })
@@ -13,6 +16,9 @@ app.$mount()
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
+// 引入uview
+import uView from '@/uni_modules/uview-ui'
+Vue.use(uView);
 export function createApp() {
   const app = createSSRApp(App)
   return {

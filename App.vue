@@ -12,8 +12,9 @@
 	}
 </script>
 
-<style>
-/*每个页面公共css */	
+<style lang="scss">
+/*每个页面公共css */
+@import "@/uni_modules/uview-ui/index.scss";
 page {
   height: 100%;
   width: 100%;
