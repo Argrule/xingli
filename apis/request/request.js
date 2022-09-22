@@ -12,7 +12,7 @@ uni.$showMsg = function(title = "数据加载失败！", duration = 1500) {
 
 // 封装uni挂载发送的请求
 uni.$http = $http;
-$http.baseUrl = 'https://www.tzih.work:38080'
+$http.baseUrl = 'http://101.43.183.202:38080'
 $http.beforeRequest = function(options) {
 	var header = {
 		cookie: wx.getStorageSync("sessionid"), //读取本地保存好的上一次cookie

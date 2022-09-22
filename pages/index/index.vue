@@ -1,13 +1,13 @@
 <template>
   <view class="content">
     <view class="text-area">
-      <view>        
+      <view>
         <u-alert title="hello" type="warning" description="欢迎登录"></u-alert>
         <u-button size="normal" type="warning" @click="gologin"
           >登录页</u-button
         >
       </view>
-    </view>
+    </view> 
   </view>
 </template>
 
@@ -20,7 +20,14 @@ export default {
   },
   onLoad() {},
   methods: {
-    gologin() {
+    async gologin() {
+      const { data:res }= await uni.$http.post('/login/register',{
+        userName:'刘荣',
+        email:'2039858744@qq.com',
+        password:'1145141919'
+      });
+      console.log('message',res.message);
+      // uni.$showMsg(res.message);
       uni.navigateTo({
         url: "../login/login",
       });
@@ -35,6 +42,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .logo {

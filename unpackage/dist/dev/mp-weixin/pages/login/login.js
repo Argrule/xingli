@@ -159,8 +159,8 @@ var _default =
   data: function data() {
     return {
       // 邮箱密码，待校验
-      email: '',
-      passWord: '',
+      email: '2039858744@qq.com',
+      passWord: '1145141919',
       // 是否同意协议
       isPermited: false };
 
@@ -195,6 +195,10 @@ var _default =
     },
     // 发登录请求
     login: function login() {
+      uni.$http.post('/login/login', {
+        userName: this.email,
+        password: this.passWord });
+
       console.log('yes login:', this.isPermited);
       uni.navigateTo({
         url: '../personalMain/personalMain' });

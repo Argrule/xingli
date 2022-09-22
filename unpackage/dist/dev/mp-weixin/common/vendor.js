@@ -8806,7 +8806,7 @@ uni.$showMsg = function () {var title = arguments.length > 0 && arguments[0] !==
 
 // 封装uni挂载发送的请求
 uni.$http = _index.$http;
-_index.$http.baseUrl = 'https://www.tzih.work:38080';
+_index.$http.baseUrl = 'http://101.43.183.202:38080';
 _index.$http.beforeRequest = function (options) {
   var header = {
     cookie: wx.getStorageSync("sessionid") //读取本地保存好的上一次cookie
