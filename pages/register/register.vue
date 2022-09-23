@@ -21,8 +21,8 @@
 		data() {
 			return {
 				// 邮箱、验证码，待校验
-				email:'',
-				checkWord:'',				
+				email:'2039858744@qq.com',
+				checkWord:'114519',	
 			};
 		},
 		methods:{			
@@ -42,8 +42,13 @@
 				this.register();										
 			},
 			// 发注册请求
-			register(){
-				console.log('yes register:');
+			async register(){
+				const { data:res }= await uni.$http.post('/login/register',{
+					userName:'刘荣',
+					email:this.email,
+					password:this.checkWord
+				});
+				console.log('message',res.message);
 			},
 			// 获取验证码
 			getIdentityCode(){				
