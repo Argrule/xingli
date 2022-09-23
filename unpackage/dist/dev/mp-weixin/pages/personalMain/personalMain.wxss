@@ -2,4 +2,28 @@ page {
   background: #f8f8f8;
   letter-spacing: 1px;
 }
+.content {
+  background-color: #F6B4A6;
+}
+.avatar {
+  margin: 10rpx 50rpx 50rpx;
+}
+.empty {
+  margin: 10rpx;
+  height: 10rpx;
+}
+.nickName {
+  margin-top: 15rpx;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: rgba(32, 41, 41, 0.76);
+}
+.arrow-right-icon {
+  margin: 50rpx;
+  position: relative;
+  left: 10%;
+}
+.person {
+  display: flex;
+}
 
