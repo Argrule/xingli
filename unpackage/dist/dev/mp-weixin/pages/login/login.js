@@ -184,7 +184,10 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
         var passWordType = /[\w\W]{6,}/;
         // if (!emailType.test(this.email)) {						
         // 	return uni.$showMsg("请输入正确的邮箱格式");
-        // }										
+        // }
+        if (this.userName == '') {
+          return uni.$showMsg("请输入用户名");
+        }
         if (!passWordType.test(this.passWord)) {
           return uni.$showMsg("请输入至少六位密码");
         }

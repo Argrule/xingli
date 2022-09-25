@@ -170,8 +170,14 @@ var _default =
       // 校验
       var emailType = /[\s\S]+@[\w\W]+/;
       var checkWordType = /[\w\W]{6,}/;
+      if (this.userName == '') {
+        return uni.$showMsg("请输入用户名");
+      }
       if (!emailType.test(this.email)) {
         return uni.$showMsg("请输入正确的邮箱格式");
+      }
+      if (!checkWordType.test(this.password)) {
+        return uni.$showMsg("请输入至少六位密码");
       }
       if (this.password != this.checkPassword) {
         return uni.$showMsg("两次密码不相同");
