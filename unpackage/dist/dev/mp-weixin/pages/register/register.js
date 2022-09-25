@@ -148,13 +148,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
     return {
       // 邮箱、验证码，待校验
       email: '2039858744@qq.com',
-      checkWord: '114519' };
+      checkWord: '114519',
+      // 密码
+      password: '123456',
+      checkPassword: '123456' };
 
   },
   methods: {
@@ -166,10 +171,12 @@ var _default =
       if (!emailType.test(this.email)) {
         return uni.$showMsg("请输入正确的邮箱格式");
       }
+      if (this.password != this.checkPassword) {
+        return uni.$showMsg("两次密码不相同");
+      }
       if (!checkWordType.test(this.checkWord)) {
         return uni.$showMsg("请输入正确验证码");
       }
-      uni.$showMsg('注册成功');
       // 注册请求
       this.register();
     },
@@ -178,9 +185,13 @@ var _default =
                   uni.$http.post('/login/register', {
                     userName: '刘荣',
                     email: _this.email,
-                    password: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;
+                    password: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
 
-                console.log('message', res.message);case 5:case "end":return _context.stop();}}}, _callee);}))();
+                res.code == '00000')) {_context.next = 8;break;}
+                uni.$showMsg('注册成功');_context.next = 9;break;case 8:return _context.abrupt("return",
+
+                uni.$showMsg(res.message));case 9:case "end":return _context.stop();}}}, _callee);}))();
+
     },
     // 获取验证码
     getIdentityCode: function getIdentityCode() {

@@ -6,10 +6,12 @@
 		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">注册</view></view>
 		<view class="title">
 		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />
+		<input class="uni-input" maxlength="20" type="text" v-model="password" placeholder="请输入密码账号" />
+		<input class="uni-input" maxlength="20" type="text" v-model="checkPassword" placeholder="请再次确认密码账号" />		
+		<input class="uni-input" maxlength="15" type="text" v-model="checkWord" placeholder="请输入验证码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="getIdentityCode">获取验证码</view>
 		</view>
-		<input class="uni-input" maxlength="15" type="text" v-model="checkWord" placeholder="请输入验证码" />		
 		</view>		
 		<button class="login-button" size="mini" @click="beforeRegister">注册</button>			
 		</form>		
@@ -23,6 +25,9 @@
 				// 邮箱、验证码，待校验
 				email:'2039858744@qq.com',
 				checkWord:'114519',	
+				// 密码
+				password: '123456',
+				checkPassword: '123456',
 			};
 		},
 		methods:{			
@@ -33,11 +38,13 @@
 				let checkWordType = /[\w\W]{6,}/;					
 				if (!emailType.test(this.email)) {						
 					return uni.$showMsg("请输入正确的邮箱格式");
-				}										
+				}
+				if (this.password!=this.checkPassword) {		
+					return uni.$showMsg("两次密码不相同");
+				}		
 				if (!checkWordType.test(this.checkWord)) {						
 					return uni.$showMsg("请输入正确验证码");
-				}
-				uni.$showMsg('注册成功');
+				}				
 				// 注册请求
 				this.register();										
 			},
@@ -47,8 +54,12 @@
 					userName:'刘荣',
 					email:this.email,
 					password:this.checkWord
-				});
-				console.log('message',res.message);
+				});				
+				if (res.code=='00000') {
+					uni.$showMsg('注册成功');
+				}else{
+					return uni.$showMsg(res.message);
+				}									
 			},
 			// 获取验证码
 			getIdentityCode(){				
@@ -60,7 +71,7 @@
 
 <style lang="less">
 .fontBody{
-	margin:0rpx 0rpx;
+	margin:0rpx 0rpx 20rpx 0rpx;
 	position: relative;
 	left: 63%;
 	color: #fff;

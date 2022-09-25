@@ -54,7 +54,7 @@
 					if (!passWordType.test(this.passWord)) {						
 						return uni.$showMsg("请输入至少六位密码");
 					}
-					uni.$showMsg('登录成功');
+					// uni.$showMsg('登录成功');
 					// 登录请求
 					this.login();
 				} else {
@@ -62,13 +62,17 @@
 				}				
 			},
 			// 发登录请求
-			login(){
-				const { data:res } = uni.$http.post('/login/login',{
+			async login(){
+				const { data:res } = await uni.$http.post('/login/login',{
 					userName:this.email,
 					password:this.passWord
 				})
-				console.log("res",res);
-				console.log('yes login:',this.isPermited)
+				if (res.code=='00000') {
+					uni.$showMsg('登录成功');
+				}else{
+					return uni.$showMsg(res.message);
+				}
+				// console.log('res',res);
 				uni.switchTab({
 					url:'../personalMain/personalMain'
 				});

@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 41));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
 //
 //
 //
@@ -186,7 +186,7 @@ var _default =
         if (!passWordType.test(this.passWord)) {
           return uni.$showMsg("请输入至少六位密码");
         }
-        uni.$showMsg('登录成功');
+        // uni.$showMsg('登录成功');
         // 登录请求
         this.login();
       } else {
@@ -194,15 +194,19 @@ var _default =
       }
     },
     // 发登录请求
-    login: function login() {var _uni$$http$post =
-      uni.$http.post('/login/login', {
-        userName: this.email,
-        password: this.passWord }),res = _uni$$http$post.data;
+    login: function login() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$post, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  uni.$http.post('/login/login', {
+                    userName: _this.email,
+                    password: _this.passWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
 
-      console.log("res", res);
-      console.log('yes login:', this.isPermited);
-      uni.switchTab({
-        url: '../personalMain/personalMain' });
+                res.code == '00000')) {_context.next = 8;break;}
+                uni.$showMsg('登录成功');_context.next = 9;break;case 8:return _context.abrupt("return",
+
+                uni.$showMsg(res.message));case 9:
+
+                // console.log('res',res);
+                uni.switchTab({
+                  url: '../personalMain/personalMain' });case 10:case "end":return _context.stop();}}}, _callee);}))();
 
     },
     // 
