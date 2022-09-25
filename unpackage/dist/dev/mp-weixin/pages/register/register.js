@@ -150,11 +150,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
     return {
       // 邮箱、验证码，待校验
+      userName: '刘荣',
       email: '2039858744@qq.com',
       checkWord: '114519',
       // 密码
@@ -183,7 +185,7 @@ var _default =
     // 发注册请求
     register: function register() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$post, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   uni.$http.post('/login/register', {
-                    userName: '刘荣',
+                    userName: _this.userName,
                     email: _this.email,
                     password: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
 

@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 208));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -216,18 +216,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+var _vuex = __webpack_require__(/*! vuex */ 15);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 208));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {
       // 个人信息
       nickName: "梦溪",
-      id: "0000000",
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent:
       "今天非常开心，因为不用大筛" };
 
   },
+  computed: _objectSpread({},
+  (0, _vuex.mapState)('m_personal', ['userId'])),
+
   components: {
     menuBoard: menuBoard },
 

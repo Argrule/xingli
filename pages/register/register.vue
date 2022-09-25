@@ -5,6 +5,7 @@
 		<!-- 名字，待修改 -->
 		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">注册</view></view>
 		<view class="title">
+		<input class="uni-input" maxlength="10" type="text" v-model="userName" placeholder="请输入用户名" />
 		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />
 		<input class="uni-input" maxlength="20" type="text" v-model="password" placeholder="请输入密码账号" />
 		<input class="uni-input" maxlength="20" type="text" v-model="checkPassword" placeholder="请再次确认密码账号" />		
@@ -18,11 +19,12 @@
 	</view>
 </template>
 
-<script>
+<script>	
 	export default {
 		data() {
 			return {
 				// 邮箱、验证码，待校验
+				userName: '刘荣',
 				email:'2039858744@qq.com',
 				checkWord:'114519',	
 				// 密码
@@ -51,7 +53,7 @@
 			// 发注册请求
 			async register(){
 				const { data:res }= await uni.$http.post('/login/register',{
-					userName:'刘荣',
+					userName:this.userName,
 					email:this.email,
 					password:this.checkWord
 				});				

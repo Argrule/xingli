@@ -3,9 +3,9 @@
 	<view class="content" style="background-image: url('../../static/login.jpg');background-size: 100% 100%;">
 		<form class="form_content">			
 		<!-- 名字，待修改 -->
-		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">名字</view></view>
+		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">login</view></view>
 		<view class="title">
-		<input class="uni-input" maxlength="20" type="number" v-model="email" placeholder="请输入邮箱账号" />		
+		<input class="uni-input" maxlength="10" type="number" v-model="userName" placeholder="请输入用户名" />		
 		<input class="uni-input" maxlength="15" type="password" v-model="passWord" placeholder="请输入密码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="forgetPass">忘记密码</view>
@@ -22,18 +22,20 @@
 	</view>
 </template>
 
-<script>
+<script>	
+	import { mapMutations } from 'vuex';
 	export default {
 		data() {
 			return {
 				// 邮箱密码，待校验
-				email:'2039858744@qq.com',
+				userName:'刘荣',
 				passWord:'1145141919',
 				// 是否同意协议
 				isPermited:false,		
 			};
 		},
-		methods:{			
+		methods:{
+			...mapMutations('m_personal',['changeUserId']),
 			// 勾选或取消同意协议
 			changeiIsPermited(){						
 				if (this.isPermited) {
@@ -46,11 +48,11 @@
 			beforeLogin(){								
 				if (this.isPermited) {
 					// 校验
-					let emailType = /[\s\S]+@[\w\W]+/;
+					// let emailType = /[\s\S]+@[\w\W]+/;
 					let passWordType = /[\w\W]{6,}/;					
-					if (!emailType.test(this.email)) {						
-						return uni.$showMsg("请输入正确的邮箱格式");
-					}										
+					// if (!emailType.test(this.email)) {						
+					// 	return uni.$showMsg("请输入正确的邮箱格式");
+					// }										
 					if (!passWordType.test(this.passWord)) {						
 						return uni.$showMsg("请输入至少六位密码");
 					}
@@ -64,11 +66,13 @@
 			// 发登录请求
 			async login(){
 				const { data:res } = await uni.$http.post('/login/login',{
-					userName:this.email,
+					userName:this.userName,
 					password:this.passWord
 				})
 				if (res.code=='00000') {
 					uni.$showMsg('登录成功');
+					// 更新ID
+					this.changeUserId(res.data.userId);
 				}else{
 					return uni.$showMsg(res.message);
 				}

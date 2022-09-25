@@ -24,9 +24,9 @@ page {
 }
 .arrow-right-icon {
   margin: 50rpx;
-  position: relative;
-  top: 50rpx;
-  left: 10%;
+  position: absolute;
+  top: 70rpx;
+  right: 4%;
 }
 .person {
   display: flex;

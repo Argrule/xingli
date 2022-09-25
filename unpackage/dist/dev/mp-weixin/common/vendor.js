@@ -8926,7 +8926,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 15));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 16));
 var _sign = _interopRequireDefault(__webpack_require__(/*! ./sign.js */ 17));
-var _private = _interopRequireDefault(__webpack_require__(/*! ./private.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _private = _interopRequireDefault(__webpack_require__(/*! ./private.js */ 18));
+
+var _personal = _interopRequireDefault(__webpack_require__(/*! ./personal.js */ 310));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 个人信息
 
 _vue.default.use(_vuex.default);
 
@@ -8937,7 +8939,8 @@ var store = new _vuex.default.Store({
   modules: {
     m_user: _user.default,
     m_sign: _sign.default,
-    m_private: _private.default } });var _default =
+    m_private: _private.default,
+    m_personal: _personal.default } });var _default =
 
 
 store;exports.default = _default;
@@ -21004,6 +21007,54 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       type: String,
       default: uni.$u.props.link.text } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */
+/*!*******************************************!*\
+  !*** F:/huawu_c/xingli/store/personal.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  // 为当前模块开启命名空间
+  namespaced: true,
+
+  // 模块的 state 数据
+  state: function state() {return {
+      userId: 0 };},
+
+
+  // 模块的 mutations 方法
+  mutations: {
+    changeUserId: function changeUserId(state, payload) {
+      console.log(payload);
+      if (payload) {
+        state.userId = payload;
+      }
+    } },
+
+
+  // 模块的 getters 属性
+  getters: {} };exports.default = _default;
 
 /***/ })
 ]]);

@@ -25,7 +25,7 @@
           <view class="nickName">
             {{ nickName }}
           </view>
-          <view class="nickName"> ID: {{ id }} </view>
+          <view class="nickName"> ID: {{ userId }} </view>
         </view>
         <view class="arrow-right-icon">
           <u-icon
@@ -58,18 +58,21 @@
 
 <script>
 import menuBoard from "../menu/menu.vue";
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
       // 个人信息
-      nickName: "梦溪",
-      id: "0000000",
+      nickName: "梦溪",      
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent:
         "今天非常开心，因为不用大筛",
     };
   },
+	computed:{
+		...mapState('m_personal',['userId'])
+	},
   components: {
     menuBoard,
   },
@@ -117,9 +120,9 @@ page {
 }
 .arrow-right-icon {
   margin: 50rpx;
-  position: relative;
-  top: 50rpx;
-  left: 10%;
+  position: absolute;
+  top: 70rpx;
+  right: 4%;
 }
 .person {
   display: flex;
