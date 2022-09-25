@@ -46,7 +46,7 @@ page {
   background-color: #f0f0f0;
 }
 .mood-word {
-  color: #DC8C6B;
+  color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
 }

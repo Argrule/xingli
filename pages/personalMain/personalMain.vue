@@ -1,5 +1,6 @@
 <template>
   <view>
+    <menuBoard ref="menuBoard"></menuBoard>
     <view class="list-dot-icon">
       <u-icon
         @click="toDoList"
@@ -46,6 +47,7 @@
 </template>
 
 <script>
+import menuBoard from "../menu/menu.vue";
 export default {
   data() {
     return {
@@ -58,12 +60,16 @@ export default {
         "今天非常开心，支持学校动态清零，防疫为重，国庆人流量大，咱们舍小家为大家（正确的，中肯的，客观的，雅致的，一针见血的）",
     };
   },
+  components: {
+    menuBoard,
+  },
   methods: {
     changePersonal() {
       console.log("changePersonal");
     },
     toDoList() {
       console.log("toDoList");
+      this.$refs.menuBoard.menuShow = true;
     },
   },
 };
@@ -116,15 +122,15 @@ page {
   box-shadow: // 2px 0px 8px rgb(109, 109, 109),  /*右边阴影*/
     0px 2px 8px rgb(109, 109, 109); /*下边阴影*/
 }
-.mood-font{
-	display: flex;
-	border-radius: 10rpx;
-	width: 350rpx;
-	background-color: rgb(240, 240, 240);
+.mood-font {
+  display: flex;
+  border-radius: 10rpx;
+  width: 350rpx;
+  background-color: rgb(240, 240, 240);
 }
-.mood-word{
-	color: #DC8C6B;
-	font-size: 35rpx;
-	font-weight: 300;
+.mood-word {
+  color: #dc8c6b;
+  font-size: 35rpx;
+  font-weight: 300;
 }
 </style>

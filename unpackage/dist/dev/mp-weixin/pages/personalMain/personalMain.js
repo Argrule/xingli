@@ -156,54 +156,56 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 288));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
@@ -216,12 +218,16 @@ var _default =
       "今天非常开心，支持学校动态清零，防疫为重，国庆人流量大，咱们舍小家为大家（正确的，中肯的，客观的，雅致的，一针见血的）" };
 
   },
+  components: {
+    menuBoard: menuBoard },
+
   methods: {
     changePersonal: function changePersonal() {
       console.log("changePersonal");
     },
     toDoList: function toDoList() {
       console.log("toDoList");
+      this.$refs.menuBoard.menuShow = true;
     } } };exports.default = _default;
 
 /***/ }),
