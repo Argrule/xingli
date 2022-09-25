@@ -1,1 +1,0 @@
-<view class="content"><view class="text-area"><view><u-alert vue-id="8dd740cc-1" title="hello" type="warning" description="欢迎登录" bind:__l="__l"></u-alert><u-button vue-id="8dd740cc-2" size="normal" type="warning" data-event-opts="{{[['^click',[['gologin']]]]}}" bind:click="__e" bind:__l="__l" vue-slots="{{['default']}}">登录页</u-button></view></view></view>

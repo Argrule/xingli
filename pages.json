@@ -4,12 +4,6 @@
 	},
 	"pages": [ 
 		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	    ,{
             "path" : "pages/login/login",
             "style" :                                                                                    
             {

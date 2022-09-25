@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {
-    "u-alert": "/uni_modules/uview-ui/components/u-alert/u-alert",
-    "u-button": "/uni_modules/uview-ui/components/u-button/u-button"
-  }
-}
