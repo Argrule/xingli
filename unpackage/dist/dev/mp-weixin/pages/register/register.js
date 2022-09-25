@@ -187,7 +187,9 @@ var _default =
                   uni.$http.post('/login/register', {
                     userName: _this.userName,
                     email: _this.email,
-                    password: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
+                    password: _this.password,
+                    checkWord: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
+
 
                 res.code == '00000')) {_context.next = 8;break;}
                 uni.$showMsg('注册成功');_context.next = 9;break;case 8:return _context.abrupt("return",

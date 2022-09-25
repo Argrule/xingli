@@ -55,7 +55,9 @@
 				const { data:res }= await uni.$http.post('/login/register',{
 					userName:this.userName,
 					email:this.email,
-					password:this.checkWord
+					password:this.password,
+					checkWord:this.checkWord,
+
 				});				
 				if (res.code=='00000') {
 					uni.$showMsg('注册成功');
