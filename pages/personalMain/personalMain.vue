@@ -79,6 +79,7 @@ export default {
   methods: {
     changePersonal() {
       console.log("changePersonal");
+	  uni.navigateTo({ url: '/pages/changePersonInformation/changePersonInformation' })
     },
     toDoList() {
       console.log("toDoList");

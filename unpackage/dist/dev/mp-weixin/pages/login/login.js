@@ -213,10 +213,15 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
 
                 // console.log('res',res);
                 uni.switchTab({
-                  url: '../personalMain/personalMain' });case 11:case "end":return _context.stop();}}}, _callee);}))();
+                  url: '../personalMain/personalMain' });
 
+                _this.afterLogin();case 12:case "end":return _context.stop();}}}, _callee);}))();
     },
-    // 
+    afterLogin: function afterLogin() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  uni.$http.get('/user/info'));case 2:_yield$uni$$http$get = _context2.sent;res = _yield$uni$$http$get.data;
+                console.log('res', res);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
+    // 获取验证码，未完善
     getIdentityCode: function getIdentityCode() {
       console.log('getIdentityCode');
     },

@@ -67,6 +67,43 @@
             }
             
         }
+        ,{
+            "path" : "pages/changePersonInformation/changePersonInformation",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "个人信息修改",
+				"navigationBarBackgroundColor":"#F6B4A6",
+                "enablePullDownRefresh": false
+            }
+		
+        }
+        ,{
+            "path" : "pages/changePersonInformation/changeAvatarUrl",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/changePersonInformation/changeUserName",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/changePersonInformation/changeGender",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
     "tabBar": {
 		"color": "#7A7E83",

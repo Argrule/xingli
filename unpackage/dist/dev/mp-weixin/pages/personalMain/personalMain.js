@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -237,11 +237,13 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function ownKeys(object, enumera
   methods: {
     changePersonal: function changePersonal() {
       console.log("changePersonal");
+      uni.navigateTo({ url: '/pages/changePersonInformation/changePersonInformation' });
     },
     toDoList: function toDoList() {
       console.log("toDoList");
       this.$refs.menuBoard.menuShow = true;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

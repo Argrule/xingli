@@ -83,8 +83,13 @@
 				uni.switchTab({
 					url:'../personalMain/personalMain'
 				});
+				this.afterLogin();
 			},
-			// 
+			async afterLogin(){
+				const { data:res } =await uni.$http.get('/user/info')
+				console.log('res',res);
+			},
+			// 获取验证码，未完善
 			getIdentityCode(){				
 				console.log('getIdentityCode');
 			},
