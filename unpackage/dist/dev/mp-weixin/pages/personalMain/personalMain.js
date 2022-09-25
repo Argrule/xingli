@@ -195,12 +195,25 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      // 个人信息
       nickName: "梦溪",
-      id: "0000000" };
+      id: "0000000",
+      // dairy
+      dateTime: "2022/9/22 Sunday",
+      dateContent:
+      "今天非常开心，支持学校动态清零，防疫为重，国庆人流量大，咱们舍小家为大家（正确的，中肯的，客观的，雅致的，一针见血的）" };
 
   },
   methods: {

@@ -31,4 +31,23 @@ page {
 .person {
   display: flex;
 }
+.mood-dairy {
+  background: #fff;
+  margin: 15rpx 15rpx;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 2px 8px #6d6d6d;
+  /*下边阴影*/
+}
+.mood-font {
+  display: flex;
+  border-radius: 10rpx;
+  width: 350rpx;
+  background-color: #f0f0f0;
+}
+.mood-word {
+  color: #DC8C6B;
+  font-size: 35rpx;
+  font-weight: 300;
+}
 

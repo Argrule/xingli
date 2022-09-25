@@ -34,6 +34,14 @@
       </view>
       <view class="empty"></view>
     </view>
+    <view class="mood-dairy">
+      <view class="mood-font">
+        <u-icon name="edit-pen" color="#DC8C6B" size="25"></u-icon>
+        <view class="mood-word"> MOOD DAIRY </view>
+      </view>
+      <view class="date">{{ dateTime }}</view>
+      <view class="dairyDetail">{{ dateContent }}</view>
+    </view>
   </view>
 </template>
 
@@ -41,8 +49,13 @@
 export default {
   data() {
     return {
+      // 个人信息
       nickName: "梦溪",
       id: "0000000",
+      // dairy
+      dateTime: "2022/9/22 Sunday",
+      dateContent:
+        "今天非常开心，支持学校动态清零，防疫为重，国庆人流量大，咱们舍小家为大家（正确的，中肯的，客观的，雅致的，一针见血的）",
     };
   },
   methods: {
@@ -94,5 +107,24 @@ page {
 }
 .person {
   display: flex;
+}
+.mood-dairy {
+  background: #fff;
+  margin: 15rpx 15rpx;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: // 2px 0px 8px rgb(109, 109, 109),  /*右边阴影*/
+    0px 2px 8px rgb(109, 109, 109); /*下边阴影*/
+}
+.mood-font{
+	display: flex;
+	border-radius: 10rpx;
+	width: 350rpx;
+	background-color: rgb(240, 240, 240);
+}
+.mood-word{
+	color: #DC8C6B;
+	font-size: 35rpx;
+	font-weight: 300;
 }
 </style>
