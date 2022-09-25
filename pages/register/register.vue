@@ -7,8 +7,8 @@
 		<view class="title">
 		<input class="uni-input" maxlength="10" type="text" v-model="userName" placeholder="请输入用户名" />
 		<input class="uni-input" maxlength="20" type="text" v-model="email" placeholder="请输入邮箱账号" />
-		<input class="uni-input" maxlength="20" type="text" v-model="password" placeholder="请输入密码账号" />
-		<input class="uni-input" maxlength="20" type="text" v-model="checkPassword" placeholder="请再次确认密码账号" />		
+		<input class="uni-input" maxlength="20" type="password" v-model="password" placeholder="请输入密码账号" />
+		<input class="uni-input" maxlength="20" type="password" v-model="checkPassword" placeholder="请再次确认密码账号" />		
 		<input class="uni-input" maxlength="15" type="text" v-model="checkWord" placeholder="请输入验证码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="getIdentityCode">获取验证码</view>

@@ -2,11 +2,33 @@
   <view>
     <view>
       <u-popup :show="menuShow" @close="close" @open="open" mode="right">
-        <view>
-          <text>出淤泥而不染，濯清涟而不妖</text>
-		  <u-button @click="menuShow = false">关闭</u-button>
+        <view class="popup">
+          <view class="popupItem1">
+            <view>账号管理</view>
+            <view class="move_arrow-right">
+              <u-icon name="arrow-right" color="#1b1b1b" size="20"></u-icon>
+            </view>
+          </view>
+          <view class="popupItem"
+            >帮助反馈
+            <view class="move_arrow-right">
+              <u-icon name="arrow-right" color="#1b1b1b" size="20"></u-icon>
+            </view>
+          </view>
+          <view class="popupItem"
+            >关于我们
+            <view class="move_arrow-right">
+              <u-icon name="arrow-right" color="#1b1b1b" size="20"></u-icon>
+            </view>
+          </view>
+          <view class="popupItem"
+            >设置
+            <view class="move_arrow-right">
+              <u-icon name="arrow-right" color="#1b1b1b" size="20"></u-icon>
+            </view>
+          </view>
         </view>
-      </u-popup>      
+      </u-popup>
     </view>
   </view>
 </template>
@@ -30,4 +52,28 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+.popup {
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+}
+.popupItem1 {
+  display: flex;
+  margin: 80rpx 30rpx 30rpx;
+}
+.popupItem {
+  display: flex;
+  margin: 30rpx;
+}
+.move_arrow-right {
+  position: absolute;
+  right: 25rpx;
+}
+// .move_arrow-right1 {
+//   position: absolute;
+//   top: 85rpx;
+//   // right: 4%;
+//   right: 90rpx;
+// }
+</style>
