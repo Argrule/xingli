@@ -19849,286 +19849,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 220 */,
 /* 221 */,
 /* 222 */
-/*!*******************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/props.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否展示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.transition.show },
-
-    // 使用的动画模式
-    mode: {
-      type: String,
-      default: uni.$u.props.transition.mode },
-
-    // 动画的执行时间，单位ms
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.transition.duration },
-
-    // 使用的动画过渡函数
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.transition.timingFunction } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 223 */
-/*!************************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/transition.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 41));
-
-
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 224));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
-var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
-
-// 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
-var getClassNames = function getClassNames(name) {return {
-    enter: "u-".concat(name, "-enter u-").concat(name, "-enter-active"),
-    'enter-to': "u-".concat(name, "-enter-to u-").concat(name, "-enter-active"),
-    leave: "u-".concat(name, "-leave u-").concat(name, "-leave-active"),
-    'leave-to': "u-".concat(name, "-leave-to u-").concat(name, "-leave-active") };};var _default =
-
-
-
-
-
-
-
-
-
-
-{
-  methods: {
-    // 组件被点击发出事件
-    clickHandler: function clickHandler() {
-      this.$emit('click');
-    },
-
-    // vue版本的组件进场处理
-    vueEnter: function vueEnter() {var _this = this;
-      // 动画进入时的类名
-      var classNames = getClassNames(this.mode);
-      // 定义状态和发出动画进入前事件
-      this.status = 'enter';
-      this.$emit('beforeEnter');
-      this.inited = true;
-      this.display = true;
-      this.classes = classNames.enter;
-      this.$nextTick( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-
-
-
-                // 标识动画尚未结束
-                _this.$emit('enter');
-                _this.transitionEnded = false;
-                // 组件动画进入后触发的事件
-                _this.$emit('afterEnter');
-                // 赋予组件enter-to类名
-                _this.classes = classNames['enter-to'];case 4:case "end":return _context.stop();}}}, _callee);})));
-
-    },
-    // 动画离场处理
-    vueLeave: function vueLeave() {var _this2 = this;
-      // 如果不是展示状态，无需执行逻辑
-      if (!this.display) return;
-      var classNames = getClassNames(this.mode);
-      // 标记离开状态和发出事件
-      this.status = 'leave';
-      this.$emit('beforeLeave');
-      // 获得类名
-      this.classes = classNames.leave;
-
-      this.$nextTick(function () {
-        // 动画正在离场的状态
-        _this2.transitionEnded = false;
-        _this2.$emit('leave');
-        // 组件执行动画，到了执行的执行时间后，执行一些额外处理
-        setTimeout(_this2.onTransitionEnd, _this2.duration);
-        _this2.classes = classNames['leave-to'];
-      });
-    },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 完成过渡后触发
-    onTransitionEnd: function onTransitionEnd() {
-      // 如果已经是结束的状态，无需再处理
-      if (this.transitionEnded) return;
-      this.transitionEnded = true;
-      // 发出组件动画执行后的事件
-      this.$emit(this.status === 'leave' ? 'afterLeave' : 'afterEnter');
-      if (!this.show && this.display) {
-        this.display = false;
-        this.inited = false;
-      }
-    } } };exports.default = _default;
-
-/***/ }),
-/* 224 */
-/*!**************************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  fade: {
-    enter: { opacity: 0 },
-    'enter-to': { opacity: 1 },
-    leave: { opacity: 1 },
-    'leave-to': { opacity: 0 } },
-
-  'fade-up': {
-    enter: { opacity: 0, transform: 'translateY(100%)' },
-    'enter-to': { opacity: 1, transform: 'translateY(0)' },
-    leave: { opacity: 1, transform: 'translateY(0)' },
-    'leave-to': { opacity: 0, transform: 'translateY(100%)' } },
-
-  'fade-down': {
-    enter: { opacity: 0, transform: 'translateY(-100%)' },
-    'enter-to': { opacity: 1, transform: 'translateY(0)' },
-    leave: { opacity: 1, transform: 'translateY(0)' },
-    'leave-to': { opacity: 0, transform: 'translateY(-100%)' } },
-
-  'fade-left': {
-    enter: { opacity: 0, transform: 'translateX(-100%)' },
-    'enter-to': { opacity: 1, transform: 'translateY(0)' },
-    leave: { opacity: 1, transform: 'translateY(0)' },
-    'leave-to': { opacity: 0, transform: 'translateX(-100%)' } },
-
-  'fade-right': {
-    enter: { opacity: 0, transform: 'translateX(100%)' },
-    'enter-to': { opacity: 1, transform: 'translateY(0)' },
-    leave: { opacity: 1, transform: 'translateY(0)' },
-    'leave-to': { opacity: 0, transform: 'translateX(100%)' } },
-
-  'slide-up': {
-    enter: { transform: 'translateY(100%)' },
-    'enter-to': { transform: 'translateY(0)' },
-    leave: { transform: 'translateY(0)' },
-    'leave-to': { transform: 'translateY(100%)' } },
-
-  'slide-down': {
-    enter: { transform: 'translateY(-100%)' },
-    'enter-to': { transform: 'translateY(0)' },
-    leave: { transform: 'translateY(0)' },
-    'leave-to': { transform: 'translateY(-100%)' } },
-
-  'slide-left': {
-    enter: { transform: 'translateX(-100%)' },
-    'enter-to': { transform: 'translateY(0)' },
-    leave: { transform: 'translateY(0)' },
-    'leave-to': { transform: 'translateX(-100%)' } },
-
-  'slide-right': {
-    enter: { transform: 'translateX(100%)' },
-    'enter-to': { transform: 'translateY(0)' },
-    leave: { transform: 'translateY(0)' },
-    'leave-to': { transform: 'translateX(100%)' } },
-
-  zoom: {
-    enter: { transform: 'scale(0.95)' },
-    'enter-to': { transform: 'scale(1)' },
-    leave: { transform: 'scale(1)' },
-    'leave-to': { transform: 'scale(0.95)' } },
-
-  'fade-zoom': {
-    enter: { opacity: 0, transform: 'scale(0.95)' },
-    'enter-to': { opacity: 1, transform: 'scale(1)' },
-    leave: { opacity: 1, transform: 'scale(1)' },
-    'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
-
-/***/ }),
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*************************************************************************/
@@ -20351,7 +20071,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 233 */
+/* 223 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*************************************************************************/
@@ -20448,98 +20168,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */
-/*!*********************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-avatar/props.js ***!
   \***************************************************************************/
@@ -20625,14 +20261,368 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */
+/*!*******************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/props.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否展示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.transition.show },
+
+    // 使用的动画模式
+    mode: {
+      type: String,
+      default: uni.$u.props.transition.mode },
+
+    // 动画的执行时间，单位ms
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.transition.duration },
+
+    // 使用的动画过渡函数
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.transition.timingFunction } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 240 */
+/*!************************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/transition.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 41));
+
+
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 241));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
+
+// 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
+var getClassNames = function getClassNames(name) {return {
+    enter: "u-".concat(name, "-enter u-").concat(name, "-enter-active"),
+    'enter-to': "u-".concat(name, "-enter-to u-").concat(name, "-enter-active"),
+    leave: "u-".concat(name, "-leave u-").concat(name, "-leave-active"),
+    'leave-to': "u-".concat(name, "-leave-to u-").concat(name, "-leave-active") };};var _default =
+
+
+
+
+
+
+
+
+
+
+{
+  methods: {
+    // 组件被点击发出事件
+    clickHandler: function clickHandler() {
+      this.$emit('click');
+    },
+
+    // vue版本的组件进场处理
+    vueEnter: function vueEnter() {var _this = this;
+      // 动画进入时的类名
+      var classNames = getClassNames(this.mode);
+      // 定义状态和发出动画进入前事件
+      this.status = 'enter';
+      this.$emit('beforeEnter');
+      this.inited = true;
+      this.display = true;
+      this.classes = classNames.enter;
+      this.$nextTick( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+
+
+
+                // 标识动画尚未结束
+                _this.$emit('enter');
+                _this.transitionEnded = false;
+                // 组件动画进入后触发的事件
+                _this.$emit('afterEnter');
+                // 赋予组件enter-to类名
+                _this.classes = classNames['enter-to'];case 4:case "end":return _context.stop();}}}, _callee);})));
+
+    },
+    // 动画离场处理
+    vueLeave: function vueLeave() {var _this2 = this;
+      // 如果不是展示状态，无需执行逻辑
+      if (!this.display) return;
+      var classNames = getClassNames(this.mode);
+      // 标记离开状态和发出事件
+      this.status = 'leave';
+      this.$emit('beforeLeave');
+      // 获得类名
+      this.classes = classNames.leave;
+
+      this.$nextTick(function () {
+        // 动画正在离场的状态
+        _this2.transitionEnded = false;
+        _this2.$emit('leave');
+        // 组件执行动画，到了执行的执行时间后，执行一些额外处理
+        setTimeout(_this2.onTransitionEnd, _this2.duration);
+        _this2.classes = classNames['leave-to'];
+      });
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 完成过渡后触发
+    onTransitionEnd: function onTransitionEnd() {
+      // 如果已经是结束的状态，无需再处理
+      if (this.transitionEnded) return;
+      this.transitionEnded = true;
+      // 发出组件动画执行后的事件
+      this.$emit(this.status === 'leave' ? 'afterLeave' : 'afterEnter');
+      if (!this.show && this.display) {
+        this.display = false;
+        this.inited = false;
+      }
+    } } };exports.default = _default;
+
+/***/ }),
+/* 241 */
+/*!**************************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  fade: {
+    enter: { opacity: 0 },
+    'enter-to': { opacity: 1 },
+    leave: { opacity: 1 },
+    'leave-to': { opacity: 0 } },
+
+  'fade-up': {
+    enter: { opacity: 0, transform: 'translateY(100%)' },
+    'enter-to': { opacity: 1, transform: 'translateY(0)' },
+    leave: { opacity: 1, transform: 'translateY(0)' },
+    'leave-to': { opacity: 0, transform: 'translateY(100%)' } },
+
+  'fade-down': {
+    enter: { opacity: 0, transform: 'translateY(-100%)' },
+    'enter-to': { opacity: 1, transform: 'translateY(0)' },
+    leave: { opacity: 1, transform: 'translateY(0)' },
+    'leave-to': { opacity: 0, transform: 'translateY(-100%)' } },
+
+  'fade-left': {
+    enter: { opacity: 0, transform: 'translateX(-100%)' },
+    'enter-to': { opacity: 1, transform: 'translateY(0)' },
+    leave: { opacity: 1, transform: 'translateY(0)' },
+    'leave-to': { opacity: 0, transform: 'translateX(-100%)' } },
+
+  'fade-right': {
+    enter: { opacity: 0, transform: 'translateX(100%)' },
+    'enter-to': { opacity: 1, transform: 'translateY(0)' },
+    leave: { opacity: 1, transform: 'translateY(0)' },
+    'leave-to': { opacity: 0, transform: 'translateX(100%)' } },
+
+  'slide-up': {
+    enter: { transform: 'translateY(100%)' },
+    'enter-to': { transform: 'translateY(0)' },
+    leave: { transform: 'translateY(0)' },
+    'leave-to': { transform: 'translateY(100%)' } },
+
+  'slide-down': {
+    enter: { transform: 'translateY(-100%)' },
+    'enter-to': { transform: 'translateY(0)' },
+    leave: { transform: 'translateY(0)' },
+    'leave-to': { transform: 'translateY(-100%)' } },
+
+  'slide-left': {
+    enter: { transform: 'translateX(-100%)' },
+    'enter-to': { transform: 'translateY(0)' },
+    leave: { transform: 'translateY(0)' },
+    'leave-to': { transform: 'translateX(-100%)' } },
+
+  'slide-right': {
+    enter: { transform: 'translateX(100%)' },
+    'enter-to': { transform: 'translateY(0)' },
+    leave: { transform: 'translateY(0)' },
+    'leave-to': { transform: 'translateX(100%)' } },
+
+  zoom: {
+    enter: { transform: 'scale(0.95)' },
+    'enter-to': { transform: 'scale(1)' },
+    leave: { transform: 'scale(1)' },
+    'leave-to': { transform: 'scale(0.95)' } },
+
+  'fade-zoom': {
+    enter: { opacity: 0, transform: 'scale(0.95)' },
+    'enter-to': { opacity: 1, transform: 'scale(1)' },
+    leave: { opacity: 1, transform: 'scale(1)' },
+    'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
+
+/***/ }),
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */
+/*!*********************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/props.js ***!
   \*************************************************************************/
@@ -20750,12 +20740,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/value.js ***!
   \*************************************************************************/
@@ -20849,14 +20839,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-link/props.js ***!
   \*************************************************************************/

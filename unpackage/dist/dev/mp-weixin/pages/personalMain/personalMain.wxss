@@ -3,10 +3,10 @@ page {
   letter-spacing: 1px;
 }
 .content {
-  background-color: #F6B4A6;
+  background-color: #f6b4a6;
 }
 .avatar {
-  margin: 10rpx 50rpx 50rpx;
+  margin: 10rpx 60rpx 50rpx 90rpx;
 }
 .empty {
   margin: 10rpx;
@@ -14,13 +14,18 @@ page {
 }
 .nickName {
   margin-top: 15rpx;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: 600;
   color: rgba(32, 41, 41, 0.76);
+}
+.list-dot-icon {
+  position: absolute;
+  right: 10%;
 }
 .arrow-right-icon {
   margin: 50rpx;
   position: relative;
+  top: 50rpx;
   left: 10%;
 }
 .person {

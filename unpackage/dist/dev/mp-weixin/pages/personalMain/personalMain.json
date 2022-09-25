@@ -3,7 +3,7 @@
   "navigationBarBackgroundColor": "#F6B4A6",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar",
-    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon"
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar"
   }
 }
