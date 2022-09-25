@@ -1,6 +1,8 @@
 <template>
   <view>
+    <!-- 右弹窗 -->
     <menuBoard ref="menuBoard"></menuBoard>
+    <!-- 打开右弹窗 -->
     <view class="list-dot-icon">
       <u-icon
         @click="toDoList"
@@ -9,6 +11,7 @@
         size="20"
       ></u-icon>
     </view>
+    <!-- 头像部分 -->
     <view class="content">
       <view class="person">
         <view class="avatar">
@@ -33,16 +36,23 @@
           ></u-icon>
         </view>
       </view>
+      <!-- 防塌陷 -->
       <view class="empty"></view>
     </view>
+    <!-- mood-dairy部分 -->
     <view class="mood-dairy">
+      <!-- 左侧框 -->
       <view class="mood-font">
         <u-icon name="edit-pen" color="#DC8C6B" size="25"></u-icon>
         <view class="mood-word"> MOOD DAIRY </view>
       </view>
-      <view class="date">{{ dateTime }}</view>
+      <!-- 右侧日期 -->
+      <view class="dateTime">{{ dateTime }}</view>
+      <!-- dairy内容 -->
       <view class="dairyDetail">{{ dateContent }}</view>
     </view>
+    <!-- to-do-list部分 -->
+    <view class="to-do-list">{{ dateContent }}</view>
   </view>
 </template>
 
@@ -115,8 +125,9 @@ page {
   display: flex;
 }
 .mood-dairy {
+  height: 330rpx;
   background: #fff;
-  margin: 15rpx 15rpx;
+  margin: 15rpx 40rpx;
   padding: 15rpx;
   border-radius: 10rpx;
   box-shadow: // 2px 0px 8px rgb(109, 109, 109),  /*右边阴影*/
@@ -132,5 +143,26 @@ page {
   color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
+}
+.dateTime {
+  color: #dc8c6b;
+  font-size: 30rpx;
+  font-weight: 300;
+  position: absolute;
+  right: 6%;
+  top: 24%;
+}
+.dairyDetail {
+  margin: 5rpx 0;
+  font-size: 30rpx;
+}
+.to-do-list {
+  font-size: 30rpx;
+  height: 400rpx;  
+  background: #fff;
+  margin: 25rpx 40rpx;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 2px 8px rgb(109, 109, 109);
 }
 </style>

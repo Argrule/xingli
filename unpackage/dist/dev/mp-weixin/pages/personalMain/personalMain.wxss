@@ -32,8 +32,9 @@ page {
   display: flex;
 }
 .mood-dairy {
+  height: 330rpx;
   background: #fff;
-  margin: 15rpx 15rpx;
+  margin: 15rpx 40rpx;
   padding: 15rpx;
   border-radius: 10rpx;
   box-shadow: 0px 2px 8px #6d6d6d;
@@ -49,5 +50,26 @@ page {
   color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
+}
+.dateTime {
+  color: #dc8c6b;
+  font-size: 30rpx;
+  font-weight: 300;
+  position: absolute;
+  right: 6%;
+  top: 24%;
+}
+.dairyDetail {
+  margin: 5rpx 0;
+  font-size: 30rpx;
+}
+.to-do-list {
+  font-size: 30rpx;
+  height: 400rpx;
+  background: #fff;
+  margin: 25rpx 40rpx;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 2px 8px #6d6d6d;
 }
 
