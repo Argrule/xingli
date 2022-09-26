@@ -196,16 +196,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
       // 关键字搜索
       keyword: "",
-      // 图书简介
-      bookContent: '',
-      // 图书封面
-      bookPicture: '' };
+      //   图书
+      bookDetail: [
+      {
+        // 图书简介
+        bookContent: "",
+        // 图书封面
+        bookPicture: "https://cdn.uviewui.com/uview/album/1.jpg" },
+
+      {
+        bookContent: "hhh",
+        bookPicture: "https://cdn.uviewui.com/uview/album/1.jpg" }] };
+
+
 
   },
   methods: {
