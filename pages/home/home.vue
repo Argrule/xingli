@@ -1,44 +1,62 @@
 <template>
-  <view>
-    <!-- <u-sticky offset-top="20">
-	<text>塞下秋来风景异，衡阳雁去无留意</text>
-</u-sticky> -->
-    <u-search      
-      height="10"      
-	  :clearabled="false"
-      v-model="keyword"
-      margin="30rpx"
-      :showAction="false"
-      @search="searchKeyWord"
-    ></u-search>
-    <view class="title"> 精选书单 </view>
-    <view>
-      <view class="bookList">
-        <view class="move_image">
-          <u--image
-            :src="bookDetail[0].bookPicture"
-            width="200rpx"
-            height="250rpx"
-          ></u--image>
+  <view class="background">
+    <u-sticky bgColor="#fff">
+      <u-search
+        height="10"
+        :clearabled="false"
+        v-model="keyword"
+        margin="30rpx"
+        :showAction="false"
+        @search="searchKeyWord"
+      ></u-search>
+      <view class="functionOptions">
+		<u-tabs
+        lineColor="#FBC2A6"
+		@click="changeFunctionOptions"
+        :list="[
+          {
+            name: '推荐',
+          },
+          {
+            name: '测试',
+          },
+        ]"
+      ></u-tabs>
+	  </view>
+    </u-sticky>
+    <view v-if="FunctionOptions">
+      <view class="title"> 精选书单 </view>
+      <view>
+        <view class="bookList">
+          <view class="move_image">
+            <u--image
+              :src="bookDetail[0].bookPicture"
+              width="200rpx"
+              height="250rpx"
+            ></u--image>
+          </view>
+        </view>
+        <view class="bookList">
+          <view class="move_image">
+            <u--image
+              :src="bookDetail[1].bookPicture"
+              width="200rpx"
+              height="250rpx"
+            ></u--image>
+          </view>
+          <view class="bookContent">{{ bookDetail[1].bookContent }}</view>
         </view>
       </view>
-      <view class="bookList">
-        <view class="move_image">
-          <u--image
-            :src="bookDetail[1].bookPicture"
-            width="200rpx"
-            height="250rpx"
-          ></u--image>
-        </view>
-        <view class="bookContent">{{ bookDetail[1].bookContent }}</view>
+      <view class="title"> 网课推荐 </view>
+      <view>
+        <view class="bookList">{{ dateContent }}</view>
+        <view class="bookList">{{ dateContent }}</view>
+        <view class="bookList">{{ dateContent }}</view>
       </view>
     </view>
-    <view class="title"> 网课推荐 </view>
-    <view>
-      <view class="bookList">{{ dateContent }}</view>
-      <view class="bookList">{{ dateContent }}</view>
-      <view class="bookList">{{ dateContent }}</view>
-    </view>
+	<view v-else>
+		hello
+	</view>
   </view>
 </template>
 
@@ -46,6 +64,8 @@
 export default {
   data() {
     return {
+	// 导航
+	FunctionOptions:true,
       // 关键字搜索
       keyword: "",
       //   图书
@@ -64,14 +84,23 @@ export default {
     };
   },
   methods: {
+	// 搜索
     searchKeyWord() {
       console.log(this.keyword);
     },
+	// 改导航
+	changeFunctionOptions(item){
+		console.log('hh',item);
+		this.FunctionOptions=!item.index;
+	},
   },
 };
 </script>
 
 <style lang="less">
+.background{
+	background-color: rgb(246, 246, 246);
+}
 .title {
   font-size: 36rpx;
   font-weight: 600;
@@ -94,5 +123,9 @@ export default {
   position: relative;
   top: -30%;
   left: 20rpx;
+}
+.functionOptions{
+	position: relative;
+	left: 35%;
 }
 </style>

@@ -1,3 +1,6 @@
+.background {
+  background-color: #f6f6f6;
+}
 .title {
   font-size: 36rpx;
   font-weight: 600;
@@ -19,5 +22,9 @@
   position: relative;
   top: -30%;
   left: 20rpx;
+}
+.functionOptions {
+  position: relative;
+  left: 35%;
 }
 
