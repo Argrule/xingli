@@ -115,9 +115,7 @@ page {
 .list-dot-icon {
   position: absolute;
   right: 10%;
-  // top: 1rpx;
-  // bottom: 1%;
-  // margin: 100rpx;
+  top: -2%;
 }
 .arrow-right-icon {
   margin: 50rpx;
