@@ -9,8 +9,10 @@
           <u-avatar size="60" :src="this.avatarUrl" shape="circle"></u-avatar>
         </view>
         <view class="nickName">
-          <view>
-            {{ userName }}
+          <view style="display: flex;">
+            <view>{{ userName }}</view>
+            <view v-if="gender"><u-icon name="man" color="#2979ff" size="28"></u-icon></view>       
+            <view v-else><u-icon name="woman" color="rgb(231, 94, 155)" size="28"></u-icon></view>       
           </view>
           <view> ID: {{ userId }} </view>
         </view>
