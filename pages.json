@@ -109,6 +109,16 @@
             }
             
         }  
+        ,{
+            "path" : "mycomponents/my-puthollow/my-puthollow",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的故事",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#F6B4A6"
+            }
+            
+        }
     ],
     "tabBar": {
 		"color": "#7A7E83",

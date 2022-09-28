@@ -2,7 +2,7 @@
 	<view>
 		this is 树洞
         <view class="suspension">
-        <u-icon name="plus-circle-fill" color="#FBC2A6" size="40"></u-icon>
+        <u-icon name="plus-circle-fill" @click="gotoPutHollow" color="#FBC2A6" size="40"></u-icon>
         </view>
 	</view>
 </template>
@@ -18,6 +18,12 @@
             console.log('erroe')
             const {data:res} = await uni.$http.get('/hollow/pages')
             console.log('pages.res is :',res);
+        },
+        methods:{
+            gotoPutHollow(){
+                console.log('gotoPutHollow');
+                uni.navigateTo({ url: '/mycomponents/my-puthollow/my-puthollow' })
+            },            
         }
 	}
 </script>

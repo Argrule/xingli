@@ -157,7 +157,12 @@ var _default =
               console.log('erroe');_context.next = 3;return (
                 uni.$http.get('/hollow/pages'));case 3:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
               console.log('pages.res is :', res);case 6:case "end":return _context.stop();}}}, _callee);}))();
-  } };exports.default = _default;
+  },
+  methods: {
+    gotoPutHollow: function gotoPutHollow() {
+      console.log('gotoPutHollow');
+      uni.navigateTo({ url: '/mycomponents/my-puthollow/my-puthollow' });
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

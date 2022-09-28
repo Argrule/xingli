@@ -10,7 +10,8 @@
     "pages/changePersonInformation/changePersonInformation",
     "pages/changePersonInformation/changeAvatarUrl",
     "pages/changePersonInformation/changeUserName",
-    "pages/changePersonInformation/changeGender"
+    "pages/changePersonInformation/changeGender",
+    "mycomponents/my-puthollow/my-puthollow"
   ],
   "subPackages": [],
   "window": {
