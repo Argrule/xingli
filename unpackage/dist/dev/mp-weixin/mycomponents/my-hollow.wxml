@@ -1,1 +1,1 @@
-<view>this is 树洞</view>
+<view>this is 树洞<view class="suspension"><u-icon vue-id="1bd69516-1" name="plus-circle-fill" color="#FBC2A6" size="40" bind:__l="__l"></u-icon></view></view>

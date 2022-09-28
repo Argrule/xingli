@@ -1,7 +1,9 @@
 <template>
 	<view>
 		this is 树洞
-        
+        <view class="suspension">
+        <u-icon name="plus-circle-fill" color="#FBC2A6" size="40"></u-icon>
+        </view>
 	</view>
 </template>
 
@@ -21,5 +23,11 @@
 </script>
 
 <style lang="scss">
-
+.suspension{
+    // 悬浮居中
+    position: absolute;
+    left: 50%;
+    transform:translate(-50%,0)  ;
+    bottom: 10rpx;    
+}
 </style>
