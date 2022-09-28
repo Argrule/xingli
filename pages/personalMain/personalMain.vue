@@ -17,13 +17,13 @@
         <view class="avatar">
           <u-avatar
             size="60"
-            src="https://cdn.uviewui.com/uview/album/1.jpg"
+            :src="this.avatarUrl"
             shape="circle"
           ></u-avatar>
         </view>
         <view>
           <view class="nickName">
-            {{ nickName }}
+            {{ userName }}
           </view>
           <view class="nickName"> ID: {{ userId }} </view>
         </view>
@@ -61,9 +61,7 @@ import menuBoard from "../menu/menu.vue";
 import { mapState } from 'vuex';
 export default {
   data() {
-    return {
-      // 个人信息
-      nickName: "梦溪",      
+    return {         
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent:
@@ -71,7 +69,7 @@ export default {
     };
   },
 	computed:{
-		...mapState('m_personal',['userId'])
+		...mapState('m_personal',['userId','userName','gender','avatarUrl'])
 	},
   components: {
     menuBoard,

@@ -1,6 +1,6 @@
 <template>
   <view>
-    <u-sticky bgColor="#fff">      
+    <u-sticky bgColor="#fff">
       <view class="functionOptions">
         <u-tabs
           lineColor="#FBC2A6"
@@ -16,12 +16,12 @@
         ></u-tabs>
       </view>
     </u-sticky>
-	<view v-if="FunctionOptions">		
-    <my-chat/>
-	</view>
-	<view v-else>    
-		<my-hollow/>
-	</view>
+    <view v-if="FunctionOptions">
+      <my-chat />
+    </view>
+    <view v-else>
+      <my-hollow />
+    </view>
   </view>
 </template>
 
@@ -31,27 +31,27 @@ import myHollow from "../../mycomponents/my-hollow.vue";
 export default {
   data() {
     return {
-		FunctionOptions:true,
-	};
+      FunctionOptions: true,
+    };
   },
-  components:{
+  components: {
     myChat,
-    myHollow
+    myHollow,
   },
   methods: {
-	// 改导航
-	changeFunctionOptions(item){
-		console.log('hh',item);
-		this.FunctionOptions=!item.index;
-	},
+    // 改导航
+    changeFunctionOptions(item) {
+      console.log("hh", item);
+      this.FunctionOptions = !item.index;
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
-/deep/ .u-tabs{	
-	margin-top: 70rpx;
-	align-items: center;	
-	// background-color: aqua;
+/deep/ .u-tabs {
+  margin-top: 70rpx;
+  align-items: center;
+  // background-color: aqua;
 }
 </style>

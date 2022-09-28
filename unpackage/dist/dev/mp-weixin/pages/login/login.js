@@ -167,7 +167,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
 
   },
   methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)('m_personal', ['changeUserId'])), {}, {
+  (0, _vuex.mapMutations)('m_personal', ['changeUserId', 'changeUserName', 'changeEmail', 'changeGender', 'changeAvatarUrl'])), {}, {
     // 勾选或取消同意协议
     changeiIsPermited: function changeiIsPermited() {
       if (this.isPermited) {
@@ -204,22 +204,31 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                     userName: _this.userName,
                     password: _this.passWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
 
-                res.code == '00000')) {_context.next = 9;break;}
+                res.code == '00000')) {_context.next = 10;break;}
                 uni.$showMsg('登录成功');
                 // 更新ID
-                _this.changeUserId(res.data.userId);_context.next = 10;break;case 9:return _context.abrupt("return",
+                _this.changeUserId(res.data.userId);
+                // 存token在session
+                uni.setStorageSync('token', res.data.token);_context.next = 11;break;case 10:return _context.abrupt("return",
 
-                uni.$showMsg(res.message));case 10:
+                uni.$showMsg(res.message));case 11:
 
                 // console.log('res',res);
                 uni.switchTab({
                   url: '../personalMain/personalMain' });
 
-                _this.afterLogin();case 12:case "end":return _context.stop();}}}, _callee);}))();
+                _this.afterLogin();case 13:case "end":return _context.stop();}}}, _callee);}))();
     },
-    afterLogin: function afterLogin() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+    afterLogin: function afterLogin() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+
+
                   uni.$http.get('/user/info'));case 2:_yield$uni$$http$get = _context2.sent;res = _yield$uni$$http$get.data;
-                console.log('res', res);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
+                console.log('res', res);
+                // 获取默认个人信息
+                _this2.changeAvatarUrl(res.data.avatarUrl);
+                _this2.changeGender(res.data.gender);
+                _this2.changeUserName(res.data.userName);
+                _this2.changeEmail(res.data.email);case 9:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 获取验证码，未完善
     getIdentityCode: function getIdentityCode() {

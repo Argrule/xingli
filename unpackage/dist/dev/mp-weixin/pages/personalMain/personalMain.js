@@ -220,8 +220,6 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function ownKeys(object, enumera
 {
   data: function data() {
     return {
-      // 个人信息
-      nickName: "梦溪",
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent:
@@ -229,7 +227,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function ownKeys(object, enumera
 
   },
   computed: _objectSpread({},
-  (0, _vuex.mapState)('m_personal', ['userId'])),
+  (0, _vuex.mapState)('m_personal', ['userId', 'userName', 'gender', 'avatarUrl'])),
 
   components: {
     menuBoard: menuBoard },

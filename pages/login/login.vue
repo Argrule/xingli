@@ -35,7 +35,7 @@
 			};
 		},
 		methods:{
-			...mapMutations('m_personal',['changeUserId']),
+			...mapMutations('m_personal',['changeUserId','changeUserName','changeEmail','changeGender','changeAvatarUrl']),
 			// 勾选或取消同意协议
 			changeiIsPermited(){						
 				if (this.isPermited) {
@@ -76,6 +76,8 @@
 					uni.$showMsg('登录成功');
 					// 更新ID
 					this.changeUserId(res.data.userId);
+					// 存token在session
+					uni.setStorageSync('token',res.data.token)
 				}else{
 					return uni.$showMsg(res.message);
 				}
@@ -86,8 +88,15 @@
 				this.afterLogin();
 			},
 			async afterLogin(){
+				// const hh = uni.getStorageSync('token');
+				// console.log('token is:',hh);
 				const { data:res } =await uni.$http.get('/user/info')
 				console.log('res',res);
+				// 获取默认个人信息
+				this.changeAvatarUrl(res.data.avatarUrl);
+				this.changeGender(res.data.gender);
+				this.changeUserName(res.data.userName);
+				this.changeEmail(res.data.email);
 			},
 			// 获取验证码，未完善
 			getIdentityCode(){				

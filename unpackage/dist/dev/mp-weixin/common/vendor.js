@@ -8809,7 +8809,7 @@ uni.$http = _index.$http;
 _index.$http.baseUrl = 'http://101.43.183.202:38080';
 _index.$http.beforeRequest = function (options) {
   var header = {
-    cookie: wx.getStorageSync("sessionid") //读取本地保存好的上一次cookie
+    Authorization: wx.getStorageSync("token") //读取本地保存好的上一次cookie
   };
   options.header = header;
   uni.showLoading({

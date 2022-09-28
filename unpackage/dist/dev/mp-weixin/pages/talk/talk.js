@@ -199,7 +199,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   methods: {
     // 改导航
     changeFunctionOptions: function changeFunctionOptions(item) {
-      console.log('hh', item);
+      console.log("hh", item);
       this.FunctionOptions = !item.index;
     } } };exports.default = _default;
 

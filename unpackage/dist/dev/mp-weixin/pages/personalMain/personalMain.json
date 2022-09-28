@@ -2,6 +2,7 @@
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#F6B4A6",
   "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
   "usingComponents": {
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar",
