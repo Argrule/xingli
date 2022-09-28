@@ -2,32 +2,26 @@
   <view>
     <!-- 右弹窗 -->
     <menuBoard ref="menuBoard"></menuBoard>
-    <!-- 打开右弹窗 -->
-    <view class="list-dot-icon">
-      <u-icon
-        @click="toDoList"
-        name="list-dot"
-        color="#DC8C6B"
-        size="20"
-      ></u-icon>
-    </view>
     <!-- 头像部分 -->
     <view class="content">
       <view class="person">
         <view class="avatar">
-          <u-avatar
-            size="60"
-            :src="this.avatarUrl"
-            shape="circle"
-          ></u-avatar>
+          <u-avatar size="60" :src="this.avatarUrl" shape="circle"></u-avatar>
         </view>
-        <view>
-          <view class="nickName">
+        <view class="nickName">
+          <view>
             {{ userName }}
           </view>
-          <view class="nickName"> ID: {{ userId }} </view>
+          <view> ID: {{ userId }} </view>
         </view>
-        <view class="arrow-right-icon">
+        <view class="list-icon">
+          <!-- 打开右弹窗 -->
+          <u-icon
+            @click="toDoList"
+            name="list-dot"
+            color="#DC8C6B"
+            size="20"
+          ></u-icon>
           <u-icon
             @click="changePersonal"
             name="arrow-right"
@@ -41,13 +35,15 @@
     </view>
     <!-- mood-dairy部分 -->
     <view class="mood-dairy">
-      <!-- 左侧框 -->
-      <view class="mood-font">
-        <u-icon name="edit-pen" color="#DC8C6B" size="25"></u-icon>
-        <view class="mood-word"> MOOD DAIRY </view>
+      <view class="flexMood">
+        <!-- 左侧框 -->
+        <view class="mood-font">
+          <u-icon name="edit-pen" color="#DC8C6B" size="25"></u-icon>
+          <view class="mood-word"> MOOD DAIRY </view>
+        </view>
+        <!-- 右侧日期 -->
+        <view class="dateTime">{{ dateTime }}</view>
       </view>
-      <!-- 右侧日期 -->
-      <view class="dateTime">{{ dateTime }}</view>
       <!-- dairy内容 -->
       <view class="dairyDetail">{{ dateContent }}</view>
     </view>
@@ -58,26 +54,27 @@
 
 <script>
 import menuBoard from "../menu/menu.vue";
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 export default {
   data() {
-    return {         
+    return {
       // dairy
       dateTime: "2022/9/22 Sunday",
-      dateContent:
-        "今天非常开心，因为不用大筛",
+      dateContent: "今天非常开心，因为不用大筛",
     };
   },
-	computed:{
-		...mapState('m_personal',['userId','userName','gender','avatarUrl'])
-	},
+  computed: {
+    ...mapState("m_personal", ["userId", "userName", "gender", "avatarUrl"]),
+  },
   components: {
     menuBoard,
   },
   methods: {
     changePersonal() {
       console.log("changePersonal");
-	  uni.navigateTo({ url: '/pages/changePersonInformation/changePersonInformation' })
+      uni.navigateTo({
+        url: "/pages/changePersonInformation/changePersonInformation",
+      });
     },
     toDoList() {
       console.log("toDoList");
@@ -96,7 +93,7 @@ page {
   background-color: #f6b4a6;
 }
 .avatar {
-  margin: 10rpx 60rpx 50rpx 90rpx;
+  margin: 60rpx 60rpx 10rpx 90rpx;
   // position: relative;
   // left: 10%;
 }
@@ -105,22 +102,33 @@ page {
   height: 10rpx;
 }
 .nickName {
-  margin-top: 15rpx;
+  margin-top: 60rpx;
   font-family: "Times New Roman", Times, serif;
   font-weight: 600;
   color: rgba(32, 41, 41, 0.76);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.list-dot-icon {
-  position: absolute;
-  right: 10%;
-  top: -2%;
+.list-icon {
+  position: relative;
+  left: 30%;
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.arrow-right-icon {
-  margin: 50rpx;
-  position: absolute;
-  top: 70rpx;
-  right: 4%;
-}
+// .list-dot-icon {
+//   position: absolute;
+//   right: 10%;
+//   top: 20rpx;
+// }
+// .arrow-right-icon {
+//   margin: 50rpx;
+//   position: absolute;
+//   top: 70rpx;
+//   right: 4%;
+// }
 .person {
   display: flex;
 }
@@ -133,10 +141,15 @@ page {
   box-shadow: // 2px 0px 8px rgb(109, 109, 109),  /*右边阴影*/
     0px 2px 8px rgb(109, 109, 109); /*下边阴影*/
 }
+.flexMood {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .mood-font {
   display: flex;
   border-radius: 10rpx;
-  width: 350rpx;
+  width: 300rpx;
   background-color: rgb(240, 240, 240);
 }
 .mood-word {
@@ -148,9 +161,9 @@ page {
   color: #dc8c6b;
   font-size: 30rpx;
   font-weight: 300;
-  position: absolute;
-  right: 6%;
-  top: 24%;
+  // position: absolute;
+  // right: 6%;
+  // top: 20rpx;
 }
 .dairyDetail {
   margin: 5rpx 0;
@@ -158,7 +171,7 @@ page {
 }
 .to-do-list {
   font-size: 30rpx;
-  height: 400rpx;  
+  height: 400rpx;
   background: #fff;
   margin: 25rpx 40rpx;
   padding: 15rpx;

@@ -35,7 +35,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "navigationBarBackgroundColor":"#F6B4A6",
+                "navigationBarBackgroundColor":"#00ff00",
                 "enablePullDownRefresh": false,
 				"navigationStyle": "custom"
             }
