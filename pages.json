@@ -38,6 +38,7 @@
                 "navigationBarBackgroundColor":"#00ff00",
                 "enablePullDownRefresh": false,
 				"navigationStyle": "custom"
+				
             }
             
         }

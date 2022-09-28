@@ -22,12 +22,14 @@
             color="#DC8C6B"
             size="20"
           ></u-icon>
-          <u-icon
+          <view style="position: relative; bottom: 11%">
+          <u-icon            
             @click="changePersonal"
             name="arrow-right"
             color="#DC8C6B"
             size="20"
           ></u-icon>
+          </view>
         </view>
       </view>
       <!-- 防塌陷 -->
@@ -93,7 +95,7 @@ page {
   background-color: #f6b4a6;
 }
 .avatar {
-  margin: 60rpx 60rpx 10rpx 90rpx;
+  margin: 80rpx 60rpx 30rpx 90rpx;
   // position: relative;
   // left: 10%;
 }
@@ -113,10 +115,10 @@ page {
 .list-icon {
   position: relative;
   left: 30%;
-  margin-top: 60rpx;
+  // margin-top: 60rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 // .list-dot-icon {
 //   position: absolute;
