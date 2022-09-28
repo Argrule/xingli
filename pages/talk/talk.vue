@@ -16,6 +16,12 @@
         ></u-tabs>
       </view>
     </u-sticky>
+	<view v-if="FunctionOptions">
+		this is TALK
+	</view>
+	<view v-else>
+		this is 树洞
+	</view>
   </view>
 </template>
 
