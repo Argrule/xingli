@@ -37,6 +37,7 @@
                 "navigationBarTitleText": "",
                 "navigationBarBackgroundColor":"#F6B4A6",
                 "enablePullDownRefresh": false
+				// "navigationStyle": "custom"
             }
             
         }
@@ -45,7 +46,8 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
             }
             
         }
@@ -54,7 +56,8 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
             }
             
         }
@@ -63,7 +66,8 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
             }
             
         }

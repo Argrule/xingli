@@ -2,10 +2,11 @@
   <view class="background">
     <u-sticky bgColor="#fff">
       <u-search
+	  	class="u_search"
         height="10"
         :clearabled="false"
         v-model="keyword"
-        margin="30rpx"
+        margin="50rpx 30rpx 0rpx 30rpx"
         :showAction="false"
         @search="searchKeyWord"
       ></u-search>
@@ -97,7 +98,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .background{
 	background-color: rgb(246, 246, 246);
 }
@@ -125,7 +126,11 @@ export default {
   left: 20rpx;
 }
 .functionOptions{
-	position: relative;
-	left: 35%;
+	margin-top: -70rpx;
+}
+/deep/ .u-tabs{	
+	margin-top: 70rpx;
+	align-items: center;	
+	// background-color: aqua;
 }
 </style>

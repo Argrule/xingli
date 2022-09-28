@@ -956,7 +956,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7655,7 +7655,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7676,14 +7676,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7769,7 +7769,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"xingli","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -19626,7 +19626,9 @@ platform;exports.default = _default;
 /* 222 */,
 /* 223 */,
 /* 224 */,
-/* 225 */
+/* 225 */,
+/* 226 */,
+/* 227 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*************************************************************************/
@@ -19849,7 +19851,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 226 */
+/* 228 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*************************************************************************/
@@ -19946,14 +19948,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 227 */,
-/* 228 */,
 /* 229 */,
 /* 230 */,
 /* 231 */,
 /* 232 */,
 /* 233 */,
-/* 234 */
+/* 234 */,
+/* 235 */,
+/* 236 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-avatar/props.js ***!
   \***************************************************************************/
@@ -20039,8 +20041,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 235 */,
-/* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
@@ -20053,7 +20053,64 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 246 */,
 /* 247 */,
 /* 248 */,
-/* 249 */
+/* 249 */,
+/* 250 */,
+/* 251 */
+/*!***************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-sticky/props.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 吸顶容器到顶部某个距离的时候，进行吸顶，在H5平台，NavigationBar为44px
+    offsetTop: {
+      type: [String, Number],
+      default: uni.$u.props.sticky.offsetTop },
+
+    // 自定义导航栏的高度
+    customNavHeight: {
+      type: [String, Number],
+
+
+
+
+
+      default: uni.$u.props.sticky.customNavHeight },
+
+
+    // 是否开启吸顶功能
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.sticky.disabled },
+
+    // 吸顶区域的背景颜色
+    bgColor: {
+      type: String,
+      default: uni.$u.props.sticky.bgColor },
+
+    // z-index值
+    zIndex: {
+      type: [String, Number],
+      default: uni.$u.props.sticky.zIndex },
+
+    // 列表中的索引值
+    index: {
+      type: [String, Number],
+      default: uni.$u.props.sticky.index } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-search/props.js ***!
   \***************************************************************************/
@@ -20179,14 +20236,190 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */
+/*!*************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-tabs/props.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 滑块的移动过渡时间，单位ms
+    duration: {
+      type: Number,
+      default: uni.$u.props.tabs.duration },
+
+    // tabs标签数组
+    list: {
+      type: Array,
+      default: uni.$u.props.tabs.list },
+
+    // 滑块颜色
+    lineColor: {
+      type: String,
+      default: uni.$u.props.tabs.lineColor },
+
+    // 菜单选择中时的样式
+    activeStyle: {
+      type: [String, Object],
+      default: uni.$u.props.tabs.activeStyle },
+
+    // 菜单非选中时的样式
+    inactiveStyle: {
+      type: [String, Object],
+      default: uni.$u.props.tabs.inactiveStyle },
+
+    // 滑块长度
+    lineWidth: {
+      type: [String, Number],
+      default: uni.$u.props.tabs.lineWidth },
+
+    // 滑块高度
+    lineHeight: {
+      type: [String, Number],
+      default: uni.$u.props.tabs.lineHeight },
+
+    // 滑块背景显示大小，当滑块背景设置为图片时使用
+    lineBgSize: {
+      type: String,
+      default: uni.$u.props.tabs.lineBgSize },
+
+    // 菜单item的样式
+    itemStyle: {
+      type: [String, Object],
+      default: uni.$u.props.tabs.itemStyle },
+
+    // 菜单是否可滚动
+    scrollable: {
+      type: Boolean,
+      default: uni.$u.props.tabs.scrollable },
+
+    // 当前选中标签的索引
+    current: {
+      type: [Number, String],
+      default: uni.$u.props.tabs.current },
+
+    // 默认读取的键名
+    keyName: {
+      type: String,
+      default: uni.$u.props.tabs.keyName } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */
+/*!**************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-image/props.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 图片地址
+    src: {
+      type: String,
+      default: uni.$u.props.image.src },
+
+    // 裁剪模式
+    mode: {
+      type: String,
+      default: uni.$u.props.image.mode },
+
+    // 宽度，单位任意
+    width: {
+      type: [String, Number],
+      default: uni.$u.props.image.width },
+
+    // 高度，单位任意
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.image.height },
+
+    // 图片形状，circle-圆形，square-方形
+    shape: {
+      type: String,
+      default: uni.$u.props.image.shape },
+
+    // 圆角，单位任意
+    radius: {
+      type: [String, Number],
+      default: uni.$u.props.image.radius },
+
+    // 是否懒加载，微信小程序、App、百度小程序、字节跳动小程序
+    lazyLoad: {
+      type: Boolean,
+      default: uni.$u.props.image.lazyLoad },
+
+    // 开启长按图片显示识别微信小程序码菜单
+    showMenuByLongpress: {
+      type: Boolean,
+      default: uni.$u.props.image.showMenuByLongpress },
+
+    // 加载中的图标，或者小图片
+    loadingIcon: {
+      type: String,
+      default: uni.$u.props.image.loadingIcon },
+
+    // 加载失败的图标，或者小图片
+    errorIcon: {
+      type: String,
+      default: uni.$u.props.image.errorIcon },
+
+    // 是否显示加载中的图标或者自定义的slot
+    showLoading: {
+      type: Boolean,
+      default: uni.$u.props.image.showLoading },
+
+    // 是否显示加载错误的图标或者自定义的slot
+    showError: {
+      type: Boolean,
+      default: uni.$u.props.image.showError },
+
+    // 是否需要淡入效果
+    fade: {
+      type: Boolean,
+      default: uni.$u.props.image.fade },
+
+    // 只支持网络资源，只对微信小程序有效
+    webp: {
+      type: Boolean,
+      default: uni.$u.props.image.webp },
+
+    // 过渡时间，单位ms
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.image.duration },
+
+    // 背景颜色，用于深色页面加载图片时，为了和背景色融合
+    bgColor: {
+      type: String,
+      default: uni.$u.props.image.bgColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-cell-group/props.js ***!
   \*******************************************************************************/
@@ -20208,14 +20441,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-cell/props.js ***!
   \*************************************************************************/
@@ -20333,14 +20566,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/props.js ***!
   \*************************************************************************/
@@ -20458,12 +20691,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */
 /*!**************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-popup/props.js ***!
   \**************************************************************************/
@@ -20550,14 +20783,108 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */
+/*!**************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-badge/props.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示圆点
+    isDot: {
+      type: Boolean,
+      default: uni.$u.props.badge.isDot },
+
+    // 显示的内容
+    value: {
+      type: [Number, String],
+      default: uni.$u.props.badge.value },
+
+    // 是否显示
+    show: {
+      type: Boolean,
+      default: uni.$u.props.badge.show },
+
+    // 最大值，超过最大值会显示 '{max}+'
+    max: {
+      type: [Number, String],
+      default: uni.$u.props.badge.max },
+
+    // 主题类型，error|warning|success|primary
+    type: {
+      type: String,
+      default: uni.$u.props.badge.type },
+
+    // 当数值为 0 时，是否展示 Badge
+    showZero: {
+      type: Boolean,
+      default: uni.$u.props.badge.showZero },
+
+    // 背景颜色，优先级比type高，如设置，type参数会失效
+    bgColor: {
+      type: [String, null],
+      default: uni.$u.props.badge.bgColor },
+
+    // 字体颜色
+    color: {
+      type: [String, null],
+      default: uni.$u.props.badge.color },
+
+    // 徽标形状，circle-四角均为圆角，horn-左下角为直角
+    shape: {
+      type: String,
+      default: uni.$u.props.badge.shape },
+
+    // 设置数字的显示方式，overflow|ellipsis|limit
+    // overflow会根据max字段判断，超出显示`${max}+`
+    // ellipsis会根据max判断，超出显示`${max}...`
+    // limit会依据1000作为判断条件，超出1000，显示`${value/1000}K`，比如2.2k、3.34w，最多保留2位小数
+    numberType: {
+      type: String,
+      default: uni.$u.props.badge.numberType },
+
+    // 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效
+    offset: {
+      type: Array,
+      default: uni.$u.props.badge.offset },
+
+    // 是否反转背景和字体颜色
+    inverted: {
+      type: Boolean,
+      default: uni.$u.props.badge.inverted },
+
+    // 是否绝对定位
+    absolute: {
+      type: Boolean,
+      default: uni.$u.props.badge.absolute } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-line/props.js ***!
   \*************************************************************************/
@@ -20598,14 +20925,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/value.js ***!
   \*************************************************************************/
@@ -20699,7 +21026,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 296 */
+/* 335 */
 /*!*******************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/button.js ***!
   \*******************************************************************/
@@ -20720,7 +21047,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 297 */
+/* 336 */
 /*!*********************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \*********************************************************************/
@@ -20753,14 +21080,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */
 /*!****************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \****************************************************************************/
@@ -20792,14 +21119,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/props.js ***!
   \*******************************************************************************/
@@ -20831,7 +21158,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 314 */
+/* 353 */
 /*!************************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \************************************************************************************/
@@ -20842,7 +21169,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 42));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 315));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 354));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -20996,7 +21323,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 315 */
+/* 354 */
 /*!**************************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \**************************************************************************************/
@@ -21072,14 +21399,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \*******************************************************************************/
@@ -21095,14 +21422,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */
 /*!********************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \********************************************************************************/
@@ -21114,14 +21441,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   props: {} };exports.default = _default;
 
 /***/ }),
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-link/props.js ***!
   \*************************************************************************/
@@ -21165,352 +21492,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     text: {
       type: String,
       default: uni.$u.props.link.text } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */
-/*!**************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-image/props.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 图片地址
-    src: {
-      type: String,
-      default: uni.$u.props.image.src },
-
-    // 裁剪模式
-    mode: {
-      type: String,
-      default: uni.$u.props.image.mode },
-
-    // 宽度，单位任意
-    width: {
-      type: [String, Number],
-      default: uni.$u.props.image.width },
-
-    // 高度，单位任意
-    height: {
-      type: [String, Number],
-      default: uni.$u.props.image.height },
-
-    // 图片形状，circle-圆形，square-方形
-    shape: {
-      type: String,
-      default: uni.$u.props.image.shape },
-
-    // 圆角，单位任意
-    radius: {
-      type: [String, Number],
-      default: uni.$u.props.image.radius },
-
-    // 是否懒加载，微信小程序、App、百度小程序、字节跳动小程序
-    lazyLoad: {
-      type: Boolean,
-      default: uni.$u.props.image.lazyLoad },
-
-    // 开启长按图片显示识别微信小程序码菜单
-    showMenuByLongpress: {
-      type: Boolean,
-      default: uni.$u.props.image.showMenuByLongpress },
-
-    // 加载中的图标，或者小图片
-    loadingIcon: {
-      type: String,
-      default: uni.$u.props.image.loadingIcon },
-
-    // 加载失败的图标，或者小图片
-    errorIcon: {
-      type: String,
-      default: uni.$u.props.image.errorIcon },
-
-    // 是否显示加载中的图标或者自定义的slot
-    showLoading: {
-      type: Boolean,
-      default: uni.$u.props.image.showLoading },
-
-    // 是否显示加载错误的图标或者自定义的slot
-    showError: {
-      type: Boolean,
-      default: uni.$u.props.image.showError },
-
-    // 是否需要淡入效果
-    fade: {
-      type: Boolean,
-      default: uni.$u.props.image.fade },
-
-    // 只支持网络资源，只对微信小程序有效
-    webp: {
-      type: Boolean,
-      default: uni.$u.props.image.webp },
-
-    // 过渡时间，单位ms
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.image.duration },
-
-    // 背景颜色，用于深色页面加载图片时，为了和背景色融合
-    bgColor: {
-      type: String,
-      default: uni.$u.props.image.bgColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */
-/*!***************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-sticky/props.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 吸顶容器到顶部某个距离的时候，进行吸顶，在H5平台，NavigationBar为44px
-    offsetTop: {
-      type: [String, Number],
-      default: uni.$u.props.sticky.offsetTop },
-
-    // 自定义导航栏的高度
-    customNavHeight: {
-      type: [String, Number],
-
-
-
-
-
-      default: uni.$u.props.sticky.customNavHeight },
-
-
-    // 是否开启吸顶功能
-    disabled: {
-      type: Boolean,
-      default: uni.$u.props.sticky.disabled },
-
-    // 吸顶区域的背景颜色
-    bgColor: {
-      type: String,
-      default: uni.$u.props.sticky.bgColor },
-
-    // z-index值
-    zIndex: {
-      type: [String, Number],
-      default: uni.$u.props.sticky.zIndex },
-
-    // 列表中的索引值
-    index: {
-      type: [String, Number],
-      default: uni.$u.props.sticky.index } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */
-/*!*************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-tabs/props.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 滑块的移动过渡时间，单位ms
-    duration: {
-      type: Number,
-      default: uni.$u.props.tabs.duration },
-
-    // tabs标签数组
-    list: {
-      type: Array,
-      default: uni.$u.props.tabs.list },
-
-    // 滑块颜色
-    lineColor: {
-      type: String,
-      default: uni.$u.props.tabs.lineColor },
-
-    // 菜单选择中时的样式
-    activeStyle: {
-      type: [String, Object],
-      default: uni.$u.props.tabs.activeStyle },
-
-    // 菜单非选中时的样式
-    inactiveStyle: {
-      type: [String, Object],
-      default: uni.$u.props.tabs.inactiveStyle },
-
-    // 滑块长度
-    lineWidth: {
-      type: [String, Number],
-      default: uni.$u.props.tabs.lineWidth },
-
-    // 滑块高度
-    lineHeight: {
-      type: [String, Number],
-      default: uni.$u.props.tabs.lineHeight },
-
-    // 滑块背景显示大小，当滑块背景设置为图片时使用
-    lineBgSize: {
-      type: String,
-      default: uni.$u.props.tabs.lineBgSize },
-
-    // 菜单item的样式
-    itemStyle: {
-      type: [String, Object],
-      default: uni.$u.props.tabs.itemStyle },
-
-    // 菜单是否可滚动
-    scrollable: {
-      type: Boolean,
-      default: uni.$u.props.tabs.scrollable },
-
-    // 当前选中标签的索引
-    current: {
-      type: [Number, String],
-      default: uni.$u.props.tabs.current },
-
-    // 默认读取的键名
-    keyName: {
-      type: String,
-      default: uni.$u.props.tabs.keyName } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */
-/*!**************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-badge/props.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示圆点
-    isDot: {
-      type: Boolean,
-      default: uni.$u.props.badge.isDot },
-
-    // 显示的内容
-    value: {
-      type: [Number, String],
-      default: uni.$u.props.badge.value },
-
-    // 是否显示
-    show: {
-      type: Boolean,
-      default: uni.$u.props.badge.show },
-
-    // 最大值，超过最大值会显示 '{max}+'
-    max: {
-      type: [Number, String],
-      default: uni.$u.props.badge.max },
-
-    // 主题类型，error|warning|success|primary
-    type: {
-      type: String,
-      default: uni.$u.props.badge.type },
-
-    // 当数值为 0 时，是否展示 Badge
-    showZero: {
-      type: Boolean,
-      default: uni.$u.props.badge.showZero },
-
-    // 背景颜色，优先级比type高，如设置，type参数会失效
-    bgColor: {
-      type: [String, null],
-      default: uni.$u.props.badge.bgColor },
-
-    // 字体颜色
-    color: {
-      type: [String, null],
-      default: uni.$u.props.badge.color },
-
-    // 徽标形状，circle-四角均为圆角，horn-左下角为直角
-    shape: {
-      type: String,
-      default: uni.$u.props.badge.shape },
-
-    // 设置数字的显示方式，overflow|ellipsis|limit
-    // overflow会根据max字段判断，超出显示`${max}+`
-    // ellipsis会根据max判断，超出显示`${max}...`
-    // limit会依据1000作为判断条件，超出1000，显示`${value/1000}K`，比如2.2k、3.34w，最多保留2位小数
-    numberType: {
-      type: String,
-      default: uni.$u.props.badge.numberType },
-
-    // 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效
-    offset: {
-      type: Array,
-      default: uni.$u.props.badge.offset },
-
-    // 是否反转背景和字体颜色
-    inverted: {
-      type: Boolean,
-      default: uni.$u.props.badge.inverted },
-
-    // 是否绝对定位
-    absolute: {
-      type: Boolean,
-      default: uni.$u.props.badge.absolute } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })

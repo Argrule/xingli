@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
+    "u-tabs": "/uni_modules/uview-ui/components/u-tabs/u-tabs"
+  }
 }
