@@ -156,40 +156,46 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myChat = function myChat() {__webpack_require__.e(/*! require.ensure | mycomponents/my-chat */ "mycomponents/my-chat").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-chat.vue */ 276));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myHollow = function myHollow() {__webpack_require__.e(/*! require.ensure | mycomponents/my-hollow */ "mycomponents/my-hollow").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-hollow.vue */ 281));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
       FunctionOptions: true };
 
   },
+  components: {
+    myChat: myChat,
+    myHollow: myHollow },
+
   methods: {
     // 改导航
     changeFunctionOptions: function changeFunctionOptions(item) {

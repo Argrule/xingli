@@ -16,21 +16,27 @@
         ></u-tabs>
       </view>
     </u-sticky>
-	<view v-if="FunctionOptions">
-		this is TALK
+	<view v-if="FunctionOptions">		
+    <my-chat/>
 	</view>
-	<view v-else>
-		this is 树洞
+	<view v-else>    
+		<my-hollow/>
 	</view>
   </view>
 </template>
 
 <script>
+import myChat from "../../mycomponents/my-chat.vue";
+import myHollow from "../../mycomponents/my-hollow.vue";
 export default {
   data() {
     return {
 		FunctionOptions:true,
 	};
+  },
+  components:{
+    myChat,
+    myHollow
   },
   methods: {
 	// 改导航

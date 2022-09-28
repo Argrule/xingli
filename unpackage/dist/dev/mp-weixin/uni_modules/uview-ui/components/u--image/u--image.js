@@ -150,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _props = _interopRequireDefault(__webpack_require__(/*! ../u-image/props.js */ 275));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uvImage = function uvImage() {__webpack_require__.e(/*! require.ensure | uni_modules/uview-ui/components/u-image/u-image */ "uni_modules/uview-ui/components/u-image/u-image").then((function () {return resolve(__webpack_require__(/*! ../u-image/u-image.vue */ 314));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _props = _interopRequireDefault(__webpack_require__(/*! ../u-image/props.js */ 275));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uvImage = function uvImage() {__webpack_require__.e(/*! require.ensure | uni_modules/uview-ui/components/u-image/u-image */ "uni_modules/uview-ui/components/u-image/u-image").then((function () {return resolve(__webpack_require__(/*! ../u-image/u-image.vue */ 324));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   name: 'u--image',
   mixins: [uni.$u.mpMixin, _props.default, uni.$u.mixin],
