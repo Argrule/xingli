@@ -32,3 +32,24 @@
           transform: translate(-50%, 0);
   bottom: 10rpx;
 }
+.hollowTextLeft {
+  width: 45%;
+}
+.hollowTextRight {
+  width: 45%;
+}
+.TextLeft {
+  margin: 10rpx 0 10rpx;
+  border-radius: 15rpx;
+  padding: 25rpx 15rpx;
+  background-color: rgb(242, 222, 215);
+}
+.TextRight {
+  margin: 10rpx 0 10rpx;
+  border-radius: 15rpx;
+  padding: 25rpx 15rpx;
+  background-color: rgb(250, 224, 211);
+}
+.light {
+  background-color: aqua;
+}
