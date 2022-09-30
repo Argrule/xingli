@@ -32,6 +32,7 @@ page {
   display: flex;
 }
 .mood-dairy {
+  position: relative;
   height: 330rpx;
   background: #fff;
   margin: 15rpx 40rpx;
@@ -66,9 +67,12 @@ page {
   font-size: 30rpx;
 }
 .dairyDetailEdit {
-  float: right;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
 }
 .to-do-list {
+  position: relative;
   font-size: 30rpx;
   height: 400rpx;
   background: #fff;

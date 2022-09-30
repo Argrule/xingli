@@ -59,10 +59,20 @@
         class="dairyDetailEdit"
           ><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon
         ></view>
+        <!--  -->
+        <view>{{ dateContent }}</view>
+        <!--  -->
       </view>
     </view>
     <!-- to-do-list部分 -->
-    <view class="to-do-list">{{ dateContent }}</view>
+    <view class="to-do-list">{{ dateContent }}
+       <view class="dairyDetail"
+        >{{ dateContent }}
+        <view
+        class="dairyDetailEdit"
+          ><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon
+        ></view>
+    </view>
   </view>
 </template>
 
@@ -150,6 +160,8 @@ page {
   display: flex;
 }
 .mood-dairy {
+  // 子绝父相
+  position: relative;
   height: 330rpx;
   background: #fff;
   margin: 15rpx 40rpx;
@@ -182,14 +194,18 @@ page {
   // right: 6%;
   // top: 20rpx;
 }
-.dairyDetail {
+.dairyDetail {  
   margin: 5rpx 0;
   font-size: 30rpx;
 }
 .dairyDetailEdit{
-  float: right;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
 }
 .to-do-list {
+  // 子绝父相
+  position: relative;
   font-size: 30rpx;
   height: 400rpx;
   background: #fff;
