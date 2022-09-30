@@ -49,6 +49,13 @@ export default {
     // 调用get函数
     this.getHollows();
   },
+  // 下拉刷新
+  // async onPullDownRefresh(){
+  //   const { data: res } = await uni.$http.get("/hollow/pages");
+  //   console.log("pages.res is :", res);
+  //   // 调用get函数
+  //   this.getHollows();
+  // },
   methods: {
     // 发请求获取hollows
     async getHollows() {

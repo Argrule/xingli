@@ -65,6 +65,9 @@ page {
   margin: 5rpx 0;
   font-size: 30rpx;
 }
+.dairyDetailEdit {
+  float: right;
+}
 .to-do-list {
   font-size: 30rpx;
   height: 400rpx;

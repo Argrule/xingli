@@ -9,10 +9,14 @@
           <u-avatar size="60" :src="this.avatarUrl" shape="circle"></u-avatar>
         </view>
         <view class="nickName">
-          <view style="display: flex;">
+          <view style="display: flex">
             <view>{{ userName }}</view>
-            <view v-if="gender"><u-icon name="man" color="#2979ff" size="28"></u-icon></view>       
-            <view v-else><u-icon name="woman" color="rgb(231, 94, 155)" size="28"></u-icon></view>       
+            <view v-if="gender"
+              ><u-icon name="man" color="#2979ff" size="28"></u-icon
+            ></view>
+            <view v-else
+              ><u-icon name="woman" color="rgb(231, 94, 155)" size="28"></u-icon
+            ></view>
           </view>
           <view> ID: {{ userId }} </view>
         </view>
@@ -25,12 +29,12 @@
             size="20"
           ></u-icon>
           <view style="position: relative; bottom: 11%">
-          <u-icon            
-            @click="changePersonal"
-            name="arrow-right"
-            color="#DC8C6B"
-            size="20"
-          ></u-icon>
+            <u-icon
+              @click="changePersonal"
+              name="arrow-right"
+              color="#DC8C6B"
+              size="20"
+            ></u-icon>
           </view>
         </view>
       </view>
@@ -49,7 +53,13 @@
         <view class="dateTime">{{ dateTime }}</view>
       </view>
       <!-- dairy内容 -->
-      <view class="dairyDetail">{{ dateContent }}</view>
+      <view class="dairyDetail"
+        >{{ dateContent }}
+        <view
+        class="dairyDetailEdit"
+          ><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon
+        ></view>
+      </view>
     </view>
     <!-- to-do-list部分 -->
     <view class="to-do-list">{{ dateContent }}</view>
@@ -72,6 +82,9 @@ export default {
   },
   components: {
     menuBoard,
+  },
+  onPullDownRefresh(){
+	console.log("onPullDownRefresh");
   },
   methods: {
     changePersonal() {
@@ -172,6 +185,9 @@ page {
 .dairyDetail {
   margin: 5rpx 0;
   font-size: 30rpx;
+}
+.dairyDetailEdit{
+  float: right;
 }
 .to-do-list {
   font-size: 30rpx;

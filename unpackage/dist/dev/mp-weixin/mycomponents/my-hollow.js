@@ -188,6 +188,13 @@ var _default =
               // 调用get函数
               _this.getHollows();case 6:case "end":return _context.stop();}}}, _callee);}))();
   },
+  // 下拉刷新
+  // async onPullDownRefresh(){
+  //   const { data: res } = await uni.$http.get("/hollow/pages");
+  //   console.log("pages.res is :", res);
+  //   // 调用get函数
+  //   this.getHollows();
+  // },
   methods: {
     // 发请求获取hollows
     getHollows: function getHollows() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (

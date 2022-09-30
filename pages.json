@@ -1,164 +1,156 @@
 {
     "easycom": {
-		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
-	},
-	"pages": [ 
-		{
-            "path" : "pages/login/login",
-            "style" :                                                                                    
-            {
+        "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+    },
+    "pages": [
+        {
+            "path": "pages/login/login",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/register/register",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/register/register",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/forgetPass/forgetPass",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/forgetPass/forgetPass",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/personalMain/personalMain",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/personalMain/personalMain",
+            "style": {
                 "navigationBarTitleText": "",
-                "navigationBarBackgroundColor":"#00ff00",
+                "navigationBarBackgroundColor": "#00ff00",
                 "enablePullDownRefresh": false,
-				"navigationStyle": "custom"
-				
+                "navigationStyle": "custom"
             }
-            
-        }
-        ,{
-            "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/home/home",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false,
-				"navigationStyle": "custom"
+                "navigationStyle": "custom"
             }
-            
-        }
-        ,{
-            "path" : "pages/order/order",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/order/order",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false,
-				"navigationStyle": "custom"
+                "navigationStyle": "custom"
             }
-            
-        }
-        ,{
-            "path" : "pages/talk/talk",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/talk/talk",
+            "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-				"navigationStyle": "custom"
+                "enablePullDownRefresh": true,
+                "navigationStyle": "custom",
+                "app-plus": {
+                    "pullToRefresh": {
+                        "support": true,
+                        "color": "#ff3333",
+                        "style": "default",
+                        "contentdown": {
+                            "caption": "下拉可刷新自定义文本"
+                        },
+                        "contentover": {
+                            "caption": "释放可刷新自定义文本"
+                        },
+                        "contentrefresh": {
+                            "caption": "正在刷新自定义文本"
+                        }
+                    }
+                }
             }
-            
-        }
-        ,{
-            "path" : "pages/changePersonInformation/changePersonInformation",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/changePersonInformation/changePersonInformation",
+            "style": {
                 "navigationBarTitleText": "个人信息修改",
-				"navigationBarBackgroundColor":"#F6B4A6",
+                "navigationBarBackgroundColor": "#F6B4A6",
                 "enablePullDownRefresh": false
             }
-		
-        }
-        ,{
-            "path" : "pages/changePersonInformation/changeAvatarUrl",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/changePersonInformation/changeAvatarUrl",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/changePersonInformation/changeUserName",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/changePersonInformation/changeUserName",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/changePersonInformation/changeGender",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "pages/changePersonInformation/changeGender",
+            "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }  
-        ,{
-            "path" : "mycomponents/my-puthollow/my-puthollow",
-            "style" :                                                                                    
-            {
+        },
+        {
+            "path": "mycomponents/my-puthollow/my-puthollow",
+            "style": {
                 "navigationBarTitleText": "我的故事",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor":"#F6B4A6"
+                "navigationBarBackgroundColor": "#F6B4A6"
             }
-            
         }
     ],
     "tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#DC8C6B",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"height": "60px",
-		"fontSize": "10px",		
-		"spacing": "2px",
-		"iconWidth": "25px",
-		"list": [{
-				"pagePath": "pages/home/home",
-				"iconPath": "static/首页-01.png",
-				"selectedIconPath": "static/首页-01.png",
-				"text": "首页"
-			},
-			{
-				"pagePath": "pages/order/order",
-				"iconPath": "static/编辑-01.png",
-				"selectedIconPath": "static/编辑-01.png",
-				"text": "预约"
-			},
-			{
-				"pagePath": "pages/talk/talk",
-				"iconPath": "static/咖啡-01.png",
-				"selectedIconPath": "static/咖啡-01.png",
-				"text": "诉心"
-			},
-			{
-				"pagePath": "pages/personalMain/personalMain",
-				"iconPath": "static/我的-01.png",
-				"selectedIconPath": "static/我的-01.png",
-				"text": "我的"
-			}
-		]
-	},
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+        "color": "#7A7E83",
+        "selectedColor": "#DC8C6B",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "height": "60px",
+        "fontSize": "10px",
+        "spacing": "2px",
+        "iconWidth": "25px",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "static/首页-01.png",
+                "selectedIconPath": "static/首页-01.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "iconPath": "static/编辑-01.png",
+                "selectedIconPath": "static/编辑-01.png",
+                "text": "预约"
+            },
+            {
+                "pagePath": "pages/talk/talk",
+                "iconPath": "static/咖啡-01.png",
+                "selectedIconPath": "static/咖啡-01.png",
+                "text": "诉心"
+            },
+            {
+                "pagePath": "pages/personalMain/personalMain",
+                "iconPath": "static/我的-01.png",
+                "selectedIconPath": "static/我的-01.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    }
 }
