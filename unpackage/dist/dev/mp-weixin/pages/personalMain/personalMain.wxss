@@ -30,6 +30,7 @@ page {
 }
 .mood-list {
   display: flex;
+  justify-content: space-between;
   border-radius: 10rpx;
   width: 90%;
   margin: 20rpx 20rpx;

@@ -63,6 +63,15 @@
         <view v-for="(item,i) in moodList" :key="i">
           <view class="mood-list">          
           <view class="mood-word">{{ item.message }}</view>
+          <view v-if="item.mood==0">
+            <uni-icons custom-prefix="iconfont" type="icon-mood" size="20"></uni-icons>
+          </view>
+          <view v-else-if="item.mood==1">
+            <uni-icons custom-prefix="iconfont" type="icon-xinqingyiban-yuan" size="18"></uni-icons>
+          </view>
+          <view v-else-if="item.mood==2">
+            <uni-icons custom-prefix="iconfont" type="icon-mood-bad" size="20"></uni-icons>
+          </view>
           </view>          
         </view>        
       </view>
@@ -93,7 +102,7 @@ export default {
         },
         {
             "id": 2,
-            "mood": 0,
+            "mood": 1,
             "message": "知道肿么注入惹"
         },
         {
@@ -165,6 +174,7 @@ page {
 // 列表
 .mood-list{
   display: flex;
+  justify-content: space-between;
   border-radius: 10rpx;
   width: 90%;
   margin: 20rpx 20rpx;
