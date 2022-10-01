@@ -43,6 +43,7 @@
     </view>
     <!-- mood-dairy部分 -->
     <view class="mood-dairy">
+      <!-- dairy头部 -->
       <view class="flexMood">
         <!-- 左侧框 -->
         <view class="mood-font">
@@ -53,25 +54,24 @@
         <view class="dateTime">{{ dateTime }}</view>
       </view>
       <!-- dairy内容 -->
-      <view class="dairyDetail"
-        >{{ dateContent }}
-        <view
-        class="dairyDetailEdit"
-          ><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon
-        ></view>
-        <!--  -->
-        <view>{{ dateContent }}</view>
-        <!--  -->
+      <view class="dairyDetail">
+        <!-- 编辑图标 -->
+        <view class="dairyDetailEdit">
+          <u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon>
+        </view>
+        <!-- 列表 -->
+        <view v-for="(item,i) in moodList" :key="i">
+          <view class="mood-list">          
+          <view class="mood-word">{{ item.message }}</view>
+          </view>          
+        </view>        
       </view>
     </view>
     <!-- to-do-list部分 -->
     <view class="to-do-list">{{ dateContent }}
-       <view class="dairyDetail"
-        >{{ dateContent }}
-        <view
-        class="dairyDetailEdit"
-          ><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon
-        ></view>
+       <view class="dairyDetail">{{ dateContent }}
+        <view class="dairyDetailEdit"><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon></view>
+        </view>
     </view>
   </view>
 </template>
@@ -85,6 +85,23 @@ export default {
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
+      moodList:[
+        {
+            "id": 1,
+            "mood": 2,
+            "message": "开始测试惹"
+        },
+        {
+            "id": 2,
+            "mood": 0,
+            "message": "知道肿么注入惹"
+        },
+        {
+            "id": 2,
+            "mood": 0,
+            "message": "hh知道肿么注入惹"
+        }
+    ],
     };
   },
   computed: {
@@ -145,24 +162,22 @@ page {
   flex-direction: column;
   justify-content: space-around;
 }
-// .list-dot-icon {
-//   position: absolute;
-//   right: 10%;
-//   top: 20rpx;
-// }
-// .arrow-right-icon {
-//   margin: 50rpx;
-//   position: absolute;
-//   top: 70rpx;
-//   right: 4%;
-// }
+// 列表
+.mood-list{
+  display: flex;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 20rpx 20rpx;
+  padding: 8rpx 12rpx;
+  background-color: #F8E8E1;  
+}
 .person {
   display: flex;
 }
 .mood-dairy {
   // 子绝父相
   position: relative;
-  height: 330rpx;
+  height: 430rpx;
   background: #fff;
   margin: 15rpx 40rpx;
   padding: 15rpx;

@@ -28,12 +28,20 @@ page {
   flex-direction: column;
   justify-content: space-around;
 }
+.mood-list {
+  display: flex;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 20rpx 20rpx;
+  padding: 8rpx 12rpx;
+  background-color: #F8E8E1;
+}
 .person {
   display: flex;
 }
 .mood-dairy {
   position: relative;
-  height: 330rpx;
+  height: 430rpx;
   background: #fff;
   margin: 15rpx 40rpx;
   padding: 15rpx;
