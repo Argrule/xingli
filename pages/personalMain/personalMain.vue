@@ -23,7 +23,7 @@
         <view class="list-icon">
           <!-- 打开右弹窗 -->
           <u-icon
-            @click="toDoList"
+            @click="rightDialogList"
             name="list-dot"
             color="#DC8C6B"
             size="20"
@@ -62,7 +62,7 @@
         <!-- 列表 -->
         <view v-for="(item,i) in moodList" :key="i">
           <view class="mood-list">          
-          <view class="mood-word">{{ item.message }}</view>
+          <view class="mood-word">{{ item.date }}</view>
           <view v-if="item.mood==0">
             <uni-icons custom-prefix="iconfont" type="icon-mood" size="20"></uni-icons>
           </view>
@@ -77,9 +77,29 @@
       </view>
     </view>
     <!-- to-do-list部分 -->
-    <view class="to-do-list">{{ dateContent }}
-       <view class="dairyDetail">{{ dateContent }}
-        <view class="dairyDetailEdit"><u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon></view>
+    <view class="to-do-list">
+      <!-- to-do-list头部 -->
+      <view class="toDoListHead">
+        <!-- 左侧框 -->
+        <view class="mood-font">
+          <u-icon name="calendar" color="#DC8C6B" size="25"></u-icon>
+          <view class="mood-word"> TO-DO-LIST </view>          
+        </view>        
+      </view>
+       <view class="dairyDetail">               
+        <!-- 列表 -->
+        <view v-for="(item,i) in toDoList" :key="i">
+          <view class="mood-list">          
+          <view v-if="item.finish==0">            
+            <uni-icons type="circle" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons>        
+          </view>
+          <view v-else>
+            <uni-icons type="checkbox-filled" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons> 
+          </view>
+          <view :class="[item.finish==0? 'mood-word' : 'mood-word-finish']">{{ item.todo }}</view>     
+          </view>
+        </view>
+        <view class="dairyDetailEdit"><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon></view>
         </view>
     </view>
   </view>
@@ -98,19 +118,36 @@ export default {
         {
             "id": 1,
             "mood": 2,
-            "message": "开始测试惹"
+            "date": "2022/09/28 Wed"
         },
         {
             "id": 2,
             "mood": 1,
-            "message": "知道肿么注入惹"
+            "date": "2022/09/29 Thr"
         },
         {
             "id": 2,
             "mood": 0,
-            "message": "hh知道肿么注入惹"
+            "date": "2022/09/30 Fri"
         }
     ],
+    toDoList:[
+      {
+            "id": 1,
+            "finish": 0,
+            "todo": "打牌"
+        },
+        {
+            "id": 2,
+            "finish": 1,
+            "todo": "不能再堕落了"
+        },
+        {
+            "id": 2,
+            "finish": 0,
+            "todo": "还是打牌"
+        }
+    ]
     };
   },
   computed: {
@@ -129,9 +166,15 @@ export default {
         url: "/pages/changePersonInformation/changePersonInformation",
       });
     },
-    toDoList() {
-      console.log("toDoList");
+    rightDialogList() {
+      console.log("rightDialogList");
       this.$refs.menuBoard.menuShow = true;
+    },
+    // 修改to-do-list完成状态
+    changeFinish(item){
+      console.log('item',item);
+      // 只是视觉上改，需要发请求改
+      item.finish=item.finish==0?1:0;
     },
   },
 };
@@ -200,6 +243,12 @@ page {
   justify-content: space-around;
   align-items: center;
 }
+.toDoListHead{
+  display: flex;
+  justify-content: start;
+  // 对齐
+  margin-left: 20rpx;
+}
 .mood-font {
   display: flex;
   border-radius: 10rpx;
@@ -209,7 +258,14 @@ page {
 .mood-word {
   color: #dc8c6b;
   font-size: 35rpx;
+  font-weight: 300;  
+}
+// 中划线效果
+.mood-word-finish {
+  color: #dc8c6b;
+  font-size: 35rpx;
   font-weight: 300;
+  text-decoration: line-through;
 }
 .dateTime {
   color: #dc8c6b;

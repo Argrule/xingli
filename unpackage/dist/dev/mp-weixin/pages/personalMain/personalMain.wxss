@@ -55,6 +55,11 @@ page {
   justify-content: space-around;
   align-items: center;
 }
+.toDoListHead {
+  display: flex;
+  justify-content: start;
+  margin-left: 20rpx;
+}
 .mood-font {
   display: flex;
   border-radius: 10rpx;
@@ -65,6 +70,12 @@ page {
   color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
+}
+.mood-word-finish {
+  color: #dc8c6b;
+  font-size: 35rpx;
+  font-weight: 300;
+  text-decoration: line-through;
 }
 .dateTime {
   color: #dc8c6b;
