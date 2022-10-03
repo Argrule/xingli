@@ -1,5 +1,15 @@
 <template>
   <view>
+    <!-- 选择心情弹窗 -->
+    <u-action-sheet :actions="[{
+					name:'开心'
+				},
+				{
+					name: '一般'
+				},
+        {
+					name: '难过'
+				}]" @select="selectClick" :show="showMoodSelect"></u-action-sheet>
     <!-- 右弹窗 -->
     <menuBoard ref="menuBoard"></menuBoard>
     <!-- 头像部分 -->
@@ -82,7 +92,17 @@
         <uni-icons type="undo" @click="changeIsDairyDetailEdit" color="#DC8C6B" size="20"></uni-icons>
         <!-- 提交mood -->
         <view style="margin-left: 50rpx" @click="putMoodToday"><u-icon name="checkbox-mark" color="#DC8C6B" size="20"></u-icon></view>
-        <view style="margin-left: 350rpx" @click="putMoodToda"><uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-xinqingyiban-yuan" size="20"></uni-icons></view>       
+        <view style="margin-left: 350rpx" @click="selectMood">
+          <view v-if="todayMood==0">
+            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-mood" size="20"></uni-icons>
+          </view>
+          <view v-else-if="todayMood==1">
+            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-xinqingyiban-yuan" size="18"></uni-icons>
+          </view>
+          <view v-else-if="todayMood==2">
+            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-mood-bad" size="20"></uni-icons>
+          </view>  
+        </view>       
         </view>
         <view class="">
           <u--textarea
@@ -130,6 +150,7 @@ export default {
     return {
       // 导航切换
       isDairyDetailEdit:true,
+      showMoodSelect: false,
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
@@ -181,16 +202,29 @@ export default {
 	console.log("onPullDownRefresh");
   },
   methods: {
+    // 选择表情
+    selectMood(){
+      console.log('// 选择表情')
+      this.showMoodSelect=true;
+    },
+    selectClick({name}){      
+      this.todayMood= name=='开心'?0:name=='一般'?1:2;
+      console.log('你选择的心情为',this.todayMood);            
+      // console.log('index is:',name);
+      this.showMoodSelect=false
+    },
     // 导航切换
     changeIsDairyDetailEdit(){
       this.isDairyDetailEdit=!this.isDairyDetailEdit
     },
+    // 修改个人信息页面
     changePersonal() {
       console.log("changePersonal");
       uni.navigateTo({
         url: "/pages/changePersonInformation/changePersonInformation",
       });
     },
+    // 打开右弹窗菜单
     rightDialogList() {
       console.log("rightDialogList");
       this.$refs.menuBoard.menuShow = true;

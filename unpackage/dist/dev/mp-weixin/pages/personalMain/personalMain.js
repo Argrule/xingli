@@ -97,6 +97,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uActionSheet: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 451))
+    },
     uAvatar: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 230))
     },
@@ -290,12 +293,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 255));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {
       // 导航切换
       isDairyDetailEdit: true,
+      showMoodSelect: false,
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
@@ -347,16 +371,29 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     console.log("onPullDownRefresh");
   },
   methods: {
+    // 选择表情
+    selectMood: function selectMood() {
+      console.log('// 选择表情');
+      this.showMoodSelect = true;
+    },
+    selectClick: function selectClick(_ref) {var name = _ref.name;
+      this.todayMood = name == '开心' ? 0 : name == '一般' ? 1 : 2;
+      console.log('你选择的心情为', this.todayMood);
+      // console.log('index is:',name);
+      this.showMoodSelect = false;
+    },
     // 导航切换
     changeIsDairyDetailEdit: function changeIsDairyDetailEdit() {
       this.isDairyDetailEdit = !this.isDairyDetailEdit;
     },
+    // 修改个人信息页面
     changePersonal: function changePersonal() {
       console.log("changePersonal");
       uni.navigateTo({
         url: "/pages/changePersonInformation/changePersonInformation" });
 
     },
+    // 打开右弹窗菜单
     rightDialogList: function rightDialogList() {
       console.log("rightDialogList");
       this.$refs.menuBoard.menuShow = true;
