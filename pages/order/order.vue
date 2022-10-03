@@ -21,30 +21,35 @@
       </view>
     </view>
     <!-- 医生列表 -->
-    <view>
-      医生列表
-      <view style="display: flex; justify-content: space-around">
+    <view>      
+      <view style="display: flex; justify-content: space-evenly">
         <view class="docotorListLeft">
           <view v-for="(item, index) in docotorList1" :key="index">
             <view class="TextLeft">
-              <u-avatar
-                size="60"
-                :src="item.avatarUrl"
-                shape="circle"
-              ></u-avatar>
-              <view> {{ item.name }} </view>
+              <view class="avatar">
+                <u-avatar
+                  size="60"
+                  :src="item.avatarUrl"
+                  shape="circle"
+                ></u-avatar>
+              </view>
+              <view class="fontDocotorName"> {{ item.name }} </view>
+              <view class="fontGoodAt"> {{ item.goodat }} </view>
             </view>
           </view>
         </view>
         <view class="docotorListRight">
           <view v-for="(item, index) in docotorList2" :key="index">
             <view class="TextRight">
-              <u-avatar
-                size="60"
-                :src="item.avatarUrl"
-                shape="circle"
-              ></u-avatar>
-              <view> {{ item.name }} </view>
+              <view class="avatar">
+                <u-avatar
+                  size="60"
+                  :src="item.avatarUrl"
+                  shape="circle"
+                ></u-avatar>
+              </view>
+              <view class="fontDocotorName"> {{ item.name }} </view>
+			  <view class="fontGoodAt"> {{ item.goodat }} </view>
             </view>
           </view>
         </view>
@@ -115,10 +120,45 @@ export default {
   position: absolute;
   right: 5%;
 }
-// .docotorListLeft{
-// 	width: 45%;
-// }
-// .docotorListRight{
-// 	width: 45%;
-// }
+.TextLeft {
+  background-color: #ffffff;
+  margin: 30rpx 0;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0px 2px 8px rgb(109, 109, 109);
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+.TextRight {
+  background-color: #ffffff;
+  margin: 30rpx 0;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0px 2px 8px rgb(109, 109, 109);
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+.avatar {	
+  margin-top: 30rpx;
+}
+// 医生名字
+.fontDocotorName{
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 30rpx 0 10rpx 0;
+}
+// 医生擅长
+.fontGoodAt{
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #464444;
+}
+.docotorListLeft {
+  width: 45%;
+}
+.docotorListRight {
+  width: 45%;
+}
 </style>
