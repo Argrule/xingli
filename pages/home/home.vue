@@ -2,7 +2,7 @@
   <view class="background">
     <u-sticky bgColor="#fff">
       <u-search
-	  	class="u_search"
+        class="u_search"
         height="10"
         :clearabled="false"
         v-model="keyword"
@@ -11,23 +11,23 @@
         @search="searchKeyWord"
       ></u-search>
       <view class="functionOptions">
-		<u-tabs
-        lineColor="#FBC2A6"
-		@click="changeFunctionOptions"
-        :list="[
-          {
-            name: '推荐',
-          },
-          {
-            name: '测试',
-          },
-        ]"
-      ></u-tabs>
-	  </view>
+        <u-tabs
+          lineColor="#FBC2A6"
+          @click="changeFunctionOptions"
+          :list="[
+            {
+              name: '推荐',
+            },
+            {
+              name: '测试',
+            },
+          ]"
+        ></u-tabs>
+      </view>
     </u-sticky>
     <view v-if="FunctionOptions">
       <view class="title"> 精选书单 </view>
-      <view v-for="(item,index) in bookList" :key="index">
+      <view v-for="(item, index) in bookList" :key="index">
         <view class="bookList">
           <!-- 封面 -->
           <view class="move_image">
@@ -39,78 +39,88 @@
           </view>
           <!-- link中图片和标签失效，纯文字才能生效 -->
           <uni-link :href="item.resourceUrl" showUnderLine="false">
-            {{item.introduce }}
-          <!-- <view class="bookContent">{{ item.introduce }}</view> -->
+            {{ item.introduce }}
+            <!-- <view class="bookContent">{{ item.introduce }}</view> -->
           </uni-link>
-        </view>              
+        </view>
       </view>
-      <view class="title"> 网课推荐 </view>
+      <view class="title"> 视频推荐 </view>
       <view>
         <view class="bookList">{{ dateContent }}</view>
         <view class="bookList">{{ dateContent }}</view>
         <view class="bookList">{{ dateContent }}</view>
       </view>
     </view>
-	<view v-else>
-		hello
-	</view>
+    <view v-else>
+      <my-test></my-test>
+    </view>
   </view>
 </template>
 
 <script>
+import myTest from "../../mycomponents/my-test.vue";
 export default {
   data() {
     return {
-	// 导航
-	FunctionOptions:true,
+      // 导航
+      FunctionOptions: true,
       // 关键字搜索
-      keyword: "",           
+      keyword: "",
       // 书单
       bookList: [
-      {
-        id:0,
-        name:'鸟哥的linux私房菜',
-        author: '鸟哥',
-        introduce: '为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux',
-        photoUrl: 'https://ts1.cn.mm.bing.net/th/id/R-C.b3b9657667d6e02e444556c3b789d530?rik=q%2bnI4l1KvaOOFg&riu=http%3a%2f%2fbooklibimg.kfzimg.com%2fdata%2fbook_lib_img_v2%2fisbn%2f0%2f4fe3%2f4fe366f82a6abd7e23843105553db4c0_0_0_0_0_water.jpg&ehk=vkRzdlxhwDP2gQiUKjGlGxVZduZ6YU43At4OWmeSNsU%3d&risl=&pid=ImgRaw&r=0',
-        resourceUrl: 'https://www.linuxidc.com/Linux/2017-03/141744.htm',        
-      },
-      {
-        id:1,
-        name:'鸟哥的linux私房菜',
-        author: '鸟哥',
-        introduce: '为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux',
-        photoUrl: 'https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0',
-        resourceUrl: 'https://www.linuxidc.com/Linux/2017-03/141744.htm',        
-      },      
-      {
-        id:1,
-        name:'鸟哥的linux私房菜',
-        author: '鸟哥',
-        introduce: '为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux',
-        photoUrl: 'https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0',
-        resourceUrl: 'https://www.linuxidc.com/Linux/2017-03/141744.htm',        
-      },      
+        {
+          id: 0,
+          name: "鸟哥的linux私房菜",
+          author: "鸟哥",
+          introduce:
+            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+          photoUrl:
+            "https://ts1.cn.mm.bing.net/th/id/R-C.b3b9657667d6e02e444556c3b789d530?rik=q%2bnI4l1KvaOOFg&riu=http%3a%2f%2fbooklibimg.kfzimg.com%2fdata%2fbook_lib_img_v2%2fisbn%2f0%2f4fe3%2f4fe366f82a6abd7e23843105553db4c0_0_0_0_0_water.jpg&ehk=vkRzdlxhwDP2gQiUKjGlGxVZduZ6YU43At4OWmeSNsU%3d&risl=&pid=ImgRaw&r=0",
+          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        },
+        {
+          id: 1,
+          name: "鸟哥的linux私房菜",
+          author: "鸟哥",
+          introduce:
+            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+          photoUrl:
+            "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
+          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        },
+        {
+          id: 1,
+          name: "鸟哥的linux私房菜",
+          author: "鸟哥",
+          introduce:
+            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+          photoUrl:
+            "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
+          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        },
       ],
     };
   },
+  components: {
+    myTest,
+  },
   methods: {
-	// 搜索
+    // 搜索
     searchKeyWord() {
       console.log(this.keyword);
     },
-	// 改导航
-	changeFunctionOptions(item){
-		console.log('hh',item);
-		this.FunctionOptions=!item.index;
-	},
+    // 改导航
+    changeFunctionOptions(item) {
+      console.log("hh", item);
+      this.FunctionOptions = !item.index;
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.background{
-	background-color: rgb(246, 246, 246);
+.background {
+  background-color: rgb(246, 246, 246);
 }
 .title {
   font-size: 36rpx;
@@ -136,12 +146,12 @@ export default {
   left: 20rpx;
   margin-right: 30rpx;
 }
-.functionOptions{
-	margin-top: -70rpx;
+.functionOptions {
+  margin-top: -70rpx;
 }
-/deep/ .u-tabs{	
-	margin-top: 70rpx;
-	align-items: center;	
-	// background-color: aqua;
+/deep/ .u-tabs {
+  margin-top: 70rpx;
+  align-items: center;
+  // background-color: aqua;
 }
 </style>
