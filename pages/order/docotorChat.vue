@@ -1,10 +1,10 @@
 <template>
 	<view>
-		this is TALK
+		
 	</view>
 </template>
 
-<script>	
+<script>
 	export default {
 		data() {
 			return {

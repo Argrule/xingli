@@ -324,7 +324,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 page {
   background: #f8f8f8;
   letter-spacing: 1px;

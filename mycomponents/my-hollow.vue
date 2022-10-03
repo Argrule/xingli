@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .suspension {
   // 悬浮居中
   position: absolute;

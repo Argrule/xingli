@@ -25,10 +25,10 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 引入uview */
-.textarea {
+.textarea.data-v-3a548e60 {
   margin-top: 20rpx;
 }
-.suspension {
+.suspension.data-v-3a548e60 {
   position: absolute;
   left: 80%;
   bottom: 20%;

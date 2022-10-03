@@ -17,7 +17,7 @@
       <view class="title">心理咨询</view>
       <!-- 跳转聊天界面 -->
       <view class="chatIcon">
-        <u-icon name="chat" color="#DC8C6B" size="35"></u-icon>
+        <u-icon name="chat" @click="gotoChat" color="#DC8C6B" size="35"></u-icon>
       </view>
     </view>
     <!-- 医生列表 -->
@@ -99,11 +99,15 @@ export default {
     searchKeyWord() {
       console.log("searchKeyWord =", this.keyword);
     },
+	gotoChat(){
+		console.log("go to chat");
+		uni.navigateTo({ url: '/pages/' })
+	}
   },
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .headPart {
   display: flex;
   position: relative;

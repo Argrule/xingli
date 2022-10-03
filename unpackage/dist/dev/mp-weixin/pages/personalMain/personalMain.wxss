@@ -1,18 +1,18 @@
-page {
+page.data-v-674418a6 {
   background: #f8f8f8;
   letter-spacing: 1px;
 }
-.content {
+.content.data-v-674418a6 {
   background-color: #f6b4a6;
 }
-.avatar {
+.avatar.data-v-674418a6 {
   margin: 80rpx 60rpx 30rpx 90rpx;
 }
-.empty {
+.empty.data-v-674418a6 {
   margin: 10rpx;
   height: 10rpx;
 }
-.nickName {
+.nickName.data-v-674418a6 {
   margin-top: 60rpx;
   font-family: "Times New Roman", Times, serif;
   font-weight: 600;
@@ -21,14 +21,14 @@ page {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.list-icon {
+.list-icon.data-v-674418a6 {
   position: relative;
   left: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.mood-list {
+.mood-list.data-v-674418a6 {
   display: flex;
   justify-content: space-between;
   border-radius: 10rpx;
@@ -37,10 +37,10 @@ page {
   padding: 8rpx 12rpx;
   background-color: #f8e8e1;
 }
-.person {
+.person.data-v-674418a6 {
   display: flex;
 }
-.mood-dairy {
+.mood-dairy.data-v-674418a6 {
   position: relative;
   height: 430rpx;
   background: #fff;
@@ -50,54 +50,54 @@ page {
   box-shadow: 0px 2px 8px #6d6d6d;
   /*下边阴影*/
 }
-.flexMood {
+.flexMood.data-v-674418a6 {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.toDoListHead {
+.toDoListHead.data-v-674418a6 {
   display: flex;
   justify-content: start;
   margin-left: 20rpx;
 }
-.mood-font {
+.mood-font.data-v-674418a6 {
   display: flex;
   border-radius: 10rpx;
   width: 300rpx;
   background-color: #f0f0f0;
 }
-.mood-word {
+.mood-word.data-v-674418a6 {
   color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
 }
-.mood-word-finish {
+.mood-word-finish.data-v-674418a6 {
   color: #dc8c6b;
   font-size: 35rpx;
   font-weight: 300;
   text-decoration: line-through;
 }
-.dateTime {
+.dateTime.data-v-674418a6 {
   color: #dc8c6b;
   font-size: 30rpx;
   font-weight: 300;
 }
-.dairyDetail {
+.dairyDetail.data-v-674418a6 {
   margin: 5rpx 0;
   font-size: 30rpx;
 }
-.dairyDetailEdit {
+.dairyDetailEdit.data-v-674418a6 {
   position: absolute;
   bottom: 10%;
   right: 5%;
 }
-.dairyDetailEditReturn {
+.dairyDetailEditReturn.data-v-674418a6 {
   display: flex;
   position: absolute;
   bottom: 10%;
   left: 5%;
 }
-.to-do-list {
+.to-do-list.data-v-674418a6 {
   position: relative;
   font-size: 30rpx;
   height: 400rpx;

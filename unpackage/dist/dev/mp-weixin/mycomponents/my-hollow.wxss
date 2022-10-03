@@ -25,31 +25,31 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 引入uview */
-.suspension {
+.suspension.data-v-7b6c01b1 {
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   bottom: 10rpx;
 }
-.hollowTextLeft {
+.hollowTextLeft.data-v-7b6c01b1 {
   width: 45%;
 }
-.hollowTextRight {
+.hollowTextRight.data-v-7b6c01b1 {
   width: 45%;
 }
-.TextLeft {
+.TextLeft.data-v-7b6c01b1 {
   margin: 10rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(242, 222, 215);
 }
-.TextRight {
+.TextRight.data-v-7b6c01b1 {
   margin: 10rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(250, 224, 211);
 }
-.light {
+.light.data-v-7b6c01b1 {
   background-color: aqua;
 }

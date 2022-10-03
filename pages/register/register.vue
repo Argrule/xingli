@@ -79,7 +79,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .fontBody{
 	margin:0rpx 0rpx 20rpx 0rpx;
 	position: relative;

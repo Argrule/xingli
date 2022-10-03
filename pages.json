@@ -110,6 +110,15 @@
                 "navigationBarBackgroundColor": "#F6B4A6"
             }
         }
+        ,{
+            "path" : "pages/order/docotorChat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
     "tabBar": {
         "color": "#7A7E83",

@@ -1,45 +1,45 @@
-.fontBody {
+.fontBody.data-v-b237504c {
   margin: 0rpx 15rpx;
   color: #fff;
   font-size: 30rpx;
 }
-.cue {
+.cue.data-v-b237504c {
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
   color: #dcdfe5;
 }
-.xieyi {
+.xieyi.data-v-b237504c {
   font-size: 25rpx;
   color: #dcdfe5;
   margin: 10rpx 0rpx 0rpx 0rpx;
 }
-.form_content {
+.form_content.data-v-b237504c {
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: space-around;
 }
-.content {
+.content.data-v-b237504c {
   height: 100%;
   text-align: center;
 }
-.select {
+.select.data-v-b237504c {
   margin-top: 15rpx;
   display: flex;
   justify-content: center;
 }
-.displayBox {
+.displayBox.data-v-b237504c {
   display: flex;
   justify-content: center;
 }
-.IDCode-button {
+.IDCode-button.data-v-b237504c {
   width: 150rpx;
   height: 50rpx;
   font-size: 8rpx;
   position: relative;
   left: 150rpx;
 }
-.uni-input {
+.uni-input.data-v-b237504c {
   text-align: left;
   padding: 10rpx;
   display: block;
@@ -50,7 +50,7 @@
   margin: 55rpx auto;
   border-radius: 8rpx;
 }
-.login-button {
+.login-button.data-v-b237504c {
   width: 300rpx;
   margin: 15rpx;
   color: #fff;

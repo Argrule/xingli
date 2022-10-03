@@ -57,7 +57,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 // 忘记密码
 .fontBody{
 	margin:0rpx 15rpx;

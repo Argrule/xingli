@@ -123,7 +123,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 // 忘记密码、注册账号
 .fontBody{
 	margin:0rpx 15rpx;
