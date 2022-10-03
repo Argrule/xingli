@@ -389,17 +389,17 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       {
         id: 1,
         mood: 2,
-        date: "2022/09/28 Wed" },
+        date: "2022/09/28 test" },
 
       {
         id: 2,
         mood: 1,
-        date: "2022/09/29 Thr" },
+        date: "2022/09/29 test" },
 
       {
         id: 2,
         mood: 0,
-        date: "2022/09/30 Fri" }],
+        date: "2022/09/30 test" }],
 
 
       toDoList: [
@@ -430,7 +430,20 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
   onPullDownRefresh: function onPullDownRefresh() {
     console.log("onPullDownRefresh");
   },
+  created: function created() {
+    this.getMoodListPage();
+    this.getMoodListDetail();
+  },
   methods: {
+    getMoodListPage: function getMoodListPage() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$get, pageResult;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  uni.$http.get('/tdmd/moodPages'));case 2:_yield$uni$$http$get = _context.sent;pageResult = _yield$uni$$http$get.data;
+                console.log("pageResult", pageResult);case 5:case "end":return _context.stop();}}}, _callee);}))();
+    },
+    getMoodListDetail: function getMoodListDetail() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, moodListResult;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  uni.$http.get('/tdmd/moods?page=1'));case 2:_yield$uni$$http$get2 = _context2.sent;moodListResult = _yield$uni$$http$get2.data;
+                console.log("pageResult", moodListResult);
+                _this.moodList = moodListResult.data;case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
     // 选择表情
     selectMood: function selectMood() {
       console.log("// 选择表情");
@@ -465,16 +478,16 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       item.finish = item.finish == 0 ? 1 : 0;
     },
     // put今日mood
-    putMoodToday: function putMoodToday() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    putMoodToday: function putMoodToday() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
                 console.log("putMoodToday");if (!(
-                _this.todayMessage == "")) {_context.next = 3;break;}return _context.abrupt("return",
-                uni.$showMsg("请填写今日心情"));case 3:_context.next = 5;return (
+                _this2.todayMessage == "")) {_context3.next = 3;break;}return _context3.abrupt("return",
+                uni.$showMsg("请填写今日心情"));case 3:_context3.next = 5;return (
 
                   uni.$http.put("/tdmd/mood", {
-                    message: _this.todayMessage,
-                    mood: _this.todayMood }));case 5:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
+                    message: _this2.todayMessage,
+                    mood: _this2.todayMood }));case 5:_yield$uni$$http$put = _context3.sent;res = _yield$uni$$http$put.data;
 
-                console.log("mood", res);case 8:case "end":return _context.stop();}}}, _callee);}))();
+                console.log("mood", res);case 8:case "end":return _context3.stop();}}}, _callee3);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

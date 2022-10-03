@@ -220,17 +220,17 @@ export default {
         {
           id: 1,
           mood: 2,
-          date: "2022/09/28 Wed",
+          date: "2022/09/28 test",
         },
         {
           id: 2,
           mood: 1,
-          date: "2022/09/29 Thr",
+          date: "2022/09/29 test",
         },
         {
           id: 2,
           mood: 0,
-          date: "2022/09/30 Fri",
+          date: "2022/09/30 test",
         },
       ],
       toDoList: [
@@ -261,7 +261,20 @@ export default {
   onPullDownRefresh() {
     console.log("onPullDownRefresh");
   },
+  created(){
+    this.getMoodListPage();
+    this.getMoodListDetail();
+  }, 
   methods: {
+    async getMoodListPage(){
+      const {data:pageResult} = await uni.$http.get('/tdmd/moodPages');
+      console.log("pageResult",pageResult);
+    },
+    async getMoodListDetail(){
+      const {data:moodListResult} = await uni.$http.get('/tdmd/moods?page=1');
+      console.log("pageResult",moodListResult);
+      this.moodList=moodListResult.data
+    },
     // 选择表情
     selectMood() {
       console.log("// 选择表情");
