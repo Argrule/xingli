@@ -30,7 +30,7 @@
       <view style="display: flex; justify-content: space-evenly">
         <view class="docotorListLeft">
           <view v-for="(item, index) in docotorList1" :key="index">
-            <view class="TextLeft">
+            <view class="TextLeft" @click="clickDocotorDetail(item)">
               <view class="avatar">
                 <u-avatar
                   size="60"
@@ -45,7 +45,7 @@
         </view>
         <view class="docotorListRight">
           <view v-for="(item, index) in docotorList2" :key="index">
-            <view class="TextRight">
+            <view class="TextRight" @click="clickDocotorDetail(item)">
               <view class="avatar">
                 <u-avatar
                   size="60"
@@ -101,13 +101,21 @@ export default {
     };
   },
   methods: {
+    // 关键字搜索
     searchKeyWord() {
       console.log("searchKeyWord =", this.keyword);
     },
+    // 打开聊天界面
     gotoChat() {
       console.log("go to chat");
       uni.navigateTo({ url: "/pages/order/docotorChat" });
     },
+    // 弹窗医生简介
+    async clickDocotorDetail({id:myid}){
+      console.log('id is ',myid);
+      const {data:res} = await uni.$http.get('/advisory/doctor',{id:myid});
+      console.log('docotor detail is',res);
+    }
   },
 };
 </script>
