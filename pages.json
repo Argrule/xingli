@@ -114,7 +114,7 @@
             "path" : "pages/order/docotorChat",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "消息",
                 "enablePullDownRefresh": false
             }
             

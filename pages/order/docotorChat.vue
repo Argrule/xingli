@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		和医生聊天
 	</view>
 </template>
 

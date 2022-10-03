@@ -224,6 +224,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -267,7 +272,7 @@ var _default =
     },
     gotoChat: function gotoChat() {
       console.log("go to chat");
-      uni.navigateTo({ url: '/pages/' });
+      uni.navigateTo({ url: "/pages/order/docotorChat" });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

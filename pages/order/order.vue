@@ -17,11 +17,16 @@
       <view class="title">心理咨询</view>
       <!-- 跳转聊天界面 -->
       <view class="chatIcon">
-        <u-icon name="chat" @click="gotoChat" color="#DC8C6B" size="35"></u-icon>
+        <u-icon
+          name="chat"
+          @click="gotoChat"
+          color="#DC8C6B"
+          size="35"
+        ></u-icon>
       </view>
     </view>
     <!-- 医生列表 -->
-    <view>      
+    <view>
       <view style="display: flex; justify-content: space-evenly">
         <view class="docotorListLeft">
           <view v-for="(item, index) in docotorList1" :key="index">
@@ -49,7 +54,7 @@
                 ></u-avatar>
               </view>
               <view class="fontDocotorName"> {{ item.name }} </view>
-			  <view class="fontGoodAt"> {{ item.goodat }} </view>
+              <view class="fontGoodAt"> {{ item.goodat }} </view>
             </view>
           </view>
         </view>
@@ -99,10 +104,10 @@ export default {
     searchKeyWord() {
       console.log("searchKeyWord =", this.keyword);
     },
-	gotoChat(){
-		console.log("go to chat");
-		uni.navigateTo({ url: '/pages/' })
-	}
+    gotoChat() {
+      console.log("go to chat");
+      uni.navigateTo({ url: "/pages/order/docotorChat" });
+    },
   },
 };
 </script>
@@ -131,7 +136,7 @@ export default {
   border-radius: 20rpx;
   box-shadow: 0px 2px 8px rgb(109, 109, 109);
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
 }
 .TextRight {
@@ -141,20 +146,20 @@ export default {
   border-radius: 20rpx;
   box-shadow: 0px 2px 8px rgb(109, 109, 109);
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
 }
-.avatar {	
+.avatar {
   margin-top: 30rpx;
 }
 // 医生名字
-.fontDocotorName{
+.fontDocotorName {
   font-size: 36rpx;
   font-weight: 600;
   margin: 30rpx 0 10rpx 0;
 }
 // 医生擅长
-.fontGoodAt{
+.fontGoodAt {
   font-size: 30rpx;
   font-weight: 300;
   color: #464444;
