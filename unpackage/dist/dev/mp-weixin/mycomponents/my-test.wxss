@@ -1,0 +1,6 @@
+.headPart.data-v-6c353254 {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15rpx 0;
+}
+

@@ -1,1 +1,1 @@
-<view class="data-v-6c353254">hello test</view>
+<view class="data-v-6c353254"><view class="headPart data-v-6c353254"><u--image vue-id="1a719932-1" src="{{photoUrl}}" width="330rpx" height="450rpx" radius="15" class="data-v-6c353254" bind:__l="__l"></u--image><u--image vue-id="1a719932-2" src="{{photoUrl}}" width="330rpx" height="450rpx" radius="15" class="data-v-6c353254" bind:__l="__l"></u--image></view></view>
