@@ -1,15 +1,21 @@
 <template>
   <view>
     <!-- 选择心情弹窗 -->
-    <u-action-sheet :actions="[{
-					name:'开心'
-				},
-				{
-					name: '一般'
-				},
+    <u-action-sheet
+      :actions="[
         {
-					name: '难过'
-				}]" @select="selectClick" :show="showMoodSelect"></u-action-sheet>
+          name: '开心',
+        },
+        {
+          name: '一般',
+        },
+        {
+          name: '难过',
+        },
+      ]"
+      @select="selectClick"
+      :show="showMoodSelect"
+    ></u-action-sheet>
     <!-- 右弹窗 -->
     <menuBoard ref="menuBoard"></menuBoard>
     <!-- 头像部分 -->
@@ -67,42 +73,81 @@
       <view class="dairyDetail" v-if="isDairyDetailEdit">
         <!-- 编辑图标 -->
         <view class="dairyDetailEdit">
-          <u-icon @click="changeIsDairyDetailEdit" name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon>
+          <u-icon
+            @click="changeIsDairyDetailEdit"
+            name="edit-pen-fill"
+            color="#DC8C6B"
+            size="28"
+          ></u-icon>
         </view>
         <!-- 列表 -->
-        <view v-for="(item,i) in moodList" :key="i">
-          <view class="mood-list">          
-          <view class="mood-word">{{ item.date }}</view>
-          <view v-if="item.mood==0">
-            <uni-icons custom-prefix="iconfont" type="icon-mood" size="20"></uni-icons>
+        <view v-for="(item, i) in moodList" :key="i">
+          <view class="mood-list">
+            <view class="mood-word">{{ item.date }}</view>
+            <view v-if="item.mood == 0">
+              <uni-icons
+                custom-prefix="iconfont"
+                type="icon-mood"
+                size="20"
+              ></uni-icons>
+            </view>
+            <view v-else-if="item.mood == 1">
+              <uni-icons
+                custom-prefix="iconfont"
+                type="icon-xinqingyiban-yuan"
+                size="18"
+              ></uni-icons>
+            </view>
+            <view v-else-if="item.mood == 2">
+              <uni-icons
+                custom-prefix="iconfont"
+                type="icon-mood-bad"
+                size="20"
+              ></uni-icons>
+            </view>
           </view>
-          <view v-else-if="item.mood==1">
-            <uni-icons custom-prefix="iconfont" type="icon-xinqingyiban-yuan" size="18"></uni-icons>
-          </view>
-          <view v-else-if="item.mood==2">
-            <uni-icons custom-prefix="iconfont" type="icon-mood-bad" size="20"></uni-icons>
-          </view>
-          </view>          
-        </view>        
+        </view>
       </view>
       <view v-else>
         <!-- 返回按钮 -->
         <view class="dairyDetailEditReturn">
-        <!-- 返回 -->
-        <uni-icons type="undo" @click="changeIsDairyDetailEdit" color="#DC8C6B" size="20"></uni-icons>
-        <!-- 提交mood -->
-        <view style="margin-left: 50rpx" @click="putMoodToday"><u-icon name="checkbox-mark" color="#DC8C6B" size="20"></u-icon></view>
-        <view style="margin-left: 350rpx" @click="selectMood">
-          <view v-if="todayMood==0">
-            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-mood" size="20"></uni-icons>
+          <!-- 返回 -->
+          <uni-icons
+            type="undo"
+            @click="changeIsDairyDetailEdit"
+            color="#DC8C6B"
+            size="20"
+          ></uni-icons>
+          <!-- 提交mood -->
+          <view style="margin-left: 50rpx" @click="putMoodToday"
+            ><u-icon name="checkbox-mark" color="#DC8C6B" size="20"></u-icon
+          ></view>
+          <view style="margin-left: 350rpx" @click="selectMood">
+            <view v-if="todayMood == 0">
+              <uni-icons
+                custom-prefix="iconfont"
+                color="#DC8C6B"
+                type="icon-mood"
+                size="20"
+              ></uni-icons>
+            </view>
+            <view v-else-if="todayMood == 1">
+              <uni-icons
+                custom-prefix="iconfont"
+                color="#DC8C6B"
+                type="icon-xinqingyiban-yuan"
+                size="18"
+              ></uni-icons>
+            </view>
+            <view v-else-if="todayMood == 2">
+              <uni-icons
+                custom-prefix="iconfont"
+                color="#DC8C6B"
+                type="icon-mood-bad"
+                size="20"
+              ></uni-icons>
+            </view>
           </view>
-          <view v-else-if="todayMood==1">
-            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-xinqingyiban-yuan" size="18"></uni-icons>
-          </view>
-          <view v-else-if="todayMood==2">
-            <uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-mood-bad" size="20"></uni-icons>
-          </view>  
-        </view>       
         </view>
         <view class="">
           <u--textarea
@@ -110,7 +155,7 @@
             placeholder="记录此刻心情......"
             border="none"
           ></u--textarea>
-    </view>
+        </view>
       </view>
     </view>
     <!-- to-do-list部分 -->
@@ -120,24 +165,39 @@
         <!-- 左侧框 -->
         <view class="mood-font">
           <u-icon name="calendar" color="#DC8C6B" size="25"></u-icon>
-          <view class="mood-word"> TO-DO-LIST </view>          
-        </view>        
+          <view class="mood-word"> TO-DO-LIST </view>
+        </view>
       </view>
-       <view class="dairyDetail">               
+      <view class="dairyDetail">
         <!-- 列表 -->
-        <view v-for="(item,i) in toDoList" :key="i">
-          <view class="mood-list">          
-          <view v-if="item.finish==0">            
-            <uni-icons type="circle" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons>        
-          </view>
-          <view v-else>
-            <uni-icons type="checkbox-filled" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons>            
-          </view>
-          <view :class="[item.finish==0? 'mood-word' : 'mood-word-finish']">{{ item.todo }}</view>     
+        <view v-for="(item, i) in toDoList" :key="i">
+          <view class="mood-list">
+            <view v-if="item.finish == 0">
+              <uni-icons
+                type="circle"
+                @click="changeFinish(item)"
+                color="#DC8C6B"
+                size="20"
+              ></uni-icons>
+            </view>
+            <view v-else>
+              <uni-icons
+                type="checkbox-filled"
+                @click="changeFinish(item)"
+                color="#DC8C6B"
+                size="20"
+              ></uni-icons>
+            </view>
+            <view
+              :class="[item.finish == 0 ? 'mood-word' : 'mood-word-finish']"
+              >{{ item.todo }}</view
+            >
           </view>
         </view>
-        <view class="dairyDetailEdit"><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon></view>
-        </view>
+        <view class="dairyDetailEdit"
+          ><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon
+        ></view>
+      </view>
     </view>
   </view>
 </template>
@@ -149,47 +209,47 @@ export default {
   data() {
     return {
       // 导航切换
-      isDairyDetailEdit:true,
+      isDairyDetailEdit: true,
       showMoodSelect: false,
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
       todayMood: 0,
-      todayMessage: '',
-      moodList:[
+      todayMessage: "",
+      moodList: [
         {
-            "id": 1,
-            "mood": 2,
-            "date": "2022/09/28 Wed"
+          id: 1,
+          mood: 2,
+          date: "2022/09/28 Wed",
         },
         {
-            "id": 2,
-            "mood": 1,
-            "date": "2022/09/29 Thr"
+          id: 2,
+          mood: 1,
+          date: "2022/09/29 Thr",
         },
         {
-            "id": 2,
-            "mood": 0,
-            "date": "2022/09/30 Fri"
-        }
-    ],
-    toDoList:[
-      {
-            "id": 1,
-            "finish": 0,
-            "todo": "打牌"
+          id: 2,
+          mood: 0,
+          date: "2022/09/30 Fri",
+        },
+      ],
+      toDoList: [
+        {
+          id: 1,
+          finish: 0,
+          todo: "打牌",
         },
         {
-            "id": 2,
-            "finish": 1,
-            "todo": "不能再堕落了"
+          id: 2,
+          finish: 1,
+          todo: "不能再堕落了",
         },
         {
-            "id": 2,
-            "finish": 0,
-            "todo": "还是打牌"
-        }
-    ]
+          id: 2,
+          finish: 0,
+          todo: "还是打牌",
+        },
+      ],
     };
   },
   computed: {
@@ -198,24 +258,24 @@ export default {
   components: {
     menuBoard,
   },
-  onPullDownRefresh(){
-	console.log("onPullDownRefresh");
+  onPullDownRefresh() {
+    console.log("onPullDownRefresh");
   },
   methods: {
     // 选择表情
-    selectMood(){
-      console.log('// 选择表情')
-      this.showMoodSelect=true;
+    selectMood() {
+      console.log("// 选择表情");
+      this.showMoodSelect = true;
     },
-    selectClick({name}){      
-      this.todayMood= name=='开心'?0:name=='一般'?1:2;
-      console.log('你选择的心情为',this.todayMood);            
+    selectClick({ name }) {
+      this.todayMood = name == "开心" ? 0 : name == "一般" ? 1 : 2;
+      console.log("你选择的心情为", this.todayMood);
       // console.log('index is:',name);
-      this.showMoodSelect=false
+      this.showMoodSelect = false;
     },
     // 导航切换
-    changeIsDairyDetailEdit(){
-      this.isDairyDetailEdit=!this.isDairyDetailEdit
+    changeIsDairyDetailEdit() {
+      this.isDairyDetailEdit = !this.isDairyDetailEdit;
     },
     // 修改个人信息页面
     changePersonal() {
@@ -230,20 +290,23 @@ export default {
       this.$refs.menuBoard.menuShow = true;
     },
     // 修改to-do-list完成状态
-    changeFinish(item){
-      console.log('item',item);
+    changeFinish(item) {
+      console.log("item", item);
       // 只是视觉上改，需要发请求改
-      item.finish=item.finish==0?1:0;
+      item.finish = item.finish == 0 ? 1 : 0;
     },
     // put今日mood
-    async putMoodToday(){
-      console.log('putMoodToday');
-      if (this.todayMessage=='') {
-        return uni.$showMsg('请填写今日心情')
+    async putMoodToday() {
+      console.log("putMoodToday");
+      if (this.todayMessage == "") {
+        return uni.$showMsg("请填写今日心情");
       }
-      const { data: res } = await uni.$http.put("/tdmd/mood",{message:this.todayMessage,mood:this.todayMood});
-      console.log('mood',res)
-    }
+      const { data: res } = await uni.$http.put("/tdmd/mood", {
+        message: this.todayMessage,
+        mood: this.todayMood,
+      });
+      console.log("mood", res);
+    },
   },
 };
 </script>
@@ -283,14 +346,14 @@ page {
   justify-content: space-around;
 }
 // 列表
-.mood-list{
+.mood-list {
   display: flex;
   justify-content: space-between;
   border-radius: 10rpx;
   width: 90%;
   margin: 20rpx 20rpx;
   padding: 8rpx 12rpx;
-  background-color: #F8E8E1;  
+  background-color: #f8e8e1;
 }
 .person {
   display: flex;
@@ -311,7 +374,7 @@ page {
   justify-content: space-around;
   align-items: center;
 }
-.toDoListHead{
+.toDoListHead {
   display: flex;
   justify-content: start;
   // 对齐
@@ -326,7 +389,7 @@ page {
 .mood-word {
   color: #dc8c6b;
   font-size: 35rpx;
-  font-weight: 300;  
+  font-weight: 300;
 }
 // 中划线效果
 .mood-word-finish {
@@ -343,16 +406,16 @@ page {
   // right: 6%;
   // top: 20rpx;
 }
-.dairyDetail {  
+.dairyDetail {
   margin: 5rpx 0;
   font-size: 30rpx;
 }
-.dairyDetailEdit{
+.dairyDetailEdit {
   position: absolute;
   bottom: 10%;
   right: 5%;
 }
-.dairyDetailEditReturn{
+.dairyDetailEditReturn {
   display: flex;
   position: absolute;
   bottom: 10%;

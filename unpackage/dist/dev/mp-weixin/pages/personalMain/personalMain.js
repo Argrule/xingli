@@ -313,6 +313,66 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 255));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
@@ -324,39 +384,39 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
       todayMood: 0,
-      todayMessage: '',
+      todayMessage: "",
       moodList: [
       {
-        "id": 1,
-        "mood": 2,
-        "date": "2022/09/28 Wed" },
+        id: 1,
+        mood: 2,
+        date: "2022/09/28 Wed" },
 
       {
-        "id": 2,
-        "mood": 1,
-        "date": "2022/09/29 Thr" },
+        id: 2,
+        mood: 1,
+        date: "2022/09/29 Thr" },
 
       {
-        "id": 2,
-        "mood": 0,
-        "date": "2022/09/30 Fri" }],
+        id: 2,
+        mood: 0,
+        date: "2022/09/30 Fri" }],
 
 
       toDoList: [
       {
-        "id": 1,
-        "finish": 0,
-        "todo": "打牌" },
+        id: 1,
+        finish: 0,
+        todo: "打牌" },
 
       {
-        "id": 2,
-        "finish": 1,
-        "todo": "不能再堕落了" },
+        id: 2,
+        finish: 1,
+        todo: "不能再堕落了" },
 
       {
-        "id": 2,
-        "finish": 0,
-        "todo": "还是打牌" }] };
+        id: 2,
+        finish: 0,
+        todo: "还是打牌" }] };
 
 
 
@@ -373,12 +433,12 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
   methods: {
     // 选择表情
     selectMood: function selectMood() {
-      console.log('// 选择表情');
+      console.log("// 选择表情");
       this.showMoodSelect = true;
     },
     selectClick: function selectClick(_ref) {var name = _ref.name;
-      this.todayMood = name == '开心' ? 0 : name == '一般' ? 1 : 2;
-      console.log('你选择的心情为', this.todayMood);
+      this.todayMood = name == "开心" ? 0 : name == "一般" ? 1 : 2;
+      console.log("你选择的心情为", this.todayMood);
       // console.log('index is:',name);
       this.showMoodSelect = false;
     },
@@ -400,18 +460,21 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     },
     // 修改to-do-list完成状态
     changeFinish: function changeFinish(item) {
-      console.log('item', item);
+      console.log("item", item);
       // 只是视觉上改，需要发请求改
       item.finish = item.finish == 0 ? 1 : 0;
     },
     // put今日mood
     putMoodToday: function putMoodToday() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                console.log('putMoodToday');if (!(
-                _this.todayMessage == '')) {_context.next = 3;break;}return _context.abrupt("return",
-                uni.$showMsg('请填写今日心情'));case 3:_context.next = 5;return (
+                console.log("putMoodToday");if (!(
+                _this.todayMessage == "")) {_context.next = 3;break;}return _context.abrupt("return",
+                uni.$showMsg("请填写今日心情"));case 3:_context.next = 5;return (
 
-                  uni.$http.put("/tdmd/mood", { message: _this.todayMessage, mood: _this.todayMood }));case 5:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
-                console.log('mood', res);case 8:case "end":return _context.stop();}}}, _callee);}))();
+                  uni.$http.put("/tdmd/mood", {
+                    message: _this.todayMessage,
+                    mood: _this.todayMood }));case 5:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
+
+                console.log("mood", res);case 8:case "end":return _context.stop();}}}, _callee);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
