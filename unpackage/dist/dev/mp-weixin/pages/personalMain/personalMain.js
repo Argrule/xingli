@@ -406,17 +406,17 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       {
         id: 1,
         finish: 0,
-        todo: "打牌" },
+        todo: "测试" },
 
       {
         id: 2,
         finish: 1,
-        todo: "不能再堕落了" },
+        todo: "还是测试" },
 
       {
         id: 2,
         finish: 0,
-        todo: "还是打牌" }] };
+        todo: "还是测测测测试" }] };
 
 
 
