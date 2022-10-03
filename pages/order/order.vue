@@ -64,10 +64,10 @@
     <u-popup
       :show="docotorDetailDialog"
       mode="bottom"
-      :round="10"
+      round="10"
       @close="this.docotorDetailDialog = false"
     >
-      <view style="background-color: #ffceb7">        
+      <view style="background-color: #ffceb7">
         <view class="dialogBoder">
           <!-- 头像等 -->
           <view class="avatarAndOther">
@@ -85,14 +85,18 @@
                 </view>
                 <view class="ageFont"> {{ docotorDetail.age }}岁 </view>
               </view>
-              <view> 联系方式:{{ docotorDetail.communicate }} </view>
+              <view class="communicateFont">
+                联系方式:{{ docotorDetail.communicate }}
+              </view>
             </view>
           </view>
           <!-- 经验 -->
-          <view>{{ docotorDetail.exp }}</view>
+          <view class="descriptionWord">{{ docotorDetail.exp }}</view>
           <!-- 寄语 -->
-          <view>医生寄语:{{ docotorDetail.msg }}</view>
+          <view class="descriptionWord">医生寄语：{{ docotorDetail.msg }}</view>
         </view>
+        <!-- 预约按钮 -->
+        <button class="orderButton" @click="clickOrderButton">预约</button>
       </view>
     </u-popup>
   </view>
@@ -139,7 +143,7 @@ export default {
       // 医生信息
       docotorDetail: {
         id: 0,
-        name: "*磊",
+        name: "李某",
         communicate: "11451419198",
         exp: "java手写时长两年半",
         msg: "手写代码是为了让大家期末考试都能过，望周知",
@@ -167,6 +171,12 @@ export default {
       console.log("docotor detail is", res);
       this.docotorDetailDialog = true;
     },
+    // 点击预约按钮
+    clickOrderButton() {
+      console.log("clickOrderButton");
+      // 关闭弹窗
+      this.docotorDetailDialog = false;
+    },
   },
 };
 </script>
@@ -178,13 +188,14 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   background-color: #ffffff;
-  margin: 30rpx;
+  margin: 80rpx 40rpx;
   border-radius: 15rpx;
   padding: 10rpx;
-    // 头像等
-  .avatarAndOther{
+  // 头像等
+  .avatarAndOther {
     display: flex;
     justify-content: space-evenly;
+    margin: 40rpx 0;
   }
   // 姓名与年龄
   .docotorAndAge {
@@ -195,31 +206,54 @@ export default {
   }
   // 医生名字字体
   .docotorNameFont {
-    font-size: 36rpx;
+    font-size: 40rpx;
     font-weight: 600;
     margin: 10rpx 0 10rpx 0;
-    background-color: aqua;
+    // background-color: aqua;
   }
   // 年龄字体
   .ageFont {
-    background-color: #f6b4a6;
+    margin: 10rpx 20rpx;
+    font-size: 30rpx;
+    font-weight: 600;
+    // background-color: #f6b4a6;
   }
+  // 联系方式字体
+  .communicateFont {
+    font-size: 30rpx;
+    color: rgb(151, 180, 209);
+  }
+  // 描述字体
+  .descriptionWord {
+    font-size: 35rpx;
+    font-weight: 500;
+    margin: 20rpx 0;
+    padding: 0 10rpx;
+  }
+}
+// 预约按钮
+.orderButton {
+  width: 50%;
+  background-color: rgb(255, 133, 83);
+  color: #ffffff;
+  position: relative;
+  bottom: 40rpx;
 }
 // 头部
 .headPart {
   display: flex;
   position: relative;
   .title {
-  font-size: 36rpx;
-  font-weight: 600;
-  margin: 30rpx 0 10rpx 0;
-  border-left: 8rpx solid #f6b4a6;
-  padding-left: 20rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+    margin: 30rpx 0 10rpx 0;
+    border-left: 8rpx solid #f6b4a6;
+    padding-left: 20rpx;
   }
   .chatIcon {
-  margin: 30rpx 0 10rpx 0;
-  position: absolute;
-  right: 5%;
+    margin: 30rpx 0 10rpx 0;
+    position: absolute;
+    right: 5%;
   }
 }
 // 医生列表

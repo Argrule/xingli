@@ -3,13 +3,14 @@
   flex-direction: column;
   justify-content: space-evenly;
   background-color: #ffffff;
-  margin: 30rpx;
+  margin: 80rpx 40rpx;
   border-radius: 15rpx;
   padding: 10rpx;
 }
 .dialogBoder .avatarAndOther.data-v-127632e4 {
   display: flex;
   justify-content: space-evenly;
+  margin: 40rpx 0;
 }
 .dialogBoder .docotorAndAge.data-v-127632e4 {
   width: 100%;
@@ -17,13 +18,31 @@
   align-items: center;
 }
 .dialogBoder .docotorNameFont.data-v-127632e4 {
-  font-size: 36rpx;
+  font-size: 40rpx;
   font-weight: 600;
   margin: 10rpx 0 10rpx 0;
-  background-color: aqua;
 }
 .dialogBoder .ageFont.data-v-127632e4 {
-  background-color: #f6b4a6;
+  margin: 10rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.dialogBoder .communicateFont.data-v-127632e4 {
+  font-size: 30rpx;
+  color: #97b4d1;
+}
+.dialogBoder .descriptionWord.data-v-127632e4 {
+  font-size: 35rpx;
+  font-weight: 500;
+  margin: 20rpx 0;
+  padding: 0 10rpx;
+}
+.orderButton.data-v-127632e4 {
+  width: 50%;
+  background-color: #ff8553;
+  color: #ffffff;
+  position: relative;
+  bottom: 40rpx;
 }
 .headPart.data-v-127632e4 {
   display: flex;

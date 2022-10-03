@@ -272,6 +272,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -313,7 +317,7 @@ var _default =
       // 医生信息
       docotorDetail: {
         id: 0,
-        name: "*磊",
+        name: "李某",
         communicate: "11451419198",
         exp: "java手写时长两年半",
         msg: "手写代码是为了让大家期末考试都能过，望周知",
@@ -340,6 +344,12 @@ var _default =
 
                 console.log("docotor detail is", res);
                 _this.docotorDetailDialog = true;case 8:case "end":return _context.stop();}}}, _callee);}))();
+    },
+    // 点击预约按钮
+    clickOrderButton: function clickOrderButton() {
+      console.log("clickOrderButton");
+      // 关闭弹窗
+      this.docotorDetailDialog = false;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
