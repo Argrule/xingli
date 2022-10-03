@@ -37,7 +37,11 @@
               height="250rpx"
             ></u--image>
           </view>
-          <view class="bookContent">{{ item.introduce }}</view>
+          <!-- link中图片和标签失效，纯文字才能生效 -->
+          <uni-link :href="item.resourceUrl" showUnderLine="false">
+            {{item.introduce }}
+          <!-- <view class="bookContent">{{ item.introduce }}</view> -->
+          </uni-link>
         </view>              
       </view>
       <view class="title"> 网课推荐 </view>
