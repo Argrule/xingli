@@ -81,8 +81,9 @@
           ></u-icon>
         </view>
         <!-- 列表 -->
+        <scroll-view scroll-y="true" style="height: 270rpx;" scroll-top="0">
         <view v-for="(item, i) in moodList" :key="i">
-          <view class="mood-list">
+          <view class="mood-list">            
             <view class="mood-word">{{ item.date }}</view>
             <view v-if="item.mood == 0">
               <uni-icons
@@ -107,6 +108,7 @@
             </view>
           </view>
         </view>
+        </scroll-view>
       </view>
       <view v-else>
         <!-- 返回按钮 -->
@@ -170,6 +172,7 @@
       </view>
       <view class="dairyDetail">
         <!-- 列表 -->
+        <scroll-view scroll-y="true" style="height: 270rpx;" scroll-top="0">
         <view v-for="(item, i) in toDoList" :key="i">
           <view class="mood-list">
             <view v-if="item.finish == 0">
@@ -194,6 +197,7 @@
             >
           </view>
         </view>
+        </scroll-view>
         <view class="dairyDetailEdit"
           ><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon
         ></view>
