@@ -22,7 +22,7 @@
     <view class="content">
       <view class="person">
         <view class="avatar">
-          <u-avatar size="60" :src="this.avatarUrl" shape="circle"></u-avatar>
+          <u-avatar size="60" :src="avatarUrl" shape="circle"></u-avatar>
         </view>
         <view class="nickName">
           <view style="display: flex">

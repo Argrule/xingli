@@ -60,6 +60,22 @@
         </view>
       </view>
     </view>
+    <!-- 医生信息弹窗 -->
+    <u-popup
+      :show="docotorDetailDialog"
+      mode="bottom" 
+      :round="10"
+      @close="this.docotorDetailDialog=false"         
+    >
+      <view>        
+        <u-avatar
+          size="60"
+          :src="docotorDetail.avatarurl"
+          shape="circle"
+        ></u-avatar>
+        <text>人生若只如初见，何事秋风悲画扇</text>
+      </view>
+    </u-popup>
   </view>
 </template>
 
@@ -67,7 +83,10 @@
 export default {
   data() {
     return {
+      // 关键字搜索
       keyword: "",
+      // 医生信息弹窗
+      docotorDetailDialog: false,
       // 左列
       docotorList1: [
         {
@@ -98,6 +117,16 @@ export default {
           goodat: "校园关系",
         },
       ],
+      // 医生信息
+      docotorDetail: {
+        id: 0,
+        name: "*磊",
+        communicate: "11451419198",
+        exp: "java手写时长两年半",
+        msg: "手写代码是为了让大家期末考试都能过，望周知",
+        age:39,
+        avatarurl:'https://cdn.uviewui.com/uview/album/5.jpg'
+      },
     };
   },
   methods: {
@@ -111,11 +140,14 @@ export default {
       uni.navigateTo({ url: "/pages/order/docotorChat" });
     },
     // 弹窗医生简介
-    async clickDocotorDetail({id:myid}){
-      console.log('id is ',myid);
-      const {data:res} = await uni.$http.get('/advisory/doctor',{id:myid});
-      console.log('docotor detail is',res);
-    }
+    async clickDocotorDetail({ id: myid }) {
+      console.log("id is ", myid);
+      const { data: res } = await uni.$http.get("/advisory/doctor", {
+        id: myid,
+      });
+      console.log("docotor detail is", res);
+      this.docotorDetailDialog=true;
+    },    
   },
 };
 </script>

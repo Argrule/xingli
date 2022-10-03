@@ -108,6 +108,9 @@ try {
     },
     uAvatar: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 230))
+    },
+    uPopup: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 332))
     }
   }
 } catch (e) {
@@ -131,6 +134,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      this.docotorDetailDialog = false
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -229,11 +237,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      // 关键字搜索
       keyword: "",
+      // 医生信息弹窗
+      docotorDetailDialog: false,
       // 左列
       docotorList1: [
       {
@@ -261,8 +288,18 @@ var _default =
         id: 4,
         name: "小熊猫",
         avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
-        goodat: "校园关系" }] };
+        goodat: "校园关系" }],
 
+
+      // 医生信息
+      docotorDetail: {
+        id: 0,
+        name: "*磊",
+        communicate: "11451419198",
+        exp: "java手写时长两年半",
+        msg: "手写代码是为了让大家期末考试都能过，望周知",
+        age: 39,
+        avatarurl: 'https://cdn.uviewui.com/uview/album/5.jpg' } };
 
 
   },
@@ -277,10 +314,13 @@ var _default =
       uni.navigateTo({ url: "/pages/order/docotorChat" });
     },
     // 弹窗医生简介
-    clickDocotorDetail: function clickDocotorDetail(_ref) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var myid, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:myid = _ref.id;
-                console.log('id is ', myid);_context.next = 4;return (
-                  uni.$http.get('/advisory/doctor', { id: myid }));case 4:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
-                console.log('docotor detail is', res);case 7:case "end":return _context.stop();}}}, _callee);}))();
+    clickDocotorDetail: function clickDocotorDetail(_ref) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var myid, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:myid = _ref.id;
+                console.log("id is ", myid);_context.next = 4;return (
+                  uni.$http.get("/advisory/doctor", {
+                    id: myid }));case 4:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+
+                console.log("docotor detail is", res);
+                _this.docotorDetailDialog = true;case 8:case "end":return _context.stop();}}}, _callee);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
