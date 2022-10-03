@@ -130,6 +130,7 @@ export default {
   position: relative;
   top: -30%;
   left: 20rpx;
+  margin-right: 30rpx;
 }
 .functionOptions{
 	margin-top: -70rpx;

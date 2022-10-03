@@ -22,6 +22,7 @@
   position: relative;
   top: -30%;
   left: 20rpx;
+  margin-right: 30rpx;
 }
 .functionOptions.data-v-92bb8f34 {
   margin-top: -70rpx;
