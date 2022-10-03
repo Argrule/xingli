@@ -63,17 +63,36 @@
     <!-- 医生信息弹窗 -->
     <u-popup
       :show="docotorDetailDialog"
-      mode="bottom" 
+      mode="bottom"
       :round="10"
-      @close="this.docotorDetailDialog=false"         
+      @close="this.docotorDetailDialog = false"
     >
-      <view>        
-        <u-avatar
-          size="60"
-          :src="docotorDetail.avatarurl"
-          shape="circle"
-        ></u-avatar>
-        <text>人生若只如初见，何事秋风悲画扇</text>
+      <view style="background-color: #ffceb7">        
+        <view class="dialogBoder">
+          <!-- 头像等 -->
+          <view class="avatarAndOther">
+            <u-avatar
+              size="60"
+              :src="docotorDetail.avatarUrl"
+              shape="circle"
+            ></u-avatar>
+            <view
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <view class="docotorAndAge">
+                <view class="docotorNameFont">
+                  {{ docotorDetail.name }}
+                </view>
+                <view class="ageFont"> {{ docotorDetail.age }}岁 </view>
+              </view>
+              <view> 联系方式:{{ docotorDetail.communicate }} </view>
+            </view>
+          </view>
+          <!-- 经验 -->
+          <view>{{ docotorDetail.exp }}</view>
+          <!-- 寄语 -->
+          <view>医生寄语:{{ docotorDetail.msg }}</view>
+        </view>
       </view>
     </u-popup>
   </view>
@@ -124,8 +143,8 @@ export default {
         communicate: "11451419198",
         exp: "java手写时长两年半",
         msg: "手写代码是为了让大家期末考试都能过，望周知",
-        age:39,
-        avatarurl:'https://cdn.uviewui.com/uview/album/5.jpg'
+        age: 39,
+        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
       },
     };
   },
@@ -146,29 +165,64 @@ export default {
         id: myid,
       });
       console.log("docotor detail is", res);
-      this.docotorDetailDialog=true;
-    },    
+      this.docotorDetailDialog = true;
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
+// 弹窗外层布局
+.dialogBoder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  margin: 30rpx;
+  border-radius: 15rpx;
+  padding: 10rpx;
+    // 头像等
+  .avatarAndOther{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  // 姓名与年龄
+  .docotorAndAge {
+    width: 100%;
+    display: flex;
+    // justify-content: start;
+    align-items: center;
+  }
+  // 医生名字字体
+  .docotorNameFont {
+    font-size: 36rpx;
+    font-weight: 600;
+    margin: 10rpx 0 10rpx 0;
+    background-color: aqua;
+  }
+  // 年龄字体
+  .ageFont {
+    background-color: #f6b4a6;
+  }
+}
+// 头部
 .headPart {
   display: flex;
   position: relative;
-}
-.title {
+  .title {
   font-size: 36rpx;
   font-weight: 600;
   margin: 30rpx 0 10rpx 0;
   border-left: 8rpx solid #f6b4a6;
   padding-left: 20rpx;
-}
-.chatIcon {
+  }
+  .chatIcon {
   margin: 30rpx 0 10rpx 0;
   position: absolute;
   right: 5%;
+  }
 }
+// 医生列表
 .TextLeft {
   background-color: #ffffff;
   margin: 30rpx 0;

@@ -253,6 +253,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -299,7 +318,7 @@ var _default =
         exp: "java手写时长两年半",
         msg: "手写代码是为了让大家期末考试都能过，望周知",
         age: 39,
-        avatarurl: 'https://cdn.uviewui.com/uview/album/5.jpg' } };
+        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg" } };
 
 
   },
