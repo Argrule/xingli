@@ -440,11 +440,13 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
   },
   methods: {
     getMoodListPage: function getMoodListPage() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$get, pageResult;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  uni.$http.get('/tdmd/moodPages'));case 2:_yield$uni$$http$get = _context.sent;pageResult = _yield$uni$$http$get.data;
+                  uni.$http.get("/tdmd/moodPages"));case 2:_yield$uni$$http$get = _context.sent;pageResult = _yield$uni$$http$get.data;
                 console.log("pageResult", pageResult);case 5:case "end":return _context.stop();}}}, _callee);}))();
     },
     getMoodListDetail: function getMoodListDetail() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, moodListResult;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
-                  uni.$http.get('/tdmd/moods?page=1'));case 2:_yield$uni$$http$get2 = _context2.sent;moodListResult = _yield$uni$$http$get2.data;
+                  uni.$http.get(
+                  "/tdmd/moods?page=1"));case 2:_yield$uni$$http$get2 = _context2.sent;moodListResult = _yield$uni$$http$get2.data;
+
                 console.log("pageResult", moodListResult);
                 _this.moodList = moodListResult.data;case 6:case "end":return _context2.stop();}}}, _callee2);}))();
     },

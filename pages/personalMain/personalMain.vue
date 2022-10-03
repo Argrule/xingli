@@ -81,33 +81,33 @@
           ></u-icon>
         </view>
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx;" scroll-top="0">
-        <view v-for="(item, i) in moodList" :key="i">
-          <view class="mood-list">            
-            <view class="mood-word">{{ item.date }}</view>
-            <view v-if="item.mood == 0">
-              <uni-icons
-                custom-prefix="iconfont"
-                type="icon-mood"
-                size="20"
-              ></uni-icons>
-            </view>
-            <view v-else-if="item.mood == 1">
-              <uni-icons
-                custom-prefix="iconfont"
-                type="icon-xinqingyiban-yuan"
-                size="18"
-              ></uni-icons>
-            </view>
-            <view v-else-if="item.mood == 2">
-              <uni-icons
-                custom-prefix="iconfont"
-                type="icon-mood-bad"
-                size="20"
-              ></uni-icons>
+        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0">
+          <view v-for="(item, i) in moodList" :key="i">
+            <view class="mood-list">
+              <view class="mood-word">{{ item.date }}</view>
+              <view v-if="item.mood == 0">
+                <uni-icons
+                  custom-prefix="iconfont"
+                  type="icon-mood"
+                  size="20"
+                ></uni-icons>
+              </view>
+              <view v-else-if="item.mood == 1">
+                <uni-icons
+                  custom-prefix="iconfont"
+                  type="icon-xinqingyiban-yuan"
+                  size="18"
+                ></uni-icons>
+              </view>
+              <view v-else-if="item.mood == 2">
+                <uni-icons
+                  custom-prefix="iconfont"
+                  type="icon-mood-bad"
+                  size="20"
+                ></uni-icons>
+              </view>
             </view>
           </view>
-        </view>
         </scroll-view>
       </view>
       <view v-else>
@@ -172,31 +172,31 @@
       </view>
       <view class="dairyDetail">
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx;" scroll-top="0">
-        <view v-for="(item, i) in toDoList" :key="i">
-          <view class="mood-list">
-            <view v-if="item.finish == 0">
-              <uni-icons
-                type="circle"
-                @click="changeFinish(item)"
-                color="#DC8C6B"
-                size="20"
-              ></uni-icons>
+        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0">
+          <view v-for="(item, i) in toDoList" :key="i">
+            <view class="mood-list">
+              <view v-if="item.finish == 0">
+                <uni-icons
+                  type="circle"
+                  @click="changeFinish(item)"
+                  color="#DC8C6B"
+                  size="20"
+                ></uni-icons>
+              </view>
+              <view v-else>
+                <uni-icons
+                  type="checkbox-filled"
+                  @click="changeFinish(item)"
+                  color="#DC8C6B"
+                  size="20"
+                ></uni-icons>
+              </view>
+              <view
+                :class="[item.finish == 0 ? 'mood-word' : 'mood-word-finish']"
+                >{{ item.todo }}</view
+              >
             </view>
-            <view v-else>
-              <uni-icons
-                type="checkbox-filled"
-                @click="changeFinish(item)"
-                color="#DC8C6B"
-                size="20"
-              ></uni-icons>
-            </view>
-            <view
-              :class="[item.finish == 0 ? 'mood-word' : 'mood-word-finish']"
-              >{{ item.todo }}</view
-            >
           </view>
-        </view>
         </scroll-view>
         <view class="dairyDetailEdit"
           ><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon
@@ -265,19 +265,21 @@ export default {
   onPullDownRefresh() {
     console.log("onPullDownRefresh");
   },
-  created(){
+  created() {
     this.getMoodListPage();
     this.getMoodListDetail();
-  }, 
+  },
   methods: {
-    async getMoodListPage(){
-      const {data:pageResult} = await uni.$http.get('/tdmd/moodPages');
-      console.log("pageResult",pageResult);
+    async getMoodListPage() {
+      const { data: pageResult } = await uni.$http.get("/tdmd/moodPages");
+      console.log("pageResult", pageResult);
     },
-    async getMoodListDetail(){
-      const {data:moodListResult} = await uni.$http.get('/tdmd/moods?page=1');
-      console.log("pageResult",moodListResult);
-      this.moodList=moodListResult.data
+    async getMoodListDetail() {
+      const { data: moodListResult } = await uni.$http.get(
+        "/tdmd/moods?page=1"
+      );
+      console.log("pageResult", moodListResult);
+      this.moodList = moodListResult.data;
     },
     // 选择表情
     selectMood() {
