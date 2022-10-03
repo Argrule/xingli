@@ -54,10 +54,10 @@
         <view class="dateTime">{{ dateTime }}</view>
       </view>
       <!-- dairy内容 -->
-      <view class="dairyDetail">
+      <view class="dairyDetail" v-if="isDairyDetailEdit">
         <!-- 编辑图标 -->
         <view class="dairyDetailEdit">
-          <u-icon name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon>
+          <u-icon @click="changeIsDairyDetailEdit" name="edit-pen-fill" color="#DC8C6B" size="28"></u-icon>
         </view>
         <!-- 列表 -->
         <view v-for="(item,i) in moodList" :key="i">
@@ -74,6 +74,23 @@
           </view>
           </view>          
         </view>        
+      </view>
+      <view v-else>
+        <!-- 返回按钮 -->
+        <view class="dairyDetailEditReturn">
+        <!-- 返回 -->
+        <uni-icons type="undo" @click="changeIsDairyDetailEdit" color="#DC8C6B" size="20"></uni-icons>
+        <!-- 提交mood -->
+        <view style="margin-left: 50rpx" @click="putMoodToday"><u-icon name="checkbox-mark" color="#DC8C6B" size="20"></u-icon></view>
+        <view style="margin-left: 350rpx" @click="putMoodToda"><uni-icons custom-prefix="iconfont" color="#DC8C6B" type="icon-xinqingyiban-yuan" size="20"></uni-icons></view>       
+        </view>
+        <view class="">
+          <u--textarea
+            v-model="todayMessage"
+            placeholder="记录此刻心情......"
+            border="none"
+          ></u--textarea>
+    </view>
       </view>
     </view>
     <!-- to-do-list部分 -->
@@ -94,7 +111,7 @@
             <uni-icons type="circle" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons>        
           </view>
           <view v-else>
-            <uni-icons type="checkbox-filled" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons> 
+            <uni-icons type="checkbox-filled" @click="changeFinish(item)" color="#DC8C6B" size="20"></uni-icons>            
           </view>
           <view :class="[item.finish==0? 'mood-word' : 'mood-word-finish']">{{ item.todo }}</view>     
           </view>
@@ -111,9 +128,13 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
+      // 导航切换
+      isDairyDetailEdit:true,
       // dairy
       dateTime: "2022/9/22 Sunday",
       dateContent: "今天非常开心，因为不用大筛",
+      todayMood: 0,
+      todayMessage: '',
       moodList:[
         {
             "id": 1,
@@ -160,6 +181,10 @@ export default {
 	console.log("onPullDownRefresh");
   },
   methods: {
+    // 导航切换
+    changeIsDairyDetailEdit(){
+      this.isDairyDetailEdit=!this.isDairyDetailEdit
+    },
     changePersonal() {
       console.log("changePersonal");
       uni.navigateTo({
@@ -176,6 +201,15 @@ export default {
       // 只是视觉上改，需要发请求改
       item.finish=item.finish==0?1:0;
     },
+    // put今日mood
+    async putMoodToday(){
+      console.log('putMoodToday');
+      if (this.todayMessage=='') {
+        return uni.$showMsg('请填写今日心情')
+      }
+      const { data: res } = await uni.$http.put("/tdmd/mood",{message:this.todayMessage,mood:this.todayMood});
+      console.log('mood',res)
+    }
   },
 };
 </script>
@@ -283,6 +317,12 @@ page {
   position: absolute;
   bottom: 10%;
   right: 5%;
+}
+.dairyDetailEditReturn{
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
 }
 .to-do-list {
   // 子绝父相

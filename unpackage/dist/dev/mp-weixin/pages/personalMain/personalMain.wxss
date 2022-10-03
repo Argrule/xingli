@@ -91,6 +91,12 @@ page {
   bottom: 10%;
   right: 5%;
 }
+.dairyDetailEditReturn {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
 .to-do-list {
   position: relative;
   font-size: 30rpx;
