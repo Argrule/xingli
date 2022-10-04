@@ -20078,7 +20078,138 @@ platform;exports.default = _default;
 /* 232 */,
 /* 233 */,
 /* 234 */,
-/* 235 */
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */
+/*!*********************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/openType.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    openType: String },
+
+  methods: {
+    onGetUserInfo: function onGetUserInfo(event) {
+      this.$emit('getuserinfo', event.detail);
+    },
+    onContact: function onContact(event) {
+      this.$emit('contact', event.detail);
+    },
+    onGetPhoneNumber: function onGetPhoneNumber(event) {
+      this.$emit('getphonenumber', event.detail);
+    },
+    onError: function onError(event) {
+      this.$emit('error', event.detail);
+    },
+    onLaunchApp: function onLaunchApp(event) {
+      this.$emit('launchapp', event.detail);
+    },
+    onOpenSetting: function onOpenSetting(event) {
+      this.$emit('opensetting', event.detail);
+    } } };exports.default = _default;
+
+/***/ }),
+/* 244 */
+/*!*******************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/button.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    lang: String,
+    sessionFrom: String,
+    sendMessageTitle: String,
+    sendMessagePath: String,
+    sendMessageImg: String,
+    showMessageCard: Boolean,
+    appParameter: String,
+    formType: String,
+    openType: String } };exports.default = _default;
+
+/***/ }),
+/* 245 */
+/*!*********************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 操作菜单是否展示 （默认false）
+    show: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.show },
+
+    // 标题
+    title: {
+      type: String,
+      default: uni.$u.props.actionSheet.title },
+
+    // 选项上方的描述信息
+    description: {
+      type: String,
+      default: uni.$u.props.actionSheet.description },
+
+    // 数据
+    actions: {
+      type: Array,
+      default: uni.$u.props.actionSheet.actions },
+
+    // 取消按钮的文字，不为空时显示按钮
+    cancelText: {
+      type: String,
+      default: uni.$u.props.actionSheet.cancelText },
+
+    // 点击某个菜单项时是否关闭弹窗
+    closeOnClickAction: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.closeOnClickAction },
+
+    // 处理底部安全区（默认true）
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.safeAreaInsetBottom },
+
+    // 小程序的打开方式
+    openType: {
+      type: String,
+      default: uni.$u.props.actionSheet.openType },
+
+    // 点击遮罩是否允许关闭 (默认true)
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.closeOnClickOverlay },
+
+    // 圆角值
+    round: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.actionSheet.round } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-avatar/props.js ***!
   \***************************************************************************/
@@ -20164,14 +20295,14 @@ platform;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*************************************************************************/
@@ -20394,7 +20525,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 244 */
+/* 262 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*************************************************************************/
@@ -20491,14 +20622,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */
 /*!*****************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \*****************************************************************************/
@@ -21674,21 +21805,148 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "unicode_decimal": 58929 }] };exports.default = _default;
 
 /***/ }),
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */
+/*!*****************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-textarea/props.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 输入框的内容
+    value: {
+      type: [String, Number],
+      default: uni.$u.props.textarea.value },
+
+    // 输入框为空时占位符
+    placeholder: {
+      type: [String, Number],
+      default: uni.$u.props.textarea.placeholder },
+
+    // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
+    placeholderClass: {
+      type: String,
+      default: uni.$u.props.input.placeholderClass },
+
+    // 指定placeholder的样式
+    placeholderStyle: {
+      type: [String, Object],
+      default: uni.$u.props.input.placeholderStyle },
+
+    // 输入框高度
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.textarea.height },
+
+    // 设置键盘右下角按钮的文字，仅微信小程序，App-vue和H5有效
+    confirmType: {
+      type: String,
+      default: uni.$u.props.textarea.confirmType },
+
+    // 是否禁用
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.textarea.disabled },
+
+    // 是否显示统计字数
+    count: {
+      type: Boolean,
+      default: uni.$u.props.textarea.count },
+
+    // 是否自动获取焦点，nvue不支持，H5取决于浏览器的实现
+    focus: {
+      type: Boolean,
+      default: uni.$u.props.textarea.focus },
+
+    // 是否自动增加高度
+    autoHeight: {
+      type: Boolean,
+      default: uni.$u.props.textarea.autoHeight },
+
+    // 如果textarea是在一个position:fixed的区域，需要显示指定属性fixed为true
+    fixed: {
+      type: Boolean,
+      default: uni.$u.props.textarea.fixed },
+
+    // 指定光标与键盘的距离
+    cursorSpacing: {
+      type: Number,
+      default: uni.$u.props.textarea.cursorSpacing },
+
+    // 指定focus时的光标位置
+    cursor: {
+      type: [String, Number],
+      default: uni.$u.props.textarea.cursor },
+
+    // 是否显示键盘上方带有”完成“按钮那一栏，
+    showConfirmBar: {
+      type: Boolean,
+      default: uni.$u.props.textarea.showConfirmBar },
+
+    // 光标起始位置，自动聚焦时有效，需与selection-end搭配使用
+    selectionStart: {
+      type: Number,
+      default: uni.$u.props.textarea.selectionStart },
+
+    // 光标结束位置，自动聚焦时有效，需与selection-start搭配使用
+    selectionEnd: {
+      type: Number,
+      default: uni.$u.props.textarea.selectionEnd },
+
+    // 键盘弹起时，是否自动上推页面
+    adjustPosition: {
+      type: Boolean,
+      default: uni.$u.props.textarea.adjustPosition },
+
+    // 是否去掉 iOS 下的默认内边距，只微信小程序有效
+    disableDefaultPadding: {
+      type: Boolean,
+      default: uni.$u.props.textarea.disableDefaultPadding },
+
+    // focus时，点击页面的时候不收起键盘，只微信小程序有效
+    holdKeyboard: {
+      type: Boolean,
+      default: uni.$u.props.textarea.holdKeyboard },
+
+    // 最大输入长度，设置为 -1 的时候不限制最大长度
+    maxlength: {
+      type: [String, Number],
+      default: uni.$u.props.textarea.maxlength },
+
+    // 边框类型，surround-四周边框，bottom-底部边框
+    border: {
+      type: String,
+      default: uni.$u.props.textarea.border },
+
+    // 用于处理或者过滤输入框内容的方法
+    formatter: {
+      type: [Function, null],
+      default: uni.$u.props.textarea.formatter } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-sticky/props.js ***!
   \***************************************************************************/
@@ -21736,14 +21994,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */
 /*!***************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-search/props.js ***!
   \***************************************************************************/
@@ -21869,14 +22127,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-tabs/props.js ***!
   \*************************************************************************/
@@ -21948,14 +22206,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 284 */,
-/* 285 */,
-/* 286 */,
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */
 /*!**************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-image/props.js ***!
   \**************************************************************************/
@@ -22047,24 +22305,132 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */
+/*!**************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-popup/props.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否展示弹窗
+    show: {
+      type: Boolean,
+      default: uni.$u.props.popup.show },
+
+    // 是否显示遮罩
+    overlay: {
+      type: Boolean,
+      default: uni.$u.props.popup.overlay },
+
+    // 弹出的方向，可选值为 top bottom right left center
+    mode: {
+      type: String,
+      default: uni.$u.props.popup.mode },
+
+    // 动画时长，单位ms
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.popup.duration },
+
+    // 是否显示关闭图标
+    closeable: {
+      type: Boolean,
+      default: uni.$u.props.popup.closeable },
+
+    // 自定义遮罩的样式
+    overlayStyle: {
+      type: [Object, String],
+      default: uni.$u.props.popup.overlayStyle },
+
+    // 点击遮罩是否关闭弹窗
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: uni.$u.props.popup.closeOnClickOverlay },
+
+    // 层级
+    zIndex: {
+      type: [String, Number],
+      default: uni.$u.props.popup.zIndex },
+
+    // 是否为iPhoneX留出底部安全距离
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: uni.$u.props.popup.safeAreaInsetBottom },
+
+    // 是否留出顶部安全距离（状态栏高度）
+    safeAreaInsetTop: {
+      type: Boolean,
+      default: uni.$u.props.popup.safeAreaInsetTop },
+
+    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
+    closeIconPos: {
+      type: String,
+      default: uni.$u.props.popup.closeIconPos },
+
+    // 是否显示圆角
+    round: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.popup.round },
+
+    // mode=center，也即中部弹出时，是否使用缩放模式
+    zoom: {
+      type: Boolean,
+      default: uni.$u.props.popup.zoom },
+
+    // 弹窗背景色，设置为transparent可去除白色背景
+    bgColor: {
+      type: String,
+      default: uni.$u.props.popup.bgColor },
+
+    // 遮罩的透明度，0-1之间
+    overlayOpacity: {
+      type: [Number, String],
+      default: uni.$u.props.popup.overlayOpacity } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-cell-group/props.js ***!
   \*******************************************************************************/
@@ -22086,14 +22452,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-cell/props.js ***!
   \*************************************************************************/
@@ -22211,141 +22577,175 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */
-/*!*****************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-textarea/props.js ***!
-  \*****************************************************************************/
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */
+/*!*************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-line/props.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   props: {
-    // 输入框的内容
-    value: {
-      type: [String, Number],
-      default: uni.$u.props.textarea.value },
-
-    // 输入框为空时占位符
-    placeholder: {
-      type: [String, Number],
-      default: uni.$u.props.textarea.placeholder },
-
-    // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
-    placeholderClass: {
+    color: {
       type: String,
-      default: uni.$u.props.input.placeholderClass },
+      default: uni.$u.props.line.color },
 
-    // 指定placeholder的样式
-    placeholderStyle: {
-      type: [String, Object],
-      default: uni.$u.props.input.placeholderStyle },
-
-    // 输入框高度
-    height: {
+    // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
+    length: {
       type: [String, Number],
-      default: uni.$u.props.textarea.height },
+      default: uni.$u.props.line.length },
 
-    // 设置键盘右下角按钮的文字，仅微信小程序，App-vue和H5有效
-    confirmType: {
+    // 线条方向，col-竖向，row-横向
+    direction: {
       type: String,
-      default: uni.$u.props.textarea.confirmType },
+      default: uni.$u.props.line.direction },
 
-    // 是否禁用
-    disabled: {
+    // 是否显示细边框
+    hairline: {
       type: Boolean,
-      default: uni.$u.props.textarea.disabled },
+      default: uni.$u.props.line.hairline },
 
-    // 是否显示统计字数
-    count: {
-      type: Boolean,
-      default: uni.$u.props.textarea.count },
-
-    // 是否自动获取焦点，nvue不支持，H5取决于浏览器的实现
-    focus: {
-      type: Boolean,
-      default: uni.$u.props.textarea.focus },
-
-    // 是否自动增加高度
-    autoHeight: {
-      type: Boolean,
-      default: uni.$u.props.textarea.autoHeight },
-
-    // 如果textarea是在一个position:fixed的区域，需要显示指定属性fixed为true
-    fixed: {
-      type: Boolean,
-      default: uni.$u.props.textarea.fixed },
-
-    // 指定光标与键盘的距离
-    cursorSpacing: {
-      type: Number,
-      default: uni.$u.props.textarea.cursorSpacing },
-
-    // 指定focus时的光标位置
-    cursor: {
+    // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
+    margin: {
       type: [String, Number],
-      default: uni.$u.props.textarea.cursor },
+      default: uni.$u.props.line.margin },
 
-    // 是否显示键盘上方带有”完成“按钮那一栏，
-    showConfirmBar: {
+    // 是否虚线，true-虚线，false-实线
+    dashed: {
       type: Boolean,
-      default: uni.$u.props.textarea.showConfirmBar },
-
-    // 光标起始位置，自动聚焦时有效，需与selection-end搭配使用
-    selectionStart: {
-      type: Number,
-      default: uni.$u.props.textarea.selectionStart },
-
-    // 光标结束位置，自动聚焦时有效，需与selection-start搭配使用
-    selectionEnd: {
-      type: Number,
-      default: uni.$u.props.textarea.selectionEnd },
-
-    // 键盘弹起时，是否自动上推页面
-    adjustPosition: {
-      type: Boolean,
-      default: uni.$u.props.textarea.adjustPosition },
-
-    // 是否去掉 iOS 下的默认内边距，只微信小程序有效
-    disableDefaultPadding: {
-      type: Boolean,
-      default: uni.$u.props.textarea.disableDefaultPadding },
-
-    // focus时，点击页面的时候不收起键盘，只微信小程序有效
-    holdKeyboard: {
-      type: Boolean,
-      default: uni.$u.props.textarea.holdKeyboard },
-
-    // 最大输入长度，设置为 -1 的时候不限制最大长度
-    maxlength: {
-      type: [String, Number],
-      default: uni.$u.props.textarea.maxlength },
-
-    // 边框类型，surround-四周边框，bottom-底部边框
-    border: {
-      type: String,
-      default: uni.$u.props.textarea.border },
-
-    // 用于处理或者过滤输入框内容的方法
-    formatter: {
-      type: [Function, null],
-      default: uni.$u.props.textarea.formatter } } };exports.default = _default;
+      default: uni.$u.props.line.dashed } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */
+/*!*********************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.show },
+
+    // 颜色
+    color: {
+      type: String,
+      default: uni.$u.props.loadingIcon.color },
+
+    // 提示文字颜色
+    textColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.textColor },
+
+    // 文字和图标是否垂直排列
+    vertical: {
+      type: Boolean,
+      default: uni.$u.props.loadingIcon.vertical },
+
+    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
+    mode: {
+      type: String,
+      default: uni.$u.props.loadingIcon.mode },
+
+    // 图标大小，单位默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.size },
+
+    // 文字大小
+    textSize: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.textSize },
+
+    // 文字内容
+    text: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.text },
+
+    // 动画模式
+    timingFunction: {
+      type: String,
+      default: uni.$u.props.loadingIcon.timingFunction },
+
+    // 动画执行周期时间
+    duration: {
+      type: [String, Number],
+      default: uni.$u.props.loadingIcon.duration },
+
+    // mode=circle时的暗边颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */
+/*!************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-gap/props.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 背景颜色（默认transparent）
+    bgColor: {
+      type: String,
+      default: uni.$u.props.gap.bgColor },
+
+    // 分割槽高度，单位px（默认30）
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.gap.height },
+
+    // 与上一个组件的距离
+    marginTop: {
+      type: [String, Number],
+      default: uni.$u.props.gap.marginTop },
+
+    // 与下一个组件的距离
+    marginBottom: {
+      type: [String, Number],
+      default: uni.$u.props.gap.marginBottom } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/props.js ***!
   \*************************************************************************/
@@ -22463,106 +22863,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */
-/*!**************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-popup/props.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否展示弹窗
-    show: {
-      type: Boolean,
-      default: uni.$u.props.popup.show },
-
-    // 是否显示遮罩
-    overlay: {
-      type: Boolean,
-      default: uni.$u.props.popup.overlay },
-
-    // 弹出的方向，可选值为 top bottom right left center
-    mode: {
-      type: String,
-      default: uni.$u.props.popup.mode },
-
-    // 动画时长，单位ms
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.popup.duration },
-
-    // 是否显示关闭图标
-    closeable: {
-      type: Boolean,
-      default: uni.$u.props.popup.closeable },
-
-    // 自定义遮罩的样式
-    overlayStyle: {
-      type: [Object, String],
-      default: uni.$u.props.popup.overlayStyle },
-
-    // 点击遮罩是否关闭弹窗
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: uni.$u.props.popup.closeOnClickOverlay },
-
-    // 层级
-    zIndex: {
-      type: [String, Number],
-      default: uni.$u.props.popup.zIndex },
-
-    // 是否为iPhoneX留出底部安全距离
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: uni.$u.props.popup.safeAreaInsetBottom },
-
-    // 是否留出顶部安全距离（状态栏高度）
-    safeAreaInsetTop: {
-      type: Boolean,
-      default: uni.$u.props.popup.safeAreaInsetTop },
-
-    // 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角
-    closeIconPos: {
-      type: String,
-      default: uni.$u.props.popup.closeIconPos },
-
-    // 是否显示圆角
-    round: {
-      type: [Boolean, String, Number],
-      default: uni.$u.props.popup.round },
-
-    // mode=center，也即中部弹出时，是否使用缩放模式
-    zoom: {
-      type: Boolean,
-      default: uni.$u.props.popup.zoom },
-
-    // 弹窗背景色，设置为transparent可去除白色背景
-    bgColor: {
-      type: String,
-      default: uni.$u.props.popup.bgColor },
-
-    // 遮罩的透明度，0-1之间
-    overlayOpacity: {
-      type: [Number, String],
-      default: uni.$u.props.popup.overlayOpacity } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */
 /*!**************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-badge/props.js ***!
   \**************************************************************************/
@@ -22642,231 +22955,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */
-/*!*************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-line/props.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    color: {
-      type: String,
-      default: uni.$u.props.line.color },
-
-    // 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带px单位的值等
-    length: {
-      type: [String, Number],
-      default: uni.$u.props.line.length },
-
-    // 线条方向，col-竖向，row-横向
-    direction: {
-      type: String,
-      default: uni.$u.props.line.direction },
-
-    // 是否显示细边框
-    hairline: {
-      type: Boolean,
-      default: uni.$u.props.line.hairline },
-
-    // 线条与上下左右元素的间距，字符串形式，如"30px"、"20px 30px"
-    margin: {
-      type: [String, Number],
-      default: uni.$u.props.line.margin },
-
-    // 是否虚线，true-虚线，false-实线
-    dashed: {
-      type: Boolean,
-      default: uni.$u.props.line.dashed } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */
-/*!*************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/value.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  computed: {
-    // 经处理后需要显示的值
-    value: function value() {var
-
-      text =
-
-
-
-      this.text,mode = this.mode,format = this.format,href = this.href;
-      // 价格类型
-      if (mode === 'price') {
-        // 如果text不为金额进行提示
-        if (!/^\d+(\.\d+)?$/.test(text)) {
-          uni.$u.error('金额模式下，text参数需要为金额格式');
-        }
-        // 进行格式化，判断用户传入的format参数为正则，或者函数，如果没有传入format，则使用默认的金额格式化处理
-        if (uni.$u.test.func(format)) {
-          // 如果用户传入的是函数，使用函数格式化
-          return format(text);
-        }
-        // 如果format非正则，非函数，则使用默认的金额格式化方法进行操作
-        return uni.$u.priceFormat(text, 2);
-      }if (mode === 'date') {
-        // 判断是否合法的日期或者时间戳
-        !uni.$u.test.date(text) && uni.$u.error('日期模式下，text参数需要为日期或时间戳格式');
-        // 进行格式化，判断用户传入的format参数为正则，或者函数，如果没有传入format，则使用默认的格式化处理
-        if (uni.$u.test.func(format)) {
-          // 如果用户传入的是函数，使用函数格式化
-          return format(text);
-        }if (format) {
-          // 如果format非正则，非函数，则使用默认的时间格式化方法进行操作
-          return uni.$u.timeFormat(text, format);
-        }
-        // 如果没有设置format，则设置为默认的时间格式化形式
-        return uni.$u.timeFormat(text, 'yyyy-mm-dd');
-      }if (mode === 'phone') {
-        // 判断是否合法的手机号
-        // !uni.$u.test.mobile(text) && uni.$u.error('手机号模式下，text参数需要为手机号码格式')
-        if (uni.$u.test.func(format)) {
-          // 如果用户传入的是函数，使用函数格式化
-          return format(text);
-        }if (format === 'encrypt') {
-          // 如果format为encrypt，则将手机号进行星号加密处理
-          return "".concat(text.substr(0, 3), "****").concat(text.substr(7));
-        }
-        return text;
-      }if (mode === 'name') {
-        // 判断是否合法的字符粗
-        !(typeof text === 'string') && uni.$u.error('姓名模式下，text参数需要为字符串格式');
-        if (uni.$u.test.func(format)) {
-          // 如果用户传入的是函数，使用函数格式化
-          return format(text);
-        }if (format === 'encrypt') {
-          // 如果format为encrypt，则将姓名进行星号加密处理
-          return this.formatName(text);
-        }
-        return text;
-      }if (mode === 'link') {
-        // 判断是否合法的字符粗
-        !uni.$u.test.url(href) && uni.$u.error('超链接模式下，href参数需要为URL格式');
-        return text;
-      }
-      return text;
-    } },
-
-  methods: {
-    // 默认的姓名脱敏规则
-    formatName: function formatName(name) {
-      var value = '';
-      if (name.length === 2) {
-        value = name.substr(0, 1) + '*';
-      } else if (name.length > 2) {
-        var char = '';
-        for (var i = 0, len = name.length - 2; i < len; i++) {
-          char += '*';
-        }
-        value = name.substr(0, 1) + char + name.substr(-1, 1);
-      } else {
-        value = name;
-      }
-      return value;
-    } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 376 */
-/*!*******************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/button.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    lang: String,
-    sessionFrom: String,
-    sendMessageTitle: String,
-    sendMessagePath: String,
-    sendMessageImg: String,
-    showMessageCard: Boolean,
-    appParameter: String,
-    formType: String,
-    openType: String } };exports.default = _default;
-
-/***/ }),
-/* 377 */
-/*!*********************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/libs/mixin/openType.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    openType: String },
-
-  methods: {
-    onGetUserInfo: function onGetUserInfo(event) {
-      this.$emit('getuserinfo', event.detail);
-    },
-    onContact: function onContact(event) {
-      this.$emit('contact', event.detail);
-    },
-    onGetPhoneNumber: function onGetPhoneNumber(event) {
-      this.$emit('getphonenumber', event.detail);
-    },
-    onError: function onError(event) {
-      this.$emit('error', event.detail);
-    },
-    onLaunchApp: function onLaunchApp(event) {
-      this.$emit('launchapp', event.detail);
-    },
-    onOpenSetting: function onOpenSetting(event) {
-      this.$emit('opensetting', event.detail);
-    } } };exports.default = _default;
-
-/***/ }),
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */
 /*!****************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \****************************************************************************/
@@ -22898,14 +23001,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/props.js ***!
   \*******************************************************************************/
@@ -22937,7 +23040,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 394 */
+/* 432 */
 /*!************************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \************************************************************************************/
@@ -22948,7 +23051,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 42));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 395));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 433));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -23102,7 +23205,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 395 */
+/* 433 */
 /*!**************************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \**************************************************************************************/
@@ -23178,14 +23281,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */
 /*!*******************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \*******************************************************************************/
@@ -23201,14 +23304,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */
 /*!********************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \********************************************************************************/
@@ -23220,14 +23323,115 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   props: {} };exports.default = _default;
 
 /***/ }),
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */
+/*!*************************************************************************!*\
+  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-text/value.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  computed: {
+    // 经处理后需要显示的值
+    value: function value() {var
+
+      text =
+
+
+
+      this.text,mode = this.mode,format = this.format,href = this.href;
+      // 价格类型
+      if (mode === 'price') {
+        // 如果text不为金额进行提示
+        if (!/^\d+(\.\d+)?$/.test(text)) {
+          uni.$u.error('金额模式下，text参数需要为金额格式');
+        }
+        // 进行格式化，判断用户传入的format参数为正则，或者函数，如果没有传入format，则使用默认的金额格式化处理
+        if (uni.$u.test.func(format)) {
+          // 如果用户传入的是函数，使用函数格式化
+          return format(text);
+        }
+        // 如果format非正则，非函数，则使用默认的金额格式化方法进行操作
+        return uni.$u.priceFormat(text, 2);
+      }if (mode === 'date') {
+        // 判断是否合法的日期或者时间戳
+        !uni.$u.test.date(text) && uni.$u.error('日期模式下，text参数需要为日期或时间戳格式');
+        // 进行格式化，判断用户传入的format参数为正则，或者函数，如果没有传入format，则使用默认的格式化处理
+        if (uni.$u.test.func(format)) {
+          // 如果用户传入的是函数，使用函数格式化
+          return format(text);
+        }if (format) {
+          // 如果format非正则，非函数，则使用默认的时间格式化方法进行操作
+          return uni.$u.timeFormat(text, format);
+        }
+        // 如果没有设置format，则设置为默认的时间格式化形式
+        return uni.$u.timeFormat(text, 'yyyy-mm-dd');
+      }if (mode === 'phone') {
+        // 判断是否合法的手机号
+        // !uni.$u.test.mobile(text) && uni.$u.error('手机号模式下，text参数需要为手机号码格式')
+        if (uni.$u.test.func(format)) {
+          // 如果用户传入的是函数，使用函数格式化
+          return format(text);
+        }if (format === 'encrypt') {
+          // 如果format为encrypt，则将手机号进行星号加密处理
+          return "".concat(text.substr(0, 3), "****").concat(text.substr(7));
+        }
+        return text;
+      }if (mode === 'name') {
+        // 判断是否合法的字符粗
+        !(typeof text === 'string') && uni.$u.error('姓名模式下，text参数需要为字符串格式');
+        if (uni.$u.test.func(format)) {
+          // 如果用户传入的是函数，使用函数格式化
+          return format(text);
+        }if (format === 'encrypt') {
+          // 如果format为encrypt，则将姓名进行星号加密处理
+          return this.formatName(text);
+        }
+        return text;
+      }if (mode === 'link') {
+        // 判断是否合法的字符粗
+        !uni.$u.test.url(href) && uni.$u.error('超链接模式下，href参数需要为URL格式');
+        return text;
+      }
+      return text;
+    } },
+
+  methods: {
+    // 默认的姓名脱敏规则
+    formatName: function formatName(name) {
+      var value = '';
+      if (name.length === 2) {
+        value = name.substr(0, 1) + '*';
+      } else if (name.length > 2) {
+        var char = '';
+        for (var i = 0, len = name.length - 2; i < len; i++) {
+          char += '*';
+        }
+        value = name.substr(0, 1) + char + name.substr(-1, 1);
+      } else {
+        value = name;
+      }
+      return value;
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */
 /*!*************************************************************************!*\
   !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-link/props.js ***!
   \*************************************************************************/
@@ -23271,217 +23475,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     text: {
       type: String,
       default: uni.$u.props.link.text } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */,
-/* 453 */,
-/* 454 */,
-/* 455 */,
-/* 456 */
-/*!*********************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 操作菜单是否展示 （默认false）
-    show: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.show },
-
-    // 标题
-    title: {
-      type: String,
-      default: uni.$u.props.actionSheet.title },
-
-    // 选项上方的描述信息
-    description: {
-      type: String,
-      default: uni.$u.props.actionSheet.description },
-
-    // 数据
-    actions: {
-      type: Array,
-      default: uni.$u.props.actionSheet.actions },
-
-    // 取消按钮的文字，不为空时显示按钮
-    cancelText: {
-      type: String,
-      default: uni.$u.props.actionSheet.cancelText },
-
-    // 点击某个菜单项时是否关闭弹窗
-    closeOnClickAction: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.closeOnClickAction },
-
-    // 处理底部安全区（默认true）
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.safeAreaInsetBottom },
-
-    // 小程序的打开方式
-    openType: {
-      type: String,
-      default: uni.$u.props.actionSheet.openType },
-
-    // 点击遮罩是否允许关闭 (默认true)
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.closeOnClickOverlay },
-
-    // 圆角值
-    round: {
-      type: [Boolean, String, Number],
-      default: uni.$u.props.actionSheet.round } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */,
-/* 463 */,
-/* 464 */
-/*!*********************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.show },
-
-    // 颜色
-    color: {
-      type: String,
-      default: uni.$u.props.loadingIcon.color },
-
-    // 提示文字颜色
-    textColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.textColor },
-
-    // 文字和图标是否垂直排列
-    vertical: {
-      type: Boolean,
-      default: uni.$u.props.loadingIcon.vertical },
-
-    // 模式选择，circle-圆形，spinner-花朵形，semicircle-半圆形
-    mode: {
-      type: String,
-      default: uni.$u.props.loadingIcon.mode },
-
-    // 图标大小，单位默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.size },
-
-    // 文字大小
-    textSize: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.textSize },
-
-    // 文字内容
-    text: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.text },
-
-    // 动画模式
-    timingFunction: {
-      type: String,
-      default: uni.$u.props.loadingIcon.timingFunction },
-
-    // 动画执行周期时间
-    duration: {
-      type: [String, Number],
-      default: uni.$u.props.loadingIcon.duration },
-
-    // mode=circle时的暗边颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.loadingIcon.inactiveColor } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */,
-/* 470 */,
-/* 471 */,
-/* 472 */
-/*!************************************************************************!*\
-  !*** F:/huawu_c/xingli/uni_modules/uview-ui/components/u-gap/props.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 背景颜色（默认transparent）
-    bgColor: {
-      type: String,
-      default: uni.$u.props.gap.bgColor },
-
-    // 分割槽高度，单位px（默认30）
-    height: {
-      type: [String, Number],
-      default: uni.$u.props.gap.height },
-
-    // 与上一个组件的距离
-    marginTop: {
-      type: [String, Number],
-      default: uni.$u.props.gap.marginTop },
-
-    // 与下一个组件的距离
-    marginBottom: {
-      type: [String, Number],
-      default: uni.$u.props.gap.marginBottom } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })

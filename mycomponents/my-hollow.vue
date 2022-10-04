@@ -99,13 +99,13 @@ export default {
   width: 45%;
 }
 .TextLeft {
-  margin: 10rpx 0 10rpx;
+  margin: 30rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(242, 222, 215);
 }
 .TextRight {
-  margin: 10rpx 0 10rpx;
+  margin: 30rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(250, 224, 211);

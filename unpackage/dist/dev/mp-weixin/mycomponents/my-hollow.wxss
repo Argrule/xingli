@@ -39,13 +39,13 @@
   width: 45%;
 }
 .TextLeft.data-v-7b6c01b1 {
-  margin: 10rpx 0 10rpx;
+  margin: 30rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(242, 222, 215);
 }
 .TextRight.data-v-7b6c01b1 {
-  margin: 10rpx 0 10rpx;
+  margin: 30rpx 0 10rpx;
   border-radius: 15rpx;
   padding: 25rpx 15rpx;
   background-color: rgb(250, 224, 211);
