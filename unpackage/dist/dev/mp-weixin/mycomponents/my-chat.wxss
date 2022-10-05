@@ -35,15 +35,20 @@
   display: flex;
   width: 100%;
 }
+.messageList .messageAndAvatar0 .msgContent.data-v-063cae1a {
+  background-color: #ffffff;
+}
 .messageList .messageAndAvatar1.data-v-063cae1a {
   display: flex;
   width: 100%;
   flex-direction: row-reverse;
 }
+.messageList .messageAndAvatar1 .msgContent.data-v-063cae1a {
+  background-color: rgb(249, 212, 194);
+}
 .messageList .msgContent.data-v-063cae1a {
-  margin: 15rpx;
-  padding: 15rpx;
+  margin: 20rpx;
+  padding: 20rpx;
   max-width: 60%;
-  background-color: cadetblue;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
 }

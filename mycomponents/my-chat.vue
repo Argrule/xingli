@@ -2,9 +2,9 @@
   <view>
     <view style="height: 50rpx; background-color: red"></view>
     <!-- 滚动窗 -->
-	<scroll-view
+    <scroll-view
       scroll-y="true"
-      style="height: 300px"
+      style="height: 300px; background-color: #f6f6f6"
       @scrolltolower="scrolltolowerUpdate"
       scroll-with-animation="true"
     >
@@ -17,7 +17,7 @@
               item.left === 1 ? 'messageAndAvatar0' : 'messageAndAvatar1',
             ]"
           >
-		  <!-- 头像 -->
+            <!-- 头像 -->
             <view>
               <u-avatar
                 size="45"
@@ -25,7 +25,7 @@
                 shape="circle"
               ></u-avatar>
             </view>
-			<!-- message -->
+            <!-- message -->
             <view class="msgContent"> 消息文字:{{ item.messageText }} </view>
           </view>
         </view>
@@ -87,27 +87,32 @@ export default {
 .messageList {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   margin: 20rpx 20rpx;
   // 消息左靠
   .messageAndAvatar0 {
     display: flex;
-    width: 100%;    
+    width: 100%;
+    .msgContent {
+      background-color: #ffffff;
+    }
   }
   // 消息右靠
   .messageAndAvatar1 {
     display: flex;
     width: 100%;
     flex-direction: row-reverse;
+    .msgContent {
+      background-color: rgb(249, 212, 194);
+    }
   }
   // 消息文字
   .msgContent {
-    margin: 15rpx;
-    padding: 15rpx;
-	// 最大宽度
-	max-width: 60%;
-    background-color: cadetblue;
-    border-radius: 10rpx;
+    margin: 20rpx;
+    padding: 20rpx;
+    // 最大宽度
+    max-width: 60%;
+    border-radius: 20rpx;
   }
 }
 </style>
