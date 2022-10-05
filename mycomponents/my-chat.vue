@@ -1,16 +1,16 @@
 <template>
-  <view>
-    <view style="height: 50rpx; background-color: red"></view>
+  <view style="height: 100%; display: flex; flex-direction: column">
     <!-- 滚动窗 -->
     <scroll-view
       scroll-y="true"
-      style="height: 300px; background-color: #f6f6f6"
+      class="scroll_view"
+      :style="{ height: chatViewHeight }"
       @scrolltolower="scrolltolowerUpdate"
       scroll-with-animation="true"
     >
       <view v-for="(item, i) in messageList" :key="i">
         <view class="messageList">
-          <view> left:{{ item.left }} </view>
+          <view> time:{{ item.left }} </view>
           <!-- 左右消息 -->
           <view
             :class="[
@@ -26,12 +26,17 @@
               ></u-avatar>
             </view>
             <!-- message -->
-            <view class="msgContent"> 消息文字:{{ item.messageText }} </view>
+            <view class="msgContent"> {{ item.messageText }} </view>
           </view>
         </view>
       </view>
     </scroll-view>
-    <view style="height: 50rpx; background-color: red"></view>
+    <view class="inputMessage" style="display: flex; align-items: center">
+      <uni-icons type="mic" size="30"></uni-icons>
+      <input class="inputFont" v-model="theMessage" @change="inputMessage" />
+      <uni-icons type="color" size="30"></uni-icons>
+      <uni-icons type="plus" size="30"></uni-icons>
+    </view>
   </view>
 </template>
 
@@ -39,6 +44,8 @@
 export default {
   data() {
     return {
+      // 高度
+      chatViewHeight: "900rpx",
       // left,1左0右
       messageList: [
         {
@@ -72,17 +79,44 @@ export default {
           messageText: "我是小诉",
         },
       ],
+      // 发送的信息
+      theMessage: "",
     };
   },
+  onload() {
+    uni.onKeyboardHeightChange((res) => {
+      console.log(res.height);
+    });
+  },
   methods: {
+    // 滚动到底部
     scrolltolowerUpdate(e) {
       console.log("scrolltolowerUpdate is", e);
+    },
+    // 发送消息
+    inputMessage() {
+      console.log("发送消息:", this.theMessage);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.scroll_view {
+  background-color: #f6f6f6;
+}
+// 发送消息
+.inputMessage {
+  display: block;
+  margin: 15rpx 10rpx;
+  padding: 15rpx;
+  .inputFont {
+    width: 100%;
+    padding: 15rpx;
+    border-radius: 35rpx;
+    background-color: #e5e5e5;
+  }
+}
 // 聊天信息项
 .messageList {
   display: flex;

@@ -81,6 +81,9 @@ try {
   components = {
     uAvatar: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 248))
+    },
+    uniIcons: function() {
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 265))
     }
   }
 } catch (e) {
@@ -137,7 +140,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
 //
 //
 //
@@ -178,6 +186,8 @@ var _default =
 {
   data: function data() {
     return {
+      // 高度
+      chatViewHeight: "900rpx",
       // left,1左0右
       messageList: [
       {
@@ -208,15 +218,28 @@ var _default =
       {
         left: 1,
         avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉" }] };
+        messageText: "我是小诉" }],
 
 
+      // 发送的信息
+      theMessage: "" };
 
   },
+  onload: function onload() {
+    uni.onKeyboardHeightChange(function (res) {
+      console.log(res.height);
+    });
+  },
   methods: {
+    // 滚动到底部
     scrolltolowerUpdate: function scrolltolowerUpdate(e) {
       console.log("scrolltolowerUpdate is", e);
+    },
+    // 发送消息
+    inputMessage: function inputMessage() {
+      console.log("发送消息:", this.theMessage);
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

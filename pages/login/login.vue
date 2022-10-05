@@ -5,7 +5,7 @@
 		<!-- 名字，待修改 -->
 		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">login</view></view>
 		<view class="title">
-		<input class="uni-input" maxlength="10" type="number" v-model="userName" placeholder="请输入用户名" />		
+		<input class="uni-input" maxlength="10" type="text" v-model="userName" placeholder="请输入用户名" />		
 		<input class="uni-input" maxlength="15" type="password" v-model="passWord" placeholder="请输入密码" />
 		<view class="displayBox">
 			<view class="fontBody" @click="forgetPass">忘记密码</view>

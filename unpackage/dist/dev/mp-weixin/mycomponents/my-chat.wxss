@@ -25,6 +25,20 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 引入uview */
+.scroll_view.data-v-063cae1a {
+  background-color: #f6f6f6;
+}
+.inputMessage.data-v-063cae1a {
+  display: block;
+  margin: 15rpx 10rpx;
+  padding: 15rpx;
+}
+.inputMessage .inputFont.data-v-063cae1a {
+  width: 100%;
+  padding: 15rpx;
+  border-radius: 35rpx;
+  background-color: #e5e5e5;
+}
 .messageList.data-v-063cae1a {
   display: flex;
   flex-direction: column;
