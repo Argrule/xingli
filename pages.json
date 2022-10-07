@@ -29,7 +29,7 @@
             "style": {
                 "navigationBarTitleText": "",
                 "navigationBarBackgroundColor": "#00ff00",
-                "enablePullDownRefresh": false,
+                "enablePullDownRefresh": true,
                 "navigationStyle": "custom"
             }
         },
@@ -37,16 +37,16 @@
             "path": "pages/home/home",
             "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom"
+                "enablePullDownRefresh": false
+                // "navigationStyle": "custom"
             }
         },
         {
             "path": "pages/order/order",
             "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom"
+                "enablePullDownRefresh": false
+                // "navigationStyle": "custom"
             }
         },
         {
@@ -54,6 +54,7 @@
             "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": true,
+				// 以下是取消顶部栏的操作
                 "navigationStyle": "custom",
                 "app-plus": {
                     "pullToRefresh": {
@@ -61,13 +62,13 @@
                         "color": "#ff3333",
                         "style": "default",
                         "contentdown": {
-                            "caption": "下拉可刷新自定义文本"
+                            "caption": "下拉可刷新"
                         },
                         "contentover": {
-                            "caption": "释放可刷新自定义文本"
+                            "caption": "释放可刷新"
                         },
                         "contentrefresh": {
-                            "caption": "正在刷新自定义文本"
+                            "caption": "正在刷新"
                         }
                     }
                 }

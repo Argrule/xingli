@@ -10,7 +10,7 @@
     >
       <view v-for="(item, i) in messageList" :key="i">
         <view class="messageList">
-          <view> time:{{ item.left }} </view>
+          <view> {{ item.time }} </view>
           <!-- 左右消息 -->
           <view
             :class="[
@@ -45,48 +45,58 @@ export default {
   data() {
     return {
       // 高度
-      chatViewHeight: "900rpx",
+      chatViewHeight: `${100 + 100}rpx`,
       // left,1左0右
       messageList: [
         {
           left: 0,
           avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-          messageText: "你好，我好无聊",
+          messageText: "我好无聊",
+          time: "昨天",
         },
         {
           left: 1,
           avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
           messageText: "我是小诉，来陪你聊天了",
+          time: "昨天",
         },
         {
           left: 0,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉，来陪你聊天了",
+          avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+          messageText: "在吗？在吗？",
+          time: "8:10",
         },
         {
           left: 1,
           avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
           messageText: "我是小诉，来陪你聊天了",
+          time: "8:10",
         },
         {
           left: 0,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+          avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
           messageText: "小诉",
+          time: "10:10",
         },
         {
           left: 1,
           avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
           messageText: "我是小诉",
+          time: "10:10",
         },
       ],
       // 发送的信息
       theMessage: "",
     };
   },
-  onload() {
-    uni.onKeyboardHeightChange((res) => {
-      console.log(res.height);
-    });
+  created() {
+    console.log("onload");
+    let screenHeight = uni.getSystemInfoSync();
+    console.log("the system info is", screenHeight);
+    this.chatViewHeight = `${
+      screenHeight.windowHeight * 2 - screenHeight.statusBarHeight * 2 - 50
+    }rpx`;
+    // console.log(this.chatViewHeight);
   },
   methods: {
     // 滚动到底部
@@ -96,6 +106,7 @@ export default {
     // 发送消息
     inputMessage() {
       console.log("发送消息:", this.theMessage);
+      // this.chatViewHeight=`calc(100vh-200rpx)`;
     },
   },
 };
@@ -107,12 +118,15 @@ export default {
 }
 // 发送消息
 .inputMessage {
-  display: block;
-  margin: 15rpx 10rpx;
-  padding: 15rpx;
+  // display: block;
+  height: 100rpx;
+  // margin: 15rpx 10rpx;
+  padding: 0 15rpx;
   .inputFont {
     width: 100%;
-    padding: 15rpx;
+    display: block;
+    font-size: 30rpx;
+    padding: 5rpx 20rpx;
     border-radius: 35rpx;
     background-color: #e5e5e5;
   }

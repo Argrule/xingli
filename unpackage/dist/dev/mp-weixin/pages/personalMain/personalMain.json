@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#00ff00",
-  "enablePullDownRefresh": false,
+  "enablePullDownRefresh": true,
   "navigationStyle": "custom",
   "usingComponents": {
     "u-action-sheet": "/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet",

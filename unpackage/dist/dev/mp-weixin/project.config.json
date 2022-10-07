@@ -12,7 +12,6 @@
     "newFeature": true,
     "bigPackageSizeSupport": true,
     "coverView": true,
-    "compileHotReLoad": true,
     "lazyloadPlaceholderEnable": false,
     "preloadBackgroundData": false,
     "autoAudits": false,
@@ -23,20 +22,19 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "disableUseStrict": false,
-    "ignoreUploadUnusedFiles": true,
+    "useStaticServer": true,
+    "showES6CompileOption": false,
     "checkInvalidKey": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "useStaticServer": true,
-    "showES6CompileOption": false,
+    "disableUseStrict": false,
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.26.0",
+  "libVersion": "2.26.1",
   "appid": "touristappid",
   "projectname": "xingli",
   "condition": {

@@ -29,13 +29,14 @@
   background-color: #f6f6f6;
 }
 .inputMessage.data-v-063cae1a {
-  display: block;
-  margin: 15rpx 10rpx;
-  padding: 15rpx;
+  height: 100rpx;
+  padding: 0 15rpx;
 }
 .inputMessage .inputFont.data-v-063cae1a {
   width: 100%;
-  padding: 15rpx;
+  display: block;
+  font-size: 30rpx;
+  padding: 5rpx 20rpx;
   border-radius: 35rpx;
   background-color: #e5e5e5;
 }

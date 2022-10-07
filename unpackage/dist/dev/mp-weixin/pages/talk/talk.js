@@ -158,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myChat = function myChat() {__webpack_require__.e(/*! require.ensure | mycomponents/my-chat */ "mycomponents/my-chat").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-chat.vue */ 338));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myHollow = function myHollow() {Promise.all(/*! require.ensure | mycomponents/my-hollow */[__webpack_require__.e("common/vendor"), __webpack_require__.e("mycomponents/my-hollow")]).then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-hollow.vue */ 343));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myChat = function myChat() {__webpack_require__.e(/*! require.ensure | mycomponents/my-chat */ "mycomponents/my-chat").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-chat.vue */ 338));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myHollow = function myHollow() {Promise.all(/*! require.ensure | mycomponents/my-hollow */[__webpack_require__.e("common/vendor"), __webpack_require__.e("mycomponents/my-hollow")]).then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-hollow.vue */ 345));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
