@@ -236,7 +236,7 @@ var _default =
     var screenHeight = uni.getSystemInfoSync();
     console.log("the system info is", screenHeight);
     this.chatViewHeight = "".concat(
-    screenHeight.windowHeight * 2 - screenHeight.statusBarHeight * 2 - 50, "rpx");
+    screenHeight.windowHeight * 2 - 100 - screenHeight.windowHeight * 0.21, "rpx");
 
     // console.log(this.chatViewHeight);
   },
