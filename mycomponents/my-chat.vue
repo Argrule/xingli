@@ -31,7 +31,7 @@
         </view>
       </view>
     </scroll-view>
-    <view class="inputMessage" style="display: flex; align-items: center">
+    <view class="inputMessage">
       <uni-icons type="mic" size="30"></uni-icons>
       <input class="inputFont" v-model="theMessage" @change="inputMessage" />
       <uni-icons type="color" size="30"></uni-icons>
@@ -94,9 +94,9 @@ export default {
     let screenHeight = uni.getSystemInfoSync();
     console.log("the system info is", screenHeight);
     this.chatViewHeight = `${
-      screenHeight.windowHeight * 2 - 100 - screenHeight.windowHeight*0.21
+      screenHeight.windowHeight * 2 - 88  
     }rpx`;
-    // console.log(this.chatViewHeight);
+    console.log(this.chatViewHeight);
   },
   methods: {
     // 滚动到底部
@@ -106,7 +106,8 @@ export default {
     // 发送消息
     inputMessage() {
       console.log("发送消息:", this.theMessage);
-      // this.chatViewHeight=`calc(100vh-200rpx)`;
+      // this.chatViewHeight=`calc(80vh)`;
+      // console.log(this.chatViewHeight)
     },
   },
 };
@@ -117,13 +118,21 @@ export default {
   background-color: #f6f6f6;
 }
 // 发送消息
-.inputMessage {
-  // display: block;
-  height: 100rpx;
-  // margin: 15rpx 10rpx;
-  padding: 0 15rpx;
+.inputMessage {  
+  // 去掉高度之后，高度为screenHeight-88莫名奇妙就没有空白了
+  // height: 100rpx;
+  // background-color: aqua;
+  display: flex; 
+  justify-content: space-evenly;
+  align-items: center;  
+  // 必须fixed，手机留有一段空白，sticky和absolute都很怪
+  position: fixed;
+  bottom: 0;
+  // 必须100%，由于fixed定位
+  width: 100%;
+  padding: 10rpx 15rpx;
   .inputFont {
-    width: 100%;
+    // width: 100%;
     display: block;
     font-size: 30rpx;
     padding: 5rpx 20rpx;

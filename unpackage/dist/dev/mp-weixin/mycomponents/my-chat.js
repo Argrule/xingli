@@ -236,9 +236,9 @@ var _default =
     var screenHeight = uni.getSystemInfoSync();
     console.log("the system info is", screenHeight);
     this.chatViewHeight = "".concat(
-    screenHeight.windowHeight * 2 - 100 - screenHeight.windowHeight * 0.21, "rpx");
+    screenHeight.windowHeight * 2 - 88, "rpx");
 
-    // console.log(this.chatViewHeight);
+    console.log(this.chatViewHeight);
   },
   methods: {
     // 滚动到底部
@@ -248,7 +248,8 @@ var _default =
     // 发送消息
     inputMessage: function inputMessage() {
       console.log("发送消息:", this.theMessage);
-      // this.chatViewHeight=`calc(100vh-200rpx)`;
+      // this.chatViewHeight=`calc(80vh)`;
+      // console.log(this.chatViewHeight)
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

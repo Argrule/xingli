@@ -9430,11 +9430,7 @@ var render = function() {
       ),
       _c(
         "uni-view",
-        {
-          staticClass: _vm._$g(9, "sc"),
-          staticStyle: { display: "flex", "align-items": "center" },
-          attrs: { _i: 9 }
-        },
+        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
         [
           _c("uni-icons", { attrs: { _i: 10 } }),
           _c("v-uni-input", {
@@ -9551,7 +9547,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n/* 引入uview */\n.scroll_view[data-v-063cae1a] {\n  background-color: #f6f6f6;\n}\n.inputMessage[data-v-063cae1a] {\n  height: 100rpx;\n  padding: 0 15rpx;\n}\n.inputMessage .inputFont[data-v-063cae1a] {\n  width: 100%;\n  display: block;\n  font-size: 30rpx;\n  padding: 5rpx 20rpx;\n  border-radius: 35rpx;\n  background-color: #e5e5e5;\n}\n.messageList[data-v-063cae1a] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 20rpx 20rpx;\n}\n.messageList .messageAndAvatar0[data-v-063cae1a] {\n  display: flex;\n  width: 100%;\n}\n.messageList .messageAndAvatar0 .msgContent[data-v-063cae1a] {\n  background-color: #ffffff;\n}\n.messageList .messageAndAvatar1[data-v-063cae1a] {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n}\n.messageList .messageAndAvatar1 .msgContent[data-v-063cae1a] {\n  background-color: rgb(249, 212, 194);\n}\n.messageList .msgContent[data-v-063cae1a] {\n  margin: 20rpx;\n  padding: 20rpx;\n  max-width: 60%;\n  border-radius: 20rpx;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n/* 引入uview */\n.scroll_view[data-v-063cae1a] {\n  background-color: #f6f6f6;\n}\n.inputMessage[data-v-063cae1a] {\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  padding: 10rpx 15rpx;\n}\n.inputMessage .inputFont[data-v-063cae1a] {\n  display: block;\n  font-size: 30rpx;\n  padding: 5rpx 20rpx;\n  border-radius: 35rpx;\n  background-color: #e5e5e5;\n}\n.messageList[data-v-063cae1a] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 20rpx 20rpx;\n}\n.messageList .messageAndAvatar0[data-v-063cae1a] {\n  display: flex;\n  width: 100%;\n}\n.messageList .messageAndAvatar0 .msgContent[data-v-063cae1a] {\n  background-color: #ffffff;\n}\n.messageList .messageAndAvatar1[data-v-063cae1a] {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n}\n.messageList .messageAndAvatar1 .msgContent[data-v-063cae1a] {\n  background-color: rgb(249, 212, 194);\n}\n.messageList .msgContent[data-v-063cae1a] {\n  margin: 20rpx;\n  padding: 20rpx;\n  max-width: 60%;\n  border-radius: 20rpx;\n}", ""]);
 // Exports
 module.exports = exports;
 
