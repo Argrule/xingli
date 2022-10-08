@@ -26,7 +26,14 @@
           <view class="bottomWord">你的心理健康指数打多少分</view>
         </view>
         <!-- 右边按钮 -->
-        <button class="testButton" size="mini">进入测试</button>
+        <view class="testButton"
+          ><uni-link
+            href="https://www.16personalities.com/profile"
+            color="black"
+            showUnderLine="false"
+            >进入测试</uni-link
+          ></view
+        >
       </view>
       <view class="testListItem">
         <!-- 左边文字 -->
@@ -94,6 +101,9 @@ export default {
   .testButton {
     background-color: #f6b4a6;
     border: none;
+    padding: 20rpx 30rpx;
+    font-size: 36rpx;
+    font-weight: 500;
     margin: 10rpx 10rpx;
     border-radius: 15rpx;
   }
