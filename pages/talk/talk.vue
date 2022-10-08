@@ -22,6 +22,7 @@
     <view v-else>
       <my-hollow />
     </view>
+    <!-- <button @click="gotoTest">myTest</button> -->
   </view>
 </template>
 
@@ -38,7 +39,15 @@ export default {
     myChat,
     myHollow,
   },
+  // 下拉刷新
+  onPullDownRefresh(){
+    console.log('onPullDownRefresh in talk.vue');
+  },
   methods: {
+    // 测试
+    gotoTest(){
+      uni.navigateTo({ url: '/pages/waterfall/waterfall' })
+    },
     // 改导航
     changeFunctionOptions(item) {
       console.log("hh", item);
