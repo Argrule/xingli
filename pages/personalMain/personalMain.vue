@@ -212,6 +212,10 @@ import { mapState,mapMutations } from "vuex";
 export default {
   data() {
     return {
+      // 节流阀
+      isloading:false,
+      diaryThePage:1,//当前页
+      // toDoThePage:1,//当前页
       // 导航切换
       isDairyDetailEdit: true,
       showMoodSelect: false,
@@ -221,21 +225,21 @@ export default {
       todayMood: 0,
       todayMessage: "",
       moodList: [
-        {
-          id: 1,
-          mood: 2,
-          date: "2022/09/28 test",
-        },
-        {
-          id: 2,
-          mood: 1,
-          date: "2022/09/29 test",
-        },
-        {
-          id: 2,
-          mood: 0,
-          date: "2022/09/30 test",
-        },
+        // {
+        //   id: 1,
+        //   mood: 2,
+        //   date: "2022/09/28 test",
+        // },
+        // {
+        //   id: 2,
+        //   mood: 1,
+        //   date: "2022/09/29 test",
+        // },
+        // {
+        //   id: 2,
+        //   mood: 0,
+        //   date: "2022/09/30 test",
+        // },
       ],
       toDoList: [
         {
@@ -272,28 +276,57 @@ export default {
   },
   methods: {
     ...mapMutations('m_page',['changeDiaryPage','changeTodoPage']),
+    // 获取diary页数
     async getMoodListPage() {
       const { data: pageResult } = await uni.$http.get("/tdmd/moodPages");
-      console.log("pageResult", pageResult);
+      // console.log("pageResult", pageResult);
+      this.changeDiaryPage(pageResult.data.pages);
     },
-    async getMoodListDetail() {
-      const { data: moodListResult } = await uni.$http.get(
-        "/tdmd/moods?page=1"
-      );
-      console.log("pageResult", moodListResult);
-      this.moodList = moodListResult.data;
+    // 获取diary list第一页
+    async getMoodListDetail(thePage=1) {
+      const { data: moodListResult } = await uni.$http.get("/tdmd/moods",{page:thePage});
+      // console.log("pageResult", moodListResult);
+      this.moodList = [...this.moodList,...moodListResult.data] ;
+      console.log('moodlist',this.moodList);
     },
     // 触底请求第二页diary
-    scrolltolowerUpdateDiary(){
+    async scrolltolowerUpdateDiary(){
+      if (this.isloading) return;
+      this.isloading=true;
+      // 请求下一页
+      await this.getInsertDiary();
+      // 解除节流
+      setTimeout(()=>{        
+        this.isloading=false;
+      },3000)
+    },
+    getInsertDiary(){
       console.log('scrolltolowerUpdateDiary');
       console.log(this.diaryPage);
-      this.changeDiaryPage(2);
-      console.log(this.diaryPage);
+      // 页数超过了，不请求
+      if (this.diaryThePage>=this.diaryPage) return;      
+      this.getMoodListDetail(++this.diaryThePage);      
+      console.log(this.diaryPage);   
     },
+    // getInsertTodo(){
+    //   console.log('getInsertTodo');
+    //   console.log(this.diaryPage);
+    //   // 页数超过了，不请求
+    //   if (this.diaryThePage>=this.diaryPage) return;      
+    //   this.getMoodListDetail(++this.diaryThePage);      
+    //   console.log(this.diaryPage);   
+    // },
     // 触底请求第二页todoList
-    scrolltolowerUpdateTodoList(){
-      console.log('scrolltolowerUpdateTodoList');
-    },
+    // async scrolltolowerUpdateTodoList(){
+    //   if (this.isloading) return;
+    //   this.isloading=true;
+    //   // 请求下一页
+    //   await this.getInsertTodo();
+    //   // 解除节流
+    //   setTimeout(()=>{        
+    //     this.isloading=false;
+    //   },3000)      
+    // },
     // 选择表情
     selectMood() {
       console.log("// 选择表情");
