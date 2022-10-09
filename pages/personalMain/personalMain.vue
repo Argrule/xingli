@@ -208,7 +208,7 @@
 
 <script>
 import menuBoard from "../menu/menu.vue";
-import { mapState } from "vuex";
+import { mapState,mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -258,6 +258,7 @@ export default {
   },
   computed: {
     ...mapState("m_personal", ["userId", "userName", "gender", "avatarUrl"]),
+    ...mapState("m_page", ["diaryPage","todoPage"]),
   },
   components: {
     menuBoard,
@@ -270,6 +271,7 @@ export default {
     this.getMoodListDetail();
   },
   methods: {
+    ...mapMutations('m_page',['changeDiaryPage','changeTodoPage']),
     async getMoodListPage() {
       const { data: pageResult } = await uni.$http.get("/tdmd/moodPages");
       console.log("pageResult", pageResult);
@@ -284,6 +286,9 @@ export default {
     // 触底请求第二页diary
     scrolltolowerUpdateDiary(){
       console.log('scrolltolowerUpdateDiary');
+      console.log(this.diaryPage);
+      this.changeDiaryPage(2);
+      console.log(this.diaryPage);
     },
     // 触底请求第二页todoList
     scrolltolowerUpdateTodoList(){
