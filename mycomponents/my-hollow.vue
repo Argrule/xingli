@@ -33,6 +33,7 @@
           <view> {{ item.story }} </view>
         </view>
       </view>
+      <view style="height:100rpx"></view>
     </view>
   </view>
 </template>
@@ -45,28 +46,45 @@ export default {
       // hollowsList1: [{ story: "story1" }, { story: "story2" }],
       // 右列
       // hollowsList2: [{ story: "story3" }, { story: "story4" }],
-
-      // hollow数据项列表
-      hollowsList: [],
+      
+      hollowsList: [],// hollow数据列表
+      hollowThePage:1,// 当前页      
+      hollowPage:1,// 页数
+      // 节流阀
+      isloading:false,
     };
   },
   // 获取树洞
   async beforeCreate() {
     const { data: res } = await uni.$http.get("/hollow/pages");
     console.log("pages.res is :", res);
+    this.hollowPage=res.data.pages;
     // 调用get函数
     this.getHollows();
   },
   methods: {
-    scrolltolowerUpdateHollow(){
-      console.log('//scrolltolowerUpdateHollow');
+    // 触底上拉获取数据
+    async scrolltolowerUpdateHollow(){
+      console.log('// 触底上拉获取数据');
+      if (this.isloading) return;
+      this.isloading=true;
+      // 页数超过了，不请求
+      if (this.hollowThePage>=this.hollowPage){
+        console.log('还能触发页数超了');
+        return this.isloading=false;
+      }
+      await this.getHollows(++this.hollowThePage);
+      // 解除节流
+      setTimeout(()=>{        
+        this.isloading=false;
+      },3000)
     },
     // 下拉刷新
     async myOnPullDownRefresh() {
-      console.log("下拉刷新");
-      const { data: res } = await uni.$http.get("/hollow/pages");
-      console.log("pages.res is :", res);
+      console.log("下拉刷新");    
       // 调用get函数
+      this.hollowsList=[];
+      this.hollowThePage=1;
       this.getHollows();
     },
     // 发请求获取hollows
@@ -84,8 +102,8 @@ export default {
     //   });
     // },
     // 发请求获取hollows
-    async getHollows() {
-      const { data: res } = await uni.$http.get("/hollow/hollows?page=1");
+    async getHollows(thePage=1) {
+      const { data: res } = await uni.$http.get("/hollow/hollows",{page:thePage});
       this.hollowsList = [...this.hollowsList, ...res.data];
       console.log("hollows", this.hollowsList);
     },

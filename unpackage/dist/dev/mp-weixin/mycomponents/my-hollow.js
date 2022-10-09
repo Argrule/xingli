@@ -176,6 +176,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -185,28 +186,45 @@ var _default =
       // 右列
       // hollowsList2: [{ story: "story3" }, { story: "story4" }],
 
-      // hollow数据项列表
-      hollowsList: [] };
+      hollowsList: [], // hollow数据列表
+      hollowThePage: 1, // 当前页      
+      hollowPage: 1, // 页数
+      // 节流阀
+      isloading: false };
 
   },
   // 获取树洞
   beforeCreate: function beforeCreate() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                 uni.$http.get("/hollow/pages"));case 2:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
               console.log("pages.res is :", res);
+              _this.hollowPage = res.data.pages;
               // 调用get函数
-              _this.getHollows();case 6:case "end":return _context.stop();}}}, _callee);}))();
+              _this.getHollows();case 7:case "end":return _context.stop();}}}, _callee);}))();
   },
   methods: {
-    scrolltolowerUpdateHollow: function scrolltolowerUpdateHollow() {
-      console.log('//scrolltolowerUpdateHollow');
+    // 触底上拉获取数据
+    scrolltolowerUpdateHollow: function scrolltolowerUpdateHollow() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                console.log('// 触底上拉获取数据');if (!
+                _this2.isloading) {_context2.next = 3;break;}return _context2.abrupt("return");case 3:
+                _this2.isloading = true;
+                // 页数超过了，不请求
+                if (!(_this2.hollowThePage >= _this2.hollowPage)) {_context2.next = 7;break;}
+                console.log('还能触发页数超了');return _context2.abrupt("return",
+                _this2.isloading = false);case 7:_context2.next = 9;return (
+
+                  _this2.getHollows(++_this2.hollowThePage));case 9:
+                // 解除节流
+                setTimeout(function () {
+                  _this2.isloading = false;
+                }, 3000);case 10:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 下拉刷新
-    myOnPullDownRefresh: function myOnPullDownRefresh() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                console.log("下拉刷新");_context2.next = 3;return (
-                  uni.$http.get("/hollow/pages"));case 3:_yield$uni$$http$get2 = _context2.sent;res = _yield$uni$$http$get2.data;
-                console.log("pages.res is :", res);
+    myOnPullDownRefresh: function myOnPullDownRefresh() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                console.log("下拉刷新");
                 // 调用get函数
-                _this2.getHollows();case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this3.hollowsList = [];
+                _this3.hollowThePage = 1;
+                _this3.getHollows();case 4:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 发请求获取hollows
     // async getHollows() {
@@ -223,10 +241,10 @@ var _default =
     //   });
     // },
     // 发请求获取hollows
-    getHollows: function getHollows() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
-                  uni.$http.get("/hollow/hollows?page=1"));case 2:_yield$uni$$http$get3 = _context3.sent;res = _yield$uni$$http$get3.data;
-                _this3.hollowsList = [].concat(_toConsumableArray(_this3.hollowsList), _toConsumableArray(res.data));
-                console.log("hollows", _this3.hollowsList);case 6:case "end":return _context3.stop();}}}, _callee3);}))();
+    getHollows: function getHollows() {var _arguments = arguments,_this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var thePage, _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context4.next = 3;return (
+                  uni.$http.get("/hollow/hollows", { page: thePage }));case 3:_yield$uni$$http$get2 = _context4.sent;res = _yield$uni$$http$get2.data;
+                _this4.hollowsList = [].concat(_toConsumableArray(_this4.hollowsList), _toConsumableArray(res.data));
+                console.log("hollows", _this4.hollowsList);case 7:case "end":return _context4.stop();}}}, _callee4);}))();
     },
     // 跳转到提交hollow页面
     gotoPutHollow: function gotoPutHollow() {
