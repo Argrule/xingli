@@ -29,16 +29,18 @@
       <view class="title"> 精选书单 </view>
       <view v-for="(item, index) in bookList" :key="index">
         <view class="bookList">
-          <!-- 封面 -->
+          <!-- 封面 -->          
           <view class="move_image">
+            <label :for="'link'+index">
             <u--image
               :src="item.photoUrl"
               width="200rpx"
               height="250rpx"
             ></u--image>
-          </view>
+            </label>
+          </view>          
           <!-- link中图片和标签失效，纯文字才能生效 -->
-          <uni-link :href="item.resourceUrl" showUnderLine="false">
+          <uni-link :href="item.resourceUrl" showUnderLine="false" :id="'link'+index">
             {{ item.introduce }}
             <!-- <view class="bookContent">{{ item.introduce }}</view> -->
           </uni-link>
