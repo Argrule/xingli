@@ -30,6 +30,7 @@ export default {
     //   console.log("putHollow");	  
       const { data: res } = await uni.$http.put("/hollow/hollow",{story:this.story});
 	  console.log("putHollow",res);
+    uni.switchTab({ url: '/pages/talk/talk' })
     },
   },
 };
