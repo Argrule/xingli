@@ -21,7 +21,7 @@
       <my-chat />
     </view>
     <view v-else>
-      <my-hollow />
+      <my-hollow ref="myHollow"/>
     </view>
     <!-- <button @click="gotoTest">myTest</button> -->
   </view>
@@ -43,6 +43,8 @@ export default {
   // 下拉刷新
   onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");
+    // 调用子组件刷新函数
+    this.$refs.myHollow.myOnPullDownRefresh();
   },
   methods: {
     // 测试

@@ -137,7 +137,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+//
+//
+//
+//
+//
 //
 //
 //
@@ -176,9 +181,12 @@ var _default =
   data: function data() {
     return {
       // 左列
-      hollowsList1: [{ story: "story1" }, { story: "story2" }],
+      // hollowsList1: [{ story: "story1" }, { story: "story2" }],
       // 右列
-      hollowsList2: [{ story: "story3" }, { story: "story4" }] };
+      // hollowsList2: [{ story: "story3" }, { story: "story4" }],
+
+      // hollow数据项列表
+      hollowsList: [] };
 
   },
   // 获取树洞
@@ -188,30 +196,35 @@ var _default =
               // 调用get函数
               _this.getHollows();case 6:case "end":return _context.stop();}}}, _callee);}))();
   },
-  // 下拉刷新
-  // async onPullDownRefresh(){
-  //   const { data: res } = await uni.$http.get("/hollow/pages");
-  //   console.log("pages.res is :", res);
-  //   // 调用get函数
-  //   this.getHollows();
-  // },
   methods: {
+    // 下拉刷新
+    myOnPullDownRefresh: function myOnPullDownRefresh() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                console.log("下拉刷新");_context2.next = 3;return (
+                  uni.$http.get("/hollow/pages"));case 3:_yield$uni$$http$get2 = _context2.sent;res = _yield$uni$$http$get2.data;
+                console.log("pages.res is :", res);
+                // 调用get函数
+                _this2.getHollows();case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
     // 发请求获取hollows
-    getHollows: function getHollows() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
-                  uni.$http.get("/hollow/hollows?page=1"));case 2:_yield$uni$$http$get2 = _context2.sent;res = _yield$uni$$http$get2.data;
-                // this.hollowsList=res.data;
-                console.log("hollows", res.data);
-                // 配置左列
-                _this2.hollowsList1 = res.data.filter(function (element, index) {
-                  return index % 2 == 0;
-                });
-                // 配置右列
-                _this2.hollowsList2 = res.data.filter(function (element, index) {
-                  return index % 2 == 1;
-                });
-                //   console.log(this.hollowsList1);
-                //   console.log(this.hollowsList2);
-              case 7:case "end":return _context2.stop();}}}, _callee2);}))();},
+    // async getHollows() {
+    //   const { data: res } = await uni.$http.get("/hollow/hollows?page=1");
+    //   // this.hollowsList=res.data;
+    //   console.log("hollows", res.data);
+    //   // 配置左列
+    //   this.hollowsList1 = res.data.filter((element, index) => {
+    //     return index % 2 == 0;
+    //   });
+    //   // 配置右列
+    //   this.hollowsList2 = res.data.filter((element, index) => {
+    //     return index % 2 == 1;
+    //   });
+    // },
+    // 发请求获取hollows
+    getHollows: function getHollows() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
+                  uni.$http.get("/hollow/hollows?page=1"));case 2:_yield$uni$$http$get3 = _context3.sent;res = _yield$uni$$http$get3.data;
+                _this3.hollowsList = [].concat(_toConsumableArray(_this3.hollowsList), _toConsumableArray(res.data));
+                console.log("hollows", _this3.hollowsList);case 6:case "end":return _context3.stop();}}}, _callee3);}))();
+    },
     // 跳转到提交hollow页面
     gotoPutHollow: function gotoPutHollow() {
       console.log("gotoPutHollow");

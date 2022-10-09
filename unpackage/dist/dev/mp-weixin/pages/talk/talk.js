@@ -203,6 +203,8 @@ __webpack_require__.r(__webpack_exports__);
   // 下拉刷新
   onPullDownRefresh: function onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");
+    // 调用子组件刷新函数
+    this.$refs.myHollow.myOnPullDownRefresh();
   },
   methods: {
     // 测试
