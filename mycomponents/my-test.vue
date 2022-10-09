@@ -16,42 +16,20 @@
       ></u--image>
     </view>
     <!-- 测试列表 -->
-    <!-- <view v-for="(item,index) in list" :key="index"> -->
-    <view>
+    <view v-for="(item, index) in testDataList" :key="index">
       <!-- 列表中的每一项 -->
       <view class="testListItem">
         <!-- 左边文字 -->
         <view class="wordFont">
-          <view class="topWord">心理健康测评-SCL90</view>
-          <view class="bottomWord">你的心理健康指数打多少分</view>
+          <view class="topWord">{{ item.name }}</view>
+          <view class="bottomWord">{{ item.discription }}</view>
         </view>
         <!-- 右边按钮 -->
         <view class="testButton"
-          ><uni-link
-            href="https://www.16personalities.com/profile"
-            color="black"
-            showUnderLine="false"
+          ><uni-link :href="item.url" color="black" showUnderLine="false"
             >进入测试</uni-link
           ></view
         >
-      </view>
-      <view class="testListItem">
-        <!-- 左边文字 -->
-        <view class="wordFont">
-          <view class="topWord">心理健康测评-SCL90</view>
-          <view class="bottomWord">你的心理健康指数打多少分</view>
-        </view>
-        <!-- 右边按钮 -->
-        <button class="testButton" size="mini">进入测试</button>
-      </view>
-      <view class="testListItem">
-        <!-- 左边文字 -->
-        <view class="wordFont">
-          <view class="topWord">心理健康测评-SCL90</view>
-          <view class="bottomWord">你的心理健康指数打多少分</view>
-        </view>
-        <!-- 右边按钮 -->
-        <button class="testButton" size="mini">进入测试</button>
       </view>
     </view>
   </view>
@@ -62,6 +40,29 @@ export default {
   data() {
     return {
       photoUrl: "https://cdn.uviewui.com/uview/album/8.jpg",
+      // 测试的列表数据
+      testDataList: [
+        {
+          name: "人格测试",
+          discription: "你的心理健康指数打多少分",
+          url: "https://www.16personalities.com/profile",
+        },
+        {
+          name: "心理健康测评-SCL90",
+          discription: "你的心理健康指数打多少分",
+          url: "http://scl90.chuangyiquan.net/?id=bdyiyu-wz&bd_vid=7645060913005989914",
+        },
+        {
+          name: "抑郁测试-SCL",
+          discription: "今天你玉玉了吗？",
+          url: "http://ceshi.youluzept.cn/depressed/?bd_vid=8282740853496576174#/",
+        },
+        {
+          name: "抑郁测试-SCL90",
+          discription: "今天你玉玉了吗？",
+          url: "http://scl90.chuangyiquan.net/?id=bdyiyu-wz&bd_vid=7645060913005989914",
+        },
+      ],
     };
   },
   methods: {},
@@ -76,9 +77,10 @@ export default {
 }
 // 测试列表中的项
 .testListItem {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: center;
+  position: relative;
   margin: 30rpx 15rpx;
   border-radius: 15rpx;
   padding: 10rpx;
@@ -86,6 +88,7 @@ export default {
   .wordFont {
     // display: flex;
     // flex-direction: column;
+    margin-left: 30rpx;
     .topWord {
       margin: 15rpx 0;
       font-size: 36rpx;
@@ -99,11 +102,16 @@ export default {
     }
   }
   .testButton {
+    // button相对位置
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    transform: translate(0, -60%);
     background-color: #f6b4a6;
     border: none;
     padding: 20rpx 30rpx;
     font-size: 36rpx;
-    font-weight: 500;
+    font-weight: 600;
     margin: 10rpx 10rpx;
     border-radius: 15rpx;
   }
