@@ -1,5 +1,6 @@
 <template>
-  <view>
+  <!-- 背景颜色配合gif动图，不要轻易修改 -->
+  <view style="background-color: #fcfcf6">
     <u-sticky bgColor="#fff">
       <view class="functionOptions">
         <u-tabs
@@ -40,13 +41,13 @@ export default {
     myHollow,
   },
   // 下拉刷新
-  onPullDownRefresh(){
-    console.log('onPullDownRefresh in talk.vue');
+  onPullDownRefresh() {
+    console.log("onPullDownRefresh in talk.vue");
   },
   methods: {
     // 测试
-    gotoTest(){
-      uni.navigateTo({ url: '/pages/waterfall/waterfall' })
+    gotoTest() {
+      uni.navigateTo({ url: "/pages/waterfall/waterfall" });
     },
     // 改导航
     changeFunctionOptions(item) {
