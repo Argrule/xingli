@@ -81,7 +81,7 @@
           ></u-icon>
         </view>
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0">
+        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0" @scrolltolower="scrolltolowerUpdateDiary">
           <view v-for="(item, i) in moodList" :key="i">
             <view class="mood-list">
               <view class="mood-word">{{ item.date }}</view>
@@ -172,7 +172,7 @@
       </view>
       <view class="dairyDetail">
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0">
+        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0" @scrolltolower="scrolltolowerUpdateTodoList">
           <view v-for="(item, i) in toDoList" :key="i">
             <view class="mood-list">
               <view v-if="item.finish == 0">
@@ -280,6 +280,14 @@ export default {
       );
       console.log("pageResult", moodListResult);
       this.moodList = moodListResult.data;
+    },
+    // 触底请求第二页diary
+    scrolltolowerUpdateDiary(){
+      console.log('scrolltolowerUpdateDiary');
+    },
+    // 触底请求第二页todoList
+    scrolltolowerUpdateTodoList(){
+      console.log('scrolltolowerUpdateTodoList');
     },
     // 选择表情
     selectMood() {
