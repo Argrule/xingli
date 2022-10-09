@@ -1,14 +1,11 @@
 <template>
   <view class="buttonPosition">
     <view>
-    <button class="talkButton" @click="gotoChat">LET'S TALK!</button>
+      <button class="talkButton" @click="gotoChat">LET'S TALK!</button>
     </view>
-    <view style="margin-top:20%">
+    <view style="margin-top: 20%">
       <!-- 动图 -->
-      <image
-        src="../static/gif/letTalk.gif"
-        mode="aspectFit"
-      />
+      <image src="../static/gif/letTalk.gif" mode="aspectFit" />
     </view>
   </view>
 </template>
@@ -19,10 +16,10 @@ export default {
     return {};
   },
   // 下拉刷新,作为组件无效
-  onPullDownRefresh(){
-    console.log('onPullDownRefresh');
+  onPullDownRefresh() {
+    console.log("onPullDownRefresh");
   },
-  methods: {   
+  methods: {
     // 跳转聊天界面
     gotoChat() {
       uni.navigateTo({ url: "/pages/talk/chat" });
@@ -32,14 +29,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.buttonPosition{
+.buttonPosition {
   height: 100%;
   width: 100%;
 }
 .talkButton {
   width: 50%;
   position: absolute;
-  top:65%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%);
   margin: 10rpx auto;
