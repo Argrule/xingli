@@ -40,6 +40,12 @@ export default {
     myChat,
     myHollow,
   },
+  // 触底上拉获取数据
+  onReachBottom(){
+    console.log('onReachBottom')
+    // 调用子组件获取更多
+    this.$refs.myHollow.scrolltolowerUpdateHollow();
+  },
   // 下拉刷新
   onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");

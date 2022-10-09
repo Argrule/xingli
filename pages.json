@@ -54,6 +54,7 @@
             "style": {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": true,
+				"onReachBottomDistance":150,
 				// 以下是取消顶部栏的操作
                 "navigationStyle": "custom",
                 "app-plus": {

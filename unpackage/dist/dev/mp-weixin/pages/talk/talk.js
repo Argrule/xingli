@@ -200,6 +200,12 @@ __webpack_require__.r(__webpack_exports__);
     myChat: myChat,
     myHollow: myHollow },
 
+  // 触底上拉获取数据
+  onReachBottom: function onReachBottom() {
+    console.log('onReachBottom');
+    // 调用子组件获取更多
+    this.$refs.myHollow.scrolltolowerUpdateHollow();
+  },
   // 下拉刷新
   onPullDownRefresh: function onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");

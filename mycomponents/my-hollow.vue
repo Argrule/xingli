@@ -6,7 +6,7 @@
         name="plus-circle-fill"
         @click="gotoPutHollow"
         color="#FBC2A6"
-        size="40"
+        size="100rpx"
       ></u-icon>
     </view>
     <!-- 树洞消息，由于瀑布流无法实现，采用替代方案，后续尝试瀑布流 -->
@@ -26,9 +26,9 @@
         </view>
       </view>
     </view> -->
-    <!-- 树洞消息 -->
-    <view style="margin:0 7%;">
-      <view v-for="(item, index) in hollowsList" :key="index">
+    <!-- 树洞消息 -->    
+   <view>
+      <view style="margin:0 7%;" v-for="(item, index) in hollowsList" :key="index">
         <view class="TextRight">
           <view> {{ item.story }} </view>
         </view>
@@ -58,6 +58,9 @@ export default {
     this.getHollows();
   },
   methods: {
+    scrolltolowerUpdateHollow(){
+      console.log('//scrolltolowerUpdateHollow');
+    },
     // 下拉刷新
     async myOnPullDownRefresh() {
       console.log("下拉刷新");
@@ -98,7 +101,7 @@ export default {
 <style lang="scss" scoped>
 .suspension {
   // 悬浮居中
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 10rpx;

@@ -26,7 +26,7 @@
 /* 文章场景相关 */
 /* 引入uview */
 .suspension.data-v-7b6c01b1 {
-  position: absolute;
+  position: fixed;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
