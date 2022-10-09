@@ -1,7 +1,4 @@
 {
-  "usingComponents": {
-    "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar",
-    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
-  },
+  "usingComponents": {},
   "component": true
 }

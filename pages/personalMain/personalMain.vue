@@ -273,6 +273,7 @@ export default {
   created() {
     this.getMoodListPage();
     this.getMoodListDetail();
+    this.getTodoList();
   },
   methods: {
     ...mapMutations('m_page',['changeDiaryPage','changeTodoPage']),
@@ -289,6 +290,12 @@ export default {
       this.moodList = [...this.moodList,...moodListResult.data] ;
       console.log('moodlist',this.moodList);
     },
+    // 获取todo list
+    async getTodoList(){
+      const {data:res} = await uni.$http.get('/tdmd/todo');
+      console.log('hh',res.data);
+    },
+    
     // 触底请求第二页diary
     async scrolltolowerUpdateDiary(){
       if (this.isloading) return;

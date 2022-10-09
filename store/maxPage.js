@@ -15,11 +15,11 @@ export default {
 	// 模块的 mutations 方法
 	mutations: {		
 		changeDiaryPage(state, payload) {            			
-			console.log('changeDiaryPage in maxPage.js');
-            state.diaryPage = payload			
+			console.log('changeDiaryPage in maxPage.js,payload is',payload);
+            state.diaryPage = payload;
 		},
 		changeTodoPage(state, payload) {
-            console.log('changeTodoPage in maxPage.js');
+            console.log('changeTodoPage in maxPage.js,payload is',payload);
 			state.todoPage = payload			
 		},
 		changeHollowPage(state, payload) {

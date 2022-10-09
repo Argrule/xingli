@@ -12,7 +12,9 @@
     "pages/changePersonInformation/changeUserName",
     "pages/changePersonInformation/changeGender",
     "mycomponents/my-puthollow/my-puthollow",
-    "pages/order/docotorChat"
+    "pages/order/docotorChat",
+    "pages/waterfall/waterfall",
+    "pages/talk/chat"
   ],
   "subPackages": [],
   "window": {

@@ -25,49 +25,18 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 引入uview */
-.scroll_view.data-v-063cae1a {
-  background-color: #f6f6f6;
-}
-.inputMessage.data-v-063cae1a {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 10rpx 15rpx;
-}
-.inputMessage .inputFont.data-v-063cae1a {
-  display: block;
-  font-size: 30rpx;
-  padding: 5rpx 20rpx;
-  border-radius: 35rpx;
-  background-color: #e5e5e5;
-}
-.messageList.data-v-063cae1a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20rpx 20rpx;
-}
-.messageList .messageAndAvatar0.data-v-063cae1a {
-  display: flex;
+.buttonPosition.data-v-063cae1a {
+  height: 100%;
   width: 100%;
 }
-.messageList .messageAndAvatar0 .msgContent.data-v-063cae1a {
-  background-color: #ffffff;
-}
-.messageList .messageAndAvatar1.data-v-063cae1a {
-  display: flex;
-  width: 100%;
-  flex-direction: row-reverse;
-}
-.messageList .messageAndAvatar1 .msgContent.data-v-063cae1a {
-  background-color: rgb(249, 212, 194);
-}
-.messageList .msgContent.data-v-063cae1a {
-  margin: 20rpx;
-  padding: 20rpx;
-  max-width: 60%;
-  border-radius: 20rpx;
+.talkButton.data-v-063cae1a {
+  width: 50%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  margin: 10rpx auto;
+  background-color: rgb(255, 133, 83);
+  color: #ffffff;
 }

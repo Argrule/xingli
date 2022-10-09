@@ -120,6 +120,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/waterfall/waterfall",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }        
+        ,{
+            "path" : "pages/talk/chat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
     "tabBar": {
         "color": "#7A7E83",

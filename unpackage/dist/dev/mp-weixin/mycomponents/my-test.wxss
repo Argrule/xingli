@@ -4,13 +4,14 @@
   margin: 15rpx 0;
 }
 .testListItem.data-v-6c353254 {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  position: relative;
   margin: 30rpx 15rpx;
   border-radius: 15rpx;
   padding: 10rpx;
   background-color: #ffffff;
+}
+.testListItem .wordFont.data-v-6c353254 {
+  margin-left: 30rpx;
 }
 .testListItem .wordFont .topWord.data-v-6c353254 {
   margin: 15rpx 0;
@@ -24,8 +25,16 @@
   color: #6c6c6c;
 }
 .testListItem .testButton.data-v-6c353254 {
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  -webkit-transform: translate(0, -60%);
+          transform: translate(0, -60%);
   background-color: #f6b4a6;
   border: none;
+  padding: 20rpx 30rpx;
+  font-size: 36rpx;
+  font-weight: 600;
   margin: 10rpx 10rpx;
   border-radius: 15rpx;
 }

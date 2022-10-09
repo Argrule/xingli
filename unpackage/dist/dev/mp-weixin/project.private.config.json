@@ -29,6 +29,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/waterfall/waterfall",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/talk/chat",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
