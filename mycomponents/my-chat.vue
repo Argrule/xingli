@@ -2,7 +2,13 @@
   <view class="buttonPosition">
     <view>
     <button class="talkButton" @click="gotoChat">LET'S TALK!</button>
-    </view>    
+    </view>
+    <view style="margin-top:20%">
+      <image
+        src="../static/gif/letsTalk.gif"
+        mode="aspectFit"
+      />
+    </view>
   </view>
 </template>
 
@@ -32,7 +38,7 @@ export default {
 .talkButton {
   width: 50%;
   position: absolute;
-  top:50%;
+  top:65%;
   left: 50%;
   transform: translate(-50%);
   margin: 10rpx auto;
