@@ -203,14 +203,16 @@ __webpack_require__.r(__webpack_exports__);
   // 触底上拉获取数据
   onReachBottom: function onReachBottom() {
     console.log('onReachBottom');
-    // 调用子组件获取更多
-    this.$refs.myHollow.scrolltolowerUpdateHollow();
+    if (!this.FunctionOptions)
+      // 调用子组件获取更多
+      this.$refs.myHollow.scrolltolowerUpdateHollow();
   },
   // 下拉刷新
   onPullDownRefresh: function onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");
-    // 调用子组件刷新函数
-    this.$refs.myHollow.myOnPullDownRefresh();
+    if (!this.FunctionOptions)
+      // 调用子组件刷新函数
+      this.$refs.myHollow.myOnPullDownRefresh();
   },
   methods: {
     // 测试

@@ -10909,6 +10909,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       state.todoPage = payload;
     },
     changeHollowPage: function changeHollowPage(state, payload) {
+      console.log('changeHollowPage in maxPage.js,payload is', payload);
       state.hollowPage = payload;
     } },
 

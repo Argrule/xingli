@@ -134,11 +134,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  if (!_vm._isMounted) {
-    _vm.e0 = function($event) {
-      this.docotorDetailDialog = false
-    }
-  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -327,6 +322,11 @@ var _default =
 
   },
   methods: {
+    // 点击遮罩关闭弹窗,必须要写成函数，@close里会失效
+    changeShowDialog: function changeShowDialog() {
+      console.log("// 点击遮罩关闭弹窗");
+      this.docotorDetailDialog = false;
+    },
     // 关键字搜索
     searchKeyWord: function searchKeyWord() {
       console.log("searchKeyWord =", this.keyword);
