@@ -476,6 +476,10 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                   _this3.isloading = false;
                 }, 3000);case 6:case "end":return _context4.stop();}}}, _callee4);}))();
     },
+    // todolist不做分页，后续可能会改进
+    scrolltolowerUpdateTodoList: function scrolltolowerUpdateTodoList() {
+      console.log('pulldown todolist');
+    },
     getInsertDiary: function getInsertDiary() {
       console.log('scrolltolowerUpdateDiary');
       console.log(this.diaryPage);

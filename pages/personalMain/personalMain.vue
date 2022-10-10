@@ -199,7 +199,7 @@
           </view>
         </scroll-view>
         <view class="dairyDetailEdit"
-          ><u-icon name="calendar" color="#DC8C6B" size="28"></u-icon
+          ><u-icon name="plus-circle" color="#DC8C6B" size="28"></u-icon
         ></view>
       </view>
     </view>
@@ -306,6 +306,10 @@ export default {
       setTimeout(()=>{        
         this.isloading=false;
       },3000)
+    },
+    // todolist不做分页，后续可能会改进
+    scrolltolowerUpdateTodoList(){
+      console.log('pulldown todolist');
     },
     getInsertDiary(){
       console.log('scrolltolowerUpdateDiary');
