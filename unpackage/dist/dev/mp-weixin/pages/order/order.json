@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "onReachBottomDistance": 150,
   "usingComponents": {
     "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
     "u-search": "/uni_modules/uview-ui/components/u-search/u-search",

@@ -106,39 +106,44 @@
 export default {
   data() {
     return {
+      // 节流阀
+      isLoading:false,
+      theDocListPage:1,//当前页
+      docListPage:1,//页数
+
       // 关键字搜索
       keyword: "",
       // 医生信息弹窗
       docotorDetailDialog: false,
       // 左列
       docotorList1: [
-        {
-          id: 0,
-          name: "猫猫学长",
-          avatarUrl: "https://cdn.uviewui.com/uview/album/1.jpg",
-          goodat: "亲子关系",
-        },
-        {
-          id: 1,
-          name: "猫猫学姐",
-          avatarUrl: "https://cdn.uviewui.com/uview/album/2.jpg",
-          goodat: "婚姻关系",
-        },
+        // {
+        //   id: 0,
+        //   name: "猫猫学长",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/1.jpg",
+        //   goodat: "亲子关系",
+        // },
+        // {
+        //   id: 1,
+        //   name: "猫猫学姐",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/2.jpg",
+        //   goodat: "婚姻关系",
+        // },
       ],
       // 右列
       docotorList2: [
-        {
-          id: 3,
-          name: "大熊猫",
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          goodat: "恋爱关系",
-        },
-        {
-          id: 4,
-          name: "小熊猫",
-          avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
-          goodat: "校园关系",
-        },
+        // {
+        //   id: 3,
+        //   name: "大熊猫",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   goodat: "恋爱关系",
+        // },
+        // {
+        //   id: 4,
+        //   name: "小熊猫",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
+        //   goodat: "校园关系",
+        // },
       ],
       // 医生信息
       docotorDetail: {
@@ -155,12 +160,27 @@ export default {
   created() {
     this.getDocotorList();
   },
+  // 触底上拉获取数据
+  async onReachBottom(){
+    console.log('onReachBottom');
+    if (this.isLoading) return;    
+    this.isLoading=true;
+    // 页数超过了，不请求
+    if (this.theDocListPage>=this.docListPage){
+      console.log('还能触发页数超了');
+      return this.isloading=false;
+    } 
+    await this.getDocotorList(++this.theDocListPage);
+    setTimeout(()=>{
+      this.isLoading=false;
+    },1000)    
+  },  
   methods: {
     // 获取docotor列表
-    async getDocotorList() {
+    async getDocotorList(thePage=1) {
       console.log("// 获取docotor列表");
       const { data: res } = await uni.$http.get("/advisory/doctors", {
-        page: 1,
+        page: thePage,
       });      
       // 左右插入
       res.data.doctors.forEach((element,index) => {
@@ -169,6 +189,8 @@ export default {
         else
         this.docotorList1.push(element);
       });
+      // 更新页数
+      this.docListPage=res.data.pages;      
       // this.docotorList1 = [...this.docotorList1, ...res.data.doctors];
       console.log('DocotorList1',this.docotorList1);
     },

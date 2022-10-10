@@ -275,40 +275,45 @@ var _default =
 {
   data: function data() {
     return {
+      // 节流阀
+      isLoading: false,
+      theDocListPage: 1, //当前页
+      docListPage: 1, //页数
+
       // 关键字搜索
       keyword: "",
       // 医生信息弹窗
       docotorDetailDialog: false,
       // 左列
       docotorList1: [
-      {
-        id: 0,
-        name: "猫猫学长",
-        avatarUrl: "https://cdn.uviewui.com/uview/album/1.jpg",
-        goodat: "亲子关系" },
-
-      {
-        id: 1,
-        name: "猫猫学姐",
-        avatarUrl: "https://cdn.uviewui.com/uview/album/2.jpg",
-        goodat: "婚姻关系" }],
-
-
+        // {
+        //   id: 0,
+        //   name: "猫猫学长",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/1.jpg",
+        //   goodat: "亲子关系",
+        // },
+        // {
+        //   id: 1,
+        //   name: "猫猫学姐",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/2.jpg",
+        //   goodat: "婚姻关系",
+        // },
+      ],
       // 右列
       docotorList2: [
-      {
-        id: 3,
-        name: "大熊猫",
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        goodat: "恋爱关系" },
-
-      {
-        id: 4,
-        name: "小熊猫",
-        avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
-        goodat: "校园关系" }],
-
-
+        // {
+        //   id: 3,
+        //   name: "大熊猫",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   goodat: "恋爱关系",
+        // },
+        // {
+        //   id: 4,
+        //   name: "小熊猫",
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
+        //   goodat: "校园关系",
+        // },
+      ],
       // 医生信息
       docotorDetail: {
         id: 0,
@@ -321,7 +326,43 @@ var _default =
 
 
   },
+  created: function created() {
+    this.getDocotorList();
+  },
+  // 触底上拉获取数据
+  onReachBottom: function onReachBottom() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              console.log('onReachBottom');if (!
+              _this.isLoading) {_context.next = 3;break;}return _context.abrupt("return");case 3:
+              _this.isLoading = true;
+              // 页数超过了，不请求
+              if (!(_this.theDocListPage >= _this.docListPage)) {_context.next = 7;break;}
+              console.log('还能触发页数超了');return _context.abrupt("return",
+              _this.isloading = false);case 7:_context.next = 9;return (
+
+                _this.getDocotorList(++_this.theDocListPage));case 9:
+              setTimeout(function () {
+                _this.isLoading = false;
+              }, 1000);case 10:case "end":return _context.stop();}}}, _callee);}))();
+  },
   methods: {
+    // 获取docotor列表
+    getDocotorList: function getDocotorList() {var _arguments = arguments,_this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var thePage, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
+                console.log("// 获取docotor列表");_context2.next = 4;return (
+                  uni.$http.get("/advisory/doctors", {
+                    page: thePage }));case 4:_yield$uni$$http$get = _context2.sent;res = _yield$uni$$http$get.data;
+
+                // 左右插入
+                res.data.doctors.forEach(function (element, index) {
+                  if (index % 2)
+                  _this2.docotorList2.push(element);else
+
+                  _this2.docotorList1.push(element);
+                });
+                // 更新页数
+                _this2.docListPage = res.data.pages;
+                // this.docotorList1 = [...this.docotorList1, ...res.data.doctors];
+                console.log('DocotorList1', _this2.docotorList1);case 9:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
     // 点击遮罩关闭弹窗,必须要写成函数，@close里会失效
     changeShowDialog: function changeShowDialog() {
       console.log("// 点击遮罩关闭弹窗");
@@ -337,13 +378,16 @@ var _default =
       uni.navigateTo({ url: "/pages/order/docotorChat" });
     },
     // 弹窗医生简介
-    clickDocotorDetail: function clickDocotorDetail(_ref) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var myid, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:myid = _ref.id;
-                console.log("id is ", myid);_context.next = 4;return (
+    clickDocotorDetail: function clickDocotorDetail(_ref) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var myid, _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:myid = _ref.id;
+                console.log("id is ", myid);_context3.next = 4;return (
                   uni.$http.get("/advisory/doctor", {
-                    id: myid }));case 4:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+                    id: myid }));case 4:_yield$uni$$http$get2 = _context3.sent;res = _yield$uni$$http$get2.data;
 
                 console.log("docotor detail is", res);
-                _this.docotorDetailDialog = true;case 8:case "end":return _context.stop();}}}, _callee);}))();
+                // 替换为当前医生的信息
+                _this3.docotorDetail = res.data;
+                // 关闭弹窗
+                _this3.docotorDetailDialog = true;case 9:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 点击预约按钮
     clickOrderButton: function clickOrderButton() {

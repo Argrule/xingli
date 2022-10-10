@@ -45,8 +45,9 @@
             "path": "pages/order/order",
             "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-                // "navigationStyle": "custom"
+                "enablePullDownRefresh": false,
+                "navigationStyle": "custom",				
+				"onReachBottomDistance":150
             }
         },
         {
