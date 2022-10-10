@@ -43,12 +43,14 @@ export default {
   // 触底上拉获取数据
   onReachBottom(){
     console.log('onReachBottom')
+    if (!this.FunctionOptions)
     // 调用子组件获取更多
     this.$refs.myHollow.scrolltolowerUpdateHollow();
   },
   // 下拉刷新
   onPullDownRefresh() {
     console.log("onPullDownRefresh in talk.vue");
+    if (!this.FunctionOptions)
     // 调用子组件刷新函数
     this.$refs.myHollow.myOnPullDownRefresh();
   },
