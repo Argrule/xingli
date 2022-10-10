@@ -23,6 +23,7 @@ export default {
 			state.todoPage = payload			
 		},
 		changeHollowPage(state, payload) {
+			console.log('changeHollowPage in maxPage.js,payload is',payload);
 			state.hollowPage = payload			
 		},	
 	},

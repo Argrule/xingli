@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -49,20 +50,25 @@ export default {
       
       hollowsList: [],// hollow数据列表
       hollowThePage:1,// 当前页      
-      hollowPage:1,// 页数
+      // hollowPage:1,// 页数
       // 节流阀
       isloading:false,
     };
+  },
+  computed:{
+    ...mapState('m_page',['hollowPage']),
   },
   // 获取树洞
   async beforeCreate() {
     const { data: res } = await uni.$http.get("/hollow/pages");
     console.log("pages.res is :", res);
-    this.hollowPage=res.data.pages;
+    // this.hollowPage=res.data.pages;
+    this.changeHollowPage(res.data.pages);
     // 调用get函数
     this.getHollows();
   },
   methods: {
+    ...mapMutations('m_page',['changeHollowPage']),
     // 触底上拉获取数据
     async scrolltolowerUpdateHollow(){
       console.log('// 触底上拉获取数据');
