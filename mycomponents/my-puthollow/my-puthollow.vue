@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -26,11 +27,21 @@ export default {
     };
   },
   methods: {
+    ...mapMutations("m_page", ["changeHollowPage"]),
     async putHollow() {
-    //   console.log("putHollow");	  
-      const { data: res } = await uni.$http.put("/hollow/hollow",{story:this.story});
-	  console.log("putHollow",res);
-    uni.switchTab({ url: '/pages/talk/talk' })
+      console.log("putHollow");
+      const { data: res } = await uni.$http.put("/hollow/hollow", {
+        story: this.story,
+      });
+      console.log("putHollow", res);
+      this.reGetHollowPage();
+      uni.switchTab({ url: "/pages/talk/talk" });      
+    },
+    // 重新获取页数
+    async reGetHollowPage() {
+      console.log("// 重新获取页数");
+      const { data: res } = await uni.$http.get("/hollow/pages");
+      this.changeHollowPage(res.data.pages);
     },
   },
 };
