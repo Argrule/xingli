@@ -152,7 +152,26 @@ export default {
       },
     };
   },
+  created() {
+    this.getDocotorList();
+  },
   methods: {
+    // 获取docotor列表
+    async getDocotorList() {
+      console.log("// 获取docotor列表");
+      const { data: res } = await uni.$http.get("/advisory/doctors", {
+        page: 1,
+      });      
+      // 左右插入
+      res.data.doctors.forEach((element,index) => {
+        if (index%2) 
+        this.docotorList2.push(element);
+        else
+        this.docotorList1.push(element);
+      });
+      // this.docotorList1 = [...this.docotorList1, ...res.data.doctors];
+      console.log('DocotorList1',this.docotorList1);
+    },
     // 点击遮罩关闭弹窗,必须要写成函数，@close里会失效
     changeShowDialog() {
       console.log("// 点击遮罩关闭弹窗");
@@ -174,6 +193,9 @@ export default {
         id: myid,
       });
       console.log("docotor detail is", res);
+      // 替换为当前医生的信息
+      this.docotorDetail = res.data;
+      // 关闭弹窗
       this.docotorDetailDialog = true;
     },
     // 点击预约按钮
