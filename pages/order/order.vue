@@ -65,7 +65,7 @@
       :show="docotorDetailDialog"
       mode="bottom"
       round="10"
-      @close="this.docotorDetailDialog = false"
+      @close="changeShowDialog"
     >
       <view style="background-color: #ffceb7">
         <view class="dialogBoder">
@@ -153,6 +153,11 @@ export default {
     };
   },
   methods: {
+    // 点击遮罩关闭弹窗,必须要写成函数，@close里会失效
+    changeShowDialog() {
+      console.log("// 点击遮罩关闭弹窗");
+      this.docotorDetailDialog = false;
+    },
     // 关键字搜索
     searchKeyWord() {
       console.log("searchKeyWord =", this.keyword);
