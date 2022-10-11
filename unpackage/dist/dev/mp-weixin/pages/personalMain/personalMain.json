@@ -9,6 +9,8 @@
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
     "u--textarea": "/uni_modules/uview-ui/components/u--textarea/u--textarea",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-popup-dialog": "/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog",
     "menu-board": "/pages/menu/menu"
   }
 }

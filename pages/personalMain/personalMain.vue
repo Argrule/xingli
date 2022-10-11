@@ -81,7 +81,12 @@
           ></u-icon>
         </view>
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0" @scrolltolower="scrolltolowerUpdateDiary">
+        <scroll-view
+          scroll-y="true"
+          style="height: 270rpx"
+          scroll-top="0"
+          @scrolltolower="scrolltolowerUpdateDiary"
+        >
           <view v-for="(item, i) in moodList" :key="i">
             <view class="mood-list">
               <view class="mood-word">{{ item.date }}</view>
@@ -172,7 +177,12 @@
       </view>
       <view class="dairyDetail">
         <!-- 列表 -->
-        <scroll-view scroll-y="true" style="height: 270rpx" scroll-top="0" @scrolltolower="scrolltolowerUpdateTodoList">
+        <scroll-view
+          scroll-y="true"
+          style="height: 270rpx"
+          scroll-top="0"
+          @scrolltolower="scrolltolowerUpdateTodoList"
+        >
           <view v-for="(item, i) in toDoList" :key="i">
             <view class="mood-list">
               <view v-if="item.finish == 0">
@@ -199,8 +209,25 @@
           </view>
         </scroll-view>
         <view class="dairyDetailEdit"
-          ><u-icon name="plus-circle" color="#DC8C6B" size="28"></u-icon
-        ></view>
+          ><u-icon
+            name="plus-circle"
+            color="#DC8C6B"
+            size="28"
+            @click="inputDialogToggle"
+          ></u-icon>
+          <!-- 填写今日todolist的弹窗 -->
+          <uni-popup ref="inputDialog" type="dialog">
+            <uni-popup-dialog
+              ref="inputClose"
+              mode="input"
+              title="填写今日to-do-list"
+              :value="todayTodo"
+              @close="dialogClose"
+              placeholder="写下你的待办吧"
+              @confirm="dialogInputConfirm"
+            ></uni-popup-dialog>
+          </uni-popup>
+        </view>
       </view>
     </view>
   </view>
@@ -208,13 +235,13 @@
 
 <script>
 import menuBoard from "../menu/menu.vue";
-import { mapState,mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
       // 节流阀
-      isloading:false,
-      diaryThePage:1,//当前页
+      isloading: false,
+      diaryThePage: 1, //当前页
       // toDoThePage:1,//当前页
       // 导航切换
       isDairyDetailEdit: true,
@@ -258,11 +285,13 @@ export default {
           todo: "还是测测测测试",
         },
       ],
+      // 添加的今日todoList
+      todayTodo: "",
     };
   },
   computed: {
     ...mapState("m_personal", ["userId", "userName", "gender", "avatarUrl"]),
-    ...mapState("m_page", ["diaryPage","todoPage"]),
+    ...mapState("m_page", ["diaryPage", "todoPage"]),
   },
   components: {
     menuBoard,
@@ -276,7 +305,30 @@ export default {
     this.getTodoList();
   },
   methods: {
-    ...mapMutations('m_page',['changeDiaryPage','changeTodoPage']),
+    ...mapMutations("m_page", ["changeDiaryPage", "changeTodoPage"]),
+    // 打开input todo
+    inputDialogToggle() {
+      this.$refs.inputDialog.open();
+    },
+    // 取消input todo
+    dialogClose() {
+      console.log("点击关闭");
+    },
+    // 提交Input todo
+    dialogInputConfirm(val) {
+      uni.showLoading({
+        title: "填写成功",
+      });
+      // const {data:res}= await uni.$http.put('/tdmd/todo');
+      setTimeout(() => {
+        uni.hideLoading();
+        console.log(val);
+        this.todayTodo = val;
+        // 关闭窗口后，恢复默认内容
+        this.$refs.inputDialog.close();
+      }, 1000);
+    },
+
     // 获取diary页数
     async getMoodListPage() {
       const { data: pageResult } = await uni.$http.get("/tdmd/moodPages");
@@ -284,48 +336,50 @@ export default {
       this.changeDiaryPage(pageResult.data.pages);
     },
     // 获取diary list第一页
-    async getMoodListDetail(thePage=1) {
-      const { data: moodListResult } = await uni.$http.get("/tdmd/moods",{page:thePage});
+    async getMoodListDetail(thePage = 1) {
+      const { data: moodListResult } = await uni.$http.get("/tdmd/moods", {
+        page: thePage,
+      });
       // console.log("pageResult", moodListResult);
-      this.moodList = [...this.moodList,...moodListResult.data] ;
-      console.log('moodlist',this.moodList);
+      this.moodList = [...this.moodList, ...moodListResult.data];
+      console.log("moodlist", this.moodList);
     },
     // 获取todo list
-    async getTodoList(){
-      const {data:res} = await uni.$http.get('/tdmd/todo');
-      console.log('hh',res.data);
+    async getTodoList() {
+      const { data: res } = await uni.$http.get("/tdmd/todo");
+      console.log("hh", res.data);
     },
-    
+
     // 触底请求第二页diary
-    async scrolltolowerUpdateDiary(){
+    async scrolltolowerUpdateDiary() {
       if (this.isloading) return;
-      this.isloading=true;
+      this.isloading = true;
       // 请求下一页
       await this.getInsertDiary();
       // 解除节流
-      setTimeout(()=>{        
-        this.isloading=false;
-      },3000)
+      setTimeout(() => {
+        this.isloading = false;
+      }, 3000);
     },
     // todolist不做分页，后续可能会改进
-    scrolltolowerUpdateTodoList(){
-      console.log('pulldown todolist');
+    scrolltolowerUpdateTodoList() {
+      console.log("pulldown todolist");
     },
-    getInsertDiary(){
-      console.log('scrolltolowerUpdateDiary');
+    getInsertDiary() {
+      console.log("scrolltolowerUpdateDiary");
       console.log(this.diaryPage);
       // 页数超过了，不请求
-      if (this.diaryThePage>=this.diaryPage) return;      
-      this.getMoodListDetail(++this.diaryThePage);      
-      console.log(this.diaryPage);   
+      if (this.diaryThePage >= this.diaryPage) return;
+      this.getMoodListDetail(++this.diaryThePage);
+      console.log(this.diaryPage);
     },
     // getInsertTodo(){
     //   console.log('getInsertTodo');
     //   console.log(this.diaryPage);
     //   // 页数超过了，不请求
-    //   if (this.diaryThePage>=this.diaryPage) return;      
-    //   this.getMoodListDetail(++this.diaryThePage);      
-    //   console.log(this.diaryPage);   
+    //   if (this.diaryThePage>=this.diaryPage) return;
+    //   this.getMoodListDetail(++this.diaryThePage);
+    //   console.log(this.diaryPage);
     // },
     // 触底请求第二页todoList
     // async scrolltolowerUpdateTodoList(){
@@ -334,9 +388,9 @@ export default {
     //   // 请求下一页
     //   await this.getInsertTodo();
     //   // 解除节流
-    //   setTimeout(()=>{        
+    //   setTimeout(()=>{
     //     this.isloading=false;
-    //   },3000)      
+    //   },3000)
     // },
     // 选择表情
     selectMood() {

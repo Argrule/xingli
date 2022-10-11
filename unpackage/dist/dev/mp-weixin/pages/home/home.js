@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uSticky: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 303))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 322))
     },
     uSearch: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 311))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 330))
     },
     uTabs: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs/u-tabs.vue */ 319))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs/u-tabs.vue */ 338))
     },
     "u-Image": function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--image/u--image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--image/u--image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--image/u--image.vue */ 327))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--image/u--image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--image/u--image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--image/u--image.vue */ 346))
     },
     uniLink: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-link/components/uni-link/uni-link */ "uni_modules/uni-link/components/uni-link/uni-link").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-link/components/uni-link/uni-link.vue */ 333))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-link/components/uni-link/uni-link */ "uni_modules/uni-link/components/uni-link/uni-link").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-link/components/uni-link/uni-link.vue */ 352))
     }
   }
 } catch (e) {
@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myTest = function myTest() {__webpack_require__.e(/*! require.ensure | mycomponents/my-test */ "mycomponents/my-test").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-test.vue */ 340));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myTest = function myTest() {__webpack_require__.e(/*! require.ensure | mycomponents/my-test */ "mycomponents/my-test").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-test.vue */ 359));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

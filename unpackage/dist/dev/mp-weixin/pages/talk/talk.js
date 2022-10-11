@@ -98,10 +98,10 @@ var components
 try {
   components = {
     uSticky: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 303))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 322))
     },
     uTabs: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs/u-tabs.vue */ 319))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tabs/u-tabs.vue */ 338))
     }
   }
 } catch (e) {
@@ -158,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myChat = function myChat() {__webpack_require__.e(/*! require.ensure | mycomponents/my-chat */ "mycomponents/my-chat").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-chat.vue */ 355));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myHollow = function myHollow() {Promise.all(/*! require.ensure | mycomponents/my-hollow */[__webpack_require__.e("common/vendor"), __webpack_require__.e("mycomponents/my-hollow")]).then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-hollow.vue */ 362));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myChat = function myChat() {__webpack_require__.e(/*! require.ensure | mycomponents/my-chat */ "mycomponents/my-chat").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-chat.vue */ 374));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var myHollow = function myHollow() {Promise.all(/*! require.ensure | mycomponents/my-hollow */[__webpack_require__.e("common/vendor"), __webpack_require__.e("mycomponents/my-hollow")]).then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-hollow.vue */ 381));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
