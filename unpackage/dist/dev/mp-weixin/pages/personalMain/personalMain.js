@@ -421,11 +421,15 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 导航切换
       isDairyDetailEdit: true,
       showMoodSelect: false,
-      // dairy
-      dateTime: "2022/9/22 Sunday",
-      dateContent: "今天非常开心，因为不用大筛",
+
+      // 今日是否提交过Mood
+      is_putMood: false,
+      // 提交Mood的内容
       todayMood: 0,
       todayMessage: "",
+      todaydateTime: "2022/9/22 Sunday",
+      todayId: 0,
+      // 列表
       moodList: [
         // {
         //   id: 1,
@@ -609,17 +613,75 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 只是视觉上改，需要发请求改
       item.finish = item.finish == 0 ? 1 : 0;
     },
+    // 判断是否是今天第一次发put请求
+    isPutMoodBefore: function isPutMoodBefore() {
+      // 依赖bug运行，后续一定要完善
+      var thetime = new Date();
+      console.log('the time is :', thetime);
+      var y = thetime.getFullYear().toString();
+      // padStart格式两位补0
+      var mt = (thetime.getMonth() + 1).toString().padStart(2, '0');
+      var day = thetime.getDate().toString().padStart(2, '0');
+      var week = thetime.getDay().toString();
+      switch (week) {
+        case '1':
+          week = 'Mon';
+          break;
+        case '2':
+          week = 'Tue';
+          break;
+        case '3':
+          week = 'Wed';
+          break;
+        case '4':
+          week = 'Thr';
+          break;
+        case '5':
+          week = 'Fri';
+          break;
+        case '6':
+          week = 'Sat';
+          break;
+        default:
+          week = 'Sun';
+          break;}
+
+      var formDateTime = y + '/' + mt + '/' + day + ' ' + week;
+      console.log('formDateTime', formDateTime);
+      console.log(formDateTime == this.moodList[0].date);
+      this.todayId = this.moodList[0].id;
+      console.log('today id', this.todayId);
+      // 返回值
+      return formDateTime == this.moodList[0].date;
+    },
     // put今日mood
-    putMoodToday: function putMoodToday() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$put2, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+    putMoodToday: function putMoodToday() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$post, res, _yield$uni$$http$put2, _res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
                 console.log("putMoodToday");if (!(
                 _this6.todayMessage == "")) {_context6.next = 3;break;}return _context6.abrupt("return",
-                uni.$showMsg("请填写今日心情"));case 3:_context6.next = 5;return (
+                uni.$showMsg("请填写今日心情"));case 3:
+
+                // 调用判断函数，接收返回值
+                _this6.is_putMood = _this6.isPutMoodBefore();
+                console.log('is_putMood', _this6.is_putMood);if (!
+
+                _this6.is_putMood) {_context6.next = 13;break;}_context6.next = 8;return (
+
+                  uni.$http.post("/tdmd/mood", {
+                    id: _this6.todayId,
+                    message: _this6.todayMessage,
+                    mood: _this6.todayMood }));case 8:_yield$uni$$http$post = _context6.sent;res = _yield$uni$$http$post.data;
+
+                console.log("mood", res);_context6.next = 19;break;case 13:_context6.next = 15;return (
+
 
                   uni.$http.put("/tdmd/mood", {
                     message: _this6.todayMessage,
-                    mood: _this6.todayMood }));case 5:_yield$uni$$http$put2 = _context6.sent;res = _yield$uni$$http$put2.data;
+                    mood: _this6.todayMood }));case 15:_yield$uni$$http$put2 = _context6.sent;_res = _yield$uni$$http$put2.data;
 
-                console.log("mood", res);case 8:case "end":return _context6.stop();}}}, _callee6);}))();
+                console.log("mood", _res);
+                // 改状态
+                _this6.is_putMood = true;case 19:case "end":return _context6.stop();}}}, _callee6);}))();
+
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
