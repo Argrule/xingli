@@ -315,15 +315,17 @@ export default {
       console.log("点击关闭");
     },
     // 提交Input todo
-    dialogInputConfirm(val) {
+    async dialogInputConfirm(input_val) {
       uni.showLoading({
         title: "填写成功",
       });
-      // const {data:res}= await uni.$http.put('/tdmd/todo');
+      // console.log(this.todayTodo);//this.todayTodo无效
+      const {data:res}= await uni.$http.put('/tdmd/todo',{todo:input_val});
+      console.log('todoToday',res);
       setTimeout(() => {
         uni.hideLoading();
-        console.log(val);
-        this.todayTodo = val;
+        // console.log(val);
+        this.todayTodo = input_val;
         // 关闭窗口后，恢复默认内容
         this.$refs.inputDialog.close();
       }, 1000);

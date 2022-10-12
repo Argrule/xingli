@@ -490,51 +490,53 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       console.log("点击关闭");
     },
     // 提交Input todo
-    dialogInputConfirm: function dialogInputConfirm(val) {var _this = this;
-      uni.showLoading({
-        title: "填写成功" });
+    dialogInputConfirm: function dialogInputConfirm(input_val) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                uni.showLoading({
+                  title: "填写成功" });
 
-      // const {data:res}= await uni.$http.put('/tdmd/todo');
-      setTimeout(function () {
-        uni.hideLoading();
-        console.log(val);
-        _this.todayTodo = val;
-        // 关闭窗口后，恢复默认内容
-        _this.$refs.inputDialog.close();
-      }, 1000);
+                // console.log(this.todayTodo);//this.todayTodo无效
+                _context.next = 3;return uni.$http.put('/tdmd/todo', { todo: input_val });case 3:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
+                console.log('todoToday', res);
+                setTimeout(function () {
+                  uni.hideLoading();
+                  // console.log(val);
+                  _this.todayTodo = input_val;
+                  // 关闭窗口后，恢复默认内容
+                  _this.$refs.inputDialog.close();
+                }, 1000);case 7:case "end":return _context.stop();}}}, _callee);}))();
     },
 
     // 获取diary页数
-    getMoodListPage: function getMoodListPage() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$get, pageResult;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  uni.$http.get("/tdmd/moodPages"));case 2:_yield$uni$$http$get = _context.sent;pageResult = _yield$uni$$http$get.data;
+    getMoodListPage: function getMoodListPage() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, pageResult;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  uni.$http.get("/tdmd/moodPages"));case 2:_yield$uni$$http$get = _context2.sent;pageResult = _yield$uni$$http$get.data;
                 // console.log("pageResult", pageResult);
-                _this2.changeDiaryPage(pageResult.data.pages);case 5:case "end":return _context.stop();}}}, _callee);}))();
+                _this2.changeDiaryPage(pageResult.data.pages);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 获取diary list第一页
-    getMoodListDetail: function getMoodListDetail() {var _arguments = arguments,_this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var thePage, _yield$uni$$http$get2, moodListResult;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context2.next = 3;return (
+    getMoodListDetail: function getMoodListDetail() {var _arguments = arguments,_this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var thePage, _yield$uni$$http$get2, moodListResult;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context3.next = 3;return (
                   uni.$http.get("/tdmd/moods", {
-                    page: thePage }));case 3:_yield$uni$$http$get2 = _context2.sent;moodListResult = _yield$uni$$http$get2.data;
+                    page: thePage }));case 3:_yield$uni$$http$get2 = _context3.sent;moodListResult = _yield$uni$$http$get2.data;
 
                 // console.log("pageResult", moodListResult);
                 _this3.moodList = [].concat(_toConsumableArray(_this3.moodList), _toConsumableArray(moodListResult.data));
-                console.log("moodlist", _this3.moodList);case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+                console.log("moodlist", _this3.moodList);case 7:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 获取todo list
-    getTodoList: function getTodoList() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
-                  uni.$http.get("/tdmd/todo"));case 2:_yield$uni$$http$get3 = _context3.sent;res = _yield$uni$$http$get3.data;
-                console.log("hh", res.data);case 5:case "end":return _context3.stop();}}}, _callee3);}))();
+    getTodoList: function getTodoList() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
+                  uni.$http.get("/tdmd/todo"));case 2:_yield$uni$$http$get3 = _context4.sent;res = _yield$uni$$http$get3.data;
+                console.log("hh", res.data);case 5:case "end":return _context4.stop();}}}, _callee4);}))();
     },
 
     // 触底请求第二页diary
-    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:if (!
-                _this4.isloading) {_context4.next = 2;break;}return _context4.abrupt("return");case 2:
+    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:if (!
+                _this4.isloading) {_context5.next = 2;break;}return _context5.abrupt("return");case 2:
                 _this4.isloading = true;
                 // 请求下一页
-                _context4.next = 5;return _this4.getInsertDiary();case 5:
+                _context5.next = 5;return _this4.getInsertDiary();case 5:
                 // 解除节流
                 setTimeout(function () {
                   _this4.isloading = false;
-                }, 3000);case 6:case "end":return _context4.stop();}}}, _callee4);}))();
+                }, 3000);case 6:case "end":return _context5.stop();}}}, _callee5);}))();
     },
     // todolist不做分页，后续可能会改进
     scrolltolowerUpdateTodoList: function scrolltolowerUpdateTodoList() {
@@ -601,16 +603,16 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       item.finish = item.finish == 0 ? 1 : 0;
     },
     // put今日mood
-    putMoodToday: function putMoodToday() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
+    putMoodToday: function putMoodToday() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$put2, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
                 console.log("putMoodToday");if (!(
-                _this5.todayMessage == "")) {_context5.next = 3;break;}return _context5.abrupt("return",
-                uni.$showMsg("请填写今日心情"));case 3:_context5.next = 5;return (
+                _this5.todayMessage == "")) {_context6.next = 3;break;}return _context6.abrupt("return",
+                uni.$showMsg("请填写今日心情"));case 3:_context6.next = 5;return (
 
                   uni.$http.put("/tdmd/mood", {
                     message: _this5.todayMessage,
-                    mood: _this5.todayMood }));case 5:_yield$uni$$http$put = _context5.sent;res = _yield$uni$$http$put.data;
+                    mood: _this5.todayMood }));case 5:_yield$uni$$http$put2 = _context6.sent;res = _yield$uni$$http$put2.data;
 
-                console.log("mood", res);case 8:case "end":return _context5.stop();}}}, _callee5);}))();
+                console.log("mood", res);case 8:case "end":return _context6.stop();}}}, _callee6);}))();
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
