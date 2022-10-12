@@ -34,6 +34,19 @@
 				isPermited:false,		
 			};
 		},
+		async beforeCreate(){
+			console.log("判断是否已登录ing");
+			const { data: res } = await uni.$http.get("/user/info");
+			console.log("已登录", res);
+			if (res.code == "00000") {
+			// 获取默认个人信息
+			this.changeAvatarUrl(res.data.avatarUrl);
+			this.changeGender(res.data.gender);
+			this.changeUserName(res.data.userName);
+			this.changeEmail(res.data.email);			
+			uni.reLaunch({ url: "/pages/personalMain/personalMain" });			
+    }
+		},
 		methods:{
 			...mapMutations('m_personal',['changeUserId','changeUserName','changeEmail','changeGender','changeAvatarUrl']),
 			// 勾选或取消同意协议

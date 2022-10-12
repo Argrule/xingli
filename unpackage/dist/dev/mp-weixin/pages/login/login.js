@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 {
   data: function data() {
     return {
@@ -167,6 +167,19 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 是否同意协议
       isPermited: false };
 
+  },
+  beforeCreate: function beforeCreate() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              console.log("判断是否已登录ing");_context.next = 3;return (
+                uni.$http.get("/user/info"));case 3:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+              console.log("已登录", res);
+              if (res.code == "00000") {
+                // 获取默认个人信息
+                _this.changeAvatarUrl(res.data.avatarUrl);
+                _this.changeGender(res.data.gender);
+                _this.changeUserName(res.data.userName);
+                _this.changeEmail(res.data.email);
+                uni.reLaunch({ url: "/pages/personalMain/personalMain" });
+              }case 7:case "end":return _context.stop();}}}, _callee);}))();
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)('m_personal', ['changeUserId', 'changeUserName', 'changeEmail', 'changeGender', 'changeAvatarUrl'])), {}, {
@@ -201,17 +214,17 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       }
     },
     // 发登录请求
-    login: function login() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$post, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+    login: function login() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$post, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                   uni.$http.post('/login/login', {
-                    userName: _this.userName,
-                    password: _this.passWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
+                    userName: _this2.userName,
+                    password: _this2.passWord }));case 2:_yield$uni$$http$post = _context2.sent;res = _yield$uni$$http$post.data;if (!(
 
-                res.code == '00000')) {_context.next = 10;break;}
+                res.code == '00000')) {_context2.next = 10;break;}
                 uni.$showMsg('登录成功');
                 // 更新ID
-                _this.changeUserId(res.data.userId);
+                _this2.changeUserId(res.data.userId);
                 // 存token在session
-                uni.setStorageSync('token', res.data.token);_context.next = 11;break;case 10:return _context.abrupt("return",
+                uni.setStorageSync('token', res.data.token);_context2.next = 11;break;case 10:return _context2.abrupt("return",
 
                 uni.$showMsg(res.message));case 11:
 
@@ -219,18 +232,18 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 uni.switchTab({
                   url: '../personalMain/personalMain' });
 
-                _this.afterLogin();case 13:case "end":return _context.stop();}}}, _callee);}))();
+                _this2.afterLogin();case 13:case "end":return _context2.stop();}}}, _callee2);}))();
     },
-    afterLogin: function afterLogin() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+    afterLogin: function afterLogin() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
 
 
-                  uni.$http.get('/user/info'));case 2:_yield$uni$$http$get = _context2.sent;res = _yield$uni$$http$get.data;
+                  uni.$http.get('/user/info'));case 2:_yield$uni$$http$get2 = _context3.sent;res = _yield$uni$$http$get2.data;
                 console.log('res', res);
                 // 获取默认个人信息
-                _this2.changeAvatarUrl(res.data.avatarUrl);
-                _this2.changeGender(res.data.gender);
-                _this2.changeUserName(res.data.userName);
-                _this2.changeEmail(res.data.email);case 9:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this3.changeAvatarUrl(res.data.avatarUrl);
+                _this3.changeGender(res.data.gender);
+                _this3.changeUserName(res.data.userName);
+                _this3.changeEmail(res.data.email);case 9:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 获取验证码，未完善
     getIdentityCode: function getIdentityCode() {
