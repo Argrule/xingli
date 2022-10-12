@@ -1,12 +1,13 @@
 <template>
   <view class="background">
     <u-sticky bgColor="#fff">
+      <view style="height:calc(6vh)"></view>
       <u-search
         class="u_search"
-        height="10"
+        height="15"
         :clearabled="false"
         v-model="keyword"
-        margin="50rpx 30rpx 0rpx 30rpx"
+        margin="0rpx 50rpx"
         :showAction="false"
         @search="searchKeyWord"
       ></u-search>
@@ -152,7 +153,7 @@ export default {
   margin-top: -70rpx;
 }
 /deep/ .u-tabs {
-  margin-top: 70rpx;
+  margin-top: 50rpx;
   align-items: center;
   // background-color: aqua;
 }
