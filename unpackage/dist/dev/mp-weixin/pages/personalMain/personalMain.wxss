@@ -37,6 +37,15 @@ page.data-v-674418a6 {
   padding: 8rpx 12rpx;
   background-color: #f8e8e1;
 }
+.todo-list.data-v-674418a6 {
+  display: flex;
+  justify-content: stretch;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 20rpx 20rpx;
+  padding: 8rpx 12rpx;
+  background-color: #f8e8e1;
+}
 .person.data-v-674418a6 {
   display: flex;
 }

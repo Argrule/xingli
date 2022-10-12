@@ -184,7 +184,7 @@
           @scrolltolower="scrolltolowerUpdateTodoList"
         >
           <view v-for="(item, i) in toDoList" :key="i">
-            <view class="mood-list">
+            <view class="todo-list">
               <view v-if="item.finish == 0">
                 <uni-icons
                   type="circle"
@@ -320,8 +320,10 @@ export default {
         title: "填写成功",
       });
       // console.log(this.todayTodo);//this.todayTodo无效
-      const {data:res}= await uni.$http.put('/tdmd/todo',{todo:input_val});
-      console.log('todoToday',res);
+      const { data: res } = await uni.$http.put("/tdmd/todo", {
+        todo: input_val,
+      });
+      console.log("todoToday", res);
       setTimeout(() => {
         uni.hideLoading();
         // console.log(val);
@@ -350,7 +352,7 @@ export default {
     async getTodoList() {
       const { data: res } = await uni.$http.get("/tdmd/todo");
       console.log("hh", res.data);
-      this.toDoList=res.data;
+      this.toDoList = res.data;
     },
 
     // 触底请求第二页diary
@@ -478,10 +480,20 @@ page {
   flex-direction: column;
   justify-content: space-around;
 }
-// 列表
+// mood列表
 .mood-list {
   display: flex;
   justify-content: space-between;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: 20rpx 20rpx;
+  padding: 8rpx 12rpx;
+  background-color: #f8e8e1;
+}
+// todo列表
+.todo-list {
+  display: flex;
+  justify-content: stretch;
   border-radius: 10rpx;
   width: 90%;
   margin: 20rpx 20rpx;
