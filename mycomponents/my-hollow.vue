@@ -83,7 +83,7 @@ export default {
       // 解除节流
       setTimeout(()=>{        
         this.isloading=false;
-      },3000)
+      },200)
     },
     // 下拉刷新
     async myOnPullDownRefresh() {
