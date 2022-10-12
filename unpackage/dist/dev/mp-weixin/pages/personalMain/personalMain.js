@@ -664,23 +664,33 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 _this6.is_putMood = _this6.isPutMoodBefore();
                 console.log('is_putMood', _this6.is_putMood);if (!
 
-                _this6.is_putMood) {_context6.next = 13;break;}_context6.next = 8;return (
+                _this6.is_putMood) {_context6.next = 16;break;}_context6.next = 8;return (
 
                   uni.$http.post("/tdmd/mood", {
                     id: _this6.todayId,
                     message: _this6.todayMessage,
                     mood: _this6.todayMood }));case 8:_yield$uni$$http$post = _context6.sent;res = _yield$uni$$http$post.data;
 
-                console.log("mood", res);_context6.next = 19;break;case 13:_context6.next = 15;return (
+                console.log("mood", res);
+                // 重新获取
+                _this6.moodList = [];
+                _this6.getMoodListDetail();
+                // 完成后返回
+                _this6.changeIsDairyDetailEdit();_context6.next = 25;break;case 16:_context6.next = 18;return (
 
 
                   uni.$http.put("/tdmd/mood", {
                     message: _this6.todayMessage,
-                    mood: _this6.todayMood }));case 15:_yield$uni$$http$put2 = _context6.sent;_res = _yield$uni$$http$put2.data;
+                    mood: _this6.todayMood }));case 18:_yield$uni$$http$put2 = _context6.sent;_res = _yield$uni$$http$put2.data;
 
                 console.log("mood", _res);
+                // 重新获取
+                _this6.moodList = [];
+                _this6.getMoodListDetail();
                 // 改状态
-                _this6.is_putMood = true;case 19:case "end":return _context6.stop();}}}, _callee6);}))();
+                _this6.is_putMood = true;
+                // 完成后返回
+                _this6.changeIsDairyDetailEdit();case 25:case "end":return _context6.stop();}}}, _callee6);}))();
 
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

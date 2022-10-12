@@ -496,7 +496,12 @@ export default {
         message: this.todayMessage,
         mood: this.todayMood,
         }); 
-        console.log("mood", res); 
+        console.log("mood", res);
+        // 重新获取
+        this.moodList=[];
+        this.getMoodListDetail();
+        // 完成后返回
+        this.changeIsDairyDetailEdit();
       } else {
         // 第一次，put
         const { data: res } = await uni.$http.put("/tdmd/mood", {
@@ -504,8 +509,13 @@ export default {
         mood: this.todayMood,
         });
         console.log("mood", res);
+        // 重新获取
+        this.moodList=[];
+        this.getMoodListDetail();
         // 改状态
         this.is_putMood=true;
+        // 完成后返回
+        this.changeIsDairyDetailEdit();
       }      
     },
   },
