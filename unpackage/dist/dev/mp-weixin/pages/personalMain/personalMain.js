@@ -444,22 +444,22 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
         // },
       ],
       toDoList: [
-      {
-        id: 1,
-        finish: 0,
-        todo: "测试" },
-
-      {
-        id: 2,
-        finish: 1,
-        todo: "还是测试" },
-
-      {
-        id: 2,
-        finish: 0,
-        todo: "还是测测测测试" }],
-
-
+        // {
+        //   id: 1,
+        //   finish: 0,
+        //   todo: "测试",
+        // },
+        // {
+        //   id: 2,
+        //   finish: 1,
+        //   todo: "还是测试",
+        // },
+        // {
+        //   id: 2,
+        //   finish: 0,
+        //   todo: "还是测测测测试",
+        // },
+      ],
       // 添加的今日todoList
       todayTodo: "" };
 
@@ -522,20 +522,21 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 console.log("moodlist", _this3.moodList);case 7:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 获取todo list
-    getTodoList: function getTodoList() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
+    getTodoList: function getTodoList() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
                   uni.$http.get("/tdmd/todo"));case 2:_yield$uni$$http$get3 = _context4.sent;res = _yield$uni$$http$get3.data;
-                console.log("hh", res.data);case 5:case "end":return _context4.stop();}}}, _callee4);}))();
+                console.log("hh", res.data);
+                _this4.toDoList = res.data;case 6:case "end":return _context4.stop();}}}, _callee4);}))();
     },
 
     // 触底请求第二页diary
-    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:if (!
-                _this4.isloading) {_context5.next = 2;break;}return _context5.abrupt("return");case 2:
-                _this4.isloading = true;
+    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:if (!
+                _this5.isloading) {_context5.next = 2;break;}return _context5.abrupt("return");case 2:
+                _this5.isloading = true;
                 // 请求下一页
-                _context5.next = 5;return _this4.getInsertDiary();case 5:
+                _context5.next = 5;return _this5.getInsertDiary();case 5:
                 // 解除节流
                 setTimeout(function () {
-                  _this4.isloading = false;
+                  _this5.isloading = false;
                 }, 3000);case 6:case "end":return _context5.stop();}}}, _callee5);}))();
     },
     // todolist不做分页，后续可能会改进
@@ -603,14 +604,14 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       item.finish = item.finish == 0 ? 1 : 0;
     },
     // put今日mood
-    putMoodToday: function putMoodToday() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$put2, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+    putMoodToday: function putMoodToday() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$put2, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
                 console.log("putMoodToday");if (!(
-                _this5.todayMessage == "")) {_context6.next = 3;break;}return _context6.abrupt("return",
+                _this6.todayMessage == "")) {_context6.next = 3;break;}return _context6.abrupt("return",
                 uni.$showMsg("请填写今日心情"));case 3:_context6.next = 5;return (
 
                   uni.$http.put("/tdmd/mood", {
-                    message: _this5.todayMessage,
-                    mood: _this5.todayMood }));case 5:_yield$uni$$http$put2 = _context6.sent;res = _yield$uni$$http$put2.data;
+                    message: _this6.todayMessage,
+                    mood: _this6.todayMood }));case 5:_yield$uni$$http$put2 = _context6.sent;res = _yield$uni$$http$put2.data;
 
                 console.log("mood", res);case 8:case "end":return _context6.stop();}}}, _callee6);}))();
     } }) };exports.default = _default;

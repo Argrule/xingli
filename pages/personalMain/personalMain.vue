@@ -269,21 +269,21 @@ export default {
         // },
       ],
       toDoList: [
-        {
-          id: 1,
-          finish: 0,
-          todo: "测试",
-        },
-        {
-          id: 2,
-          finish: 1,
-          todo: "还是测试",
-        },
-        {
-          id: 2,
-          finish: 0,
-          todo: "还是测测测测试",
-        },
+        // {
+        //   id: 1,
+        //   finish: 0,
+        //   todo: "测试",
+        // },
+        // {
+        //   id: 2,
+        //   finish: 1,
+        //   todo: "还是测试",
+        // },
+        // {
+        //   id: 2,
+        //   finish: 0,
+        //   todo: "还是测测测测试",
+        // },
       ],
       // 添加的今日todoList
       todayTodo: "",
@@ -350,6 +350,7 @@ export default {
     async getTodoList() {
       const { data: res } = await uni.$http.get("/tdmd/todo");
       console.log("hh", res.data);
+      this.toDoList=res.data;
     },
 
     // 触底请求第二页diary
