@@ -83,7 +83,7 @@
         <!-- 列表 -->
         <scroll-view
           scroll-y="true"
-          style="height: 270rpx"
+          style="height: calc(28vh)"
           scroll-top="0"
           @scrolltolower="scrolltolowerUpdateDiary"
         >
@@ -179,7 +179,7 @@
         <!-- 列表 -->
         <scroll-view
           scroll-y="true"
-          style="height: 270rpx"
+          style="height: calc(28vh)"
           scroll-top="0"
           @scrolltolower="scrolltolowerUpdateTodoList"
         >
@@ -230,6 +230,8 @@
         </view>
       </view>
     </view>
+    <!-- 占位，防塌陷 -->
+    <view class="empty"></view>
   </view>
 </template>
 
@@ -582,11 +584,11 @@ page {
 .mood-dairy {
   // 子绝父相
   position: relative;
-  height: 430rpx;
+  height: calc(35vh);
   background: #fff;
-  margin: 15rpx 40rpx;
+  margin: 50rpx 40rpx;
   padding: 15rpx;
-  border-radius: 10rpx;
+  border-radius: 25rpx;
   box-shadow: // 2px 0px 8px rgb(109, 109, 109),  /*右边阴影*/
     0px 2px 8px rgb(109, 109, 109); /*下边阴影*/
 }
@@ -633,8 +635,9 @@ page {
 }
 .dairyDetailEdit {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   right: 5%;
+  z-index: 1;
 }
 .dairyDetailEditReturn {
   display: flex;
@@ -646,11 +649,11 @@ page {
   // 子绝父相
   position: relative;
   font-size: 30rpx;
-  height: 400rpx;
+  height: calc(35vh);
   background: #fff;
-  margin: 25rpx 40rpx;
+  margin: 50rpx 40rpx;
   padding: 15rpx;
-  border-radius: 10rpx;
+  border-radius: 25rpx;
   box-shadow: 0px 2px 8px rgb(109, 109, 109);
 }
 </style>
