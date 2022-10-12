@@ -617,40 +617,40 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     isPutMoodBefore: function isPutMoodBefore() {
       // 依赖bug运行，后续一定要完善
       var thetime = new Date();
-      console.log('the time is :', thetime);
+      console.log("the time is :", thetime);
       var y = thetime.getFullYear().toString();
       // padStart格式两位补0
-      var mt = (thetime.getMonth() + 1).toString().padStart(2, '0');
-      var day = thetime.getDate().toString().padStart(2, '0');
+      var mt = (thetime.getMonth() + 1).toString().padStart(2, "0");
+      var day = thetime.getDate().toString().padStart(2, "0");
       var week = thetime.getDay().toString();
       switch (week) {
-        case '1':
-          week = 'Mon';
+        case "1":
+          week = "Mon";
           break;
-        case '2':
-          week = 'Tue';
+        case "2":
+          week = "Tue";
           break;
-        case '3':
-          week = 'Wed';
+        case "3":
+          week = "Wed";
           break;
-        case '4':
-          week = 'Thr';
+        case "4":
+          week = "Thr";
           break;
-        case '5':
-          week = 'Fri';
+        case "5":
+          week = "Fri";
           break;
-        case '6':
-          week = 'Sat';
+        case "6":
+          week = "Sat";
           break;
         default:
-          week = 'Sun';
+          week = "Sun";
           break;}
 
-      var formDateTime = y + '/' + mt + '/' + day + ' ' + week;
-      console.log('formDateTime', formDateTime);
+      var formDateTime = y + "/" + mt + "/" + day + " " + week;
+      console.log("formDateTime", formDateTime);
       console.log(formDateTime == this.moodList[0].date);
       this.todayId = this.moodList[0].id;
-      console.log('today id', this.todayId);
+      console.log("today id", this.todayId);
       // 返回值
       return formDateTime == this.moodList[0].date;
     },
@@ -662,7 +662,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
 
                 // 调用判断函数，接收返回值
                 _this6.is_putMood = _this6.isPutMoodBefore();
-                console.log('is_putMood', _this6.is_putMood);if (!
+                console.log("is_putMood", _this6.is_putMood);if (!
 
                 _this6.is_putMood) {_context6.next = 16;break;}_context6.next = 8;return (
 

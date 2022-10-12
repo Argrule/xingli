@@ -248,12 +248,12 @@ export default {
       showMoodSelect: false,
 
       // 今日是否提交过Mood
-      is_putMood:false,
+      is_putMood: false,
       // 提交Mood的内容
       todayMood: 0,
       todayMessage: "",
       todaydateTime: "2022/9/22 Sunday",
-      todayId:0,
+      todayId: 0,
       // 列表
       moodList: [
         // {
@@ -439,45 +439,45 @@ export default {
       item.finish = item.finish == 0 ? 1 : 0;
     },
     // 判断是否是今天第一次发put请求
-    isPutMoodBefore(){
+    isPutMoodBefore() {
       // 依赖bug运行，后续一定要完善
-      let thetime= new Date();
-      console.log('the time is :',thetime);
-      let y=thetime.getFullYear().toString();
+      let thetime = new Date();
+      console.log("the time is :", thetime);
+      let y = thetime.getFullYear().toString();
       // padStart格式两位补0
-      let mt = (thetime.getMonth() + 1).toString().padStart(2, '0');
-      let day = thetime.getDate().toString().padStart(2, '0');
-      let week = thetime.getDay().toString();                    
+      let mt = (thetime.getMonth() + 1).toString().padStart(2, "0");
+      let day = thetime.getDate().toString().padStart(2, "0");
+      let week = thetime.getDay().toString();
       switch (week) {
-        case '1':
-          week='Mon';
+        case "1":
+          week = "Mon";
           break;
-        case '2':
-          week='Tue';
+        case "2":
+          week = "Tue";
           break;
-        case '3':
-          week='Wed';
+        case "3":
+          week = "Wed";
           break;
-        case '4':
-          week='Thr';
+        case "4":
+          week = "Thr";
           break;
-        case '5':
-          week='Fri';
+        case "5":
+          week = "Fri";
           break;
-        case '6':
-          week='Sat';          
-          break;      
+        case "6":
+          week = "Sat";
+          break;
         default:
-          week='Sun';
+          week = "Sun";
           break;
-      }      
-      let formDateTime=  y + '/' + mt + '/' + day + ' ' + week;
-      console.log('formDateTime',formDateTime);
-      console.log(formDateTime==this.moodList[0].date)
-      this.todayId=this.moodList[0].id;
-      console.log('today id',this.todayId);
+      }
+      let formDateTime = y + "/" + mt + "/" + day + " " + week;
+      console.log("formDateTime", formDateTime);
+      console.log(formDateTime == this.moodList[0].date);
+      this.todayId = this.moodList[0].id;
+      console.log("today id", this.todayId);
       // 返回值
-      return formDateTime==this.moodList[0].date;
+      return formDateTime == this.moodList[0].date;
     },
     // put今日mood
     async putMoodToday() {
@@ -486,37 +486,37 @@ export default {
         return uni.$showMsg("请填写今日心情");
       }
       // 调用判断函数，接收返回值
-      this.is_putMood=this.isPutMoodBefore();
-      console.log('is_putMood',this.is_putMood);
-      
+      this.is_putMood = this.isPutMoodBefore();
+      console.log("is_putMood", this.is_putMood);
+
       if (this.is_putMood) {
         // 非第一次，只能修改
-       const { data: res } = await uni.$http.post("/tdmd/mood", {
-        id:this.todayId,
-        message: this.todayMessage,
-        mood: this.todayMood,
-        }); 
+        const { data: res } = await uni.$http.post("/tdmd/mood", {
+          id: this.todayId,
+          message: this.todayMessage,
+          mood: this.todayMood,
+        });
         console.log("mood", res);
         // 重新获取
-        this.moodList=[];
+        this.moodList = [];
         this.getMoodListDetail();
         // 完成后返回
         this.changeIsDairyDetailEdit();
       } else {
         // 第一次，put
         const { data: res } = await uni.$http.put("/tdmd/mood", {
-        message: this.todayMessage,
-        mood: this.todayMood,
+          message: this.todayMessage,
+          mood: this.todayMood,
         });
         console.log("mood", res);
         // 重新获取
-        this.moodList=[];
+        this.moodList = [];
         this.getMoodListDetail();
         // 改状态
-        this.is_putMood=true;
+        this.is_putMood = true;
         // 完成后返回
         this.changeIsDairyDetailEdit();
-      }      
+      }
     },
   },
 };
