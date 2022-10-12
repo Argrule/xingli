@@ -495,15 +495,21 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                   title: "填写成功" });
 
                 // console.log(this.todayTodo);//this.todayTodo无效
-                _context.next = 3;return uni.$http.put('/tdmd/todo', { todo: input_val });case 3:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
-                console.log('todoToday', res);
+                _context.next = 3;return uni.$http.put("/tdmd/todo", {
+                  todo: input_val });case 3:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
+
+                console.log("todoToday", res);
+                // 重新获取todoList列表
+                // console.log('// 重新获取todoList列表');
+                _this.getTodoList();
+                // 关加载动画
                 setTimeout(function () {
                   uni.hideLoading();
                   // console.log(val);
                   _this.todayTodo = input_val;
                   // 关闭窗口后，恢复默认内容
                   _this.$refs.inputDialog.close();
-                }, 1000);case 7:case "end":return _context.stop();}}}, _callee);}))();
+                }, 1000);case 8:case "end":return _context.stop();}}}, _callee);}))();
     },
 
     // 获取diary页数

@@ -324,6 +324,10 @@ export default {
         todo: input_val,
       });
       console.log("todoToday", res);
+      // 重新获取todoList列表
+      // console.log('// 重新获取todoList列表');
+      this.getTodoList();
+      // 关加载动画
       setTimeout(() => {
         uni.hideLoading();
         // console.log(val);
