@@ -270,7 +270,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 var _default =
 {
   data: function data() {
@@ -342,7 +341,7 @@ var _default =
                 _this.getDocotorList(++_this.theDocListPage));case 9:
               setTimeout(function () {
                 _this.isLoading = false;
-              }, 1000);case 10:case "end":return _context.stop();}}}, _callee);}))();
+              }, 100);case 10:case "end":return _context.stop();}}}, _callee);}))();
   },
   methods: {
     // 获取docotor列表

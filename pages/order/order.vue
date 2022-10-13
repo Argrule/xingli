@@ -1,13 +1,12 @@
 <template>
-  <view>
+  <view style="background-color: #F6F6F6;">
     <!-- 搜索框 -->
     <u-sticky bgColor="#fff">
-      <u-search
-        class="u_search"
-        height="10"
+      <u-search      
+        height="25"
         :clearabled="false"
         v-model="keyword"
-        margin="50rpx 30rpx 0rpx 30rpx"
+        margin="40rpx 50rpx"
         :showAction="false"
         @search="searchKeyWord"
       ></u-search>
@@ -173,7 +172,7 @@ export default {
     await this.getDocotorList(++this.theDocListPage);
     setTimeout(()=>{
       this.isLoading=false;
-    },1000)    
+    },100)    
   },  
   methods: {
     // 获取docotor列表
@@ -346,5 +345,8 @@ export default {
 }
 .docotorListRight {
   width: 45%;
+}
+/deep/ .u-sticky {    
+  height: 100rpx;  
 }
 </style>

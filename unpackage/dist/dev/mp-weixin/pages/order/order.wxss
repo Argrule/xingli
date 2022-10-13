@@ -99,4 +99,7 @@
 .docotorListRight.data-v-127632e4 {
   width: 45%;
 }
+.data-v-127632e4 .u-sticky {
+  height: 100rpx;
+}
 

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
   "usingComponents": {
     "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
     "u-search": "/uni_modules/uview-ui/components/u-search/u-search",
