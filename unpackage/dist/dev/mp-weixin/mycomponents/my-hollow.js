@@ -222,7 +222,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 // 解除节流
                 setTimeout(function () {
                   _this2.isloading = false;
-                }, 200);case 10:case "end":return _context2.stop();}}}, _callee2);}))();
+                }, 100);case 10:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 下拉刷新
     myOnPullDownRefresh: function myOnPullDownRefresh() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:

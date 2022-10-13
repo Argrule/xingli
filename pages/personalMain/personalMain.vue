@@ -374,7 +374,7 @@ export default {
       // 解除节流
       setTimeout(() => {
         this.isloading = false;
-      }, 3000);
+      }, 100);
     },
     // todolist不做分页，后续可能会改进
     scrolltolowerUpdateTodoList() {

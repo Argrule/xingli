@@ -549,7 +549,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 // 解除节流
                 setTimeout(function () {
                   _this5.isloading = false;
-                }, 3000);case 6:case "end":return _context5.stop();}}}, _callee5);}))();
+                }, 100);case 6:case "end":return _context5.stop();}}}, _callee5);}))();
     },
     // todolist不做分页，后续可能会改进
     scrolltolowerUpdateTodoList: function scrolltolowerUpdateTodoList() {
