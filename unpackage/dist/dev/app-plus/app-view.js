@@ -9282,7 +9282,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".background[data-v-44021cb6] {\n  background-color: #f6f6f6;\n}\n.title[data-v-44021cb6] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n  border-left: 8rpx solid #f6b4a6;\n  padding-left: 20rpx;\n}\n.bookList[data-v-44021cb6] {\n  font-size: 30rpx;\n  height: 200rpx;\n  background: #fff;\n  margin: 80rpx 40rpx;\n  padding: 15rpx;\n  border-radius: 30rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n}\n.move_image[data-v-44021cb6] {\n  position: relative;\n  top: -30%;\n  left: 20rpx;\n  margin-right: 30rpx;\n}\n.functionOptions[data-v-44021cb6] {\n  margin-top: -70rpx;\n}\n[data-v-44021cb6] .u-tabs {\n  margin-top: 50rpx;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, ".background[data-v-44021cb6] {\n  background-color: #f6f6f6;\n}\n.title[data-v-44021cb6] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n  border-left: 8rpx solid #f6b4a6;\n  padding-left: 20rpx;\n}\n.bookList[data-v-44021cb6] {\n  font-size: 30rpx;\n  height: 200rpx;\n  background: #fff;\n  margin: 80rpx 40rpx;\n  padding: 15rpx;\n  border-radius: 30rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n}\n.move_image[data-v-44021cb6] {\n  position: relative;\n  top: -30%;\n  left: 20rpx;\n  margin-right: 30rpx;\n}\n.functionOptions[data-v-44021cb6] {\n  margin-top: -70rpx;\n}\n[data-v-44021cb6] .u-tabs {\n  margin-top: 60rpx;\n  align-items: center;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -152,7 +152,7 @@ export default {
   margin-top: -70rpx;
 }
 /deep/ .u-tabs {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   align-items: center;
   // background-color: aqua;
 }

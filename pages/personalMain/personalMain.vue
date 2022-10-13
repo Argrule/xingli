@@ -572,6 +572,7 @@ page {
 .todo-list {
   display: flex;
   justify-content: stretch;
+  // align-items: center;
   border-radius: 10rpx;
   width: 90%;
   margin: 20rpx 20rpx;
