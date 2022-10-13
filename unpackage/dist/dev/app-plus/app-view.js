@@ -7166,7 +7166,6 @@ var render = function() {
             attrs: { _i: 2 }
           }),
           _c("u-search", {
-            staticClass: _vm._$g(3, "sc"),
             attrs: { _i: 3 },
             on: {
               search: function($event) {

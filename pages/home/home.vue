@@ -2,9 +2,8 @@
   <view class="background">
     <u-sticky bgColor="#fff">
       <view style="height:calc(6vh)"></view>
-      <u-search
-        class="u_search"
-        height="15"
+      <u-search        
+        height="25"
         :clearabled="false"
         v-model="keyword"
         margin="0rpx 50rpx"
