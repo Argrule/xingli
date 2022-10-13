@@ -106,7 +106,17 @@ export default {
   components: {
     myTest,
   },
+  created(){
+    console.log('home start in home.vue');
+    this.getBookList();
+  },
   methods: {
+    // 获取书单
+    async getBookList(thepage=1){
+      const {data:res} = await uni.$http.get('/recommend/books',{page:thepage});
+      console.log('// 获取书单',res.data);
+      this.bookList = res.data;
+    },
     // 搜索
     searchKeyWord() {
       console.log(this.keyword);

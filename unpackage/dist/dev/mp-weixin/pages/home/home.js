@@ -167,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var myTest = function myTest() {__webpack_require__.e(/*! require.ensure | mycomponents/my-test */ "mycomponents/my-test").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-test.vue */ 359));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var myTest = function myTest() {__webpack_require__.e(/*! require.ensure | mycomponents/my-test */ "mycomponents/my-test").then((function () {return resolve(__webpack_require__(/*! ../../mycomponents/my-test.vue */ 359));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -275,7 +275,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   components: {
     myTest: myTest },
 
+  created: function created() {
+    console.log('home start in home.vue');
+    this.getBookList();
+  },
   methods: {
+    // 获取书单
+    getBookList: function getBookList() {var _arguments = arguments,_this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var thepage, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:thepage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context.next = 3;return (
+                  uni.$http.get('/recommend/books', { page: thepage }));case 3:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+                console.log('// 获取书单', res.data);
+                _this.bookList = res.data;case 7:case "end":return _context.stop();}}}, _callee);}))();
+    },
     // 搜索
     searchKeyWord: function searchKeyWord() {
       console.log(this.keyword);
@@ -285,6 +295,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       console.log("hh", item);
       this.FunctionOptions = !item.index;
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
