@@ -70,36 +70,36 @@ export default {
       keyword: "",
       // 书单
       bookList: [
-        {
-          id: 0,
-          name: "鸟哥的linux私房菜",
-          author: "鸟哥",
-          introduce:
-            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
-          photoUrl:
-            "https://ts1.cn.mm.bing.net/th/id/R-C.b3b9657667d6e02e444556c3b789d530?rik=q%2bnI4l1KvaOOFg&riu=http%3a%2f%2fbooklibimg.kfzimg.com%2fdata%2fbook_lib_img_v2%2fisbn%2f0%2f4fe3%2f4fe366f82a6abd7e23843105553db4c0_0_0_0_0_water.jpg&ehk=vkRzdlxhwDP2gQiUKjGlGxVZduZ6YU43At4OWmeSNsU%3d&risl=&pid=ImgRaw&r=0",
-          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
-        },
-        {
-          id: 1,
-          name: "鸟哥的linux私房菜",
-          author: "鸟哥",
-          introduce:
-            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
-          photoUrl:
-            "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
-          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
-        },
-        {
-          id: 1,
-          name: "鸟哥的linux私房菜",
-          author: "鸟哥",
-          introduce:
-            "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
-          photoUrl:
-            "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
-          resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
-        },
+        // {
+        //   id: 0,
+        //   name: "鸟哥的linux私房菜",
+        //   author: "鸟哥",
+        //   introduce:
+        //     "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+        //   photoUrl:
+        //     "https://ts1.cn.mm.bing.net/th/id/R-C.b3b9657667d6e02e444556c3b789d530?rik=q%2bnI4l1KvaOOFg&riu=http%3a%2f%2fbooklibimg.kfzimg.com%2fdata%2fbook_lib_img_v2%2fisbn%2f0%2f4fe3%2f4fe366f82a6abd7e23843105553db4c0_0_0_0_0_water.jpg&ehk=vkRzdlxhwDP2gQiUKjGlGxVZduZ6YU43At4OWmeSNsU%3d&risl=&pid=ImgRaw&r=0",
+        //   resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        // },
+        // {
+        //   id: 1,
+        //   name: "鸟哥的linux私房菜",
+        //   author: "鸟哥",
+        //   introduce:
+        //     "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+        //   photoUrl:
+        //     "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
+        //   resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        // },
+        // {
+        //   id: 1,
+        //   name: "鸟哥的linux私房菜",
+        //   author: "鸟哥",
+        //   introduce:
+        //     "为Linux新手而写，基于CentOS7.x,同时适用于各种常见版本的Linux",
+        //   photoUrl:
+        //     "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
+        //   resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
+        // },
       ],
     };
   },
