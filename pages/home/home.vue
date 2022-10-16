@@ -54,6 +54,7 @@
       <view class="title"> 视频推荐 </view>
       <view v-for="(item, i) in videoList" :key="i">
         <view class="videoList">
+          <!-- 视频图片 -->
           <image
             :src="item.url"
             style="
@@ -64,8 +65,14 @@
             "
             mode="aspectFit"
           ></image>
-          <view>
-            {{ item.description }}
+          <view class="videoContent">
+            <!-- 视频标题 -->
+            <view class="videoTitle">
+              {{ item.description }}
+            </view>
+            <view class="videoView">点击观看
+              <u-icon name="play-circle" size="18" color="black"></u-icon>
+            </view>
           </view>
         </view>
       </view>
@@ -205,6 +212,27 @@ export default {
   left: 20rpx;
   margin-right: 30rpx;
   box-shadow: 0px -2px 8px rgb(109, 109, 109);
+}
+.videoContent{
+  margin-left: 30rpx;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // align-items: center;
+  .videoTitle{
+    font-size: 35rpx;
+    font-weight: 600;    
+  }
+  .videoView{
+    width: 180rpx;    
+    border-radius: 15rpx;
+    padding: 15rpx;
+    font-size: 34rpx;
+    background-color: #f6b4a6;
+    display: flex;
+    align-items: center;
+  }
 }
 .functionOptions {
   margin-top: -70rpx;
