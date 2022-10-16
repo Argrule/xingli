@@ -484,6 +484,39 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     this.getMoodListPage();
     this.getMoodListDetail();
     this.getTodoList();
+    // this.todaydateTime=;
+    {
+      var thetime = new Date();
+      var y = thetime.getFullYear().toString();
+      // padStart格式两位补0
+      var mt = (thetime.getMonth() + 1).toString().padStart(2, "0");
+      var day = thetime.getDate().toString().padStart(2, "0");
+      var week = thetime.getDay().toString();
+      switch (week) {
+        case "1":
+          week = "Mon";
+          break;
+        case "2":
+          week = "Tue";
+          break;
+        case "3":
+          week = "Wed";
+          break;
+        case "4":
+          week = "Thr";
+          break;
+        case "5":
+          week = "Fri";
+          break;
+        case "6":
+          week = "Sat";
+          break;
+        default:
+          week = "Sun";
+          break;}
+
+      this.todaydateTime = y + "/" + mt + "/" + day + " " + week;
+    };
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)("m_page", ["changeDiaryPage", "changeTodoPage"])), {}, {

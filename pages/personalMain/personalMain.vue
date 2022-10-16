@@ -309,6 +309,39 @@ export default {
     this.getMoodListPage();
     this.getMoodListDetail();
     this.getTodoList();
+    // this.todaydateTime=;
+    {
+      let thetime = new Date();
+      let y = thetime.getFullYear().toString();
+      // padStart格式两位补0
+      let mt = (thetime.getMonth() + 1).toString().padStart(2, "0");
+      let day = thetime.getDate().toString().padStart(2, "0");
+      let week = thetime.getDay().toString();
+      switch (week) {
+        case "1":
+          week = "Mon";
+          break;
+        case "2":
+          week = "Tue";
+          break;
+        case "3":
+          week = "Wed";
+          break;
+        case "4":
+          week = "Thr";
+          break;
+        case "5":
+          week = "Fri";
+          break;
+        case "6":
+          week = "Sat";
+          break;
+        default:
+          week = "Sun";
+          break;
+      }
+      this.todaydateTime = y + "/" + mt + "/" + day + " " + week;
+    };
   },
   methods: {
     ...mapMutations("m_page", ["changeDiaryPage", "changeTodoPage"]),
