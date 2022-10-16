@@ -230,6 +230,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 {
   data: function data() {
     return {
@@ -276,14 +281,16 @@ __webpack_require__.r(__webpack_exports__);
     myTest: myTest },
 
   created: function created() {
-    console.log('home start in home.vue');
+    console.log("home start in home.vue");
     this.getBookList();
   },
   methods: {
     // 获取书单
     getBookList: function getBookList() {var _arguments = arguments,_this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var thepage, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:thepage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context.next = 3;return (
-                  uni.$http.get('/recommend/books', { page: thepage }));case 3:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
-                console.log('// 获取书单', res.data);
+                  uni.$http.get("/recommend/books", {
+                    page: thepage }));case 3:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+
+                console.log("// 获取书单", res.data);
                 _this.bookList = res.data;case 7:case "end":return _context.stop();}}}, _callee);}))();
     },
     // 搜索

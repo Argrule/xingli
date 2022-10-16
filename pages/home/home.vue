@@ -1,8 +1,8 @@
 <template>
   <view class="background">
     <u-sticky bgColor="#fff">
-      <view style="height:calc(6vh)"></view>
-      <u-search        
+      <view style="height: calc(6vh)"></view>
+      <u-search
         height="25"
         :clearabled="false"
         v-model="keyword"
@@ -29,18 +29,23 @@
       <view class="title"> 精选书单 </view>
       <view v-for="(item, index) in bookList" :key="index">
         <view class="bookList">
-          <!-- 封面 -->          
+          <!-- 封面 -->
           <view class="move_image">
-            <label :for="'link'+index">
-            <u--image
-              :src="item.photoUrl"
-              width="200rpx"
-              height="250rpx"
-            ></u--image>
+            <label :for="'link' + index">
+              <u--image
+                :src="item.photoUrl"
+                radius="10rpx"
+                width="200rpx"
+                height="250rpx"
+              ></u--image>
             </label>
-          </view>          
+          </view>
           <!-- link中图片和标签失效，纯文字才能生效 -->
-          <uni-link :href="item.resourceUrl" showUnderLine="false" :id="'link'+index">
+          <uni-link
+            :href="item.resourceUrl"
+            showUnderLine="false"
+            :id="'link' + index"
+          >
             {{ item.introduce }}
             <!-- <view class="bookContent">{{ item.introduce }}</view> -->
           </uni-link>
@@ -106,15 +111,17 @@ export default {
   components: {
     myTest,
   },
-  created(){
-    console.log('home start in home.vue');
+  created() {
+    console.log("home start in home.vue");
     this.getBookList();
   },
   methods: {
     // 获取书单
-    async getBookList(thepage=1){
-      const {data:res} = await uni.$http.get('/recommend/books',{page:thepage});
-      console.log('// 获取书单',res.data);
+    async getBookList(thepage = 1) {
+      const { data: res } = await uni.$http.get("/recommend/books", {
+        page: thepage,
+      });
+      console.log("// 获取书单", res.data);
       this.bookList = res.data;
     },
     // 搜索
@@ -157,6 +164,7 @@ export default {
   top: -30%;
   left: 20rpx;
   margin-right: 30rpx;
+  box-shadow: 0px 4px 8px rgb(109, 109, 109);
 }
 .functionOptions {
   margin-top: -70rpx;
