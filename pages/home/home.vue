@@ -52,11 +52,24 @@
         </view>
       </view>
       <view class="title"> 视频推荐 </view>
-      <view>
-        <view class="bookList">{{ dateContent }}</view>
-        <view class="bookList">{{ dateContent }}</view>
-        <view class="bookList">{{ dateContent }}</view>
+      <view v-for="(item, i) in videoList" :key="i">
+        <view class="videoList">
+          <image
+            :src="item.url"
+            style="
+              width: 320rpx;
+              height: 178rpx;
+              background-color: #eeeeee;
+              margin-left: 15rpx;
+            "
+            mode="aspectFit"
+          ></image>
+          <view>
+            {{ item.description }}
+          </view>
+        </view>
       </view>
+      <view style="height: 1rpx"></view>
     </view>
     <view v-else>
       <my-test></my-test>
@@ -105,6 +118,21 @@ export default {
         //     "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
         //   resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
         // },
+      ],
+      // 视频列表
+      videoList: [
+        {
+          url: "../../static/screen1.png",
+          description: "大学生心理健康教育",
+        },
+        {
+          url: "../../static/screen2.png",
+          description: "心理健康是什么",
+        },
+        {
+          url: "../../static/screen3.png",
+          description: "教你如何保持心理健康",
+        },
       ],
     };
   },
@@ -159,12 +187,24 @@ export default {
   display: flex;
   // justify-content: space-around;
 }
+.videoList {
+  font-size: 30rpx;
+  height: 200rpx;
+  background: #fff;
+  margin: 40rpx 40rpx;
+  padding: 15rpx 15rpx;
+  border-radius: 30rpx;
+  box-shadow: 0px 2px 8px rgb(109, 109, 109);
+  display: flex;
+  align-items: center;
+  // justify-content: space-around;
+}
 .move_image {
   position: relative;
   top: -30%;
   left: 20rpx;
   margin-right: 30rpx;
-  box-shadow: 0px 4px 8px rgb(109, 109, 109);
+  box-shadow: 0px -2px 8px rgb(109, 109, 109);
 }
 .functionOptions {
   margin-top: -70rpx;

@@ -235,6 +235,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
@@ -274,7 +287,22 @@ __webpack_require__.r(__webpack_exports__);
         //     "https://ts1.cn.mm.bing.net/th/id/R-C.a7237de7f1f05d56f76284c36070eef6?rik=T31uqSYxULAEWA&riu=http%3a%2f%2fww1.sinaimg.cn%2flarge%2f006VHXWOly1fo7zgwzxz6j30g40mrq4f.jpg&ehk=LV4KghigDzkDAx9al3ykxDs2pUZ1XOfjGEFbm7vFW5k%3d&risl=&pid=ImgRaw&r=0",
         //   resourceUrl: "https://www.linuxidc.com/Linux/2017-03/141744.htm",
         // },
-      ] };
+      ],
+      // 视频列表
+      videoList: [
+      {
+        url: "../../static/screen1.png",
+        description: "大学生心理健康教育" },
+
+      {
+        url: "../../static/screen2.png",
+        description: "心理健康是什么" },
+
+      {
+        url: "../../static/screen3.png",
+        description: "教你如何保持心理健康" }] };
+
+
 
   },
   components: {
