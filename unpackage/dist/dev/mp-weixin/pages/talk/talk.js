@@ -202,7 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 
   // 触底上拉获取数据
   onReachBottom: function onReachBottom() {
-    console.log('onReachBottom');
+    console.log("onReachBottom");
     if (!this.FunctionOptions)
       // 调用子组件获取更多
       this.$refs.myHollow.scrolltolowerUpdateHollow();
@@ -213,6 +213,9 @@ __webpack_require__.r(__webpack_exports__);
     if (!this.FunctionOptions)
       // 调用子组件刷新函数
       this.$refs.myHollow.myOnPullDownRefresh();
+    setTimeout(function () {
+      uni.stopPullDownRefresh();
+    }, 500);
   },
   methods: {
     // 测试

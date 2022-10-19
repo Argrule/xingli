@@ -306,6 +306,9 @@ export default {
   },
   onPullDownRefresh() {
     console.log("onPullDownRefresh");
+    setTimeout(function () {
+			uni.stopPullDownRefresh();
+		}, 500);
   },
   created() {
     this.getMoodListPage();

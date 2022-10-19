@@ -174,6 +174,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
               console.log("已登录", res);
               if (res.code == "00000") {
                 // 获取默认个人信息
+                _this.changeUserId(res.data.userId);
                 _this.changeAvatarUrl(res.data.avatarUrl);
                 _this.changeGender(res.data.gender);
                 _this.changeUserName(res.data.userName);

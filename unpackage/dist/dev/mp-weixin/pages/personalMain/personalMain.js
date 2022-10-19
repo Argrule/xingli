@@ -481,6 +481,9 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
 
   onPullDownRefresh: function onPullDownRefresh() {
     console.log("onPullDownRefresh");
+    setTimeout(function () {
+      uni.stopPullDownRefresh();
+    }, 500);
   },
   created: function created() {
     this.getMoodListPage();
