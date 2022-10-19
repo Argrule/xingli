@@ -1,0 +1,50 @@
+.fontBody.data-v-891c2434 {
+  margin: 0rpx 0rpx 20rpx 0rpx;
+  position: relative;
+  left: 63%;
+  color: #fff;
+  padding: 5rpx 10rpx;
+  background-color: rgba(255, 255, 255, 0.295);
+  font-size: 30rpx;
+  border-radius: 8rpx;
+}
+.form_content.data-v-891c2434 {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content.data-v-891c2434 {
+  height: 100%;
+  text-align: center;
+}
+.displayBox.data-v-891c2434 {
+  display: flex;
+  justify-content: right;
+}
+.IDCode-button.data-v-891c2434 {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 8rpx;
+  position: relative;
+  left: 150rpx;
+}
+.uni-input.data-v-891c2434 {
+  text-align: left;
+  padding: 10rpx;
+  display: block;
+  font-size: 30rpx;
+  border: 1px #fff solid;
+  background-color: #fff;
+  width: 500rpx;
+  margin: 35rpx auto;
+  border-radius: 8rpx;
+}
+.login-button.data-v-891c2434 {
+  width: 300rpx;
+  margin: 15rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #fbc2a6;
+}
+

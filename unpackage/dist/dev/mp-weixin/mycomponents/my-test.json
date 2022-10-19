@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "u--image": "/uni_modules/uview-ui/components/u--image/u--image",
+    "uni-link": "/uni_modules/uni-link/components/uni-link/uni-link"
+  },
+  "component": true
+}

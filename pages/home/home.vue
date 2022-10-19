@@ -70,7 +70,10 @@
             <view class="videoTitle">
               {{ item.description }}
             </view>
-            <view class="videoView">点击观看
+            <view class="videoView">
+              <uni-link :href="item.resourceUrl" showUnderLine="false">
+                点击观看
+              </uni-link>
               <u-icon name="play-circle" size="18" color="black"></u-icon>
             </view>
           </view>
@@ -131,14 +134,17 @@ export default {
         {
           url: "../../static/screen1.png",
           description: "大学生心理健康教育",
+          resourceUrl:'https://www.bilibili.com/video/BV1u5411P7yS/?spm_id_from=333.337.search-card.all.click&vd_source=3125029dccaa6183b8bd3feaa82d2648'          
         },
         {
           url: "../../static/screen2.png",
-          description: "心理健康是什么",
+          description: "心理健康教育课",
+          resourceUrl:'https://www.bilibili.com/video/BV14V411j7HB/?spm_id_from=333.337.search-card.all.click&vd_source=f2931028eb696609d18762d6348e840d'
         },
         {
           url: "../../static/screen3.png",
           description: "教你如何保持心理健康",
+          resourceUrl:'https://www.bilibili.com/video/BV1eV4y1u7P8/?spm_id_from=333.337.search-card.all.click&vd_source=3125029dccaa6183b8bd3feaa82d2648'
         },
       ],
     };
@@ -213,19 +219,19 @@ export default {
   margin-right: 30rpx;
   box-shadow: 0px -2px 8px rgb(109, 109, 109);
 }
-.videoContent{
+.videoContent {
   margin-left: 30rpx;
   height: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   // align-items: center;
-  .videoTitle{
+  .videoTitle {
     font-size: 35rpx;
-    font-weight: 600;    
+    font-weight: 600;
   }
-  .videoView{
-    width: 180rpx;    
+  .videoView {
+    width: 180rpx;
     border-radius: 15rpx;
     padding: 15rpx;
     font-size: 34rpx;

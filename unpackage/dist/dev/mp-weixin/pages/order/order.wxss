@@ -1,0 +1,105 @@
+.dialogBoder.data-v-127632e4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  margin: 80rpx 40rpx;
+  border-radius: 15rpx;
+  padding: 10rpx;
+}
+.dialogBoder .avatarAndOther.data-v-127632e4 {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40rpx 0;
+}
+.dialogBoder .docotorAndAge.data-v-127632e4 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.dialogBoder .docotorNameFont.data-v-127632e4 {
+  font-size: 40rpx;
+  font-weight: 600;
+  margin: 10rpx 0 10rpx 0;
+}
+.dialogBoder .ageFont.data-v-127632e4 {
+  margin: 10rpx 20rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.dialogBoder .communicateFont.data-v-127632e4 {
+  font-size: 30rpx;
+  color: #97b4d1;
+}
+.dialogBoder .descriptionWord.data-v-127632e4 {
+  font-size: 35rpx;
+  font-weight: 500;
+  margin: 20rpx 0;
+  padding: 0 10rpx;
+}
+.orderButton.data-v-127632e4 {
+  width: 50%;
+  background-color: #ff8553;
+  color: #ffffff;
+  position: relative;
+  bottom: 40rpx;
+}
+.headPart.data-v-127632e4 {
+  display: flex;
+  position: relative;
+}
+.headPart .title.data-v-127632e4 {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 30rpx 0 10rpx 0;
+  border-left: 8rpx solid #f6b4a6;
+  padding-left: 20rpx;
+}
+.headPart .chatIcon.data-v-127632e4 {
+  margin: 30rpx 0 10rpx 0;
+  position: absolute;
+  right: 5%;
+}
+.TextLeft.data-v-127632e4 {
+  background-color: #ffffff;
+  margin: 30rpx 0;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0px 2px 8px #6d6d6d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.TextRight.data-v-127632e4 {
+  background-color: #ffffff;
+  margin: 30rpx 0;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0px 2px 8px #6d6d6d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar.data-v-127632e4 {
+  margin-top: 30rpx;
+}
+.fontDocotorName.data-v-127632e4 {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin: 30rpx 0 10rpx 0;
+}
+.fontGoodAt.data-v-127632e4 {
+  font-size: 30rpx;
+  font-weight: 300;
+  color: #464444;
+}
+.docotorListLeft.data-v-127632e4 {
+  width: 45%;
+}
+.docotorListRight.data-v-127632e4 {
+  width: 45%;
+}
+.data-v-127632e4 .u-sticky {
+  height: 100rpx;
+}
+

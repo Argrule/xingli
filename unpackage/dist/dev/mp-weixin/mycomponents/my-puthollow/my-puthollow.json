@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的故事",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#F6B4A6",
+  "usingComponents": {
+    "u--textarea": "/uni_modules/uview-ui/components/u--textarea/u--textarea",
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
+  }
+}

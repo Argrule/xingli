@@ -7320,8 +7320,10 @@ var render = function() {
                                 attrs: { _i: "20-" + $31 }
                               },
                               [
-                                _vm._v("点击观看"),
-                                _c("u-icon", { attrs: { _i: "21-" + $31 } })
+                                _c("uni-link", { attrs: { _i: "21-" + $31 } }, [
+                                  _vm._v("点击观看")
+                                ]),
+                                _c("u-icon", { attrs: { _i: "22-" + $31 } })
                               ],
                               1
                             )
@@ -7337,15 +7339,15 @@ var render = function() {
               }),
               _c("uni-view", {
                 staticStyle: { height: "1rpx" },
-                attrs: { _i: 22 }
+                attrs: { _i: 23 }
               })
             ],
             2
           )
         : _c(
             "uni-view",
-            { attrs: { _i: 23 } },
-            [_c("my-test", { attrs: { _i: 24 } })],
+            { attrs: { _i: 24 } },
+            [_c("my-test", { attrs: { _i: 25 } })],
             1
           )
     ],
