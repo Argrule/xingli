@@ -30,7 +30,14 @@
                 "navigationBarTitleText": "",
                 "navigationBarBackgroundColor": "#00ff00",
                 "enablePullDownRefresh": true,
-                "navigationStyle": "custom"
+                "navigationStyle": "custom",
+				"app-plus": {
+				    "pullToRefresh": {
+				        "support": true,
+				        "color": "#FF8564",
+				        "style": "circle"                        
+				    }
+				}
             }
         },
         {
@@ -62,17 +69,8 @@
                 "app-plus": {
                     "pullToRefresh": {
                         "support": true,
-                        "color": "#ff3333",
-                        "style": "default",
-                        "contentdown": {
-                            "caption": "下拉可刷新"
-                        },
-                        "contentover": {
-                            "caption": "释放可刷新"
-                        },
-                        "contentrefresh": {
-                            "caption": "正在刷新"
-                        }
+                        "color": "#FF8564",
+                        "style": "circle"                        
                     }
                 }
             }

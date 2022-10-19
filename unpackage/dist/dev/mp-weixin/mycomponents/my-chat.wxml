@@ -1,1 +1,0 @@
-<view class="buttonPosition data-v-063cae1a"><view class="data-v-063cae1a"><button data-event-opts="{{[['tap',[['gotoChat',['$event']]]]]}}" class="talkButton data-v-063cae1a" bindtap="__e">LET'S TALK!</button></view><view style="margin-top:20%;" class="data-v-063cae1a"><image src="../static/gif/letTalk.gif" mode="aspectFit" class="data-v-063cae1a"></image></view></view>
