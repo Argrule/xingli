@@ -181,7 +181,8 @@ var _default =
 {
   data: function data() {
     return {
-      photoUrl: "https://cdn.uviewui.com/uview/album/8.jpg",
+      photoUrl1: "https://i0.hdslb.com/bfs/album/cc311de2ace4edebede945f3282148133200044b.png@1036w.webp",
+      photoUrl2: "https://i0.hdslb.com/bfs/album/a2265521dd2ed3cc22b0db76c13f2ad557b955ce.png@1036w.webp",
       // 测试的列表数据
       testDataList: [
       {

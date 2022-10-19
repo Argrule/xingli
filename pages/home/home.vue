@@ -71,7 +71,7 @@
               {{ item.description }}
             </view>
             <view class="videoView">
-              <uni-link :href="item.resourceUrl" showUnderLine="false">
+              <uni-link :href="item.resourceUrl" color="black" showUnderLine="false">
                 点击观看
               </uni-link>
               <u-icon name="play-circle" size="18" color="black"></u-icon>
