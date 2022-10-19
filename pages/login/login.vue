@@ -40,6 +40,7 @@
 			console.log("已登录", res);
 			if (res.code == "00000") {
 			// 获取默认个人信息
+			this.changeUserId(res.data.userId);
 			this.changeAvatarUrl(res.data.avatarUrl);
 			this.changeGender(res.data.gender);
 			this.changeUserName(res.data.userName);
