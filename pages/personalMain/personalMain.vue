@@ -38,13 +38,15 @@
         </view>
         <view class="list-icon">
           <!-- 打开右弹窗 -->
-          <u-icon
-            @click="rightDialogList"
-            name="list-dot"
-            color="#DC8C6B"
-            size="20"
-          ></u-icon>
-          <view style="position: relative; bottom: 11%">
+          <view style="position: relative; top: 10%">
+            <u-icon
+              @click="rightDialogList"
+              name="list-dot"
+              color="#DC8C6B"
+              size="20"
+            ></u-icon>
+          </view>
+          <view style="position: relative; bottom: 10%">
             <u-icon
               @click="changePersonal"
               name="arrow-right"
@@ -341,7 +343,7 @@ export default {
           break;
       }
       this.todaydateTime = y + "/" + mt + "/" + day + " " + week;
-    };
+    }
   },
   methods: {
     ...mapMutations("m_page", ["changeDiaryPage", "changeTodoPage"]),
