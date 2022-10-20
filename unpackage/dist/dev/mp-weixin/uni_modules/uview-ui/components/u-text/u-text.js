@@ -80,7 +80,7 @@ var components
 try {
   components = {
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 273))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 281))
     },
     uLink: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-link/u-link */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-link/u-link")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-link/u-link.vue */ 504))
@@ -239,7 +239,7 @@ __webpack_require__.r(__webpack_exports__);
 var _value = _interopRequireDefault(__webpack_require__(/*! ./value.js */ 501));
 var _button = _interopRequireDefault(__webpack_require__(/*! ../../libs/mixin/button.js */ 261));
 var _openType = _interopRequireDefault(__webpack_require__(/*! ../../libs/mixin/openType.js */ 260));
-var _props = _interopRequireDefault(__webpack_require__(/*! ./props.js */ 433));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _props = _interopRequireDefault(__webpack_require__(/*! ./props.js */ 451));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //

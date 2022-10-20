@@ -5,6 +5,7 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "u-action-sheet": "/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet",
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal",
     "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar",
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",

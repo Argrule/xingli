@@ -18,6 +18,30 @@
     ></u-action-sheet>
     <!-- 右弹窗 -->
     <menuBoard ref="menuBoard"></menuBoard>
+    <!-- dairy内容 -->
+     <!-- <u-transition :show="show" mode="zoom-in">
+        <view class="transition"></view>
+    </u-transition> -->
+    <u-modal
+      :show="dairyShow"
+      :closeOnClickOverlay="true"
+      :zoom="true"
+      @close="dairyShow = false"
+      :showConfirmButton="false"
+    >
+      <view
+        class="slot-content"
+        style="
+          white-space: normal;
+          word-break: break-all;
+          overflow: hidden;
+          font-size: 35rpx;
+          font-weight: 600;
+        "
+      >
+        {{ dairyContent }}
+      </view>
+    </u-modal>
     <!-- 头像部分 -->
     <view class="content">
       <view class="person">
@@ -90,7 +114,7 @@
           @scrolltolower="scrolltolowerUpdateDiary"
         >
           <view v-for="(item, i) in moodList" :key="i">
-            <view class="mood-list">
+            <view class="mood-list" @click="getTheDairyContent(item)">
               <view class="mood-word">{{ item.date }}</view>
               <view v-if="item.mood == 0">
                 <uni-icons
@@ -246,6 +270,10 @@ export default {
       // 节流阀
       isloading: false,
       diaryThePage: 1, //当前页
+      // 展示dairy文字内容
+      dairyShow: false,
+      dairyContent:
+        "// 展示dairy文字内容\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggggggggggg",
       // toDoThePage:1,//当前页
       // 导航切换
       isDairyDetailEdit: true,
@@ -259,40 +287,8 @@ export default {
       todaydateTime: "2022/9/22 Sunday",
       todayId: 0,
       // 列表
-      moodList: [
-        // {
-        //   id: 1,
-        //   mood: 2,
-        //   date: "2022/09/28 test",
-        // },
-        // {
-        //   id: 2,
-        //   mood: 1,
-        //   date: "2022/09/29 test",
-        // },
-        // {
-        //   id: 2,
-        //   mood: 0,
-        //   date: "2022/09/30 test",
-        // },
-      ],
-      toDoList: [
-        // {
-        //   id: 1,
-        //   finish: 0,
-        //   todo: "测试",
-        // },
-        // {
-        //   id: 2,
-        //   finish: 1,
-        //   todo: "还是测试",
-        // },
-        // {
-        //   id: 2,
-        //   finish: 0,
-        //   todo: "还是测测测测试",
-        // },
-      ],
+      moodList: [],
+      toDoList: [],
       // 添加的今日todoList
       todayTodo: "",
     };
@@ -307,8 +303,8 @@ export default {
   onPullDownRefresh() {
     console.log("onPullDownRefresh");
     setTimeout(function () {
-			uni.stopPullDownRefresh();
-		}, 500);
+      uni.stopPullDownRefresh();
+    }, 500);
   },
   created() {
     this.getMoodListPage();
@@ -350,6 +346,15 @@ export default {
   },
   methods: {
     ...mapMutations("m_page", ["changeDiaryPage", "changeTodoPage"]),
+    // 获取点击的dairy文字内容
+    async getTheDairyContent({id:theId}) {
+      this.dairyShow = true;
+      console.log("// 获取点击的dairy文字内容");
+      console.log('the id is',theId);
+      const {data:res} =await uni.$http.get('/tdmd/mood',{id:theId});
+      console.log('the dairy content is',res);
+      this.dairyContent = res.data.message;
+    },
     // 打开input todo
     inputDialogToggle() {
       this.$refs.inputDialog.open();

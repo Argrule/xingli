@@ -100,23 +100,26 @@ try {
     uActionSheet: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 255))
     },
+    uModal: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 552))
+    },
     uAvatar: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 265))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 273))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 273))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 281))
     },
     uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 282))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 290))
     },
     "u-Textarea": function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--textarea/u--textarea */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--textarea/u--textarea")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--textarea/u--textarea.vue */ 290))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--textarea/u--textarea */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--textarea/u--textarea")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--textarea/u--textarea.vue */ 298))
     },
     uniPopup: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 296))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 304))
     },
     uniPopupDialog: function() {
-      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 303))
+      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 311))
     }
   }
 } catch (e) {
@@ -140,6 +143,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.dairyShow = false
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -414,13 +422,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 315));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var menuBoard = function menuBoard() {__webpack_require__.e(/*! require.ensure | pages/menu/menu */ "pages/menu/menu").then((function () {return resolve(__webpack_require__(/*! ../menu/menu.vue */ 323));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {
       // 节流阀
       isloading: false,
       diaryThePage: 1, //当前页
+      // 展示dairy文字内容
+      dairyShow: false,
+      dairyContent:
+      "// 展示dairy文字内容\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggggggggggg",
       // toDoThePage:1,//当前页
       // 导航切换
       isDairyDetailEdit: true,
@@ -434,40 +470,8 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       todaydateTime: "2022/9/22 Sunday",
       todayId: 0,
       // 列表
-      moodList: [
-        // {
-        //   id: 1,
-        //   mood: 2,
-        //   date: "2022/09/28 test",
-        // },
-        // {
-        //   id: 2,
-        //   mood: 1,
-        //   date: "2022/09/29 test",
-        // },
-        // {
-        //   id: 2,
-        //   mood: 0,
-        //   date: "2022/09/30 test",
-        // },
-      ],
-      toDoList: [
-        // {
-        //   id: 1,
-        //   finish: 0,
-        //   todo: "测试",
-        // },
-        // {
-        //   id: 2,
-        //   finish: 1,
-        //   todo: "还是测试",
-        // },
-        // {
-        //   id: 2,
-        //   finish: 0,
-        //   todo: "还是测测测测试",
-        // },
-      ],
+      moodList: [],
+      toDoList: [],
       // 添加的今日todoList
       todayTodo: "" };
 
@@ -525,6 +529,15 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)("m_page", ["changeDiaryPage", "changeTodoPage"])), {}, {
+    // 获取点击的dairy文字内容
+    getTheDairyContent: function getTheDairyContent(_ref) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var theId, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:theId = _ref.id;
+                _this.dairyShow = true;
+                console.log("// 获取点击的dairy文字内容");
+                console.log('the id is', theId);_context.next = 6;return (
+                  uni.$http.get('/tdmd/mood', { id: theId }));case 6:_yield$uni$$http$get = _context.sent;res = _yield$uni$$http$get.data;
+                console.log('the dairy content is', res);
+                _this.dairyContent = res.data.message;case 10:case "end":return _context.stop();}}}, _callee);}))();
+    },
     // 打开input todo
     inputDialogToggle: function inputDialogToggle() {
       this.$refs.inputDialog.open();
@@ -534,60 +547,60 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       console.log("点击关闭");
     },
     // 提交Input todo
-    dialogInputConfirm: function dialogInputConfirm(input_val) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    dialogInputConfirm: function dialogInputConfirm(input_val) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                 uni.showLoading({
                   title: "填写成功" });
 
                 // console.log(this.todayTodo);//this.todayTodo无效
-                _context.next = 3;return uni.$http.put("/tdmd/todo", {
-                  todo: input_val });case 3:_yield$uni$$http$put = _context.sent;res = _yield$uni$$http$put.data;
+                _context2.next = 3;return uni.$http.put("/tdmd/todo", {
+                  todo: input_val });case 3:_yield$uni$$http$put = _context2.sent;res = _yield$uni$$http$put.data;
 
                 console.log("todoToday", res);
                 // 重新获取todoList列表
                 // console.log('// 重新获取todoList列表');
-                _this.getTodoList();
+                _this2.getTodoList();
                 // 关加载动画
                 setTimeout(function () {
                   uni.hideLoading();
                   // console.log(val);
-                  _this.todayTodo = input_val;
+                  _this2.todayTodo = input_val;
                   // 关闭窗口后，恢复默认内容
-                  _this.$refs.inputDialog.close();
-                }, 1000);case 8:case "end":return _context.stop();}}}, _callee);}))();
+                  _this2.$refs.inputDialog.close();
+                }, 1000);case 8:case "end":return _context2.stop();}}}, _callee2);}))();
     },
 
     // 获取diary页数
-    getMoodListPage: function getMoodListPage() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uni$$http$get, pageResult;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
-                  uni.$http.get("/tdmd/moodPages"));case 2:_yield$uni$$http$get = _context2.sent;pageResult = _yield$uni$$http$get.data;
+    getMoodListPage: function getMoodListPage() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get2, pageResult;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
+                  uni.$http.get("/tdmd/moodPages"));case 2:_yield$uni$$http$get2 = _context3.sent;pageResult = _yield$uni$$http$get2.data;
                 // console.log("pageResult", pageResult);
-                _this2.changeDiaryPage(pageResult.data.pages);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this3.changeDiaryPage(pageResult.data.pages);case 5:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 获取diary list第一页
-    getMoodListDetail: function getMoodListDetail() {var _arguments = arguments,_this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var thePage, _yield$uni$$http$get2, moodListResult;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context3.next = 3;return (
+    getMoodListDetail: function getMoodListDetail() {var _arguments = arguments,_this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var thePage, _yield$uni$$http$get3, moodListResult;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;_context4.next = 3;return (
                   uni.$http.get("/tdmd/moods", {
-                    page: thePage }));case 3:_yield$uni$$http$get2 = _context3.sent;moodListResult = _yield$uni$$http$get2.data;
+                    page: thePage }));case 3:_yield$uni$$http$get3 = _context4.sent;moodListResult = _yield$uni$$http$get3.data;
 
                 // console.log("pageResult", moodListResult);
-                _this3.moodList = [].concat(_toConsumableArray(_this3.moodList), _toConsumableArray(moodListResult.data));
-                console.log("moodlist", _this3.moodList);case 7:case "end":return _context3.stop();}}}, _callee3);}))();
+                _this4.moodList = [].concat(_toConsumableArray(_this4.moodList), _toConsumableArray(moodListResult.data));
+                console.log("moodlist", _this4.moodList);case 7:case "end":return _context4.stop();}}}, _callee4);}))();
     },
     // 获取todo list
-    getTodoList: function getTodoList() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$get3, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
-                  uni.$http.get("/tdmd/todo"));case 2:_yield$uni$$http$get3 = _context4.sent;res = _yield$uni$$http$get3.data;
+    getTodoList: function getTodoList() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var _yield$uni$$http$get4, res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_context5.next = 2;return (
+                  uni.$http.get("/tdmd/todo"));case 2:_yield$uni$$http$get4 = _context5.sent;res = _yield$uni$$http$get4.data;
                 console.log("hh", res.data);
-                _this4.toDoList = res.data;case 6:case "end":return _context4.stop();}}}, _callee4);}))();
+                _this5.toDoList = res.data;case 6:case "end":return _context5.stop();}}}, _callee5);}))();
     },
 
     // 触底请求第二页diary
-    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:if (!
-                _this5.isloading) {_context5.next = 2;break;}return _context5.abrupt("return");case 2:
-                _this5.isloading = true;
+    scrolltolowerUpdateDiary: function scrolltolowerUpdateDiary() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:if (!
+                _this6.isloading) {_context6.next = 2;break;}return _context6.abrupt("return");case 2:
+                _this6.isloading = true;
                 // 请求下一页
-                _context5.next = 5;return _this5.getInsertDiary();case 5:
+                _context6.next = 5;return _this6.getInsertDiary();case 5:
                 // 解除节流
                 setTimeout(function () {
-                  _this5.isloading = false;
-                }, 100);case 6:case "end":return _context5.stop();}}}, _callee5);}))();
+                  _this6.isloading = false;
+                }, 100);case 6:case "end":return _context6.stop();}}}, _callee6);}))();
     },
     // todolist不做分页，后续可能会改进
     scrolltolowerUpdateTodoList: function scrolltolowerUpdateTodoList() {
@@ -625,7 +638,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       console.log("// 选择表情");
       this.showMoodSelect = true;
     },
-    selectClick: function selectClick(_ref) {var name = _ref.name;
+    selectClick: function selectClick(_ref2) {var name = _ref2.name;
       this.todayMood = name == "开心" ? 0 : name == "一般" ? 1 : 2;
       console.log("你选择的心情为", this.todayMood);
       // console.log('index is:',name);
@@ -695,42 +708,42 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       return formDateTime == this.moodList[0].date;
     },
     // put今日mood
-    putMoodToday: function putMoodToday() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var _yield$uni$$http$post, res, _yield$uni$$http$put2, _res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+    putMoodToday: function putMoodToday() {var _this7 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7() {var _yield$uni$$http$post, res, _yield$uni$$http$put2, _res;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
                 console.log("putMoodToday");if (!(
-                _this6.todayMessage == "")) {_context6.next = 3;break;}return _context6.abrupt("return",
+                _this7.todayMessage == "")) {_context7.next = 3;break;}return _context7.abrupt("return",
                 uni.$showMsg("请填写今日心情"));case 3:
 
                 // 调用判断函数，接收返回值
-                _this6.is_putMood = _this6.isPutMoodBefore();
-                console.log("is_putMood", _this6.is_putMood);if (!
+                _this7.is_putMood = _this7.isPutMoodBefore();
+                console.log("is_putMood", _this7.is_putMood);if (!
 
-                _this6.is_putMood) {_context6.next = 16;break;}_context6.next = 8;return (
+                _this7.is_putMood) {_context7.next = 16;break;}_context7.next = 8;return (
 
                   uni.$http.post("/tdmd/mood", {
-                    id: _this6.todayId,
-                    message: _this6.todayMessage,
-                    mood: _this6.todayMood }));case 8:_yield$uni$$http$post = _context6.sent;res = _yield$uni$$http$post.data;
+                    id: _this7.todayId,
+                    message: _this7.todayMessage,
+                    mood: _this7.todayMood }));case 8:_yield$uni$$http$post = _context7.sent;res = _yield$uni$$http$post.data;
 
                 console.log("mood", res);
                 // 重新获取
-                _this6.moodList = [];
-                _this6.getMoodListDetail();
+                _this7.moodList = [];
+                _this7.getMoodListDetail();
                 // 完成后返回
-                _this6.changeIsDairyDetailEdit();_context6.next = 25;break;case 16:_context6.next = 18;return (
+                _this7.changeIsDairyDetailEdit();_context7.next = 25;break;case 16:_context7.next = 18;return (
 
 
                   uni.$http.put("/tdmd/mood", {
-                    message: _this6.todayMessage,
-                    mood: _this6.todayMood }));case 18:_yield$uni$$http$put2 = _context6.sent;_res = _yield$uni$$http$put2.data;
+                    message: _this7.todayMessage,
+                    mood: _this7.todayMood }));case 18:_yield$uni$$http$put2 = _context7.sent;_res = _yield$uni$$http$put2.data;
 
                 console.log("mood", _res);
                 // 重新获取
-                _this6.moodList = [];
-                _this6.getMoodListDetail();
+                _this7.moodList = [];
+                _this7.getMoodListDetail();
                 // 改状态
-                _this6.is_putMood = true;
+                _this7.is_putMood = true;
                 // 完成后返回
-                _this6.changeIsDairyDetailEdit();case 25:case "end":return _context6.stop();}}}, _callee6);}))();
+                _this7.changeIsDairyDetailEdit();case 25:case "end":return _context7.stop();}}}, _callee7);}))();
 
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
