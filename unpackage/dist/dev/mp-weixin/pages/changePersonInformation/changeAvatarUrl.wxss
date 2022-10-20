@@ -1,0 +1,15 @@
+.example-body.data-v-b9460a56 {
+  padding: 10px;
+  padding-top: 0;
+}
+.custom-image-box.data-v-b9460a56 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text.data-v-b9460a56 {
+  font-size: 14px;
+  color: #333;
+}
+

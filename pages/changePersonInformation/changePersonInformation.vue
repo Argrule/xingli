@@ -9,7 +9,7 @@
 		<view slot="value">
 			<u-avatar
             size="60"
-            src="https://cdn.uviewui.com/uview/album/1.jpg"
+            :src="avatarUrl"
             shape="circle"
           ></u-avatar>
 		</view>
@@ -29,10 +29,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
   },
+  computed:{
+    ...mapState("m_personal", ["avatarUrl"]),
+  }
 };
 </script>
 

@@ -1,1 +1,1 @@
-<view class="data-v-b9460a56">avatarUrl</view>
+<view class="example-body custom-image-box data-v-b9460a56"><uni-file-picker vue-id="6f7a3e5e-1" limit="1" del-icon="{{false}}" disable-preview="{{true}}" imageStyles="{{imageStyles}}" file-mediatype="image" value="{{imageValue}}" data-event-opts="{{[['^success',[['success']]],['^fail',[['fail']]],['^input',[['__set_model',['','imageValue','$event',[]]]]]]}}" bind:success="__e" bind:fail="__e" bind:input="__e" class="data-v-b9460a56" bind:__l="__l" vue-slots="{{['default']}}">选择</uni-file-picker></view>

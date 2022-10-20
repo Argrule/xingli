@@ -28,6 +28,7 @@
       :zoom="true"
       @close="dairyShow = false"
       :showConfirmButton="false"
+      width="600rpx"
     >
       <view
         class="slot-content"
