@@ -3,7 +3,7 @@
 	<view class="content" style="background-image: url('../../static/login.jpg');background-size: 100% 100%;">
 		<form class="form_content">			
 		<!-- 名字，待修改 -->
-		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">login</view></view>
+		<view class="title"><view style="font-size:50rpx;color:white;font-weight:500;">心享</view></view>
 		<view class="title">
 		<input class="uni-input" maxlength="10" type="text" v-model="userName" placeholder="请输入用户名" />		
 		<input class="uni-input" maxlength="15" type="password" v-model="passWord" placeholder="请输入密码" />

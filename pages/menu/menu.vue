@@ -27,6 +27,7 @@
               <u-icon name="arrow-right" color="#1b1b1b" size="20"></u-icon>
             </view>
           </view>
+          <view class="loginout" @click="loginout">退出登录 </view>
         </view>
       </u-popup>
     </view>
@@ -47,6 +48,11 @@ export default {
     close() {
       this.menuShow = false;
       // console.log('close');
+    },
+    loginout() {
+      console.log("loginout in menu.vue");
+      uni.removeStorageSync("token");
+      uni.reLaunch({ url: "/pages/login/login" });
     },
   },
 };
@@ -69,6 +75,18 @@ export default {
 .move_arrow-right {
   position: absolute;
   right: 25rpx;
+}
+.loginout {
+  position: absolute;
+  bottom: 10%;
+  background-color: #f7664e;
+  left: 50%;
+  width: 140rpx;
+  padding: 20rpx 50rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  border-radius: 15rpx;
+  transform: translate(-50%, 0);
 }
 // .move_arrow-right1 {
 //   position: absolute;
