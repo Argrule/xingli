@@ -167,110 +167,113 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 43));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 {
   data: function data() {
     return {
@@ -284,35 +287,9 @@ var _default =
       // 医生信息弹窗
       docotorDetailDialog: false,
       // 左列
-      docotorList1: [
-        // {
-        //   id: 0,
-        //   name: "猫猫学长",
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/1.jpg",
-        //   goodat: "亲子关系",
-        // },
-        // {
-        //   id: 1,
-        //   name: "猫猫学姐",
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/2.jpg",
-        //   goodat: "婚姻关系",
-        // },
-      ],
+      docotorList1: [],
       // 右列
-      docotorList2: [
-        // {
-        //   id: 3,
-        //   name: "大熊猫",
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   goodat: "恋爱关系",
-        // },
-        // {
-        //   id: 4,
-        //   name: "小熊猫",
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/4.jpg",
-        //   goodat: "校园关系",
-        // },
-      ],
+      docotorList2: [],
       // 医生信息
       docotorDetail: {
         id: 0,
@@ -330,12 +307,12 @@ var _default =
   },
   // 触底上拉获取数据
   onReachBottom: function onReachBottom() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-              console.log('onReachBottom');if (!
+              console.log("onReachBottom");if (!
               _this.isLoading) {_context.next = 3;break;}return _context.abrupt("return");case 3:
               _this.isLoading = true;
               // 页数超过了，不请求
               if (!(_this.theDocListPage >= _this.docListPage)) {_context.next = 7;break;}
-              console.log('还能触发页数超了');return _context.abrupt("return",
+              console.log("还能触发页数超了");return _context.abrupt("return",
               _this.isloading = false);case 7:_context.next = 9;return (
 
                 _this.getDocotorList(++_this.theDocListPage));case 9:
@@ -343,7 +320,8 @@ var _default =
                 _this.isLoading = false;
               }, 100);case 10:case "end":return _context.stop();}}}, _callee);}))();
   },
-  methods: {
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)("m_dchat", ["setAdvisoryId"])), {}, {
     // 获取docotor列表
     getDocotorList: function getDocotorList() {var _arguments = arguments,_this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var thePage, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
                 console.log("// 获取docotor列表");_context2.next = 4;return (
@@ -352,15 +330,13 @@ var _default =
 
                 // 左右插入
                 res.data.doctors.forEach(function (element, index) {
-                  if (index % 2)
-                  _this2.docotorList2.push(element);else
-
+                  if (index % 2) _this2.docotorList2.push(element);else
                   _this2.docotorList1.push(element);
                 });
                 // 更新页数
                 _this2.docListPage = res.data.pages;
                 // this.docotorList1 = [...this.docotorList1, ...res.data.doctors];
-                console.log('DocotorList1', _this2.docotorList1);case 9:case "end":return _context2.stop();}}}, _callee2);}))();
+                console.log("DocotorList1", _this2.docotorList1);case 9:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 点击遮罩关闭弹窗,必须要写成函数，@close里会失效
     changeShowDialog: function changeShowDialog() {
@@ -389,11 +365,16 @@ var _default =
                 _this3.docotorDetailDialog = true;case 9:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 点击预约按钮
-    clickOrderButton: function clickOrderButton() {
-      console.log("clickOrderButton");
-      // 关闭弹窗
-      this.docotorDetailDialog = false;
-    } } };exports.default = _default;
+    clickOrderButton: function clickOrderButton(theDocotorId) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+                console.log("clickOrderButton");_context4.next = 3;return (
+                  uni.$http.put("/advisory/reserve", {
+                    doctorId: theDocotorId }));case 3:_yield$uni$$http$put = _context4.sent;res = _yield$uni$$http$put.data;
+
+                // 关闭弹窗
+                _this4.docotorDetailDialog = false;
+                console.log("// 点击预约按钮", res);
+                _this4.setAdvisoryId(res.data.advisoryId);case 8:case "end":return _context4.stop();}}}, _callee4);}))();
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

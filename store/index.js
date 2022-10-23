@@ -2,7 +2,8 @@ import Vue from "vue";
 import Vuex from "vuex";
 import moduleUser from "./user.js";
 import moduleSign from "./sign.js";
-import modulePrivate from "./private.js";
+// 与医生聊天
+import moduleDChat from "./docChat.js";
 // 个人信息
 import modulePersonal from "./personal.js";
 // 最大页数
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
   modules: {
     m_user: moduleUser,
     m_sign: moduleSign,
-    m_private: modulePrivate,
+    // 与医生聊天
+    m_dchat: moduleDChat,
     // 个人信息
     m_personal: modulePersonal,
     // 最大页数

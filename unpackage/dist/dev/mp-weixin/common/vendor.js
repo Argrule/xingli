@@ -9368,14 +9368,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 15));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 16));
 var _sign = _interopRequireDefault(__webpack_require__(/*! ./sign.js */ 17));
-var _private = _interopRequireDefault(__webpack_require__(/*! ./private.js */ 18));
+
+var _docChat = _interopRequireDefault(__webpack_require__(/*! ./docChat.js */ 18));
 
 var _personal = _interopRequireDefault(__webpack_require__(/*! ./personal.js */ 19));
 
-var _maxPage = _interopRequireDefault(__webpack_require__(/*! ./maxPage.js */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 个人信息
+var _maxPage = _interopRequireDefault(__webpack_require__(/*! ./maxPage.js */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // 与医生聊天
+// 个人信息
 // 最大页数
 _vue.default.use(_vuex.default);
-
 var store = new _vuex.default.Store({
   state: {},
   mutations: {},
@@ -9383,7 +9384,8 @@ var store = new _vuex.default.Store({
   modules: {
     m_user: _user.default,
     m_sign: _sign.default,
-    m_private: _private.default,
+    // 与医生聊天
+    m_dchat: _docChat.default,
     // 个人信息
     m_personal: _personal.default,
     // 最大页数
@@ -10812,7 +10814,7 @@ module.exports = index_cjs;
 /***/ }),
 /* 18 */
 /*!******************************************!*\
-  !*** F:/huawu_c/xingli/store/private.js ***!
+  !*** F:/huawu_c/xingli/store/docChat.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -10823,12 +10825,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   namespaced: true,
   state: function state() {
     return {
-      detail: 1 };
+      // 与医生交流的id
+      advisoryId: 1 };
 
   },
   mutations: {
-    setDetail: function setDetail(state, detail) {
-      state.detail = detail;
+    setAdvisoryId: function setAdvisoryId(state, advisoryId) {
+      state.advisoryId = advisoryId;
     } } };exports.default = _default;
 
 /***/ }),
