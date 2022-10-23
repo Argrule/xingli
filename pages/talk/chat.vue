@@ -7,7 +7,7 @@
       @scrolltolower="scrolltolowerUpdate"
       scroll-with-animation="true"
     >
-	<!-- <view></view> -->
+      <!-- <view></view> -->
       <view v-for="(item, i) in messageList" :key="i">
         <view class="messageList">
           <view> {{ item.time }} </view>
@@ -31,7 +31,7 @@
         </view>
       </view>
     </scroll-view>
-	<!-- 输入框，表情之类的待添加，最好分离成组件 -->
+    <!-- 输入框，表情之类的待添加，最好分离成组件 -->
     <view class="inputMessage">
       <uni-icons type="mic" size="30"></uni-icons>
       <input class="inputFont" v-model="theMessage" @change="inputMessage" />
@@ -42,9 +42,13 @@
 </template>
 
 <script>
+// import websoket_ai from "./websoket_ai";//这个不会用
+import wxRequest from "./socket.js";
 export default {
   data() {
     return {
+      // 全局websocket对象
+      socket: null,
       // 高度
       chatViewHeight: `${100 + 100}rpx`,
       // left,1左0右
@@ -136,14 +140,44 @@ export default {
   //     }rpx`;
   //     console.log(this.chatViewHeight);
   //   },
+  mounted() {
+    let my_token = uni.getStorageSync("token");
+    this.socket = new wxRequest(
+      "ws://ainame.xyz:38080/advisory/chat?token=" + my_token + "&advisoryId=0",
+      5000000
+    );
+    // let my_token = uni.getStorageSync("token");
+    // this.socket = websoket_ai.init(0, my_token);
+    // // 打开事件
+    // this.socket.onopen = function () {
+    //   console.log("websocket已打开");
+    // };
+    // // 浏览器端接收服务器发来的消息
+    // this.socket.onmessage = function (msg) {
+    //   console.log("收到数据：");
+    //   console.log(msg.data);
+    // };
+    // // 关闭事件
+    // this.socket.onclose = function () {
+    //   console.log("websocket已关闭");
+    // };
+    // //异常事件
+    // this.socket.onerror = function () {
+    //   console.log("websocket发生了错误");
+    // };
+  },
   methods: {
     // 滚动到底部
     scrolltolowerUpdate(e) {
       console.log("scrolltolowerUpdate is", e);
     },
     // 发送消息
-    inputMessage() {
+    async inputMessage() {
       console.log("发送消息:", this.theMessage);
+      const res = await this.socket.send(
+        JSON.stringify({ message: this.theMessage })
+      );
+      console.log("websocket发送是否成功：", res);
       // this.chatViewHeight=`calc(80vh)`;
       // console.log(this.chatViewHeight)
     },
