@@ -1,3 +1,22 @@
+// let my_token = uni.getStorageSync("token");
+// this.socket = websoket_ai.init(0, my_token);
+// // 打开事件
+// this.socket.onopen = function () {
+//   console.log("websocket已打开");
+// };
+// // 浏览器端接收服务器发来的消息
+// this.socket.onmessage = function (msg) {
+//   console.log("收到数据：");
+//   console.log(msg.data);
+// };
+// // 关闭事件
+// this.socket.onclose = function () {
+//   console.log("websocket已关闭");
+// };
+// //异常事件
+// this.socket.onerror = function () {
+//   console.log("websocket发生了错误");
+// };
 export default {
     // 判断是否已连接
     checkOpenSocket() {

@@ -26,7 +26,6 @@
 /* 文章场景相关 */
 /* 引入uview */
 .scroll_view.data-v-108b2932 {
-  background-color: #f6f6f6;
   padding-bottom: 40rpx;
 }
 .inputMessage.data-v-108b2932 {
@@ -37,7 +36,7 @@
   bottom: 0;
   width: 100%;
   padding: 10rpx 15rpx;
-  background-color: #ffffff;
+  background-color: #f6f6f6;
 }
 .inputMessage .inputFont.data-v-108b2932 {
   display: block;

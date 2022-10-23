@@ -223,6 +223,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _socket = _interopRequireDefault(__webpack_require__(/*! ./socket.js */ 255));
 var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
@@ -331,25 +332,6 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     5000000,
     this.messageList);
 
-    // let my_token = uni.getStorageSync("token");
-    // this.socket = websoket_ai.init(0, my_token);
-    // // 打开事件
-    // this.socket.onopen = function () {
-    //   console.log("websocket已打开");
-    // };
-    // // 浏览器端接收服务器发来的消息
-    // this.socket.onmessage = function (msg) {
-    //   console.log("收到数据：");
-    //   console.log(msg.data);
-    // };
-    // // 关闭事件
-    // this.socket.onclose = function () {
-    //   console.log("websocket已关闭");
-    // };
-    // //异常事件
-    // this.socket.onerror = function () {
-    //   console.log("websocket发生了错误");
-    // };
   },
   methods: {
     // 时间戳转为时间
@@ -362,10 +344,11 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       console.log("scrolltolowerUpdate is", e);
     },
     // 发送消息
-    inputMessage: function inputMessage() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                console.log("发送消息:", _this.theMessage);_context.next = 3;return (
+    inputMessage: function inputMessage() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
+                _this.theMessage == "")) {_context.next = 2;break;}return _context.abrupt("return");case 2:
+                console.log("发送消息:", _this.theMessage);_context.next = 5;return (
                   _this.socket.send(
-                  JSON.stringify({ message: _this.theMessage })));case 3:res = _context.sent;
+                  JSON.stringify({ message: _this.theMessage })));case 5:res = _context.sent;
 
                 console.log("websocket发送是否成功：", res);
                 if (res == undefined) {
@@ -375,10 +358,11 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                     // objectId: 0,
                     timestamp: parseInt(new Date() / 1000) });
 
+                  _this.theMessage = "";
                 }
                 // this.chatViewHeight=`calc(80vh)`;
                 // console.log(this.chatViewHeight)
-              case 6:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
+              case 8:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

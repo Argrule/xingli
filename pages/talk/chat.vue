@@ -36,7 +36,8 @@
     <!-- 输入框，表情之类的待添加，最好分离成组件 -->
     <view class="inputMessage">
       <uni-icons type="mic" size="30"></uni-icons>
-      <input class="inputFont" v-model="theMessage" @change="inputMessage" />
+      <!-- confirm监听手机enter事件 -->
+      <input class="inputFont" v-model="theMessage" @confirm="inputMessage" />
       <uni-icons type="color" size="30"></uni-icons>
       <uni-icons type="plus" size="30"></uni-icons>
     </view>
@@ -153,25 +154,6 @@ export default {
       5000000,
       this.messageList
     );
-    // let my_token = uni.getStorageSync("token");
-    // this.socket = websoket_ai.init(0, my_token);
-    // // 打开事件
-    // this.socket.onopen = function () {
-    //   console.log("websocket已打开");
-    // };
-    // // 浏览器端接收服务器发来的消息
-    // this.socket.onmessage = function (msg) {
-    //   console.log("收到数据：");
-    //   console.log(msg.data);
-    // };
-    // // 关闭事件
-    // this.socket.onclose = function () {
-    //   console.log("websocket已关闭");
-    // };
-    // //异常事件
-    // this.socket.onerror = function () {
-    //   console.log("websocket发生了错误");
-    // };
   },
   methods: {
     // 时间戳转为时间
@@ -185,6 +167,7 @@ export default {
     },
     // 发送消息
     async inputMessage() {
+      if (this.theMessage == "") return;
       console.log("发送消息:", this.theMessage);
       const res = await this.socket.send(
         JSON.stringify({ message: this.theMessage })
@@ -197,6 +180,7 @@ export default {
           // objectId: 0,
           timestamp: parseInt(new Date() / 1000),
         });
+        this.theMessage = "";
       }
       // this.chatViewHeight=`calc(80vh)`;
       // console.log(this.chatViewHeight)
@@ -207,7 +191,7 @@ export default {
 
 <style lang="scss" scoped>
 .scroll_view {
-  background-color: #f6f6f6;
+  // background-color: ;
   padding-bottom: 40rpx;
 }
 // 发送消息
@@ -227,7 +211,7 @@ export default {
   width: 100%;
   padding: 10rpx 15rpx;
   // 需要给颜色，否则显示scroll-view的颜色
-  background-color: #ffffff;
+  background-color: #f6f6f6;
   .inputFont {
     // width: 100%;
     display: block;
