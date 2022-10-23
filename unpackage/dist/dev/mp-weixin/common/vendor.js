@@ -20212,7 +20212,6 @@ platform;exports.default = _default;
         _this.reset();
         console.log(res, 'pong');
         var result = JSON.parse(res.data);
-        console.log(_this.messageList);
         _this.messageList.push(result.data);
       });
 

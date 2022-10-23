@@ -55,8 +55,7 @@ class wsRequest {
             //接受任何消息都说明当前连接是正常的
             this.reset();
             console.log(res, 'pong');
-            let result=JSON.parse(res.data);
-            console.log(this.messageList);            
+            let result=JSON.parse(res.data);             
             this.messageList.push(result.data)            
         })
 

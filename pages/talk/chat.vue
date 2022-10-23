@@ -10,7 +10,7 @@
       <!-- <view></view> -->
       <view v-for="(item, i) in messageList" :key="i">
         <view class="messageList">
-          <view> {{ item.timestamp }} </view>
+          <view> {{ transTime(item.timestamp) }} </view>
           <!-- 左右消息 -->
           <view
             :class="[item.fromMe ? 'messageAndAvatar1' : 'messageAndAvatar0']"
@@ -21,8 +21,8 @@
                 size="45"
                 :src="
                   item.fromMe
-                    ? 'https://cdn.uviewui.com/uview/album/3.jpg'
-                    : 'https://cdn.uviewui.com/uview/album/5.jpg'
+                    ? avatarUrl
+                    : 'https://cdn.uviewui.com/uview/album/3.jpg'
                 "
                 shape="circle"
               ></u-avatar>
@@ -46,6 +46,7 @@
 <script>
 // import websoket_ai from "./websoket_ai";//这个不会用
 import wxRequest from "./socket.js";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -132,6 +133,9 @@ export default {
       theMessage: "",
     };
   },
+  computed: {
+    ...mapState("m_personal", ["avatarUrl"]),
+  },
   //   试图操作高度来分配scroll view的空间
   //   created() {
   //     console.log("onload");
@@ -170,6 +174,11 @@ export default {
     // };
   },
   methods: {
+    // 时间戳转为时间
+    transTime(timeNumStr) {
+      let msgTime = new Date(timeNumStr * 1000);
+      return msgTime.toLocaleTimeString();
+    },
     // 滚动到底部
     scrolltolowerUpdate(e) {
       console.log("scrolltolowerUpdate is", e);
@@ -186,7 +195,7 @@ export default {
           fromMe: true,
           message: this.theMessage,
           // objectId: 0,
-          timestamp: 1666526534,
+          timestamp: parseInt(new Date() / 1000),
         });
       }
       // this.chatViewHeight=`calc(80vh)`;
