@@ -1,5 +1,5 @@
 <template>
-  <view style="background-color: #f6f6f6">
+  <view style="background-color: #fcfcf6">
     <!-- 搜索框 -->
     <u-sticky bgColor="#fff">
       <u-search

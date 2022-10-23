@@ -570,7 +570,8 @@ export default {
 
 <style lang="less" scoped>
 page {
-  background: #f8f8f8;
+  // background: #f8f8f8;
+  background: #fcfcf6;
   letter-spacing: 1px;
 }
 .content {
