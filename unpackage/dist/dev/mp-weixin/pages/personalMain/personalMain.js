@@ -456,8 +456,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       diaryThePage: 1, //当前页
       // 展示dairy文字内容
       dairyShow: false,
-      dairyContent:
-      "// 展示dairy文字内容\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggggggggggg",
+      dairyContent: "",
       // toDoThePage:1,//当前页
       // 导航切换
       isDairyDetailEdit: true,
@@ -468,7 +467,8 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 提交Mood的内容
       todayMood: 0,
       todayMessage: "",
-      todaydateTime: "2022/9/22 Sunday",
+      // 右侧今日日期
+      todaydateTime: "",
       todayId: 0,
       // 列表
       moodList: [],
@@ -513,7 +513,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
           week = "Wed";
           break;
         case "4":
-          week = "Thr";
+          week = "Thu";
           break;
         case "5":
           week = "Fri";
