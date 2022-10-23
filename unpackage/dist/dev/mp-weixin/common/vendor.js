@@ -20156,7 +20156,7 @@ platform;exports.default = _default;
 
 /* WEBPACK VAR INJECTION */(function(uni) {function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var wsRequest = /*#__PURE__*/function () {"use strict";
 
-  function wsRequest(url, time) {_classCallCheck(this, wsRequest);
+  function wsRequest(url, time) {var my_list = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;_classCallCheck(this, wsRequest);
     this.status = null; // websocket是否关闭
     this.lockReconnect = false; //避免重复连接
     this.url = url;
@@ -20165,6 +20165,9 @@ platform;exports.default = _default;
     this.timeout = time; //多少秒执行检测
     this.timeoutObj = null; //检测服务器端是否还活着
     this.reconnectTimeOutObj = null; //重连之后多久再次重连
+
+    // 消息列表
+    this.messageList = my_list;
 
     try {
       return this.initRequest();
@@ -20208,6 +20211,9 @@ platform;exports.default = _default;
         //接受任何消息都说明当前连接是正常的
         _this.reset();
         console.log(res, 'pong');
+        var result = JSON.parse(res.data);
+        console.log(_this.messageList);
+        _this.messageList.push(result.data);
       });
 
     }

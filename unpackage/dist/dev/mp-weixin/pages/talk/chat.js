@@ -203,6 +203,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var _socket = _interopRequireDefault(__webpack_require__(/*! ./socket.js */ 255));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 {
   data: function data() {
@@ -213,79 +215,79 @@ var _socket = _interopRequireDefault(__webpack_require__(/*! ./socket.js */ 255)
       chatViewHeight: "".concat(100 + 100, "rpx"),
       // left,1左0右
       messageList: [
-      {
-        left: 0,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        messageText: "我好无聊",
-        time: "昨天" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉，来陪你聊天了",
-        time: "昨天" },
-
-      {
-        left: 0,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        messageText: "在吗？在吗？",
-        time: "8:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉，来陪你聊天了",
-        time: "8:10" },
-
-      {
-        left: 0,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        messageText: "小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" },
-
-      {
-        left: 1,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        messageText: "我是小诉",
-        time: "10:10" }],
-
-
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "我好无聊",
+        //   time: "昨天",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉，来陪你聊天了",
+        //   time: "昨天",
+        // },
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "在吗？在吗？",
+        //   time: "8:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉，来陪你聊天了",
+        //   time: "8:10",
+        // },
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+      ],
       // 发送的信息
       theMessage: "" };
 
@@ -304,7 +306,8 @@ var _socket = _interopRequireDefault(__webpack_require__(/*! ./socket.js */ 255)
     var my_token = uni.getStorageSync("token");
     this.socket = new _socket.default(
     "ws://ainame.xyz:38080/advisory/chat?token=" + my_token + "&advisoryId=0",
-    5000000);
+    5000000,
+    this.messageList);
 
     // let my_token = uni.getStorageSync("token");
     // this.socket = websoket_ai.init(0, my_token);
@@ -338,9 +341,17 @@ var _socket = _interopRequireDefault(__webpack_require__(/*! ./socket.js */ 255)
                   JSON.stringify({ message: _this.theMessage })));case 3:res = _context.sent;
 
                 console.log("websocket发送是否成功：", res);
+                if (res == undefined) {
+                  _this.messageList.push({
+                    fromMe: true,
+                    message: _this.theMessage,
+                    // objectId: 0,
+                    timestamp: 1666526534 });
+
+                }
                 // this.chatViewHeight=`calc(80vh)`;
                 // console.log(this.chatViewHeight)
-              case 5:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
+              case 6:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

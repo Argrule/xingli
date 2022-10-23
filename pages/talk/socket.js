@@ -1,6 +1,6 @@
 class wsRequest {
 
-    constructor(url, time) {
+    constructor(url, time,my_list=null) {
         this.status = null; // websocket是否关闭
         this.lockReconnect = false //避免重复连接
         this.url = url
@@ -9,6 +9,9 @@ class wsRequest {
         this.timeout = time //多少秒执行检测
         this.timeoutObj = null //检测服务器端是否还活着
         this.reconnectTimeOutObj = null //重连之后多久再次重连
+
+        // 消息列表
+        this.messageList=my_list    
 
         try {
             return this.initRequest()
@@ -52,6 +55,9 @@ class wsRequest {
             //接受任何消息都说明当前连接是正常的
             this.reset();
             console.log(res, 'pong');
+            let result=JSON.parse(res.data);
+            console.log(this.messageList);            
+            this.messageList.push(result.data)            
         })
 
     }

@@ -10,23 +10,25 @@
       <!-- <view></view> -->
       <view v-for="(item, i) in messageList" :key="i">
         <view class="messageList">
-          <view> {{ item.time }} </view>
+          <view> {{ item.timestamp }} </view>
           <!-- 左右消息 -->
           <view
-            :class="[
-              item.left === 1 ? 'messageAndAvatar0' : 'messageAndAvatar1',
-            ]"
+            :class="[item.fromMe ? 'messageAndAvatar1' : 'messageAndAvatar0']"
           >
             <!-- 头像 -->
             <view>
               <u-avatar
                 size="45"
-                :src="item.avatarUrl"
+                :src="
+                  item.fromMe
+                    ? 'https://cdn.uviewui.com/uview/album/3.jpg'
+                    : 'https://cdn.uviewui.com/uview/album/5.jpg'
+                "
                 shape="circle"
               ></u-avatar>
             </view>
             <!-- message -->
-            <view class="msgContent"> {{ item.messageText }} </view>
+            <view class="msgContent"> {{ item.message }} </view>
           </view>
         </view>
       </view>
@@ -53,78 +55,78 @@ export default {
       chatViewHeight: `${100 + 100}rpx`,
       // left,1左0右
       messageList: [
-        {
-          left: 0,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-          messageText: "我好无聊",
-          time: "昨天",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉，来陪你聊天了",
-          time: "昨天",
-        },
-        {
-          left: 0,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-          messageText: "在吗？在吗？",
-          time: "8:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉，来陪你聊天了",
-          time: "8:10",
-        },
-        {
-          left: 0,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-          messageText: "小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
-        {
-          left: 1,
-          avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-          messageText: "我是小诉",
-          time: "10:10",
-        },
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "我好无聊",
+        //   time: "昨天",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉，来陪你聊天了",
+        //   time: "昨天",
+        // },
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "在吗？在吗？",
+        //   time: "8:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉，来陪你聊天了",
+        //   time: "8:10",
+        // },
+        // {
+        //   left: 0,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
+        //   messageText: "小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
+        // {
+        //   left: 1,
+        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
+        //   messageText: "我是小诉",
+        //   time: "10:10",
+        // },
       ],
       // 发送的信息
       theMessage: "",
@@ -144,7 +146,8 @@ export default {
     let my_token = uni.getStorageSync("token");
     this.socket = new wxRequest(
       "ws://ainame.xyz:38080/advisory/chat?token=" + my_token + "&advisoryId=0",
-      5000000
+      5000000,
+      this.messageList
     );
     // let my_token = uni.getStorageSync("token");
     // this.socket = websoket_ai.init(0, my_token);
@@ -178,6 +181,14 @@ export default {
         JSON.stringify({ message: this.theMessage })
       );
       console.log("websocket发送是否成功：", res);
+      if (res == undefined) {
+        this.messageList.push({
+          fromMe: true,
+          message: this.theMessage,
+          // objectId: 0,
+          timestamp: 1666526534,
+        });
+      }
       // this.chatViewHeight=`calc(80vh)`;
       // console.log(this.chatViewHeight)
     },
