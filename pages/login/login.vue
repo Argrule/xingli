@@ -28,8 +28,8 @@
 		data() {
 			return {
 				// 邮箱密码，待校验
-				userName:'刘荣',
-				passWord:'1145141919',
+				userName:'',
+				passWord:'',
 				// 是否同意协议
 				isPermited:false,		
 			};
