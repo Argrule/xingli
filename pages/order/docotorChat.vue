@@ -121,6 +121,7 @@ export default {
   // height: 100rpx;
   // background-color: aqua;
   //   z-index: 1;
+  height: 8vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -129,14 +130,14 @@ export default {
   bottom: 0;
   // 必须100%，由于fixed定位
   width: 100%;
-  padding: 10rpx 15rpx;
+  padding: 10rpx 0rpx;
   // 需要给颜色，否则显示scroll-view的颜色
   background-color: #f6f6f6;
   .inputFont {
-    // width: 100%;
+    width: 60vw;
     display: block;
-    font-size: 30rpx;
-    padding: 5rpx 20rpx;
+    font-size: 45rpx;
+    padding: 10rpx 20rpx;
     border-radius: 35rpx;
     background-color: #e5e5e5;
   }
