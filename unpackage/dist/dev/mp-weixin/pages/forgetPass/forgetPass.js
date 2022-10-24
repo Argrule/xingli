@@ -152,9 +152,9 @@ var _default =
   data: function data() {
     return {
       // 邮箱密码，待校验
-      oldPassword: '114514',
-      newPassword: '1145141919',
-      checkNewPassword: '1145141919' };
+      oldPassword: '',
+      newPassword: '',
+      checkNewPassword: '' };
 
   },
   methods: {
