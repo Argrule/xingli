@@ -113,14 +113,23 @@
             }
         }
         ,{
-            "path" : "pages/order/docotorChat",
+            "path" : "pages/order/chatList",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "消息",
+                "navigationBarTitleText": "消息列表",
                 "enablePullDownRefresh": false
             }
             
-        }
+        },
+		{
+		    "path" : "pages/order/docotorChat",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "消息",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
         ,{
             "path" : "pages/waterfall/waterfall",
             "style" :                                                                                    
