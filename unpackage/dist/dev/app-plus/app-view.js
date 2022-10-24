@@ -10346,12 +10346,20 @@ var render = function() {
         "u-sticky",
         { attrs: { _i: 1 } },
         [
+          _c("uni-view", {
+            staticStyle: {
+              height: "3vh",
+              "background-color": "#FFFFFF",
+              "margin-top": "2vh"
+            },
+            attrs: { _i: 2 }
+          }),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
             [
               _c("u-tabs", {
-                attrs: { _i: 3 },
+                attrs: { _i: 4 },
                 on: {
                   click: function($event) {
                     return _vm.$handleViewEvent($event)
@@ -10364,17 +10372,17 @@ var render = function() {
         ],
         1
       ),
-      _vm._$g(4, "i")
+      _vm._$g(5, "i")
         ? _c(
             "uni-view",
-            { attrs: { _i: 4 } },
-            [_c("my-chat", { attrs: { _i: 5 } })],
+            { attrs: { _i: 5 } },
+            [_c("my-chat", { attrs: { _i: 6 } })],
             1
           )
         : _c(
             "uni-view",
-            { attrs: { _i: 6 } },
-            [_c("my-hollow", { ref: "myHollow", attrs: { _i: 7 } })],
+            { attrs: { _i: 7 } },
+            [_c("my-hollow", { ref: "myHollow", attrs: { _i: 8 } })],
             1
           )
     ],
@@ -10941,7 +10949,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n[data-v-46ceb4d6] .u-tabs {\n  margin-top: 70rpx;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, "\n[data-v-46ceb4d6] .u-tabs {\n  align-items: center;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

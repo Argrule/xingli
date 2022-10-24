@@ -1,7 +1,8 @@
 <template>
   <!-- 背景颜色配合gif动图，不要轻易修改 -->
-  <view style="background-color: #fcfcf6">
-    <u-sticky bgColor="#fff">
+  <view style="background-color: #fcfcf6">    
+    <u-sticky bgColor="#FFFFFF">
+      <view style="height:3vh;background-color:#FFFFFF;margin-top:2vh;"></view>
       <view class="functionOptions">
         <u-tabs
           lineColor="#FBC2A6"
@@ -73,7 +74,7 @@ export default {
 
 <style lang="less" scoped>
 /deep/ .u-tabs {
-  margin-top: 70rpx;
+  // margin-top: 70rpx;
   align-items: center;
   // background-color: aqua;
 }

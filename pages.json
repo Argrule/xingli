@@ -52,7 +52,7 @@
             "path": "pages/order/order",
             "style": {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": true,
+                // "enablePullDownRefresh": true,
 				"navigationBarBackgroundColor": "#ffffff",
                 // "navigationStyle": "custom",				
 				"onReachBottomDistance":150
