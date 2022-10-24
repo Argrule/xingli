@@ -2,7 +2,9 @@
   <view style="background-color: #fcfcf6">
     <!-- 搜索框 -->
     <u-sticky bgColor="#FFFFFF">
-      <view style="height:6vh;background-color:#FFFFFF;margin-top:1vh;"></view>
+      <view
+        style="height: 6vh; background-color: #ffffff; margin-top: 1vh"
+      ></view>
       <u-search
         height="25"
         :clearabled="false"
@@ -97,7 +99,7 @@
         </view>
         <!-- 预约按钮 -->
         <button class="orderButton" @click="clickOrderButton(docotorDetail)">
-          预约
+          {{ reserved ? "继续聊天" : "预约" }}
         </button>
       </view>
     </u-popup>
@@ -123,15 +125,9 @@ export default {
       // 右列
       docotorList2: [],
       // 医生信息
-      docotorDetail: {
-        id: 0,
-        name: "李某",
-        communicate: "11451419198",
-        exp: "java手写时长两年半",
-        msg: "手写代码是为了让大家期末考试都能过，望周知",
-        age: 39,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-      },
+      docotorDetail: {},
+      reserved: false, //是否被预约
+      copy_list: {}, //备份用于修改引用，reserved是否被预约
     };
   },
   created() {
@@ -153,7 +149,7 @@ export default {
     }, 100);
   },
   methods: {
-    ...mapMutations("m_dchat", ["setAdvisoryId",'setDocAvatarUrl']),
+    ...mapMutations("m_dchat", ["setAdvisoryId", "setDocAvatarUrl"]),
     // 获取docotor列表
     async getDocotorList(thePage = 1) {
       console.log("// 获取docotor列表");
@@ -182,14 +178,18 @@ export default {
     // 打开聊天界面
     gotoChat() {
       console.log("go to chat");
-      uni.navigateTo({ url: "/pages/order/docotorChat" });
+      uni.navigateTo({ url: "/pages/order/chatList" });
     },
     // 弹窗医生简介
-    async clickDocotorDetail({ id: myid }) {
-      console.log("id is ", myid);
+    async clickDocotorDetail(item) {
+      console.log("id is ", item.id);
       const { data: res } = await uni.$http.get("/advisory/doctor", {
-        id: myid,
+        id: item.id,
       });
+      // //
+      this.reserved = item.reserved;
+      // //
+      this.copy_list = item;
       console.log("docotor detail is", res);
       // 替换为当前医生的信息
       this.docotorDetail = res.data;
@@ -202,11 +202,17 @@ export default {
       const { data: res } = await uni.$http.put("/advisory/reserve", {
         doctorId: theDocotor.id,
       });
+      if ((res.code = "00000")) {
+        // 一律改为已预约
+        this.reserved = this.copy_list.reserved = true;
+      }
       // 关闭弹窗
       this.docotorDetailDialog = false;
       console.log("// 点击预约按钮", res);
       this.setAdvisoryId(res.data.advisoryId);
       this.setDocAvatarUrl(theDocotor.avatarUrl);
+      // 无论继续聊天还是预约，都去聊天界面
+      uni.navigateTo({ url: "/pages/order/docotorChat" });
     },
   },
 };

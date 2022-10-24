@@ -43,7 +43,7 @@ class wsRequest {
         // 如果希望websocket连接一直保持，在close或者error上绑定重新连接方法。
         this.socketTask.onClose((res) => {
             console.log(res, '连接关闭');
-            this.reconnect();
+            // this.reconnect();
         })
 
         this.socketTask.onError((res) => {

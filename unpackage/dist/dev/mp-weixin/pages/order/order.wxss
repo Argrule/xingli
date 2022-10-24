@@ -100,6 +100,7 @@
   width: 45%;
 }
 .data-v-127632e4 .u-sticky {
-  height: 100rpx;
+  height: 12vh;
+  align-items: center;
 }
 

@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uSticky: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 333))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 342))
     },
     uSearch: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 341))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 350))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 284))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 293))
     },
     uAvatar: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 276))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 285))
     },
     uPopup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 377))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 386))
     }
   }
 } catch (e) {
@@ -274,6 +274,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 {
   data: function data() {
@@ -292,16 +294,10 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 右列
       docotorList2: [],
       // 医生信息
-      docotorDetail: {
-        id: 0,
-        name: "李某",
-        communicate: "11451419198",
-        exp: "java手写时长两年半",
-        msg: "手写代码是为了让大家期末考试都能过，望周知",
-        age: 39,
-        avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg" } };
-
-
+      docotorDetail: {},
+      reserved: false, //是否被预约
+      copy_list: {} //备份用于修改引用，reserved是否被预约
+    };
   },
   created: function created() {
     this.getDocotorList();
@@ -322,7 +318,7 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
               }, 100);case 10:case "end":return _context.stop();}}}, _callee);}))();
   },
   methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)("m_dchat", ["setAdvisoryId"])), {}, {
+  (0, _vuex.mapMutations)("m_dchat", ["setAdvisoryId", "setDocAvatarUrl"])), {}, {
     // 获取docotor列表
     getDocotorList: function getDocotorList() {var _arguments = arguments,_this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var thePage, _yield$uni$$http$get, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:thePage = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
                 console.log("// 获取docotor列表");_context2.next = 4;return (
@@ -351,30 +347,41 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     // 打开聊天界面
     gotoChat: function gotoChat() {
       console.log("go to chat");
-      uni.navigateTo({ url: "/pages/order/docotorChat" });
+      uni.navigateTo({ url: "/pages/order/chatList" });
     },
     // 弹窗医生简介
-    clickDocotorDetail: function clickDocotorDetail(_ref) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var myid, _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:myid = _ref.id;
-                console.log("id is ", myid);_context3.next = 4;return (
+    clickDocotorDetail: function clickDocotorDetail(item) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _yield$uni$$http$get2, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                console.log("id is ", item.id);_context3.next = 3;return (
                   uni.$http.get("/advisory/doctor", {
-                    id: myid }));case 4:_yield$uni$$http$get2 = _context3.sent;res = _yield$uni$$http$get2.data;
+                    id: item.id }));case 3:_yield$uni$$http$get2 = _context3.sent;res = _yield$uni$$http$get2.data;
 
+                // //
+                _this3.reserved = item.reserved;
+                // //
+                _this3.copy_list = item;
                 console.log("docotor detail is", res);
                 // 替换为当前医生的信息
                 _this3.docotorDetail = res.data;
                 // 关闭弹窗
-                _this3.docotorDetailDialog = true;case 9:case "end":return _context3.stop();}}}, _callee3);}))();
+                _this3.docotorDetailDialog = true;case 10:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 点击预约按钮
-    clickOrderButton: function clickOrderButton(theDocotorId) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+    clickOrderButton: function clickOrderButton(theDocotor) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var _yield$uni$$http$put, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
                 console.log("clickOrderButton");_context4.next = 3;return (
                   uni.$http.put("/advisory/reserve", {
-                    doctorId: theDocotorId }));case 3:_yield$uni$$http$put = _context4.sent;res = _yield$uni$$http$put.data;
+                    doctorId: theDocotor.id }));case 3:_yield$uni$$http$put = _context4.sent;res = _yield$uni$$http$put.data;
 
+                if (res.code = "00000") {
+                  // 一律改为已预约
+                  _this4.reserved = _this4.copy_list.reserved = true;
+                }
                 // 关闭弹窗
                 _this4.docotorDetailDialog = false;
                 console.log("// 点击预约按钮", res);
-                _this4.setAdvisoryId(res.data.advisoryId);case 8:case "end":return _context4.stop();}}}, _callee4);}))();
+                _this4.setAdvisoryId(res.data.advisoryId);
+                _this4.setDocAvatarUrl(theDocotor.avatarUrl);
+                // 无论继续聊天还是预约，都去聊天界面
+                uni.navigateTo({ url: "/pages/order/docotorChat" });case 11:case "end":return _context4.stop();}}}, _callee4);}))();
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

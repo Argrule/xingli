@@ -96,22 +96,22 @@ var components
 try {
   components = {
     uCellGroup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 399))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 408))
     },
     uCell: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 407))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 416))
     },
     uAvatar: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 276))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-avatar/u-avatar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-avatar/u-avatar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-avatar/u-avatar.vue */ 285))
     },
     uActionSheet: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 258))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 267))
     },
     uniPopup: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 307))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 316))
     },
     uniPopupDialog: function() {
-      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 314))
+      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 323))
     }
   }
 } catch (e) {
@@ -230,6 +230,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
@@ -237,13 +253,25 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
       // 选择性别弹窗
       showSexSelect: false,
       theGender: 1,
-      nickName: "刘荣" };
+      nickName: "",
+      theEmail: "" };
 
   },
   computed: _objectSpread({},
-  (0, _vuex.mapState)("m_personal", ["avatarUrl", "userId", "userName", "gender"])),
+  (0, _vuex.mapState)("m_personal", [
+  "avatarUrl",
+  "userId",
+  "userName",
+  "gender",
+  "email"])),
 
-  methods: {
+
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)("m_personal", [
+  "changeGender",
+  "changeUserName",
+  "changeEmail"])), {}, {
+
     // 选择性别后触发
     selectClick: function selectClick(_ref) {var name = _ref.name;
       this.theGender = name == "男" ? 1 : 0;
@@ -257,15 +285,25 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
     dialogClose: function dialogClose() {
       console.log("dialogClose,取消就不发请求");
     },
-    // 提交
+    // 提交nickName
     dialogInputConfirm: function dialogInputConfirm(str_value) {
       console.log("dialogInputConfirm");
       // 修改昵称
       this.putPersonInfo(str_value);
     },
+    // 提交email
+    emailInputConfirm: function emailInputConfirm(str_value) {
+      console.log("emailInputConfirm");
+      // 修改email
+      this.putPersonInfo(str_value, 2);
+    },
     // 打开input nickName
     inputDialogToggle: function inputDialogToggle() {
       this.$refs.inputNickName.open();
+    },
+    // 打开input email弹窗
+    emailDialogToggle: function emailDialogToggle() {
+      this.$refs.inputEmailName.open();
     },
     // 各种修改信息put
     putPersonInfo: function putPersonInfo(str_value) {var _arguments = arguments,_this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var key, putInfo, _yield$uni$$http$post, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:key = _arguments.length > 1 && _arguments[1] !== undefined ? _arguments[1] : 0;
@@ -276,15 +314,35 @@ var _vuex = __webpack_require__(/*! vuex */ 15);function _interopRequireDefault(
                 0 ? 5 : _context.t0 ===
 
 
-                1 ? 7 : 9;break;case 5:putInfo.nickName = str_value;return _context.abrupt("break", 10);case 7:
-                putInfo.gender = str_value;return _context.abrupt("break", 10);case 9:return _context.abrupt("break", 10);case 10:_context.next = 12;return (
 
 
 
+                1 ? 9 : _context.t0 ===
 
-                  uni.$http.post("/user/info", putInfo));case 12:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;
-                console.log("put info", res);case 15:case "end":return _context.stop();}}}, _callee);}))();
-    } } };exports.default = _default;
+
+                2 ? 11 : 15;break;case 5:if (!(str_value == "")) {_context.next = 7;break;}return _context.abrupt("return", uni.$showMsg("名字不能为空"));case 7:putInfo.userName = str_value;return _context.abrupt("break", 15);case 9:putInfo.gender = str_value;return _context.abrupt("break", 15);case 11:if (
+                /[\w\W]+@[\w\W]+/.test(str_value)) {_context.next = 13;break;}return _context.abrupt("return",
+                uni.$showMsg("邮箱格式错误"));case 13:
+
+                putInfo.email = str_value;return _context.abrupt("break", 15);case 15:_context.next = 17;return (
+
+
+                  uni.$http.post("/user/info", putInfo));case 17:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;
+                console.log("put info", res);if (!(
+                res.code == "00000")) {_context.next = 30;break;}_context.t1 =
+                key;_context.next = _context.t1 ===
+                0 ? 24 : _context.t1 ===
+
+
+                1 ? 26 : _context.t1 ===
+
+
+                2 ? 28 : 30;break;case 24:_this.changeUserName(str_value);return _context.abrupt("break", 30);case 26:_this.changeGender(str_value);return _context.abrupt("break", 30);case 28:
+                _this.changeEmail(str_value);return _context.abrupt("break", 30);case 30:case "end":return _context.stop();}}}, _callee);}))();
+
+
+
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })

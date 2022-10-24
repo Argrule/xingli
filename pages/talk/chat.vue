@@ -155,6 +155,10 @@ export default {
       this.messageList
     );
   },
+  beforeDestroy() {
+    // 关闭对话
+    this.socket.close();
+  },
   methods: {
     // 时间戳转为时间
     transTime(timeNumStr) {

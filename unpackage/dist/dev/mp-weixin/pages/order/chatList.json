@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "消息列表",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-list": "/uni_modules/uview-ui/components/u-list/u-list",
+    "u-list-item": "/uni_modules/uview-ui/components/u-list-item/u-list-item",
+    "u-cell": "/uni_modules/uview-ui/components/u-cell/u-cell",
+    "u-avatar": "/uni_modules/uview-ui/components/u-avatar/u-avatar"
+  }
+}

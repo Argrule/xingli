@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "navigationBarBackgroundColor": "#ffffff",
+  "navigationStyle": "custom",
   "onReachBottomDistance": 150,
   "usingComponents": {
     "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
