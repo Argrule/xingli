@@ -54,7 +54,7 @@
                 "navigationBarTitleText": "",
                 // "enablePullDownRefresh": true,
 				"navigationBarBackgroundColor": "#ffffff",
-                // "navigationStyle": "custom",				
+                "navigationStyle": "custom",				
 				"onReachBottomDistance":150
             }
         },

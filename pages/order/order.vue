@@ -1,12 +1,13 @@
 <template>
   <view style="background-color: #fcfcf6">
     <!-- 搜索框 -->
-    <u-sticky bgColor="#fff">
+    <u-sticky bgColor="#FFFFFF">
+      <view style="height:6vh;background-color:#FFFFFF;margin-top:1vh;"></view>
       <u-search
         height="25"
         :clearabled="false"
         v-model="keyword"
-        margin="0.1rpx 50rpx 40rpx"
+        margin="0 50rpx"
         :showAction="false"
         @search="searchKeyWord"
       ></u-search>
@@ -328,6 +329,7 @@ export default {
   width: 45%;
 }
 /deep/ .u-sticky {
-  height: 100rpx;
+  height: 12vh;
+  align-items: center;
 }
 </style>

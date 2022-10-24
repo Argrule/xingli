@@ -21,6 +21,7 @@ page {
   width: 100%;
   padding: 0;
   margin: 0;
+  // 背景颜色，适配gif动图
   background-color: #fcfcf6;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
     Segoe UI, Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB",

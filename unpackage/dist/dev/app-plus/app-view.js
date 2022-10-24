@@ -9857,15 +9857,23 @@ var render = function() {
         "u-sticky",
         { attrs: { _i: 1 } },
         [
+          _c("uni-view", {
+            staticStyle: {
+              height: "6vh",
+              "background-color": "#FFFFFF",
+              "margin-top": "1vh"
+            },
+            attrs: { _i: 2 }
+          }),
           _c("u-search", {
-            attrs: { _i: 2 },
+            attrs: { _i: 3 },
             on: {
               search: function($event) {
                 return _vm.$handleViewEvent($event)
               }
             },
             model: {
-              value: _vm._$g(2, "v-model"),
+              value: _vm._$g(3, "v-model"),
               callback: function() {},
               expression: "keyword"
             }
@@ -9875,17 +9883,17 @@ var render = function() {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
         [
-          _c("uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
+          _c("uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
             _vm._v("心理咨询")
           ]),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
             [
               _c("u-icon", {
-                attrs: { _i: 6 },
+                attrs: { _i: 7 },
                 on: {
                   click: function($event) {
                     return _vm.$handleViewEvent($event)
@@ -9900,7 +9908,7 @@ var render = function() {
       ),
       _c(
         "uni-view",
-        { attrs: { _i: 7 } },
+        { attrs: { _i: 8 } },
         [
           _c(
             "uni-view",
@@ -9909,22 +9917,22 @@ var render = function() {
                 display: "flex",
                 "justify-content": "space-evenly"
               },
-              attrs: { _i: 8 }
+              attrs: { _i: 9 }
             },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-                _vm._l(_vm._$g(10, "f"), function(item, index, $20, $30) {
+                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                _vm._l(_vm._$g(11, "f"), function(item, index, $20, $30) {
                   return _c(
                     "uni-view",
-                    { key: item, attrs: { _i: "10-" + $30 } },
+                    { key: item, attrs: { _i: "11-" + $30 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g("11-" + $30, "sc"),
-                          attrs: { _i: "11-" + $30 },
+                          staticClass: _vm._$g("12-" + $30, "sc"),
+                          attrs: { _i: "12-" + $30 },
                           on: {
                             click: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -9935,19 +9943,11 @@ var render = function() {
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g("12-" + $30, "sc"),
-                              attrs: { _i: "12-" + $30 }
+                              staticClass: _vm._$g("13-" + $30, "sc"),
+                              attrs: { _i: "13-" + $30 }
                             },
-                            [_c("u-avatar", { attrs: { _i: "13-" + $30 } })],
+                            [_c("u-avatar", { attrs: { _i: "14-" + $30 } })],
                             1
-                          ),
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g("14-" + $30, "sc"),
-                              attrs: { _i: "14-" + $30 }
-                            },
-                            [_vm._v(_vm._$g("14-" + $30, "t0-0"))]
                           ),
                           _c(
                             "uni-view",
@@ -9956,6 +9956,14 @@ var render = function() {
                               attrs: { _i: "15-" + $30 }
                             },
                             [_vm._v(_vm._$g("15-" + $30, "t0-0"))]
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g("16-" + $30, "sc"),
+                              attrs: { _i: "16-" + $30 }
+                            },
+                            [_vm._v(_vm._$g("16-" + $30, "t0-0"))]
                           )
                         ],
                         1
@@ -9968,17 +9976,17 @@ var render = function() {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                _vm._l(_vm._$g(17, "f"), function(item, index, $21, $31) {
+                { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                _vm._l(_vm._$g(18, "f"), function(item, index, $21, $31) {
                   return _c(
                     "uni-view",
-                    { key: item, attrs: { _i: "17-" + $31 } },
+                    { key: item, attrs: { _i: "18-" + $31 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g("18-" + $31, "sc"),
-                          attrs: { _i: "18-" + $31 },
+                          staticClass: _vm._$g("19-" + $31, "sc"),
+                          attrs: { _i: "19-" + $31 },
                           on: {
                             click: function($event) {
                               return _vm.$handleViewEvent($event)
@@ -9989,19 +9997,11 @@ var render = function() {
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g("19-" + $31, "sc"),
-                              attrs: { _i: "19-" + $31 }
+                              staticClass: _vm._$g("20-" + $31, "sc"),
+                              attrs: { _i: "20-" + $31 }
                             },
-                            [_c("u-avatar", { attrs: { _i: "20-" + $31 } })],
+                            [_c("u-avatar", { attrs: { _i: "21-" + $31 } })],
                             1
-                          ),
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g("21-" + $31, "sc"),
-                              attrs: { _i: "21-" + $31 }
-                            },
-                            [_vm._v(_vm._$g("21-" + $31, "t0-0"))]
                           ),
                           _c(
                             "uni-view",
@@ -10010,6 +10010,14 @@ var render = function() {
                               attrs: { _i: "22-" + $31 }
                             },
                             [_vm._v(_vm._$g("22-" + $31, "t0-0"))]
+                          ),
+                          _c(
+                            "uni-view",
+                            {
+                              staticClass: _vm._$g("23-" + $31, "sc"),
+                              attrs: { _i: "23-" + $31 }
+                            },
+                            [_vm._v(_vm._$g("23-" + $31, "t0-0"))]
                           )
                         ],
                         1
@@ -10029,7 +10037,7 @@ var render = function() {
       _c(
         "u-popup",
         {
-          attrs: { _i: 23 },
+          attrs: { _i: 24 },
           on: {
             close: function($event) {
               return _vm.$handleViewEvent($event)
@@ -10041,18 +10049,18 @@ var render = function() {
             "uni-view",
             {
               staticStyle: { "background-color": "#ffceb7" },
-              attrs: { _i: 24 }
+              attrs: { _i: 25 }
             },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+                    { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                     [
-                      _c("u-avatar", { attrs: { _i: 27 } }),
+                      _c("u-avatar", { attrs: { _i: 28 } }),
                       _c(
                         "uni-view",
                         {
@@ -10061,31 +10069,31 @@ var render = function() {
                             "flex-direction": "column",
                             "align-items": "center"
                           },
-                          attrs: { _i: 28 }
+                          attrs: { _i: 29 }
                         },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(29, "sc"),
-                              attrs: { _i: 29 }
+                              staticClass: _vm._$g(30, "sc"),
+                              attrs: { _i: 30 }
                             },
                             [
-                              _c(
-                                "uni-view",
-                                {
-                                  staticClass: _vm._$g(30, "sc"),
-                                  attrs: { _i: 30 }
-                                },
-                                [_vm._v(_vm._$g(30, "t0-0"))]
-                              ),
                               _c(
                                 "uni-view",
                                 {
                                   staticClass: _vm._$g(31, "sc"),
                                   attrs: { _i: 31 }
                                 },
-                                [_vm._v(_vm._$g(31, "t0-0") + "岁")]
+                                [_vm._v(_vm._$g(31, "t0-0"))]
+                              ),
+                              _c(
+                                "uni-view",
+                                {
+                                  staticClass: _vm._$g(32, "sc"),
+                                  attrs: { _i: 32 }
+                                },
+                                [_vm._v(_vm._$g(32, "t0-0") + "岁")]
                               )
                             ],
                             1
@@ -10093,10 +10101,10 @@ var render = function() {
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(32, "sc"),
-                              attrs: { _i: 32 }
+                              staticClass: _vm._$g(33, "sc"),
+                              attrs: { _i: 33 }
                             },
-                            [_vm._v("联系方式:" + _vm._$g(32, "t0-0"))]
+                            [_vm._v("联系方式:" + _vm._$g(33, "t0-0"))]
                           )
                         ],
                         1
@@ -10106,13 +10114,13 @@ var render = function() {
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
-                    [_vm._v(_vm._$g(33, "t0-0"))]
+                    { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
+                    [_vm._v(_vm._$g(34, "t0-0"))]
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                    [_vm._v("医生寄语：" + _vm._$g(34, "t0-0"))]
+                    { staticClass: _vm._$g(35, "sc"), attrs: { _i: 35 } },
+                    [_vm._v("医生寄语：" + _vm._$g(35, "t0-0"))]
                   )
                 ],
                 1
@@ -10120,8 +10128,8 @@ var render = function() {
               _c(
                 "v-uni-button",
                 {
-                  staticClass: _vm._$g(35, "sc"),
-                  attrs: { _i: 35 },
+                  staticClass: _vm._$g(36, "sc"),
+                  attrs: { _i: 36 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -10229,7 +10237,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".dialogBoder[data-v-57a76b98] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  background-color: #ffffff;\n  margin: 80rpx 40rpx;\n  border-radius: 15rpx;\n  padding: 10rpx;\n}\n.dialogBoder .avatarAndOther[data-v-57a76b98] {\n  display: flex;\n  justify-content: space-evenly;\n  margin: 40rpx 0;\n}\n.dialogBoder .docotorAndAge[data-v-57a76b98] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n}\n.dialogBoder .docotorNameFont[data-v-57a76b98] {\n  font-size: 40rpx;\n  font-weight: 600;\n  margin: 10rpx 0 10rpx 0;\n}\n.dialogBoder .ageFont[data-v-57a76b98] {\n  margin: 10rpx 20rpx;\n  font-size: 30rpx;\n  font-weight: 600;\n}\n.dialogBoder .communicateFont[data-v-57a76b98] {\n  font-size: 30rpx;\n  color: #97b4d1;\n}\n.dialogBoder .descriptionWord[data-v-57a76b98] {\n  font-size: 35rpx;\n  font-weight: 500;\n  margin: 20rpx 0;\n  padding: 0 10rpx;\n}\n.orderButton[data-v-57a76b98] {\n  width: 50%;\n  background-color: #ff8553;\n  color: #ffffff;\n  position: relative;\n  bottom: 40rpx;\n}\n.headPart[data-v-57a76b98] {\n  display: flex;\n  position: relative;\n}\n.headPart .title[data-v-57a76b98] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n  border-left: 8rpx solid #f6b4a6;\n  padding-left: 20rpx;\n}\n.headPart .chatIcon[data-v-57a76b98] {\n  margin: 30rpx 0 10rpx 0;\n  position: absolute;\n  right: 5%;\n}\n.TextLeft[data-v-57a76b98] {\n  background-color: #ffffff;\n  margin: 30rpx 0;\n  padding: 10rpx;\n  border-radius: 20rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.TextRight[data-v-57a76b98] {\n  background-color: #ffffff;\n  margin: 30rpx 0;\n  padding: 10rpx;\n  border-radius: 20rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.avatar[data-v-57a76b98] {\n  margin-top: 30rpx;\n}\n.fontDocotorName[data-v-57a76b98] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n}\n.fontGoodAt[data-v-57a76b98] {\n  font-size: 30rpx;\n  font-weight: 300;\n  color: #464444;\n}\n.docotorListLeft[data-v-57a76b98] {\n  width: 45%;\n}\n.docotorListRight[data-v-57a76b98] {\n  width: 45%;\n}\n[data-v-57a76b98] .u-sticky {\n  height: 100rpx;\n}\n", ""]);
+exports.push([module.i, ".dialogBoder[data-v-57a76b98] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  background-color: #ffffff;\n  margin: 80rpx 40rpx;\n  border-radius: 15rpx;\n  padding: 10rpx;\n}\n.dialogBoder .avatarAndOther[data-v-57a76b98] {\n  display: flex;\n  justify-content: space-evenly;\n  margin: 40rpx 0;\n}\n.dialogBoder .docotorAndAge[data-v-57a76b98] {\n  width: 100%;\n  display: flex;\n  align-items: center;\n}\n.dialogBoder .docotorNameFont[data-v-57a76b98] {\n  font-size: 40rpx;\n  font-weight: 600;\n  margin: 10rpx 0 10rpx 0;\n}\n.dialogBoder .ageFont[data-v-57a76b98] {\n  margin: 10rpx 20rpx;\n  font-size: 30rpx;\n  font-weight: 600;\n}\n.dialogBoder .communicateFont[data-v-57a76b98] {\n  font-size: 30rpx;\n  color: #97b4d1;\n}\n.dialogBoder .descriptionWord[data-v-57a76b98] {\n  font-size: 35rpx;\n  font-weight: 500;\n  margin: 20rpx 0;\n  padding: 0 10rpx;\n}\n.orderButton[data-v-57a76b98] {\n  width: 50%;\n  background-color: #ff8553;\n  color: #ffffff;\n  position: relative;\n  bottom: 40rpx;\n}\n.headPart[data-v-57a76b98] {\n  display: flex;\n  position: relative;\n}\n.headPart .title[data-v-57a76b98] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n  border-left: 8rpx solid #f6b4a6;\n  padding-left: 20rpx;\n}\n.headPart .chatIcon[data-v-57a76b98] {\n  margin: 30rpx 0 10rpx 0;\n  position: absolute;\n  right: 5%;\n}\n.TextLeft[data-v-57a76b98] {\n  background-color: #ffffff;\n  margin: 30rpx 0;\n  padding: 10rpx;\n  border-radius: 20rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.TextRight[data-v-57a76b98] {\n  background-color: #ffffff;\n  margin: 30rpx 0;\n  padding: 10rpx;\n  border-radius: 20rpx;\n  box-shadow: 0px 2px 8px #6d6d6d;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.avatar[data-v-57a76b98] {\n  margin-top: 30rpx;\n}\n.fontDocotorName[data-v-57a76b98] {\n  font-size: 36rpx;\n  font-weight: 600;\n  margin: 30rpx 0 10rpx 0;\n}\n.fontGoodAt[data-v-57a76b98] {\n  font-size: 30rpx;\n  font-weight: 300;\n  color: #464444;\n}\n.docotorListLeft[data-v-57a76b98] {\n  width: 45%;\n}\n.docotorListRight[data-v-57a76b98] {\n  width: 45%;\n}\n[data-v-57a76b98] .u-sticky {\n  height: 12vh;\n  align-items: center;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
