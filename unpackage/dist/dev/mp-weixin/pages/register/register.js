@@ -158,12 +158,12 @@ var _default =
   data: function data() {
     return {
       // 邮箱、验证码，待校验
-      userName: '刘荣',
-      email: '2039858744@qq.com',
-      checkWord: '114519',
+      userName: '',
+      email: '',
+      checkWord: '',
       // 密码
-      password: '123456',
-      checkPassword: '123456' };
+      password: '',
+      checkPassword: '' };
 
   },
   methods: {
@@ -185,7 +185,7 @@ var _default =
         return uni.$showMsg("两次密码不相同");
       }
       if (!checkWordType.test(this.checkWord)) {
-        return uni.$showMsg("请输入正确验证码");
+        return uni.$showMsg("验证码至少六位");
       }
       // 注册请求
       this.register();
@@ -199,15 +199,17 @@ var _default =
                     checkWord: _this.checkWord }));case 2:_yield$uni$$http$post = _context.sent;res = _yield$uni$$http$post.data;if (!(
 
 
-                res.code == '00000')) {_context.next = 8;break;}
-                uni.$showMsg('注册成功');_context.next = 9;break;case 8:return _context.abrupt("return",
+                res.code == '00000')) {_context.next = 9;break;}
+                uni.$showMsg('注册成功');
+                uni.navigateTo({ url: "/pages/login/login" });_context.next = 10;break;case 9:return _context.abrupt("return",
 
-                uni.$showMsg(res.message));case 9:case "end":return _context.stop();}}}, _callee);}))();
+                uni.$showMsg(res.message));case 10:case "end":return _context.stop();}}}, _callee);}))();
 
     },
     // 获取验证码
     getIdentityCode: function getIdentityCode() {
       console.log('getIdentityCode');
+      this.checkWord = 'checkWord';
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

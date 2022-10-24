@@ -24,12 +24,12 @@
 		data() {
 			return {
 				// 邮箱、验证码，待校验
-				userName: '刘荣',
-				email:'2039858744@qq.com',
-				checkWord:'114519',	
+				userName: '',
+				email:'',
+				checkWord:'',	
 				// 密码
-				password: '123456',
-				checkPassword: '123456',
+				password: '',
+				checkPassword: '',
 			};
 		},
 		methods:{			
@@ -51,7 +51,7 @@
 					return uni.$showMsg("两次密码不相同");
 				}		
 				if (!checkWordType.test(this.checkWord)) {						
-					return uni.$showMsg("请输入正确验证码");
+					return uni.$showMsg("验证码至少六位");
 				}				
 				// 注册请求
 				this.register();										
@@ -67,6 +67,7 @@
 				});				
 				if (res.code=='00000') {
 					uni.$showMsg('注册成功');
+					uni.navigateTo({ url: "/pages/login/login" });   
 				}else{
 					return uni.$showMsg(res.message);
 				}									
@@ -74,6 +75,7 @@
 			// 获取验证码
 			getIdentityCode(){				
 				console.log('getIdentityCode');
+				this.checkWord='checkWord';
 			},				
 		}
 	}
