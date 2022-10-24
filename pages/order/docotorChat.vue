@@ -51,81 +51,9 @@ export default {
   data() {
     return {
       // 全局websocket对象
-      socket: null,      
-      messageList: [
-        // {
-        //   left: 0,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        //   messageText: "我好无聊",
-        //   time: "昨天",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉，来陪你聊天了",
-        //   time: "昨天",
-        // },
-        // {
-        //   left: 0,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        //   messageText: "在吗？在吗？",
-        //   time: "8:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉，来陪你聊天了",
-        //   time: "8:10",
-        // },
-        // {
-        //   left: 0,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/5.jpg",
-        //   messageText: "小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-        // {
-        //   left: 1,
-        //   avatarUrl: "https://cdn.uviewui.com/uview/album/3.jpg",
-        //   messageText: "我是小诉",
-        //   time: "10:10",
-        // },
-      ],
+      socket: null, 
+	  // 消息记录     
+      messageList: [],
       // 发送的信息
       theMessage: "",
     };
