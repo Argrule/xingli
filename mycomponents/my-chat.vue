@@ -3,7 +3,7 @@
     <view>
       <button class="talkButton" @click="gotoChat">LET'S TALK!</button>
     </view>
-    <view style="margin-top: 20%">
+    <view style="margin:20vh auto;">
       <!-- 动图 -->
       <image src="../static/gif/letTalk.gif" mode="aspectFit" />
     </view>

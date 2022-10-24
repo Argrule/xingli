@@ -96,7 +96,7 @@
           <view class="descriptionWord">医生寄语：{{ docotorDetail.msg }}</view>
         </view>
         <!-- 预约按钮 -->
-        <button class="orderButton" @click="clickOrderButton(docotorDetail.id)">
+        <button class="orderButton" @click="clickOrderButton(docotorDetail)">
           预约
         </button>
       </view>
@@ -153,7 +153,7 @@ export default {
     }, 100);
   },
   methods: {
-    ...mapMutations("m_dchat", ["setAdvisoryId"]),
+    ...mapMutations("m_dchat", ["setAdvisoryId",'setDocAvatarUrl']),
     // 获取docotor列表
     async getDocotorList(thePage = 1) {
       console.log("// 获取docotor列表");
@@ -197,15 +197,16 @@ export default {
       this.docotorDetailDialog = true;
     },
     // 点击预约按钮
-    async clickOrderButton(theDocotorId) {
+    async clickOrderButton(theDocotor) {
       console.log("clickOrderButton");
       const { data: res } = await uni.$http.put("/advisory/reserve", {
-        doctorId: theDocotorId,
+        doctorId: theDocotor.id,
       });
       // 关闭弹窗
       this.docotorDetailDialog = false;
       console.log("// 点击预约按钮", res);
       this.setAdvisoryId(res.data.advisoryId);
+      this.setDocAvatarUrl(theDocotor.avatarUrl);
     },
   },
 };
