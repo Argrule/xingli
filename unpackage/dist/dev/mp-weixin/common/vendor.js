@@ -1464,7 +1464,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8556,7 +8556,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8577,14 +8577,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8670,7 +8670,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"心享","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -22989,7 +22989,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue" }, "pages": [{ "path": "pages/login/login", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/register/register", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/forgetPass/forgetPass", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/personalMain/personalMain", "style": { "navigationBarTitleText": "", "navigationBarBackgroundColor": "#00ff00", "enablePullDownRefresh": true, "navigationStyle": "custom", "app-plus": { "pullToRefresh": { "support": true, "color": "#FF8564", "style": "circle" } } } }, { "path": "pages/home/home", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/order/order", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false, "navigationBarBackgroundColor": "#ffffff", "onReachBottomDistance": 150 } }, { "path": "pages/talk/talk", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": true, "onReachBottomDistance": 150, "navigationStyle": "custom", "app-plus": { "pullToRefresh": { "support": true, "color": "#FF8564", "style": "circle" } } } }, { "path": "pages/changePersonInformation/changePersonInformation", "style": { "navigationBarTitleText": "个人信息修改", "navigationBarBackgroundColor": "#F6B4A6", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeAvatarUrl", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeUserName", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeGender", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "mycomponents/my-puthollow/my-puthollow", "style": { "navigationBarTitleText": "我的故事", "enablePullDownRefresh": false, "navigationBarBackgroundColor": "#F6B4A6" } }, { "path": "pages/order/docotorChat", "style": { "navigationBarTitleText": "消息", "enablePullDownRefresh": false } }, { "path": "pages/waterfall/waterfall", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/talk/chat", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }], "tabBar": { "color": "#7A7E83", "selectedColor": "#DC8C6B", "borderStyle": "black", "backgroundColor": "#ffffff", "height": "60px", "fontSize": "10px", "spacing": "2px", "iconWidth": "25px", "list": [{ "pagePath": "pages/home/home", "iconPath": "static/home-01.png", "selectedIconPath": "static/home-01.png", "text": "首页" }, { "pagePath": "pages/order/order", "iconPath": "static/edit-01.png", "selectedIconPath": "static/edit-01.png", "text": "预约" }, { "pagePath": "pages/talk/talk", "iconPath": "static/talk-01.png", "selectedIconPath": "static/talk-01.png", "text": "诉心" }, { "pagePath": "pages/personalMain/personalMain", "iconPath": "static/mine-01.png", "selectedIconPath": "static/mine-01.png", "text": "我的" }] }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8", "app-plus": { "bounce": "none" } } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue" }, "pages": [{ "path": "pages/login/login", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/register/register", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/forgetPass/forgetPass", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/personalMain/personalMain", "style": { "navigationBarTitleText": "", "navigationBarBackgroundColor": "#00ff00", "enablePullDownRefresh": true, "navigationStyle": "custom", "app-plus": { "pullToRefresh": { "support": true, "color": "#FF8564", "style": "circle" } } } }, { "path": "pages/home/home", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/order/order", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": true, "navigationBarBackgroundColor": "#ffffff", "onReachBottomDistance": 150 } }, { "path": "pages/talk/talk", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": true, "onReachBottomDistance": 150, "navigationStyle": "custom", "app-plus": { "pullToRefresh": { "support": true, "color": "#FF8564", "style": "circle" } } } }, { "path": "pages/changePersonInformation/changePersonInformation", "style": { "navigationBarTitleText": "个人信息修改", "navigationBarBackgroundColor": "#F6B4A6", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeAvatarUrl", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeUserName", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/changePersonInformation/changeGender", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "mycomponents/my-puthollow/my-puthollow", "style": { "navigationBarTitleText": "我的故事", "enablePullDownRefresh": false, "navigationBarBackgroundColor": "#F6B4A6" } }, { "path": "pages/order/docotorChat", "style": { "navigationBarTitleText": "消息", "enablePullDownRefresh": false } }, { "path": "pages/waterfall/waterfall", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/talk/chat", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }], "tabBar": { "color": "#7A7E83", "selectedColor": "#DC8C6B", "borderStyle": "black", "backgroundColor": "#ffffff", "height": "60px", "fontSize": "10px", "spacing": "2px", "iconWidth": "25px", "list": [{ "pagePath": "pages/home/home", "iconPath": "static/home-01.png", "selectedIconPath": "static/home-01.png", "text": "首页" }, { "pagePath": "pages/order/order", "iconPath": "static/edit-01.png", "selectedIconPath": "static/edit-01.png", "text": "预约" }, { "pagePath": "pages/talk/talk", "iconPath": "static/talk-01.png", "selectedIconPath": "static/talk-01.png", "text": "诉心" }, { "pagePath": "pages/personalMain/personalMain", "iconPath": "static/mine-01.png", "selectedIconPath": "static/mine-01.png", "text": "我的" }] }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8", "app-plus": { "bounce": "none" } } };exports.default = _default;
 
 /***/ }),
 /* 422 */

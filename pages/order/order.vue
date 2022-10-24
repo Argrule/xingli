@@ -6,7 +6,7 @@
         height="25"
         :clearabled="false"
         v-model="keyword"
-        margin="40rpx 50rpx"
+        margin="0rpx 50rpx 40rpx"
         :showAction="false"
         @search="searchKeyWord"
       ></u-search>
