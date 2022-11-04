@@ -1,0 +1,199 @@
+{
+    "easycom": {
+        "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+    },
+    "pages": [
+        {
+            "path": "pages/login/login",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/register/register",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/forgetPass/forgetPass",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/personalMain/personalMain",
+            "style": {
+                "navigationBarTitleText": "",
+                "navigationBarBackgroundColor": "#00ff00",
+                "enablePullDownRefresh": true,
+                "navigationStyle": "custom",
+				"app-plus": {
+				    "pullToRefresh": {
+				        "support": true,
+				        "color": "#FF8564",
+				        "style": "circle"                        
+				    }
+				}
+            }
+        },
+        {
+            "path": "pages/home/home",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,				
+                "navigationStyle": "custom"
+            }
+        },
+        {
+            "path": "pages/order/order",
+            "style": {
+                "navigationBarTitleText": "",
+                // "enablePullDownRefresh": true,
+				"navigationBarBackgroundColor": "#ffffff",
+                "navigationStyle": "custom",				
+				"onReachBottomDistance":150
+            }
+        },
+        {
+            "path": "pages/talk/talk",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true,
+				"onReachBottomDistance":150,
+				// 以下是取消顶部栏的操作
+                "navigationStyle": "custom",
+                "app-plus": {
+                    "pullToRefresh": {
+                        "support": true,
+                        "color": "#FF8564",
+                        "style": "circle"                        
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/changePersonInformation/changePersonInformation",
+            "style": {
+                "navigationBarTitleText": "个人信息修改",
+                "navigationBarBackgroundColor": "#F6B4A6",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/changePersonInformation/changeAvatarUrl",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/changePersonInformation/changeUserName",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "pages/changePersonInformation/changeGender",
+            "style": {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path": "mycomponents/my-puthollow/my-puthollow",
+            "style": {
+                "navigationBarTitleText": "我的故事",
+                "enablePullDownRefresh": false,
+                "navigationBarBackgroundColor": "#F6B4A6"
+            }
+        }
+        ,{
+            "path" : "pages/order/chatList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "消息列表",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/order/docotorChat",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "消息",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/waterfall/waterfall",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }        
+        ,{
+            "path" : "pages/talk/chat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#DC8C6B",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "height": "60px",
+        "fontSize": "10px",
+        "spacing": "2px",
+        "iconWidth": "25px",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "static/home-01.png",
+                "selectedIconPath": "static/home-01.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "iconPath": "static/edit-01.png",
+                "selectedIconPath": "static/edit-01.png",
+                "text": "预约"
+            },
+            {
+                "pagePath": "pages/talk/talk",
+                "iconPath": "static/talk-01.png",
+                "selectedIconPath": "static/talk-01.png",
+                "text": "诉心"
+            },
+            {
+                "pagePath": "pages/personalMain/personalMain",
+                "iconPath": "static/mine-01.png",
+                "selectedIconPath": "static/mine-01.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8",
+        "app-plus":{
+            // 关闭滑动变形
+            "bounce":"none"
+        }
+    }
+}
